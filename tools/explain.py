@@ -278,8 +278,8 @@ def boxes_for(script: dict, slug: str, title: str) -> list[Box]:
             label = key.replace("_port", "").replace("_", " ")
             body = f"Publishes the app's {label} port as {port}."
             if key in ("web_port", "webui_port", "http_port"):
-                body = (f"This is how you'll open the app: go to http://your-server-ip:{port} in your browser "
-                        "(HexOS also links to it from the app's card).")
+                body = (f"The app's web page is published on port {port}. "
+                        "You don't need to remember it — clicking the app's card in HexOS takes you there.")
             add(("app_values", "network", key), f"{label.capitalize()} port: {port}", body, tone="network")
         elif key == "certificate_id":
             add(("app_values", "network", key), "HTTPS certificate",
