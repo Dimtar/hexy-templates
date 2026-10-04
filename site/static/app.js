@@ -78,26 +78,59 @@
     });
   });
 
-  // Hovering a code line lights up the box(es) that cover it.
-  code.addEventListener("mouseover", (e) => {
-    const ln = e.target.closest(".ln");
-    if (!ln) return;
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  const sideBySide = matchMedia("(min-width: 961px)");
+
+  // Bring a box on screen if it isn't already. Uses the smallest scroll that
+  // works, so a box that's already visible never makes the page jump.
+  function reveal(box) {
+    const r = box.getBoundingClientRect();
+    const headerBottom = 76;
+    if (r.top >= headerBottom && r.bottom <= innerHeight - 16) return;
+    box.scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "nearest" });
+  }
+
+  function boxForLine(ln) {
     const n = +ln.dataset.line;
     const covering = boxes.filter((b) => n >= +b.dataset.start && n <= +b.dataset.end);
     // Prefer the most specific (shortest) range.
     covering.sort((a, b) => (a.dataset.end - a.dataset.start) - (b.dataset.end - b.dataset.start));
-    if (covering[0]) activate(covering[0], false);
-  });
-  code.addEventListener("mouseleave", () => activate(pinned, false));
+    return covering[0];
+  }
 
+  // Hovering a code line lights up the box that covers it. If the mouse rests
+  // there for a moment, the page scrolls that box into view; waiting first
+  // stops the page from lurching about while the mouse just passes over code.
+  // The code column is sticky, so it stays put under the mouse while the
+  // explanations scroll past beside it.
+  let revealTimer = 0;
+  code.addEventListener("mouseover", (e) => {
+    const ln = e.target.closest(".ln");
+    if (!ln) return;
+    const box = boxForLine(ln);
+    if (!box || box === active) return;
+    activate(box, false);
+    clearTimeout(revealTimer);
+    if (sideBySide.matches) revealTimer = setTimeout(() => reveal(box), 350);
+  });
+  code.addEventListener("mouseleave", () => {
+    clearTimeout(revealTimer);
+    activate(pinned, false);
+  });
+
+  // Clicking or tapping a line (or its numbered marker) pins its explanation
+  // and scrolls straight to it.
   code.addEventListener("click", (e) => {
     const marker = e.target.closest(".marker");
-    if (!marker) return;
-    e.preventDefault();
-    const box = document.getElementById(`box-${marker.dataset.box}`);
+    const ln = e.target.closest(".ln");
+    const box = marker ? document.getElementById(`box-${marker.dataset.box}`) : ln && boxForLine(ln);
+    if (marker) e.preventDefault();
+    if (!box) return;
+    clearTimeout(revealTimer);
     pinned = box;
     activate(box, false);
-    box.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (sideBySide.matches) reveal(box);
+    else box.scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "center" });
   });
 
   let frame = 0;
