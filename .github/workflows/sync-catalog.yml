@@ -52,6 +52,8 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Compare with upstream
         id: sync
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: python tools/sync.py --report "$RUNNER_TEMP/report.md"
       - name: Validate install scripts
         if: steps.sync.outputs.changed == 'true'

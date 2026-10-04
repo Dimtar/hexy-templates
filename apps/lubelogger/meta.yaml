@@ -20,3 +20,4 @@ upstream:
   commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/lubelogger
 notes: []
+curated: true

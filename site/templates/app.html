@@ -12,6 +12,7 @@
       <h1>{{ app.title }}</h1>
       <p class="lede">{{ m.description }}</p>
       <div class="meta-row">
+        {% if app.curated %}<span class="badge badge-curated" title="HexOS has its own official install script for this app">★ Curated by HexOS</span>{% endif %}
         <span class="badge badge-{{ app.status }}" title="{{ app.status_help }}">{{ app.status_label }}</span>
         {% for c in m.categories %}<span class="tag">{{ c }}</span>{% endfor %}
         {% if m.upstream %}<span class="muted">Based on TrueNAS app v{{ m.upstream.version }}{% if m.upstream.app_version %} ({{ app.title }} {{ m.upstream.app_version }}){% endif %}</span>{% endif %}
@@ -25,6 +26,13 @@
     </div>
   </header>
 
+  {% if app.curated %}
+  <aside class="notice notice-curated">
+    <strong>★ Curated by HexOS:</strong> HexOS has its own official install script for this app, so you can simply press
+    <b>Install</b> in HexOS — no custom script needed. Use the script below only if you want to change how it's set up.
+    <a href="{{ app.official_url }}">View HexOS's official script</a>.
+  </aside>
+  {% endif %}
   {% if m.needs_review %}
   <aside class="notice notice-needs-retest"><strong>Under review:</strong> the TrueNAS version of this app changed recently and this script hasn't been updated yet.</aside>
   {% endif %}

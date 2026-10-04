@@ -26,6 +26,7 @@ import yaml
 
 import explain
 import generate
+import hexos
 import truenas
 
 ROOT = truenas.ROOT
@@ -132,6 +133,24 @@ def sync(apps: dict[str, truenas.UpstreamApp], commit: str) -> dict[str, list[st
     return report
 
 
+def sync_curated(curated: set[str]) -> dict[str, list[str]]:
+    """Mirror which apps HexOS curates into each app's meta.yaml."""
+    report: dict[str, list[str]] = {"curated": [], "uncurated": []}
+    for app_dir in sorted(p for p in APPS.iterdir() if p.is_dir()):
+        meta = read_meta(app_dir.name) or {}
+        now, was = app_dir.name in curated, bool(meta.get("curated"))
+        if now == was:
+            continue
+        if now:
+            meta["curated"] = True
+            report["curated"].append(app_dir.name)
+        else:
+            meta.pop("curated", None)
+            report["uncurated"].append(app_dir.name)
+        write_meta(app_dir.name, meta)
+    return report
+
+
 def render_report(report: dict[str, list[str]], commit: str) -> str:
     out = [
         "Automated check against the [TrueNAS apps catalogue]"
@@ -143,6 +162,8 @@ def render_report(report: dict[str, list[str]], commit: str) -> str:
         ("regenerated", "🔄 Settings changed — script regenerated", "The app's TrueNAS settings changed, so its generated script was rebuilt. Compare the diff."),
         ("review", "✋ Settings changed — hand-written script needs a look", "These scripts are `managed: manual`, so nothing was changed. Update them by hand, then delete `needs_review` from meta.yaml."),
         ("removed", "🗑️ Removed from the TrueNAS catalogue", "Flagged with `removed_upstream: true`. Delete the folder if it should go."),
+        ("curated", "⭐ Now curated by HexOS", "HexOS added an official script for these apps, so they're now tagged Curated."),
+        ("uncurated", "Curated tag removed", "These apps are no longer in HexOS's official catalogue."),
     ]
     for key, title, hint in sections:
         items = report[key]
@@ -166,6 +187,7 @@ def main() -> None:
     path = truenas.CACHE if args.no_fetch else truenas.fetch()
     commit = truenas.commit(path)
     report = sync(truenas.load(path), commit)
+    report.update(sync_curated(hexos.curated()))
     changed = any(report.values())
 
     args.report.parent.mkdir(parents=True, exist_ok=True)

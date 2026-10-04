@@ -38,6 +38,7 @@ python3 -m http.server 8411 --directory dist
 | `status` | `draft` (generated, untested), `tested` (installed on real HexOS), `needs-retest` (was tested, then regenerated) |
 | `managed` | `generated`: sync may rewrite `script.json` when TrueNAS changes. Set it to `manual` once you hand-edit a script, so sync only flags the app instead of overwriting it. |
 | `notes` | Extra or replacement explanation boxes. A note whose `path` matches an automatic box replaces that box. |
+| `curated` | Set by sync when HexOS has its own official script for the app (read from the `prod` branch of eshtek/hexos-app-catalog). Don't edit by hand. |
 | `needs_review` | Set by sync on `manual` apps. Delete it once you've updated the script. |
 
 Example note:
@@ -56,6 +57,7 @@ notes:
 
 - **New TrueNAS apps** get a draft script.
 - **Changed apps** (when their `questions.yaml` changed) are regenerated if `managed: generated`, or flagged if `managed: manual`.
+- **Curated apps**: the `curated` tag follows HexOS's official catalogue, and any change shows up in the same pull request.
 - **Removed apps** are flagged with `removed_upstream: true` and are never deleted automatically.
 
 Version-only bumps (a new container image with the same settings) are ignored on purpose.

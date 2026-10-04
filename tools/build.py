@@ -20,6 +20,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
 import explain
+import hexos
 from truenas import ROOT
 
 SITE = ROOT / "site"
@@ -67,6 +68,8 @@ def load_apps() -> list[dict]:
             "meta": meta,
             "title": title,
             "status": status,
+            "curated": bool(meta.get("curated")),
+            "official_url": hexos.script_url(folder.name),
             "status_label": STATUS.get(status, STATUS["draft"])[0],
             "status_help": STATUS.get(status, STATUS["draft"])[1],
             "script_text": script_text,
@@ -91,6 +94,7 @@ def build(base: str, out: Path) -> None:
     apps = load_apps()
     categories = sorted({c for a in apps for c in a["meta"].get("categories", [])})
     counts = {s: sum(a["status"] == s for a in apps) for s in STATUS}
+    counts["curated"] = sum(a["curated"] for a in apps)
 
     if out.exists():
         shutil.rmtree(out)
