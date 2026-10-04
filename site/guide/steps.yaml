@@ -8,13 +8,14 @@ intro: >-
   which port it uses and how much of your server it may use. It takes about two minutes.
 
 steps:
-  - title: Turn on experimental features
+  - title: Turn on expert mode and experimental features
     body:
       - In HexOS, open Settings, go to Preferences, then open Advanced Settings.
-      - Turn on the Experimental features switch. This unlocks the Custom Install button on app pages.
+      - Turn on both the Expert mode and Experimental features switches. Together they unlock the
+        Custom Install button on app pages.
     tip: You only need to do this once.
     screenshot: step-1-preferences.png
-    alt: HexOS Settings › Preferences › Advanced Settings with the experimental features switch turned on
+    alt: HexOS Settings › Preferences › Advanced Settings with the Expert mode and Experimental features switches turned on
 
   - title: Find your app and copy its script
     body:
