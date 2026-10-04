@@ -66,11 +66,11 @@ steps:
 
   - title: Open your new app
     body:
-      - Once the app shows as running, find its card in HexOS and click it. The app opens in a new
-        browser tab.
+      - Once the app shows as running, go to Apps › Installed Apps in HexOS, find its card and click
+        it. The app opens in a new browser tab.
       - Some apps ask you to create an account or finish a short setup the first time you open them.
     screenshot: step-6-open.png
-    alt: The new app's card in HexOS, ready to click to open the app
+    alt: The new app's card under Apps › Installed Apps in HexOS, ready to click
 
 faq:
   - q: What does “Draft” mean?
