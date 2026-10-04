@@ -52,7 +52,7 @@ notes:
 
 ## Catalogue updates
 
-`.github/workflows/sync-catalog.yml` runs every Monday, and you can also start it by hand from the Actions tab. It opens or updates a single pull request on the `catalog-sync` branch:
+`.github/workflows/sync-catalog.yml` runs every day at 6pm Sydney time (adjusting for daylight saving), and you can also start it by hand from the Actions tab. It opens or updates a single pull request on the `catalog-sync` branch:
 
 - **New TrueNAS apps** get a draft script.
 - **Changed apps** (when their `questions.yaml` changed) are regenerated if `managed: generated`, or flagged if `managed: manual`.
