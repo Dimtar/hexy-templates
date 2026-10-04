@@ -29,10 +29,12 @@ steps:
   - title: Open the app in HexOS
     body:
       - In HexOS, go to Apps and search for the same app.
-      - Open it and choose Custom Install instead of Install. For apps HexOS doesn't
-        curate yet, Custom Install is the only option.
+      - Open it and choose Custom Install — the button with the glasses icon, which only
+        appears in expert mode.
+      - Don't press the plain Install button. For apps HexOS doesn't curate yet, that takes you
+        to the TrueNAS setup screen instead of using the script.
     screenshot: step-3-custom-install.png
-    alt: The HexOS app page with the Custom Install button highlighted
+    alt: The Audiobookshelf app in HexOS with the Custom Install button highlighted
 
   - title: Paste the script
     body:
