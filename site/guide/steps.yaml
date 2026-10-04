@@ -66,11 +66,15 @@ steps:
 
   - title: Open your new app
     body:
-      - Once the app shows as running, go to Apps › Installed Apps in HexOS, find its card and click
-        it. The app opens in a new browser tab.
+      - In HexOS, go to Apps › Installed Apps and click your new app's card.
+      - Once it shows as Running, press Launch. The app opens in a new browser tab.
       - Some apps ask you to create an account or finish a short setup the first time you open them.
+    note: >-
+      You may see “This app is experimental and may not behave correctly.” That's HexOS's standard
+      notice for apps installed with a custom script — it doesn't mean anything went wrong.
+    tip: Turn on “Show on dashboard” to get a shortcut to the app on your HexOS home screen.
     screenshot: step-6-open.png
-    alt: The new app's card under Apps › Installed Apps in HexOS, ready to click
+    alt: The Audiobookshelf details panel in HexOS showing Running, with the Launch button highlighted
 
 faq:
   - q: What does “Draft” mean?
