@@ -2,17 +2,18 @@
 // still lists every app with JavaScript off.
 (function () {
   const input = document.getElementById("q");
-  const status = document.getElementById("status");
+  const segs = Array.from(document.querySelectorAll(".seg"));
   const chips = Array.from(document.querySelectorAll(".chip"));
   const cards = Array.from(document.querySelectorAll(".card"));
   const count = document.getElementById("count");
   const empty = document.getElementById("empty");
   let category = "";
+  let status = "";
 
   const params = new URLSearchParams(location.search);
   input.value = params.get("q") || "";
   category = params.get("category") || "";
-  status.value = params.get("status") || "";
+  status = params.get("status") || "";
 
   function apply() {
     const terms = input.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
@@ -22,24 +23,30 @@
       const ok =
         terms.every((t) => text.includes(t)) &&
         (!category || card.dataset.cats.split(" ").includes(category)) &&
-        (!status.value || card.dataset.status === status.value);
+        (!status || card.dataset.status === status);
       card.hidden = !ok;
       if (ok) shown++;
     }
     count.textContent = shown === cards.length ? `${shown} apps` : `${shown} of ${cards.length} apps`;
     empty.hidden = shown > 0;
     chips.forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.cat === category)));
+    segs.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.status === status)));
 
     const next = new URLSearchParams();
     if (input.value.trim()) next.set("q", input.value.trim());
     if (category) next.set("category", category);
-    if (status.value) next.set("status", status.value);
+    if (status) next.set("status", status);
     const qs = next.toString();
     history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
   }
 
   input.addEventListener("input", apply);
-  status.addEventListener("change", apply);
+  segs.forEach((b) =>
+    b.addEventListener("click", () => {
+      status = b.dataset.status;
+      apply();
+    })
+  );
   chips.forEach((chip) =>
     chip.addEventListener("click", () => {
       category = chip.dataset.cat === category ? "" : chip.dataset.cat;
