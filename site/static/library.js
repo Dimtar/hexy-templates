@@ -34,11 +34,7 @@
     count.textContent = shown === cards.length ? `${shown} apps` : `${shown} of ${cards.length} apps`;
     empty.hidden = shown > 0;
     chips.forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.cat === category)));
-    curatedBtn.addEventListener("click", () => {
-    curatedOnly = !curatedOnly;
-    apply();
-  });
-  segs.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.status === status)));
+    segs.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.status === status)));
     curatedBtn.setAttribute("aria-pressed", String(curatedOnly));
 
     const next = new URLSearchParams();
@@ -51,6 +47,10 @@
   }
 
   input.addEventListener("input", apply);
+  curatedBtn.addEventListener("click", () => {
+    curatedOnly = !curatedOnly;
+    apply();
+  });
   segs.forEach((b) =>
     b.addEventListener("click", () => {
       status = b.dataset.status;

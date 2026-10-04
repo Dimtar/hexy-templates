@@ -9,6 +9,7 @@ GitHub Pages (a project site), "/" for a custom domain or local preview.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import re
@@ -88,7 +89,12 @@ def load_apps() -> list[dict]:
 
 def build(base: str, out: Path) -> None:
     env = Environment(loader=FileSystemLoader(SITE / "templates"), autoescape=select_autoescape())
-    env.globals.update(base=base, repo="https://github.com/Dimtar/hexy-templates")
+    # Appended to CSS/JS URLs so a deploy never pairs new HTML with stale cached assets.
+    digest = hashlib.sha256()
+    for f in sorted((SITE / "static").rglob("*")):
+        if f.is_file():
+            digest.update(f.read_bytes())
+    env.globals.update(base=base, repo="https://github.com/Dimtar/hexy-templates", v=digest.hexdigest()[:10])
     env.filters["tojson_attr"] = lambda v: json.dumps(v)
 
     apps = load_apps()

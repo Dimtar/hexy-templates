@@ -6,7 +6,7 @@
   <title>{% block title %}Hexy Templates{% endblock %}</title>
   <meta name="description" content="{% block description %}Custom install scripts for every TrueNAS app, explained in plain language for HexOS.{% endblock %}">
   <link rel="icon" href="{{ base }}static/icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{{ base }}static/style.css">
+  <link rel="stylesheet" href="{{ base }}static/style.css?v={{ v }}">
   <script>
     try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
@@ -37,7 +37,7 @@
       <p>App names, descriptions and icons come from the <a href="https://github.com/truenas/apps">TrueNAS apps catalogue</a>.</p>
     </div>
   </footer>
-  <script src="{{ base }}static/site.js"></script>
+  <script src="{{ base }}static/site.js?v={{ v }}"></script>
   {% block scripts %}{% endblock %}
 </body>
 </html>
