@@ -264,6 +264,7 @@ img { max-width: 100%; }
 .step h2 { font-size: 1.25rem; margin-bottom: 6px; }
 .step p { margin: 8px 0 0; color: var(--muted); }
 .tip { background: var(--accent-soft); border-radius: 10px; padding: 8px 12px; color: var(--text) !important; font-size: 0.92rem; }
+.note { background: var(--retest-bg); color: var(--retest-text) !important; border-left: 4px solid var(--network); border-radius: 10px; padding: 8px 12px; font-size: 0.92rem; }
 .warn { background: var(--draft-bg); color: var(--draft-text) !important; border-left: 4px solid var(--warning); border-radius: 10px; padding: 8px 12px; font-size: 0.92rem; }
 .shot { margin: 0; }
 .shot img { display: block; width: 100%; border-radius: 10px; border: 1px solid var(--border); }

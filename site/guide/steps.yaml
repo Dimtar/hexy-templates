@@ -49,15 +49,20 @@ steps:
     screenshot: step-4-paste.png
     alt: The “Install Audiobookshelf with custom script” window with the script pasted into the editor
 
-  - title: Answer any questions and install
+  - title: Answer any questions, then install
     body:
-      - Some apps ask for a few details first, such as an admin username and password.
-        Passwords for the app's internal database are created for you.
+      - Press Install below the script editor.
+      - If the app needs details from you, a Configuration page appears — for example, Directus
+        asks for an admin email and password. Fill in every field marked with a red star, then
+        press Install again. Passwords for the app's internal database are created for you.
       - If the app needs a storage location you haven't set up yet, HexOS asks you to pick one.
-      - Press Install and wait for the app to show as running. The first start can take a few
-        minutes while HexOS downloads it.
+      - Wait for the app to show as running. The first start can take a few minutes while HexOS
+        downloads it.
+    note: >-
+      Most apps don't ask any questions — only about 1 in 4 scripts do. If no Configuration page
+      appears, that's normal: there's nothing to fill in.
     screenshot: step-5-install.png
-    alt: HexOS installing an app, with the progress shown on the app card
+    alt: The Configuration page for Directus, asking for an admin email and password
 
   - title: Open your new app
     body:
