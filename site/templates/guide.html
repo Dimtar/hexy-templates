@@ -14,6 +14,7 @@
         <span class="step-num">{{ loop.index }}</span>
         <h2>{{ s.title }}</h2>
         {% for p in s.body %}<p>{{ p }}</p>{% endfor %}
+        {% if s.warning %}<p class="warn"><strong>Important:</strong> {{ s.warning }}</p>{% endif %}
         {% if s.tip %}<p class="tip"><strong>Tip:</strong> {{ s.tip }}</p>{% endif %}
       </div>
       <figure class="shot">

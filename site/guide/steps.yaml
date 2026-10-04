@@ -38,12 +38,16 @@ steps:
 
   - title: Paste the script
     body:
-      - A script editor opens. Click inside it, select everything (Ctrl+A, or Cmd+A on a Mac)
-        and delete it.
+      - A window titled “Install … with custom script” opens with a script editor. It may already
+        contain a starter script, the app's default script, or the last script you used.
+      - Click inside the editor, select everything (Ctrl+A, or Cmd+A on a Mac) and delete it.
       - Paste the script you copied (Ctrl+V, or Cmd+V on a Mac).
+    warning: >-
+      Empty the editor completely before pasting — including any leftover { } brackets. If anything
+      is left behind, the pasted script won't be valid and the install will fail.
     tip: If the editor shows a red error, the paste was probably cut short — copy the script again.
     screenshot: step-4-paste.png
-    alt: The HexOS custom install script editor with a script pasted in
+    alt: The “Install Audiobookshelf with custom script” window with the script pasted into the editor
 
   - title: Answer any questions and install
     body:
