@@ -11,7 +11,7 @@ steps:
   - title: Turn on experimental features
     body:
       - In HexOS, open Settings, go to Preferences, then open Advanced Settings.
-      - Switch on experimental features. This unlocks the Custom Install button on app pages.
+      - Turn on the Experimental features switch. This unlocks the Custom Install button on app pages.
     tip: You only need to do this once.
     screenshot: step-1-preferences.png
     alt: HexOS Settings › Preferences › Advanced Settings with the experimental features switch turned on
