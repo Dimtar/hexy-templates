@@ -1,0 +1,21 @@
+title: Media Manager
+description: A modern selfhosted media management system for your media library
+icon: https://media.sys.truenas.net/apps/media-manager/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- manager
+home: https://maxdorninger.github.io/MediaManager/introduction.html
+screenshots: []
+train: community
+truenas_name: media-manager
+status: draft
+managed: generated
+upstream:
+  version: 1.2.30
+  app_version: 1.12.3
+  questions_sha: 8c9c980a776e705eee3259325cd847108c813ecc417eb9df2e0f286bc1a3a14f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/media-manager
+notes: []

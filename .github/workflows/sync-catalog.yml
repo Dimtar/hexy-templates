@@ -1,0 +1,49 @@
+# Weekly check of the TrueNAS apps catalogue. New apps get draft scripts and
+# apps whose settings changed get regenerated or flagged; everything lands in a
+# single pull request on the `catalog-sync` branch for a human to review.
+# While that PR is open, later runs update it instead of opening another.
+#
+# Requires: Settings › Actions › General › "Allow GitHub Actions to create and
+# approve pull requests".
+name: Sync TrueNAS catalogue
+
+on:
+  schedule:
+    - cron: "17 6 * * 1" # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: catalog-sync
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Compare with upstream
+        id: sync
+        run: python tools/sync.py --report "$RUNNER_TEMP/report.md"
+      - name: Validate install scripts
+        if: steps.sync.outputs.changed == 'true'
+        run: python tools/validate.py
+      - name: Open or update pull request
+        if: steps.sync.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: catalog-sync
+          delete-branch: true
+          commit-message: "Sync with TrueNAS catalogue: ${{ steps.sync.outputs.summary }}"
+          title: "TrueNAS catalogue update: ${{ steps.sync.outputs.summary }}"
+          body-path: ${{ runner.temp }}/report.md
+          labels: catalog-sync
+          add-paths: apps/**

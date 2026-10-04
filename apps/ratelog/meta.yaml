@@ -1,0 +1,24 @@
+title: Ratelog
+description: A web application to search, rate, and track movies and TV shows via TMDB.
+icon: https://media.sys.truenas.net/apps/ratelog/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- ratings
+- tmdb
+- movies
+- tv-shows
+home: https://github.com/golmenero/ratelog
+screenshots: []
+train: community
+truenas_name: ratelog
+status: draft
+managed: generated
+upstream:
+  version: 1.0.15
+  app_version: v2.0.1
+  questions_sha: b262da2e46218382568c46958855366d92130ac85c7977859620cffe70556286
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/ratelog
+notes: []

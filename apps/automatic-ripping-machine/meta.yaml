@@ -1,0 +1,23 @@
+title: Automatic Ripping Machine
+description: Insert an optical disc (Blu-ray, DVD, CD) and checks to see if it's audio, video (Movie or
+  TV), or data, then rips it.
+icon: https://media.sys.truenas.net/apps/automatic-ripping-machine/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- video
+- ripping
+home: https://github.com/automatic-ripping-machine/automatic-ripping-machine
+screenshots: []
+train: community
+truenas_name: automatic-ripping-machine
+status: draft
+managed: generated
+upstream:
+  version: 1.1.17
+  app_version: 2.24.4
+  questions_sha: be31e7067f17a9eb4301fdf41cc790f7a459b92cc8df5a3ee2cba7e1cb8a5aa5
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/automatic-ripping-machine
+notes: []

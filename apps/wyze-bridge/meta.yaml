@@ -1,0 +1,21 @@
+title: Wyze Bridge
+description: Create a local WebRTC, RTSP, RTMP, or HLS/Low-Latency HLS stream for most of your Wyze cameras
+icon: https://media.sys.truenas.net/apps/wyze-bridge/icons/icon.png
+categories:
+- security
+keywords:
+- camera
+home: https://github.com/mrlt8/docker-wyze-bridge
+screenshots:
+- https://media.sys.truenas.net/apps/wyze-bridge/screenshots/screenshot1.png
+train: community
+truenas_name: wyze-bridge
+status: draft
+managed: generated
+upstream:
+  version: 1.1.8
+  app_version: 2.10.3
+  questions_sha: 136ab94a0755594031ca316364f567383e070ac220ce43a0dbfca3a82318be58
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/wyze-bridge
+notes: []

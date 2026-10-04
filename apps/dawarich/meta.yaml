@@ -1,0 +1,24 @@
+title: Dawarich
+description: Dawarich is a self-hostable alternative to Google Location History (Google Maps Timeline)
+icon: https://media.sys.truenas.net/apps/dawarich/icons/icon.svg
+categories:
+- productivity
+keywords:
+- location
+- history
+home: https://dawarich.app/
+screenshots:
+- https://media.sys.truenas.net/apps/dawarich/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/dawarich/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/dawarich/screenshots/screenshot3.jpg
+train: community
+truenas_name: dawarich
+status: draft
+managed: generated
+upstream:
+  version: 1.4.73
+  app_version: 1.15.3
+  questions_sha: 338be6e8f0b6a4c6ba96a5b9e2eeb63424d5c69b1405b808ddd25d93bae4a5b8
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/dawarich
+notes: []

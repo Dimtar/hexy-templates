@@ -1,0 +1,62 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS komodo 1.3.21"
+  },
+  "installation_questions": [
+    {
+      "question": "Passkey",
+      "type": "password",
+      "key": "passkey",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30160]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/komodo"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/komodo"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/komodo/config_keys",
+      "snapshot": {"id": "config_keys"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/komodo/backups"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/komodo/syncs",
+      "snapshot": {"id": "syncs"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/komodo/periphery_root",
+      "snapshot": {"id": "periphery_root"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/komodo/mongodb_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "mongodb_data"}
+    }
+  ],
+  "app_values": {
+    "komodo": {
+      "db_password": "$RANDOM_STRING(16)",
+      "passkey": "$QUESTION(passkey)"
+    },
+    "storage": {
+      "config_keys": "$HOST_PATH($LOCATION(ApplicationsPerformance)/komodo/config_keys)",
+      "backups": "$HOST_PATH($LOCATION(ApplicationsCapacity)/komodo/backups)",
+      "syncs": "$HOST_PATH($LOCATION(ApplicationsPerformance)/komodo/syncs)",
+      "periphery_root": "$HOST_PATH($LOCATION(ApplicationsPerformance)/komodo/periphery_root)",
+      "mongodb_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/komodo/mongodb_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30160}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

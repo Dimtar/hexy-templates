@@ -1,0 +1,25 @@
+title: Audiobookshelf
+description: Audiobookshelf is a self-hosted audiobook and podcast server
+icon: https://media.sys.truenas.net/apps/audiobookshelf/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- audiobook
+home: https://www.audiobookshelf.org/
+screenshots:
+- https://media.sys.truenas.net/apps/audiobookshelf/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/audiobookshelf/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/audiobookshelf/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/audiobookshelf/screenshots/screenshot4.jpg
+train: community
+truenas_name: audiobookshelf
+status: draft
+managed: generated
+upstream:
+  version: 1.6.17
+  app_version: 2.37.1
+  questions_sha: 7b5288bef057c95cdf22f0505b98dfb153eab629889d9f0f7761918c50cb9afd
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/audiobookshelf
+notes: []

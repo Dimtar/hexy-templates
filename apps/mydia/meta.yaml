@@ -1,0 +1,21 @@
+title: Mydia
+description: Your personal media companion, built with Phoenix LiveView
+icon: https://media.sys.truenas.net/apps/mydia/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- manager
+home: https://github.com/getmydia/mydia
+screenshots: []
+train: community
+truenas_name: mydia
+status: draft
+managed: generated
+upstream:
+  version: 1.2.38
+  app_version: 0.15.0-pg
+  questions_sha: 695d5258e91a66710520b167c9cbf84403a16eec990ac7e2d92b1dc1fb812c9a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mydia
+notes: []

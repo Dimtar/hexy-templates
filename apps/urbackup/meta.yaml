@@ -1,0 +1,21 @@
+title: UrBackup
+description: UrBackup is an easy to setup Open Source client/server backup system, that through a combination
+  of image and file backups accomplishes both data safety and a fast restoration time.
+icon: https://media.sys.truenas.net/apps/urbackup/icons/icon.png
+categories:
+- backup
+keywords:
+- backup
+home: https://github.com/uroni/urbackup_backend
+screenshots: []
+train: community
+truenas_name: urbackup
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: 2.5.x
+  questions_sha: 6598c081c7ffe9e74b49673426e06fcaac17f99d9ea994566677eb24640a3d72
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/urbackup
+notes: []

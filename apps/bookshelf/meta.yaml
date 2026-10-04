@@ -1,0 +1,25 @@
+title: Bookshelf
+description: A place for your books. users.
+icon: https://media.sys.truenas.net/apps/bookshelf/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- ebook
+- audiobook
+home: https://github.com/pennydreadful/bookshelf
+screenshots:
+- https://media.sys.truenas.net/apps/bookshelf/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/bookshelf/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/bookshelf/screenshots/screenshot3.png
+train: community
+truenas_name: bookshelf
+status: draft
+managed: generated
+upstream:
+  version: 1.1.9
+  app_version: hardcover-v0.4.21.182
+  questions_sha: 95f33980d122d8d19f1167aff49d9dba3f2ef54b4fbc2cfc16bf85b9a19d061c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/bookshelf
+notes: []

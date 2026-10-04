@@ -1,0 +1,35 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS netbird-client 1.1.52"
+  },
+  "installation_questions": [
+    {
+      "question": "Setup key",
+      "type": "password",
+      "key": "setup_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/netbird-client"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/netbird-client/state",
+      "snapshot": {"id": "state"}
+    }
+  ],
+  "app_values": {
+    "netbird": {"setup_key": "$QUESTION(setup_key)"},
+    "storage": {
+      "state": "$HOST_PATH($LOCATION(ApplicationsPerformance)/netbird-client/state)"
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

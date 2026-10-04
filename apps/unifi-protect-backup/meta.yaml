@@ -1,0 +1,22 @@
+title: Unifi Protect Backup
+description: Unifi Protect Backup is a python based tool for backing up UniFi Protect event clips as they
+  occur.
+icon: https://media.sys.truenas.net/apps/unifi-protect-backup/icons/icon.svg
+categories:
+- storage
+keywords:
+- backup
+- unifi-protect
+home: https://github.com/ep1cman/unifi-protect-backup
+screenshots: []
+train: community
+truenas_name: unifi-protect-backup
+status: draft
+managed: generated
+upstream:
+  version: 1.3.9
+  app_version: 0.14.3
+  questions_sha: 0c1c487345e0984e033c5c3ce9b2b31c58c9638a396847d011773b0de45e498c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/unifi-protect-backup
+notes: []

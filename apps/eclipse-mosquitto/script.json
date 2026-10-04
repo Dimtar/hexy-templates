@@ -1,0 +1,38 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS eclipse-mosquitto 1.2.8"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [1883, 8081]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/eclipse-mosquitto"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/eclipse-mosquitto/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/eclipse-mosquitto/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/eclipse-mosquitto/data)",
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/eclipse-mosquitto/config)"
+    },
+    "network": {
+      "broker_port": {"bind_mode": "published", "port_number": 1883},
+      "ws_port": {"bind_mode": "published", "port_number": 8081}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

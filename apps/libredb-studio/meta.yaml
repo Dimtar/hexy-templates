@@ -1,0 +1,23 @@
+title: LibreDB Studio
+description: LibreDB Studio is an open-source, self-hosted SQL IDE. A web-based client to browse, query,
+  and manage your SQL databases.
+icon: https://media.sys.truenas.net/apps/libredb-studio/icons/icon.svg
+categories:
+- database
+keywords:
+- database
+- sql
+- ide
+home: https://libredb.org
+screenshots: []
+train: community
+truenas_name: libredb-studio
+status: draft
+managed: generated
+upstream:
+  version: 1.0.15
+  app_version: 0.17.0
+  questions_sha: b4cc9318ab2cb61f36b88eeb123ad1736bfd7b8319803a23c5b661fe7ec39f47
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/libredb-studio
+notes: []

@@ -1,0 +1,39 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS home-assistant 1.8.67"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30103]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/home-assistant"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/home-assistant/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/home-assistant/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "home_assistant": {"db_password": "$RANDOM_STRING(16)"},
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/home-assistant/config)",
+      "media": "$HOST_PATH($LOCATION(Media))",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/home-assistant/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30103}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

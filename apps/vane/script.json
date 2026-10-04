@@ -1,0 +1,40 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS vane 1.0.2"
+  },
+  "installation_questions": [
+    {
+      "question": "Searxng api url",
+      "type": "text",
+      "key": "searxng_api_url",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30421]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/vane"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/vane/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "vane": {"searxng_api_url": "$QUESTION(searxng_api_url)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/vane/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30421}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

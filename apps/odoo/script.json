@@ -1,0 +1,42 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS odoo 1.6.44"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30062]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/odoo"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/odoo/data",
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/odoo/addons",
+      "snapshot": {"id": "addons"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/odoo/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "odoo": {"db_password": "$RANDOM_STRING(16)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/odoo/data)",
+      "addons": "$HOST_PATH($LOCATION(ApplicationsPerformance)/odoo/addons)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/odoo/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30062}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

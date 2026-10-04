@@ -1,0 +1,49 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS factorio 1.1.10"
+  },
+  "installation_questions": [
+    {
+      "question": "Username",
+      "type": "text",
+      "key": "username",
+      "required": true
+    },
+    {
+      "question": "Token",
+      "type": "password",
+      "key": "token",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [34197, 27015]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/factorio"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/factorio/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "factorio": {
+      "username": "$QUESTION(username)",
+      "token": "$QUESTION(token)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/factorio/data)"
+    },
+    "network": {
+      "game_port": {"bind_mode": "published", "port_number": 34197},
+      "rcon_port": {"bind_mode": "published", "port_number": 27015}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

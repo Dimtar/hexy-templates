@@ -1,0 +1,24 @@
+title: Firefly III
+description: Firefly III is a personal finances manager
+icon: https://media.sys.truenas.net/apps/firefly-iii/icons/icon.png
+categories:
+- financial
+keywords:
+- finance
+home: https://www.firefly-iii.org/
+screenshots:
+- https://media.sys.truenas.net/apps/firefly-iii/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/firefly-iii/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/firefly-iii/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/firefly-iii/screenshots/screenshot4.png
+train: community
+truenas_name: firefly-iii
+status: draft
+managed: generated
+upstream:
+  version: 1.9.65
+  app_version: version-6.7.7
+  questions_sha: 513e362ea959539a98f4ac54f8e976313ec2749e22ba1202b9adeefcfa9c5151
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/firefly-iii
+notes: []

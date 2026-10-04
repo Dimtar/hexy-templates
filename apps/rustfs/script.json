@@ -1,0 +1,31 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS rustfs 1.1.33"
+  },
+  "installation_questions": [
+    {
+      "question": "Access key",
+      "type": "text",
+      "key": "access_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": [],
+    "specifications": ["2CORE"],
+    "ports": [30292, 30293]
+  },
+  "app_values": {
+    "rustfs": {
+      "access_key": "$QUESTION(access_key)",
+      "secret_key": "$RANDOM_STRING(32)"
+    },
+    "network": {
+      "api_port": {"bind_mode": "published", "port_number": 30292},
+      "web_port": {"bind_mode": "published", "port_number": 30293}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

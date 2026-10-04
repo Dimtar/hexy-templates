@@ -1,0 +1,22 @@
+title: ConvertX
+description: ConvertX is a self-hosted online file converter with support for over 1000 formats
+icon: https://media.sys.truenas.net/apps/convertx/icons/icon.png
+categories:
+- productivity
+keywords:
+- convertx
+- files
+- conversion
+home: https://github.com/C4illin/ConvertX
+screenshots: []
+train: community
+truenas_name: convertx
+status: draft
+managed: generated
+upstream:
+  version: 1.1.9
+  app_version: v0.19.0
+  questions_sha: a3a530b31cecdbbe469814be3cc41194138fcd8f1c078f98fd2cffdd821ba2fb
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/convertx
+notes: []

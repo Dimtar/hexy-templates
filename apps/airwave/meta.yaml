@@ -1,0 +1,26 @@
+title: Airwave
+description: Turn your Plex library into custom, always-on live TV channels, watchable on native apps
+  for every screen.
+icon: https://media.sys.truenas.net/apps/airwave/icons/icon.svg
+categories:
+- media
+keywords:
+- plex
+- live-tv
+- iptv
+- dvr
+- media
+- streaming
+home: https://getairwave.tv
+screenshots: []
+train: community
+truenas_name: airwave
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 0.15.13
+  questions_sha: eff700125ad6eb31a9a560d1d15beb74392b5df58051e43244c15743dfa735ce
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/airwave
+notes: []

@@ -1,0 +1,20 @@
+title: Heimdall
+description: An Application dashboard and launcher
+icon: https://media.sys.truenas.net/apps/heimdall/icons/icon.png
+categories:
+- productivity
+keywords:
+- dashboard
+home: https://heimdall.site/
+screenshots: []
+train: community
+truenas_name: heimdall
+status: draft
+managed: generated
+upstream:
+  version: 1.1.11
+  app_version: 2.8.3
+  questions_sha: 6562e7a10dcb66c8bfa6fd4eeb467ab20e9a70dc74d3f8c926d698c8e09a0aa6
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/heimdall
+notes: []

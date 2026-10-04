@@ -1,0 +1,28 @@
+title: autoxpose
+description: Automatic DNS and reverse proxy configuration for Docker containers.
+icon: https://media.sys.truenas.net/apps/autoxpose/icons/icon.svg
+categories:
+- networking
+keywords:
+- dns
+- reverse-proxy
+- docker
+- automation
+- networking
+home: https://github.com/mostafa-wahied/autoxpose
+screenshots:
+- https://media.sys.truenas.net/apps/autoxpose/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/autoxpose/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/autoxpose/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/autoxpose/screenshots/screenshot4.png
+train: community
+truenas_name: autoxpose
+status: draft
+managed: generated
+upstream:
+  version: 1.1.13
+  app_version: 0.5.2
+  questions_sha: f8b5f28a753b3c4bb7f41bb38be40a6a4357e3ee31fef64a44e10dfbd792af34
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/autoxpose
+notes: []

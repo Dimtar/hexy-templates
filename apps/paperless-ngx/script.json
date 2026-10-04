@@ -1,0 +1,76 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS paperless-ngx 1.6.56"
+  },
+  "installation_questions": [
+    {
+      "question": "Admin user",
+      "type": "text",
+      "key": "admin_user",
+      "required": true
+    },
+    {
+      "question": "Admin mail",
+      "type": "text",
+      "key": "admin_mail",
+      "required": true
+    },
+    {
+      "question": "Admin password",
+      "type": "password",
+      "key": "admin_password",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30070]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/paperless-ngx"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/paperless-ngx/data",
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/paperless-ngx/consume",
+      "snapshot": {"id": "consume"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/paperless-ngx/trash",
+      "snapshot": {"id": "trash"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/paperless-ngx/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "paperless": {
+      "db_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "secret_key": "$RANDOM_STRING(32)",
+      "admin_user": "$QUESTION(admin_user)",
+      "admin_mail": "$QUESTION(admin_mail)",
+      "admin_password": "$QUESTION(admin_password)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/paperless-ngx/data)",
+      "media": "$HOST_PATH($LOCATION(Media))",
+      "consume": "$HOST_PATH($LOCATION(ApplicationsPerformance)/paperless-ngx/consume)",
+      "trash": "$HOST_PATH($LOCATION(ApplicationsPerformance)/paperless-ngx/trash)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/paperless-ngx/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30070}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

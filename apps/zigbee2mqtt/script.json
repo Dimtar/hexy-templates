@@ -1,0 +1,88 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS zigbee2mqtt 1.1.25"
+  },
+  "installation_questions": [
+    {
+      "question": "Topic",
+      "type": "text",
+      "key": "topic",
+      "required": true
+    },
+    {
+      "question": "Server",
+      "type": "text",
+      "key": "server",
+      "required": true
+    },
+    {
+      "question": "User",
+      "type": "text",
+      "key": "user",
+      "required": true
+    },
+    {
+      "question": "Password",
+      "type": "password",
+      "key": "password",
+      "required": true
+    },
+    {
+      "question": "Port",
+      "type": "text",
+      "key": "port",
+      "required": true
+    },
+    {
+      "question": "Adapter",
+      "type": "select",
+      "key": "adapter",
+      "required": true,
+      "options": [
+        {"text": "zstack", "value": "zstack"},
+        {"text": "deconz", "value": "deconz"},
+        {"text": "ember", "value": "ember"},
+        {"text": "zigate", "value": "zigate"},
+        {"text": "None", "value": ""}
+      ]
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30065]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/zigbee2mqtt"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/zigbee2mqtt/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "zigbee2mqtt": {
+      "mqtt": {
+        "topic": "$QUESTION(topic)",
+        "server": "$QUESTION(server)",
+        "user": "$QUESTION(user)",
+        "password": "$QUESTION(password)"
+      },
+      "serial": {
+        "port": "$QUESTION(port)",
+        "adapter": "$QUESTION(adapter)"
+      }
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/zigbee2mqtt/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30065}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

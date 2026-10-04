@@ -1,0 +1,21 @@
+title: Crafty 4
+description: Crafty 4 is the next iteration of our Minecraft Server Wrapper/Controller/Launcher
+icon: https://media.sys.truenas.net/apps/crafty-4/icons/icon.png
+categories:
+- games
+keywords:
+- minecraft
+- crafty
+home: https://craftycontrol.com/
+screenshots: []
+train: community
+truenas_name: crafty-4
+status: draft
+managed: generated
+upstream:
+  version: 1.1.17
+  app_version: 4.11.0
+  questions_sha: 26e94183dcde3c8e8774d0669ff8adf2bf9bad08bc02927a70eae9be8e546573
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/crafty-4
+notes: []

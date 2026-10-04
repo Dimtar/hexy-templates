@@ -1,0 +1,24 @@
+title: LibreChat
+description: LibreChat is the ultimate open-source app for all your AI conversations, fully customizable
+  and compatible with any AI provider — all in one sleek interface
+icon: https://media.sys.truenas.net/apps/librechat/icons/icon.svg
+categories:
+- productivity
+keywords:
+- chat
+- ai
+- librechat
+- open-source
+home: https://www.librechat.ai/
+screenshots: []
+train: community
+truenas_name: librechat
+status: draft
+managed: generated
+upstream:
+  version: 1.2.74
+  app_version: v0.8.7
+  questions_sha: 552da8622d72c0467081b24f17383fdc420b527b589e79e2c2ab497d33b02c94
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/librechat
+notes: []

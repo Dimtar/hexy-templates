@@ -1,0 +1,21 @@
+title: Traccar
+description: Traccar GPS Tracking System
+icon: https://media.sys.truenas.net/apps/traccar/icons/icon.svg
+categories:
+- productivity
+keywords:
+- gps
+- tracking
+home: https://www.traccar.org/
+screenshots: []
+train: community
+truenas_name: traccar
+status: draft
+managed: generated
+upstream:
+  version: 1.2.42
+  app_version: 6.16.0
+  questions_sha: ee7773977d53702044010412995fe4a6c83eb7ff599b1028937737c530f9eb97
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/traccar
+notes: []

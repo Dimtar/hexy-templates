@@ -1,0 +1,46 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS concourse 1.2.41"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30152, 30153]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/concourse"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/concourse/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/concourse/workspace",
+      "snapshot": {"id": "workspace"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/concourse/keystore",
+      "snapshot": {"id": "keystore"}
+    }
+  ],
+  "app_values": {
+    "concourse": {
+      "db_password": "$RANDOM_STRING(16)",
+      "external_url": "http://$SERVER_LAN_IP:30152"
+    },
+    "storage": {
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/concourse/postgres_data)",
+      "workspace": "$HOST_PATH($LOCATION(ApplicationsPerformance)/concourse/workspace)",
+      "keystore": "$HOST_PATH($LOCATION(ApplicationsPerformance)/concourse/keystore)"
+    },
+    "network": {
+      "http_port": {"bind_mode": "published", "port_number": 30152},
+      "https_port": {"bind_mode": "published", "port_number": 30153}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

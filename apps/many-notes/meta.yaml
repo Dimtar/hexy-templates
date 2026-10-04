@@ -1,0 +1,22 @@
+title: Many Notes
+description: Many Notes is a Markdown note-taking web application designed for simplicity! Easily create
+  or import your vaults and organize your thoughts right away.
+icon: https://media.sys.truenas.net/apps/many-notes/icons/icon.svg
+categories:
+- productivity
+keywords:
+- documentation
+- knowledgebase
+home: https://github.com/brufdev/many-notes
+screenshots: []
+train: community
+truenas_name: many-notes
+status: draft
+managed: generated
+upstream:
+  version: 1.1.10
+  app_version: '0.18'
+  questions_sha: 7063dccb0e30bbebac46a5829cd6fee809dd00aae03e80291c965745cd01cf34
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/many-notes
+notes: []

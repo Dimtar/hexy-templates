@@ -1,0 +1,23 @@
+title: Komga
+description: Komga is a free and open source comics/mangas server.
+icon: https://media.sys.truenas.net/apps/komga/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- comics
+- mangas
+home: https://komga.org
+screenshots:
+- https://media.sys.truenas.net/apps/komga/screenshots/screenshot1.png
+train: community
+truenas_name: komga
+status: draft
+managed: generated
+upstream:
+  version: 1.4.17
+  app_version: 1.28.1
+  questions_sha: 994911be4d8787ed0634993cb2505efe2de215b1b064b225238690925c33d844
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/komga
+notes: []

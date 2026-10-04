@@ -1,0 +1,50 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS omni-infra-provider-truenas 1.0.6"
+  },
+  "installation_questions": [
+    {
+      "question": "Endpoint",
+      "type": "text",
+      "key": "endpoint",
+      "required": true
+    },
+    {
+      "question": "Service account key",
+      "type": "password",
+      "key": "service_account_key",
+      "required": true
+    },
+    {
+      "question": "Provider id",
+      "type": "text",
+      "key": "provider_id",
+      "required": true
+    },
+    {
+      "question": "Api key",
+      "type": "password",
+      "key": "api_key",
+      "required": true
+    },
+    {
+      "question": "Default pool",
+      "type": "text",
+      "key": "default_pool",
+      "required": true
+    }
+  ],
+  "requirements": {"locations": [], "specifications": ["2CORE"]},
+  "app_values": {
+    "omni": {
+      "endpoint": "$QUESTION(endpoint)",
+      "service_account_key": "$QUESTION(service_account_key)",
+      "provider_id": "$QUESTION(provider_id)",
+      "truenas": {"api_key": "$QUESTION(api_key)"},
+      "vm": {"default_pool": "$QUESTION(default_pool)"}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,22 @@
+title: Bitcoin Knots
+description: Run your personal node powered by Bitcoin Knots.
+icon: https://media.sys.truenas.net/apps/bitcoind-knots/icons/icon.png
+categories:
+- financial
+keywords:
+- bitcoin
+- cryptocurrency
+- blockchain
+home: https://bitcoinknots.org
+screenshots: []
+train: community
+truenas_name: bitcoind-knots
+status: draft
+managed: generated
+upstream:
+  version: 1.1.15
+  app_version: v29.4.2
+  questions_sha: f24ada457306ae459769e5078c42f9702bd07b2b2e05566b605ed2582d5de3fa
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/bitcoind-knots
+notes: []

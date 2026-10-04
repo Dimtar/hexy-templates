@@ -1,0 +1,23 @@
+title: ArchiSteamFarm
+description: ArchiSteamFarm is a tool for automatically farming Steam trading cards on multiple accounts
+  simultaneously
+icon: https://media.sys.truenas.net/apps/archisteamfarm/icons/icon.webp
+categories:
+- games
+keywords:
+- archisteamfarm
+- steam
+- asf
+home: https://github.com/JustArchiNET/ArchiSteamFarm
+screenshots: []
+train: community
+truenas_name: archisteamfarm
+status: draft
+managed: generated
+upstream:
+  version: 1.1.27
+  app_version: 6.3.10.3
+  questions_sha: 8430f36571fec65e3f27c9e29d0aa6a0a25b04f9726dfa3966de530f8cea8faf
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/archisteamfarm
+notes: []

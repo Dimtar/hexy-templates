@@ -1,0 +1,46 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS gameyfin 1.0.3"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30424]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/gameyfin"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/gameyfin"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/gameyfin/data",
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/gameyfin/db",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "db"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/gameyfin/logs"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/gameyfin/plugin_data",
+      "snapshot": {"id": "plugin_data"}
+    }
+  ],
+  "app_values": {
+    "gameyfin": {"app_key": "$RANDOM_STRING(32)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/gameyfin/data)",
+      "db": "$HOST_PATH($LOCATION(ApplicationsPerformance)/gameyfin/db)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/gameyfin/logs)",
+      "plugin_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/gameyfin/plugin_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30424}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

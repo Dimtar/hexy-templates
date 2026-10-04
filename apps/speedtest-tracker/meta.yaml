@@ -1,0 +1,22 @@
+title: Speedtest Tracker
+description: Speedtest Tracker is a self-hosted application that monitors the performance and uptime of
+  your internet connection.
+icon: https://media.sys.truenas.net/apps/speedtest-tracker/icons/icon.png
+categories:
+- productivity
+keywords:
+- speedtest
+- tracker
+home: https://speedtest-tracker.dev
+screenshots: []
+train: community
+truenas_name: speedtest-tracker
+status: draft
+managed: generated
+upstream:
+  version: 1.1.20
+  app_version: 1.15.0
+  questions_sha: a8278c673c7584e2168e8f6ece36c1cfe95e378c4a936464d753f8b4dec7f9e6
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/speedtest-tracker
+notes: []

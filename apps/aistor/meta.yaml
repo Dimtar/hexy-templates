@@ -1,0 +1,22 @@
+title: AIStor™
+description: The Object Store for AI Data Infrastructure
+icon: https://media.sys.truenas.net/apps/ix-app/icons/icon.webp
+categories:
+- storage
+keywords:
+- storage
+- object-storage
+- S3
+home: https://www.min.io/
+screenshots: []
+train: stable
+truenas_name: aistor
+status: draft
+managed: generated
+upstream:
+  version: 1.1.22
+  app_version: RELEASE.2026-09-19T17-05-25Z
+  questions_sha: 0047314ea00938d0b3df8d9eb5db0f8bb6d406b4069cb87945db461a1de6b73d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/aistor
+notes: []

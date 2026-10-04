@@ -1,0 +1,25 @@
+title: Kerberos.io Agent
+description: An open and scalable video surveillance system for anyone making this world a better and
+  more peaceful place.
+icon: https://media.sys.truenas.net/apps/kerberos-agent/icons/icon.svg
+categories:
+- cameras
+keywords:
+- kerberos
+- security
+- video
+home: https://kerberos.io/
+screenshots:
+- https://media.sys.truenas.net/apps/kerberos-agent/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/kerberos-agent/screenshots/screenshot2.png
+train: community
+truenas_name: kerberos-agent
+status: draft
+managed: generated
+upstream:
+  version: 1.1.46
+  app_version: v3.12.7
+  questions_sha: 5792856277528b821b440dfb916647c821143fd6b98102cfce852b443e9ea69d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/kerberos-agent
+notes: []

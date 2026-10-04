@@ -1,0 +1,55 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS headscale 1.1.17"
+  },
+  "installation_questions": [
+    {
+      "question": "Base domain",
+      "type": "text",
+      "key": "base_domain",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30210]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/headscale"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/headscale/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/headscale/lib",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "lib"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/headscale/run",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "run"}
+    }
+  ],
+  "app_values": {
+    "headscale": {
+      "server_url": "http://$SERVER_LAN_IP:30210",
+      "dns": {"base_domain": "$QUESTION(base_domain)"}
+    },
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/headscale/config)",
+      "lib": "$HOST_PATH($LOCATION(ApplicationsPerformance)/headscale/lib)",
+      "run": "$HOST_PATH($LOCATION(ApplicationsPerformance)/headscale/run)"
+    },
+    "network": {
+      "api_port": {"bind_mode": "published", "port_number": 30210}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

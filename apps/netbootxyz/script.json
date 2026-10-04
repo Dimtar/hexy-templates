@@ -1,0 +1,40 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS netbootxyz 1.3.9"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [31009, 31010, 31011]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/netbootxyz"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/netbootxyz/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/netbootxyz/assets",
+      "snapshot": {"id": "assets"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/netbootxyz/config)",
+      "assets": "$HOST_PATH($LOCATION(ApplicationsPerformance)/netbootxyz/assets)"
+    },
+    "network": {
+      "tftp_port": {"bind_mode": "published", "port_number": 31009},
+      "web_http_port": {"bind_mode": "published", "port_number": 31010},
+      "web_assets_port": {
+        "bind_mode": "published",
+        "port_number": 31011
+      }
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

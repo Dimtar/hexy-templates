@@ -1,0 +1,26 @@
+title: AudioMuse-AI
+description: AudioMuse-AI - A self-hosted music playlist generator using sonic analysis to discover related
+  tracks
+icon: https://media.sys.truenas.net/apps/audiomuse-ai/icons/icon.png
+categories:
+- media
+keywords:
+- music
+- playlist
+- ai
+- sonic-analysis
+- jellyfin
+- navidrome
+home: https://github.com/NeptuneHub/AudioMuse-AI
+screenshots: []
+train: community
+truenas_name: audiomuse-ai
+status: draft
+managed: generated
+upstream:
+  version: 1.0.44
+  app_version: 3.6.3
+  questions_sha: 205e560b82180f33124486ec28538a820b20a5bd6feef26ce03030f9b8a15507
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/audiomuse-ai
+notes: []

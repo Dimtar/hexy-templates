@@ -1,0 +1,31 @@
+title: Dropgate Server
+description: A self-hosted, privacy-first file sharing system with both hosted upload and direct P2P transfer
+  capabilities.
+icon: https://media.sys.truenas.net/apps/dropgate-server/icons/icon.png
+categories:
+- productivity
+keywords:
+- file sharing
+- privacy
+- p2p
+- e2ee
+- transfer
+home: https://diamonddigital.dev/projects/dropgate
+screenshots:
+- https://media.sys.truenas.net/apps/dropgate-server/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/dropgate-server/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/dropgate-server/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/dropgate-server/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/dropgate-server/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/dropgate-server/screenshots/screenshot6.png
+train: community
+truenas_name: dropgate-server
+status: draft
+managed: generated
+upstream:
+  version: 1.0.7
+  app_version: 3.0.13
+  questions_sha: 38375e50f097d8363643920eedff8f24ff0291216175902dae0b0bf5f5721bf0
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/dropgate-server
+notes: []

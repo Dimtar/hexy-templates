@@ -1,0 +1,50 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS netbird-server 1.0.54"
+  },
+  "installation_questions": [
+    {
+      "question": "Netbird address",
+      "type": "text",
+      "key": "netbird_address",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30415, 30416, 30417]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/netbird-server"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/netbird-server/data",
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/netbird-server/config",
+      "snapshot": {"id": "config"}
+    }
+  ],
+  "app_values": {
+    "netbird": {
+      "netbird_address": "$QUESTION(netbird_address)",
+      "store_encryption_key": "$RANDOM_STRING(32)",
+      "auth_secret": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/netbird-server/data)",
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/netbird-server/config)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30415},
+      "mgmt_port": {"bind_mode": "published", "port_number": 30416},
+      "stun_port": {"bind_mode": "published", "port_number": 30417}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

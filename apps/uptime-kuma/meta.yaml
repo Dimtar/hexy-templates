@@ -1,0 +1,23 @@
+title: Uptime Kuma
+description: A fancy self-hosted monitoring tool
+icon: https://media.sys.truenas.net/apps/uptime-kuma/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- uptime
+- monitor
+home: https://github.com/louislam/uptime-kuma
+screenshots:
+- https://media.sys.truenas.net/apps/uptime-kuma/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/uptime-kuma/screenshots/screenshot2.jpg
+train: community
+truenas_name: uptime-kuma
+status: draft
+managed: generated
+upstream:
+  version: 1.2.17
+  app_version: 2.5.5
+  questions_sha: e429d671fb5af62a13eef9fe0a21a29bf624b89d8cd99ee5091a7a0c41e12cc3
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/uptime-kuma
+notes: []

@@ -1,0 +1,22 @@
+title: 1Password Connect
+description: Securely access your 1Password items and vaults in your company's apps and cloud infrastructure.
+icon: https://media.sys.truenas.net/apps/onepassword-connect/icons/icon.svg
+categories:
+- security
+keywords:
+- 1password
+- secrets
+- security
+home: https://developer.1password.com/docs/connect/
+screenshots: []
+train: community
+truenas_name: onepassword-connect
+status: draft
+managed: generated
+upstream:
+  version: 1.1.8
+  app_version: 1.8.2
+  questions_sha: 2c0a7dcbe29d9836b9ffd08f9e36d6b377313dd34c98b6991c7aef12e4a53a29
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/onepassword-connect
+notes: []

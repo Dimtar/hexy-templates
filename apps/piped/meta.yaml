@@ -1,0 +1,21 @@
+title: Piped
+description: An alternative privacy-friendly YouTube frontend which is efficient by design.
+icon: https://media.sys.truenas.net/apps/piped/icons/icon.svg
+categories:
+- media
+keywords:
+- youtube
+- frontend
+home: https://github.com/TeamPiped/Piped
+screenshots: []
+train: community
+truenas_name: piped
+status: draft
+managed: generated
+upstream:
+  version: 1.2.31
+  app_version: latest
+  questions_sha: 977d7eaa8c5471ba2aa1b2b21ce6d2e5d69e3bd88ee0787c25892e7deddaa1c7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/piped
+notes: []

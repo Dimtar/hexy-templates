@@ -1,0 +1,39 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS elastic-search 1.4.21"
+  },
+  "installation_questions": [
+    {
+      "question": "Password",
+      "type": "password",
+      "key": "password",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30003]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/elastic-search"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/elastic-search/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "elastic": {"password": "$QUESTION(password)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/elastic-search/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30003}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

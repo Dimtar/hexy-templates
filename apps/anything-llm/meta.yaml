@@ -1,0 +1,24 @@
+title: Anything LLM
+description: Anything-LLM is the all-in-one Desktop & Docker AI application with built-in RAG, AI agents,
+  No-code agent builder, MCP compatibility, and more.
+icon: https://media.sys.truenas.net/apps/anything-llm/icons/icon.svg
+categories:
+- ai
+keywords:
+- ai
+- llm
+- webui
+- anything-llm
+home: https://anythingllm.com/
+screenshots: []
+train: community
+truenas_name: anything-llm
+status: draft
+managed: generated
+upstream:
+  version: 1.1.19
+  app_version: 1.17.0
+  questions_sha: 26fbdb3a4b440e4675976eeaac7ee98998aa236fbc706d8975bc4d055e5c1ed9
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/anything-llm
+notes: []

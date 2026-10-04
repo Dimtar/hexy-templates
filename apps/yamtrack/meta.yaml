@@ -1,0 +1,22 @@
+title: Yamtrack
+description: A self hosted media tracker.
+icon: https://media.sys.truenas.net/apps/yamtrack/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- tracker
+- yamtrack
+home: https://github.com/FuzzyGrim/Yamtrack
+screenshots: []
+train: community
+truenas_name: yamtrack
+status: draft
+managed: generated
+upstream:
+  version: 1.2.41
+  app_version: 0.26.3
+  questions_sha: 0f32a0ad0cc8348ccef1b66f2e9e105b2af2887eeb46489fa6698c90b9610746
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/yamtrack
+notes: []

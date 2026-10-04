@@ -1,0 +1,30 @@
+title: nextrmnl
+description: SSH and SFTP in the browser for the machines in your own network. A terminal with tabs, jump
+  hosts and copy and paste like PuTTY, file transfer next to it, a vault per account for keys and passwords
+  that only the account's password opens, host keys that are checked and remembered, accounts by invitation
+  or OpenID Connect, an optional second factor, encrypted backups and a log without terminal content.
+icon: https://media.sys.truenas.net/apps/nextrmnl/icons/icon.png
+categories:
+- utilities
+keywords:
+- ssh
+- sftp
+- terminal
+- remote-access
+- utilities
+home: https://nextrmnl.nexapps.dev
+screenshots:
+- https://media.sys.truenas.net/apps/nextrmnl/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/nextrmnl/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/nextrmnl/screenshots/screenshot3.jpg
+train: community
+truenas_name: nextrmnl
+status: draft
+managed: generated
+upstream:
+  version: 1.0.3
+  app_version: 0.4.1
+  questions_sha: f1b62df56a90daa178ab720ce1c0a411855cbf5ea888c87dff3023e3b20c7745
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nextrmnl
+notes: []

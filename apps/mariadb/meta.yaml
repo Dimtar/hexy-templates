@@ -1,0 +1,20 @@
+title: Mariadb
+description: MariaDB server is a community developed fork of MySQL server.
+icon: https://media.sys.truenas.net/apps/mariadb/icons/icon.png
+categories:
+- database
+keywords:
+- database
+home: https://mariadb.org/
+screenshots: []
+train: community
+truenas_name: mariadb
+status: draft
+managed: generated
+upstream:
+  version: 1.1.13
+  app_version: 13.0.2
+  questions_sha: 9fe846cc1421e1668556d4a7dbb9e891d4e22b273a22b3a1e5d83b4a0cfd94ad
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mariadb
+notes: []

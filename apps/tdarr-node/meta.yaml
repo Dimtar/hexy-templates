@@ -1,0 +1,21 @@
+title: Tdarr Node
+description: Tdarr Node is a Distributed Transcoding System
+icon: https://media.sys.truenas.net/apps/tdarr-node/icons/icon.png
+categories:
+- media
+keywords:
+- encode
+- transcode
+home: https://home.tdarr.io/
+screenshots: []
+train: community
+truenas_name: tdarr-node
+status: draft
+managed: generated
+upstream:
+  version: 1.1.44
+  app_version: 2.94.01
+  questions_sha: e978b5536d92ae71aaca49cdf6b60757f437a2aba2d1369e99b7eb10be0e5799
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tdarr-node
+notes: []

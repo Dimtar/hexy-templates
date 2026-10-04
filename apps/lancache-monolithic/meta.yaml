@@ -1,0 +1,22 @@
+title: LanCache Monolithic
+description: LanCache Monolithic is a monolithic lancache service capable of caching all CDNs in a single
+  instance
+icon: https://media.sys.truenas.net/apps/lancache-monolithic/icons/icon.svg
+categories:
+- games
+keywords:
+- lancache
+- games
+home: https://lancache.net/
+screenshots: []
+train: community
+truenas_name: lancache-monolithic
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: latest
+  questions_sha: 3789c25c40e901aabbcea894cfaa39a40e04044714fea69c6a5e1e143b941767
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/lancache-monolithic
+notes: []

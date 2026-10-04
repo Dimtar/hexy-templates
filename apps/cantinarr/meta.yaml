@@ -1,0 +1,32 @@
+title: Cantinarr
+description: Media requests and server management in one app. Household members browse and request movies,
+  shows, books, and music, follow downloads, and get notified when content is ready. Administrators manage
+  connected services, review approvals, and investigate stuck downloads.
+icon: https://media.sys.truenas.net/apps/cantinarr/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- requests
+- radarr
+- sonarr
+- chaptarr
+- lidarr
+- music
+- plex
+- mcp
+home: https://cantinarr.com
+screenshots:
+- https://media.sys.truenas.net/apps/cantinarr/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/cantinarr/screenshots/screenshot2.png
+train: community
+truenas_name: cantinarr
+status: draft
+managed: generated
+upstream:
+  version: 1.0.20
+  app_version: 0.19.0
+  questions_sha: 2b2746b1c31c50dc38c64adedec8c2cb49df68f8c65a7e4559ee562b986bac03
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cantinarr
+notes: []

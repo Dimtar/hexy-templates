@@ -1,0 +1,22 @@
+title: Tailscale
+description: Secure remote access to shared resources
+icon: https://media.sys.truenas.net/apps/tailscale/icons/icon.png
+categories:
+- networking
+keywords:
+- vpn
+- tailscale
+- wireguard
+home: https://tailscale.com/
+screenshots: []
+train: community
+truenas_name: tailscale
+status: draft
+managed: generated
+upstream:
+  version: 1.4.17
+  app_version: v1.102.5
+  questions_sha: 7d64b52928fca40532a02e69d7256a0e675d0d2f54b203852dd54d90a0326c9b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tailscale
+notes: []

@@ -1,0 +1,21 @@
+title: Code Server
+description: Code Server is VS Code in the browser
+icon: https://media.sys.truenas.net/apps/code-server/icons/icon.png
+categories:
+- development
+keywords:
+- code
+- editor
+home: https://coder.com
+screenshots: []
+train: community
+truenas_name: code-server
+status: draft
+managed: generated
+upstream:
+  version: 1.1.42
+  app_version: 4.140.0
+  questions_sha: 6186ccf57516543ba39377f6e8167de9d691c8731a68c245d80bc74fb5809dc4
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/code-server
+notes: []

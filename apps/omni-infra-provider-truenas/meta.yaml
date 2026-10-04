@@ -1,0 +1,25 @@
+title: Omni TrueNAS Provider
+description: Sidero Omni infrastructure provider that provisions Talos Linux VMs on TrueNAS SCALE.
+icon: https://media.sys.truenas.net/apps/omni-infra-provider-truenas/icons/icon.png
+categories:
+- management
+keywords:
+- kubernetes
+- omni
+- talos
+- sidero
+- cluster
+- vm-provisioning
+home: https://github.com/bearbinary/omni-infra-provider-truenas
+screenshots: []
+train: community
+truenas_name: omni-infra-provider-truenas
+status: draft
+managed: generated
+upstream:
+  version: 1.0.6
+  app_version: v0.16.2
+  questions_sha: 91603e421b32bdc01e22811f5bc3f635182f66ef6c49ee370084727748bf1007
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/omni-infra-provider-truenas
+notes: []

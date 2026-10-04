@@ -1,0 +1,29 @@
+title: Nextcloud
+description: A file sharing server that puts the control and security of your own data back into your
+  hands.
+icon: https://media.sys.truenas.net/apps/nextcloud/icons/icon.svg
+categories:
+- productivity
+keywords:
+- nextcloud
+- storage
+- sync
+- http
+- web
+- php
+home: https://nextcloud.com/
+screenshots:
+- https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot3.png
+train: stable
+truenas_name: nextcloud
+status: draft
+managed: generated
+upstream:
+  version: 2.3.75
+  app_version: 35.0.1
+  questions_sha: 8bb7a27c4b37cfd80eeb8dc81e5f655f11250e9970e96830914b209c7825b6d6
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/nextcloud
+notes: []

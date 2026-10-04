@@ -1,0 +1,25 @@
+title: Ebbwell
+description: Private, self-hosted period tracker and ovulation estimator with symptothermal rules, reminders,
+  app lock, partner sharing, single sign-on and local accounts.
+icon: https://media.sys.truenas.net/apps/ebbwell/icons/icon.png
+categories:
+- health
+keywords:
+- health
+- period
+- cycle
+- fertility
+- privacy
+home: https://github.com/Maxren2/ebbwell
+screenshots: []
+train: community
+truenas_name: ebbwell
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.7.1
+  questions_sha: 900fe8895cada5db01c86f282313addffe216c8d84ef7fd3a8e9add3df8c65f4
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/ebbwell
+notes: []

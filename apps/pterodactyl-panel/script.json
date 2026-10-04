@@ -1,0 +1,43 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS pterodactyl-panel 1.2.22"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30162]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/pterodactyl-panel"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/pterodactyl-panel/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/pterodactyl-panel/mariadb_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "mariadb_data"}
+    }
+  ],
+  "app_values": {
+    "pterodactyl": {
+      "db_password": "$RANDOM_STRING(16)",
+      "db_root_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "app_url": "http://$SERVER_LAN_IP:30162",
+      "app_key": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/pterodactyl-panel/config)",
+      "mariadb_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/pterodactyl-panel/mariadb_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30162}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

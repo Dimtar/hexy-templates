@@ -1,0 +1,56 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS mariadb 1.1.13"
+  },
+  "installation_questions": [
+    {
+      "question": "User",
+      "type": "text",
+      "key": "user",
+      "required": true
+    },
+    {
+      "question": "Password",
+      "type": "password",
+      "key": "password",
+      "required": true
+    },
+    {
+      "question": "Database",
+      "type": "text",
+      "key": "database",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [3306]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/mariadb"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mariadb/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "mariadb": {
+      "user": "$QUESTION(user)",
+      "password": "$QUESTION(password)",
+      "database": "$QUESTION(database)",
+      "root_password": "$RANDOM_STRING(16)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mariadb/data)"
+    },
+    "network": {
+      "tcp_port": {"bind_mode": "published", "port_number": 3306}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

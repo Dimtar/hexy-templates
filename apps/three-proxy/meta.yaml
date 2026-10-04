@@ -1,0 +1,22 @@
+title: 3proxy
+description: 3proxy is a powerful and lightweight HTTP/SOCKS proxy server.
+icon: https://media.sys.truenas.net/apps/three-proxy/icons/icon.webp
+categories:
+- networking
+keywords:
+- 3proxy
+- http
+- socks
+home: https://github.com/3proxy/3proxy
+screenshots: []
+train: community
+truenas_name: three-proxy
+status: draft
+managed: generated
+upstream:
+  version: 1.1.12
+  app_version: 2.3.0
+  questions_sha: ea99536059c3588a6423b681688ce41ae6af89d3ebb02594911bee010db3671b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/three-proxy
+notes: []

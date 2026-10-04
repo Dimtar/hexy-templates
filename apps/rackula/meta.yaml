@@ -1,0 +1,20 @@
+title: Rackula
+description: Drag and drop rack visualizer
+icon: https://media.sys.truenas.net/apps/rackula/icons/icon.svg
+categories:
+- productivity
+keywords:
+- rack
+home: https://github.com/RackulaLives/Rackula
+screenshots: []
+train: community
+truenas_name: rackula
+status: draft
+managed: generated
+upstream:
+  version: 1.2.28
+  app_version: 26.9.2
+  questions_sha: 0499c78cb5300cf0390a7d3c5e0a4aea1702082a75a9a0896aa7c3cada2aa7d9
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/rackula
+notes: []

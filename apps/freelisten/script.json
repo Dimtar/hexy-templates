@@ -1,0 +1,37 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS freelisten 1.0.0"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Music", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30504]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/freelisten"},
+    {"path": "$LOCATION(Music)", "network_share": true},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/freelisten/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/freelisten/config)",
+      "music": "$HOST_PATH($LOCATION(Music))",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30504}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

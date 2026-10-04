@@ -1,0 +1,22 @@
+title: Mempool
+description: A fully-featured Bitcoin mempool visualizer, block explorer, and API service.
+icon: https://media.sys.truenas.net/apps/mempool/icons/icon.svg
+categories:
+- financial
+keywords:
+- bitcoin
+- cryptocurrency
+- blockchain
+home: https://mempool.space
+screenshots: []
+train: community
+truenas_name: mempool
+status: draft
+managed: generated
+upstream:
+  version: 1.2.13
+  app_version: v3.3.1
+  questions_sha: bb00443afef062496f8c6f3d693cff3e74f07c4e530179a3a0e73a68d8ccc44e
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mempool
+notes: []

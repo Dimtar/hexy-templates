@@ -1,0 +1,25 @@
+title: Terraria
+description: Terraria is a land of adventure! A land of mystery! A land that's yours to shape, defend,
+  and enjoy.
+icon: https://media.sys.truenas.net/apps/terraria/icons/icon.png
+categories:
+- games
+keywords:
+- adventure
+- building
+- game
+- terraria
+- world
+home: https://terraria.org/
+screenshots: []
+train: community
+truenas_name: terraria
+status: draft
+managed: generated
+upstream:
+  version: 1.4.7
+  app_version: vanilla-1.4.5.8
+  questions_sha: ba696723aad94f92faef2b0870d09183711e1b3b9674799389412f3be2eaf8e2
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/terraria
+notes: []

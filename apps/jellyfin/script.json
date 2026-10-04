@@ -1,0 +1,50 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS jellyfin 1.3.16"
+  },
+  "requirements": {
+    "locations": [
+      "ApplicationsPerformance",
+      "ApplicationsCapacity",
+      "Media"
+    ],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30013, 30014]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/jellyfin"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/jellyfin"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/jellyfin/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/jellyfin/cache",
+      "owner": {"user": "apps"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/jellyfin/config)",
+      "cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/jellyfin/cache)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30013},
+      "https_port": {"bind_mode": "published", "port_number": 30014}
+    },
+    "resources": {
+      "limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"},
+      "gpus": "$GPU_CONFIG()"
+    }
+  }
+}

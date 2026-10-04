@@ -1,0 +1,36 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS monitee-agent 1.1.17"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30135, 30136]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/monitee-agent"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/monitee-agent/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/monitee-agent/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/monitee-agent/config)",
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/monitee-agent/data)"
+    },
+    "network": {
+      "https_port": {"bind_mode": "published", "port_number": 30135},
+      "http_port": {"bind_mode": "published", "port_number": 30136}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

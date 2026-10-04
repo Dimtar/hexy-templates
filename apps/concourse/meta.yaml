@@ -1,0 +1,21 @@
+title: Concourse
+description: Concourse is a container-based automation system written in Go.
+icon: https://media.sys.truenas.net/apps/concourse/icons/icon.svg
+categories:
+- productivity
+keywords:
+- automation
+- ci
+home: https://concourse-ci.org
+screenshots: []
+train: community
+truenas_name: concourse
+status: draft
+managed: generated
+upstream:
+  version: 1.2.41
+  app_version: 8.3.1
+  questions_sha: cf80e9bbb294e46d6d5d2caad29a0734245326789d78ba827ee9b7da0f4a51fc
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/concourse
+notes: []

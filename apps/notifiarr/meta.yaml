@@ -1,0 +1,20 @@
+title: Notifiarr
+description: Client for Notifiarr.com
+icon: https://media.sys.truenas.net/apps/notifiarr/icons/icon.png
+categories:
+- productivity
+keywords:
+- notifiarr
+home: https://notifiarr.com/
+screenshots: []
+train: community
+truenas_name: notifiarr
+status: draft
+managed: generated
+upstream:
+  version: 1.1.11
+  app_version: v0.9.7
+  questions_sha: 5b751b07c42d6c01c72785278ae9bba2a3bf2a033b0abd65ca38d62d937f8190
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/notifiarr
+notes: []

@@ -1,0 +1,23 @@
+title: Jenkins
+description: Jenkins is a leading open source automation server,
+icon: https://media.sys.truenas.net/apps/jenkins/icons/icon.svg
+categories:
+- productivity
+keywords:
+- automation
+- ci/cd
+home: https://www.jenkins.io/
+screenshots:
+- https://media.sys.truenas.net/apps/jenkins/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/jenkins/screenshots/screenshot2.png
+train: community
+truenas_name: jenkins
+status: draft
+managed: generated
+upstream:
+  version: 1.3.16
+  app_version: 2.580.1-jdk21
+  questions_sha: 451cabed02dd54ac3d029fa7d8d1903d11614518663f5e1292c4efb0f90d7bb8
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/jenkins
+notes: []

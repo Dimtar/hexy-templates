@@ -1,0 +1,24 @@
+title: Joplin
+description: Joplin is an open source note-taking app. Capture your thoughts and securely access them
+  from any device
+icon: https://media.sys.truenas.net/apps/joplin/icons/icon.png
+categories:
+- productivity
+keywords:
+- notes
+home: https://joplinapp.org/
+screenshots:
+- https://media.sys.truenas.net/apps/joplin/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/joplin/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/joplin/screenshots/screenshot3.png
+train: community
+truenas_name: joplin
+status: draft
+managed: generated
+upstream:
+  version: 1.7.31
+  app_version: amd64-3.7.2
+  questions_sha: 8156388ce19b2280eaa4c51a49bdb0ee59e28255206e177321f8024ac8cfb6cd
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/joplin
+notes: []

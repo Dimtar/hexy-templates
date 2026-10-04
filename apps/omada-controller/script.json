@@ -1,0 +1,95 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS omada-controller 1.4.12"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [
+      30076,
+      30077,
+      30078,
+      30079,
+      27001,
+      29810,
+      29811,
+      29814,
+      29812,
+      29813,
+      29815,
+      29816,
+      29817,
+      30354
+    ]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/omada-controller"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/omada-controller"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/omada-controller/data",
+      "snapshot": {"id": "data"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/omada-controller/logs"}
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/omada-controller/data)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/omada-controller/logs)"
+    },
+    "network": {
+      "manage_http_port": {
+        "bind_mode": "published",
+        "port_number": 30076
+      },
+      "manage_https_port": {
+        "bind_mode": "published",
+        "port_number": 30077
+      },
+      "portal_http_port": {
+        "bind_mode": "published",
+        "port_number": 30078
+      },
+      "portal_https_port": {
+        "bind_mode": "published",
+        "port_number": 30079
+      },
+      "app_discovery_port": {
+        "bind_mode": "published",
+        "port_number": 27001
+      },
+      "discovery_port": {"bind_mode": "published", "port_number": 29810},
+      "manager_v1_port": {
+        "bind_mode": "published",
+        "port_number": 29811
+      },
+      "manager_v2_port": {
+        "bind_mode": "published",
+        "port_number": 29814
+      },
+      "adopt_v1_port": {"bind_mode": "published", "port_number": 29812},
+      "upgrade_v1_port": {
+        "bind_mode": "published",
+        "port_number": 29813
+      },
+      "transfer_v2_port": {
+        "bind_mode": "published",
+        "port_number": 29815
+      },
+      "rtty_port": {"bind_mode": "published", "port_number": 29816},
+      "device_monitor_port": {
+        "bind_mode": "published",
+        "port_number": 29817
+      },
+      "upgrade_https_port": {
+        "bind_mode": "published",
+        "port_number": 30354
+      }
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

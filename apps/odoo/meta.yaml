@@ -1,0 +1,23 @@
+title: Odoo
+description: Odoo is a suite of web based open source business apps.
+icon: https://media.sys.truenas.net/apps/odoo/icons/icon.png
+categories:
+- productivity
+keywords:
+- erp
+- odoo
+home: https://www.odoo.com/
+screenshots:
+- https://media.sys.truenas.net/apps/odoo/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/odoo/screenshots/screenshot2.png
+train: community
+truenas_name: odoo
+status: draft
+managed: generated
+upstream:
+  version: 1.6.44
+  app_version: 20.0-20260926
+  questions_sha: 7e27fa3912b99706340a6efb4677c9347b1d9df0f907dc0314cd1dcb130dda90
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/odoo
+notes: []

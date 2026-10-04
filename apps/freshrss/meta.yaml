@@ -1,0 +1,22 @@
+title: FreshRSS
+description: FreshRSS is a free, self-hostable news aggregator
+icon: https://media.sys.truenas.net/apps/freshrss/icons/icon.png
+categories:
+- productivity
+keywords:
+- rss
+- news
+home: https://freshrss.org/
+screenshots:
+- https://media.sys.truenas.net/apps/freshrss/screenshots/screenshot1.webp
+train: community
+truenas_name: freshrss
+status: draft
+managed: generated
+upstream:
+  version: 1.7.30
+  app_version: 1.30.0
+  questions_sha: 870d96e5c3e9b5e55a76bcf70baeb56000d39741b1523e0fe9dba0ed71c76dab
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/freshrss
+notes: []

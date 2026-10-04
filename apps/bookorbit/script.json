@@ -1,0 +1,62 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS bookorbit 1.0.29"
+  },
+  "installation_questions": [
+    {
+      "question": "Bootstrap token",
+      "type": "password",
+      "key": "bootstrap_token",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Documents", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30441]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/bookorbit"},
+    {"path": "$LOCATION(Documents)", "network_share": true},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/bookorbit/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/bookorbit/book_drop",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "book_drop"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/bookorbit/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "bookorbit": {
+      "db_password": "$RANDOM_STRING(16)",
+      "jwt_secret": "$RANDOM_STRING(32)",
+      "bootstrap_token": "$QUESTION(bootstrap_token)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/bookorbit/data)",
+      "books": "$HOST_PATH($LOCATION(Documents))",
+      "book_drop": "$HOST_PATH($LOCATION(ApplicationsPerformance)/bookorbit/book_drop)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/bookorbit/postgres_data)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30441}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

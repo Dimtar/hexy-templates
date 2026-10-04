@@ -1,0 +1,22 @@
+title: Chatwoot
+description: Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk,
+  Salesforce Service Cloud etc.
+icon: https://media.sys.truenas.net/apps/chatwoot/icons/icon.svg
+categories:
+- productivity
+keywords:
+- support
+- live chat
+home: https://www.chatwoot.com/
+screenshots: []
+train: community
+truenas_name: chatwoot
+status: draft
+managed: generated
+upstream:
+  version: 1.2.54
+  app_version: v4.18.0
+  questions_sha: fa6bc35c6ab758803defc4f4bf195ded9e42771bece669e506e34a96f15e6228
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/chatwoot
+notes: []

@@ -1,0 +1,22 @@
+title: Dockpeek
+description: Easily access your Docker container web interfaces and keep them up to date — across all
+  your hosts.
+icon: https://media.sys.truenas.net/apps/dockpeek/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- docker
+- ports
+home: https://github.com/dockpeek/dockpeek
+screenshots: []
+train: community
+truenas_name: dockpeek
+status: draft
+managed: generated
+upstream:
+  version: 1.1.9
+  app_version: v1.7.3
+  questions_sha: ef6420700e2a3857ec031735e25cab551db16441f7d614755f495db3616e4bae
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/dockpeek
+notes: []

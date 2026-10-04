@@ -1,0 +1,47 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS passbolt 1.4.16"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30097]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/passbolt"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/passbolt/gpg",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "gpg"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/passbolt/jwt",
+      "snapshot": {"id": "jwt"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/passbolt/mariadb_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "mariadb_data"}
+    }
+  ],
+  "app_values": {
+    "passbolt": {
+      "db_password": "$RANDOM_STRING(16)",
+      "db_root_password": "$RANDOM_STRING(16)",
+      "app_url": "http://$SERVER_LAN_IP:30097"
+    },
+    "storage": {
+      "gpg": "$HOST_PATH($LOCATION(ApplicationsPerformance)/passbolt/gpg)",
+      "jwt": "$HOST_PATH($LOCATION(ApplicationsPerformance)/passbolt/jwt)",
+      "mariadb_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/passbolt/mariadb_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30097}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

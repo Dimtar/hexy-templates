@@ -1,0 +1,45 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS transmission 1.3.10"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30096, 50413]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/transmission"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/transmission/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/transmission/downloads_complete",
+      "snapshot": {"id": "downloads_complete"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/transmission/downloads_incomplete",
+      "snapshot": {"id": "downloads_incomplete"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/transmission/config)",
+      "downloads_complete": "$HOST_PATH($LOCATION(ApplicationsPerformance)/transmission/downloads_complete)",
+      "downloads_incomplete": "$HOST_PATH($LOCATION(ApplicationsPerformance)/transmission/downloads_incomplete)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30096},
+      "peer_port": {"bind_mode": "published", "port_number": 50413}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

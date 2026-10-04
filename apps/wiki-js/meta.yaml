@@ -1,0 +1,20 @@
+title: Wiki.js
+description: Wiki.js is a modern and powerful wiki app built on Node.js.
+icon: https://media.sys.truenas.net/apps/wiki-js/icons/icon.svg
+categories:
+- productivity
+keywords:
+- wiki
+home: https://js.wiki/
+screenshots: []
+train: community
+truenas_name: wiki-js
+status: draft
+managed: generated
+upstream:
+  version: 1.2.35
+  app_version: 2.5.316
+  questions_sha: 6abe30777cfb7496722689e22710b57b1d78fb34586a6d4f2633239a94cfceff
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/wiki-js
+notes: []

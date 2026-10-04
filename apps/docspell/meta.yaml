@@ -1,0 +1,23 @@
+title: Docspell
+description: Docspell assists in organizing your piles of digital documents, resulting from scanners,
+  e-mails and other sources with minimal effort.
+icon: https://media.sys.truenas.net/apps/docspell/icons/icon.svg
+categories:
+- productivity
+keywords:
+- document
+- organization
+- storage
+home: https://docspell.org/
+screenshots: []
+train: community
+truenas_name: docspell
+status: draft
+managed: generated
+upstream:
+  version: 1.2.32
+  app_version: v0.43.0
+  questions_sha: 75c4b14a10a0e85ae3bb49cc0c596127d9c74d2f0a6266dbd0ba51b9e6949e89
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/docspell
+notes: []

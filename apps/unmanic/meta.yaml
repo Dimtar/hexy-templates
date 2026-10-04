@@ -1,0 +1,24 @@
+title: Unmanic
+description: Unmanic is a library optimizer
+icon: https://media.sys.truenas.net/apps/unmanic/icons/icon.png
+categories:
+- media
+keywords:
+- optimize
+- media
+home: https://github.com/Unmanic/unmanic
+screenshots:
+- https://media.sys.truenas.net/apps/unmanic/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/unmanic/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/unmanic/screenshots/screenshot3.png
+train: community
+truenas_name: unmanic
+status: draft
+managed: generated
+upstream:
+  version: 1.1.9
+  app_version: 0.4.1
+  questions_sha: 25647740d785e597757381819ac753ebba7728c7cefedc637fb3fdc0da2f74ef
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/unmanic
+notes: []

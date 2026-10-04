@@ -1,0 +1,21 @@
+title: Woodpecker CI
+description: Woodpecker CI is a simple, yet powerful CI/CD engine with great extensibility.
+icon: https://media.sys.truenas.net/apps/woodpecker-ci/icons/icon.svg
+categories:
+- productivity
+keywords:
+- automation
+- ci
+home: https://woodpecker-ci.org
+screenshots: []
+train: community
+truenas_name: woodpecker-ci
+status: draft
+managed: generated
+upstream:
+  version: 1.2.40
+  app_version: v3.18.1
+  questions_sha: fa1488e0a4cb07c8bcd0accb9a0ee1b24893d75a1cc543b4cfeaff4cd7baa24d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/woodpecker-ci
+notes: []

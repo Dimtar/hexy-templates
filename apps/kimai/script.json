@@ -1,0 +1,62 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS kimai 1.2.17"
+  },
+  "installation_questions": [
+    {
+      "question": "Admin mail",
+      "type": "text",
+      "key": "admin_mail",
+      "required": true
+    },
+    {
+      "question": "Admin password",
+      "type": "password",
+      "key": "admin_password",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30237]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/kimai"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/kimai/data",
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/kimai/plugins",
+      "snapshot": {"id": "plugins"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/kimai/mariadb_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "mariadb_data"}
+    }
+  ],
+  "app_values": {
+    "kimai": {
+      "db_password": "$RANDOM_STRING(16)",
+      "db_root_password": "$RANDOM_STRING(16)",
+      "admin_mail": "$QUESTION(admin_mail)",
+      "admin_password": "$QUESTION(admin_password)",
+      "app_secret": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/kimai/data)",
+      "plugins": "$HOST_PATH($LOCATION(ApplicationsPerformance)/kimai/plugins)",
+      "mariadb_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/kimai/mariadb_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30237}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

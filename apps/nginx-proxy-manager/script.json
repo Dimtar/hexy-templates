@@ -1,0 +1,37 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS nginx-proxy-manager 1.3.11"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30020, 30021, 30022]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/nginx-proxy-manager"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/nginx-proxy-manager/data",
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/nginx-proxy-manager/certs",
+      "snapshot": {"id": "certs"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nginx-proxy-manager/data)",
+      "certs": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nginx-proxy-manager/certs)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30020},
+      "http_port": {"bind_mode": "published", "port_number": 30021},
+      "https_port": {"bind_mode": "published", "port_number": 30022}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

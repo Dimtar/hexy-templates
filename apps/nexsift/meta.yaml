@@ -1,0 +1,31 @@
+title: nexsift
+description: The filter for your homelab's notifications. Services report to nexsift instead of to your
+  phone, through doors that answer like Gotify, ntfy, a Discord webhook, SMTP or syslog. nexsift sorts
+  everything into one inbox, bundles the routine and passes on only what matters, through ntfy, Gotify,
+  Telegram, Apprise, a webhook or Web Push.
+icon: https://media.sys.truenas.net/apps/nexsift/icons/icon.png
+categories:
+- productivity
+keywords:
+- notifications
+- alerts
+- gotify
+- ntfy
+- syslog
+- homelab
+home: https://github.com/DerKezorm/nexsift
+screenshots:
+- https://media.sys.truenas.net/apps/nexsift/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/nexsift/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/nexsift/screenshots/screenshot3.jpg
+train: community
+truenas_name: nexsift
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 0.6.0
+  questions_sha: 5b7b66ff44a99de742f4cc6bcb97d93da4395910ee4e564400fb9cb3b989c64c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nexsift
+notes: []

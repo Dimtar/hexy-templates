@@ -1,0 +1,44 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS authelia 1.2.49"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30133]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/authelia"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/authelia/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/authelia/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "authelia": {
+      "db_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "encryption_key": "$RANDOM_STRING(32)",
+      "jwt_secret": "$RANDOM_STRING(32)",
+      "session_secret": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/authelia/config)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/authelia/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30133}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

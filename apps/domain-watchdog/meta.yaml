@@ -1,0 +1,22 @@
+title: Domain Watchdog
+description: An app that monitors domain names using RDAP, tracks their history, and helps you acquire
+  them when they expire
+icon: https://media.sys.truenas.net/apps/domain-watchdog/icons/icon.png
+categories:
+- monitoring
+keywords:
+- domain
+- watchdog
+home: https://github.com/maelgangloff/domain-watchdog
+screenshots: []
+train: community
+truenas_name: domain-watchdog
+status: draft
+managed: generated
+upstream:
+  version: 1.2.35
+  app_version: v1.4.5
+  questions_sha: 842548418584c6542ae701e5680ac19e521119eb327b81d0ca1fae5328778e27
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/domain-watchdog
+notes: []

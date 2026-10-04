@@ -1,0 +1,36 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS music-assistant 1.1.44"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30278, 30279]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/music-assistant"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/music-assistant/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "music_assistant": {"base_url": "http://$SERVER_LAN_IP:30278"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/music-assistant/data)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30278},
+      "stream_port": {"bind_mode": "published", "port_number": 30279}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

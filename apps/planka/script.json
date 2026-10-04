@@ -1,0 +1,49 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS planka 2.3.34"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30034]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/planka"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/planka"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/planka/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/planka/logs",
+      "owner": {"user": "apps"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/planka/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "planka": {
+      "db_password": "$RANDOM_STRING(16)",
+      "secret_key": "$RANDOM_STRING(32)",
+      "base_url": "http://$SERVER_LAN_IP:30034"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/planka/data)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/planka/logs)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/planka/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30034}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

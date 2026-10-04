@@ -1,0 +1,25 @@
+title: HyOS - Hytale Server
+description: Hytale dedicated game server with web management UI, OAuth authentication, auto-updates,
+  mod support, and REST API for server control.
+icon: https://media.sys.truenas.net/apps/hyos/icons/icon.png
+categories:
+- games
+keywords:
+- hytale
+- game-server
+- voxel
+- sandbox
+home: https://hyos.io
+screenshots:
+- https://media.sys.truenas.net/apps/hyos/screenshots/screenshot1.png
+train: community
+truenas_name: hyos
+status: draft
+managed: generated
+upstream:
+  version: 1.0.17
+  app_version: 0.0.29
+  questions_sha: 464f946981dda51ecacb3a56f7567e0b521e0b9e993669e84ea12784453eada9
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/hyos
+notes: []

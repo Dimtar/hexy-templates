@@ -1,0 +1,23 @@
+title: wallabag
+description: 'wallabag is a self hostable application for saving web pages: Save and classify articles.
+  Read them later. Freely.'
+icon: https://media.sys.truenas.net/apps/wallabag/icons/icon.svg
+categories:
+- productivity
+keywords:
+- productivity
+- read-it-later
+- bookmarks
+home: https://wallabag.org/
+screenshots: []
+train: community
+truenas_name: wallabag
+status: draft
+managed: generated
+upstream:
+  version: 1.0.2
+  app_version: 2.6.14
+  questions_sha: ec48a853daaac8cc3c06a6639bcf3f61b904d6c45a59b4a305d3661ea015c84b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/wallabag
+notes: []

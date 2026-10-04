@@ -1,0 +1,29 @@
+title: Pocket ID
+description: Pocket ID is a simple and easy-to-use OIDC provider that allows users to authenticate with
+  their passkeys to your services.
+icon: https://media.sys.truenas.net/apps/pocket-id/icons/icon.png
+categories:
+- authentication
+keywords:
+- authentication
+- oidc
+- passkeys
+- openid
+home: https://pocket-id.org
+screenshots:
+- https://media.sys.truenas.net/apps/pocket-id/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/pocket-id/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/pocket-id/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/pocket-id/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/pocket-id/screenshots/screenshot5.png
+train: community
+truenas_name: pocket-id
+status: draft
+managed: generated
+upstream:
+  version: 1.1.21
+  app_version: v2.17.0
+  questions_sha: 6c0727cd682ff24ad5acd7a0bf8306ed1e4a0f815179519aaa386279e2eff7ae
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/pocket-id
+notes: []

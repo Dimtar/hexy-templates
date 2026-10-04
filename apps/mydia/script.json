@@ -1,0 +1,57 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS mydia 1.2.38"
+  },
+  "installation_questions": [
+    {
+      "question": "Host",
+      "type": "text",
+      "key": "host",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["Media", "ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30308]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/mydia"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mydia/images",
+      "snapshot": {"id": "images"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mydia/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mydia/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "mydia": {
+      "db_password": "$RANDOM_STRING(16)",
+      "host": "$QUESTION(host)",
+      "secret_key_base": "$RANDOM_STRING(32)",
+      "guardian_secret_key": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "media": "$HOST_PATH($LOCATION(Media))",
+      "images": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mydia/images)",
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mydia/config)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mydia/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30308}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

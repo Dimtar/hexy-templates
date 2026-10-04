@@ -1,0 +1,20 @@
+title: Seerr
+description: Open-source media request and discovery manager for Jellyfin, Plex, and Emby.
+icon: https://media.sys.truenas.net/apps/seerr/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+home: https://docs.seerr.dev/
+screenshots: []
+train: community
+truenas_name: seerr
+status: draft
+managed: generated
+upstream:
+  version: 1.0.13
+  app_version: v3.5.0
+  questions_sha: e55579697ae22baa4744b6b0ecc1464b0227478b797a95120fbd062a52bc4e55
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/seerr
+notes: []

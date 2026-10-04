@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="hero">
+  <div class="wrap">
+    <h1>Install any TrueNAS app on HexOS</h1>
+    <p class="lede">{{ apps|length }} ready-made custom install scripts — one for every app in the TrueNAS catalogue — with every line explained in plain English.</p>
+    <div class="search">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M10 2a8 8 0 0 1 6.32 12.9l5.39 5.4-1.42 1.4-5.39-5.38A8 8 0 1 1 10 2Zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/></svg>
+      <input id="q" type="search" placeholder="Search apps — try “photos”, “jellyfin” or “budget”" autocomplete="off" aria-label="Search apps" autofocus>
+      <kbd>/</kbd>
+    </div>
+    <p class="hero-links"><a href="{{ base }}guide/">New to custom install scripts? Read the step-by-step guide →</a></p>
+  </div>
+</section>
+
+<section class="wrap library">
+  <div class="filters">
+    <div class="chips" role="group" aria-label="Filter by category">
+      <button class="chip" data-cat="" aria-pressed="true">All</button>
+      {% for c in categories %}<button class="chip" data-cat="{{ c }}" aria-pressed="false">{{ c|replace("-", " ") }}</button>{% endfor %}
+    </div>
+    <div class="filter-row">
+      <label class="select">Status
+        <select id="status">
+          <option value="">Any ({{ apps|length }})</option>
+          <option value="tested">Tested ({{ counts["tested"] }})</option>
+          <option value="needs-retest">Needs re-test ({{ counts["needs-retest"] }})</option>
+          <option value="draft">Draft ({{ counts["draft"] }})</option>
+        </select>
+      </label>
+      <p id="count" class="count" aria-live="polite">{{ apps|length }} apps</p>
+    </div>
+  </div>
+
+  <ul class="grid" id="grid">
+    {% for a in apps %}
+    <li class="card" data-search="{{ a.search }}" data-cats="{{ a.meta.categories|join(' ') }}" data-status="{{ a.status }}">
+      <a href="{{ base }}apps/{{ a.slug }}/">
+        <img class="app-icon" src="{{ a.meta.icon }}" alt="" width="48" height="48" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="card-body">
+          <h2>{{ a.title }}</h2>
+          <p>{{ a.meta.description|truncate(110) }}</p>
+          <div class="card-tags">
+            <span class="badge badge-{{ a.status }}" title="{{ a.status_help }}">{{ a.status_label }}</span>
+            {% for c in a.meta.categories[:2] %}<span class="tag">{{ c }}</span>{% endfor %}
+          </div>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <div id="empty" class="empty" hidden>
+    <p>No apps match that search.</p>
+    <p>Can't find it? The app may not be in the TrueNAS catalogue yet — <a href="{{ repo }}/issues/new">request it on GitHub</a>.</p>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ base }}static/library.js"></script>{% endblock %}

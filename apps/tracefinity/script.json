@@ -1,0 +1,44 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS tracefinity 1.0.4"
+  },
+  "installation_questions": [
+    {
+      "question": "Auto naming",
+      "type": "select",
+      "key": "auto_naming",
+      "required": true,
+      "options": [
+        {"text": "Disabled", "value": ""},
+        {"text": "Ollama (Local vision naming)", "value": "ollama"}
+      ]
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30479]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/tracefinity"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/tracefinity/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "tracefinity": {"auto_naming": "$QUESTION(auto_naming)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/tracefinity/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30479}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

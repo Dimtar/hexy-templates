@@ -1,0 +1,23 @@
+title: LanguageTool Server
+description: Open-source grammar and style checker server.
+icon: https://media.sys.truenas.net/apps/languagetool/icons/icon.svg
+categories:
+- productivity
+keywords:
+- grammar
+- spelling
+- style-check
+- editor
+home: https://languagetool.org
+screenshots: []
+train: community
+truenas_name: languagetool
+status: draft
+managed: generated
+upstream:
+  version: 1.0.3
+  app_version: '6.8'
+  questions_sha: 812834f55fc5db30b0c4aee2df007867e7889c4010151bdaa2cfcc75faca0d33
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/languagetool
+notes: []

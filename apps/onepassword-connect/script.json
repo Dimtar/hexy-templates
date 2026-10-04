@@ -1,0 +1,40 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS onepassword-connect 1.1.8"
+  },
+  "installation_questions": [
+    {
+      "question": "Credentials",
+      "type": "password",
+      "key": "credentials",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30358, 30359]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/onepassword-connect"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/onepassword-connect/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "onepassword": {"credentials": "$QUESTION(credentials)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/onepassword-connect/data)"
+    },
+    "network": {
+      "api_port": {"bind_mode": "published", "port_number": 30358},
+      "sync_port": {"bind_mode": "published", "port_number": 30359}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

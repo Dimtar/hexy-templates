@@ -1,0 +1,22 @@
+title: Chaptarr
+description: A book collection manager for audiobooks and eBooks.
+icon: https://media.sys.truenas.net/apps/chaptarr/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- ebook
+- audiobook
+home: https://github.com/Chaptarr/chaptarr
+screenshots: []
+train: community
+truenas_name: chaptarr
+status: draft
+managed: generated
+upstream:
+  version: 1.0.5
+  app_version: 0.9.965
+  questions_sha: d864f839704b9889149cffc1ce6e1778e80fe2c7bcf4f3cacd5ea5ba00f2a931
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/chaptarr
+notes: []

@@ -1,0 +1,62 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS stash 1.1.9"
+  },
+  "requirements": {
+    "locations": [
+      "ApplicationsPerformance",
+      "ApplicationsCapacity",
+      "Media"
+    ],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30198]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/stash"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/stash"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/stash/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/stash/data",
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/stash/metadata",
+      "snapshot": {"id": "metadata"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/stash/cache"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/stash/blobs",
+      "snapshot": {"id": "blobs"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/stash/generated",
+      "snapshot": {"id": "generated"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/stash/config)",
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/stash/data)",
+      "metadata": "$HOST_PATH($LOCATION(ApplicationsPerformance)/stash/metadata)",
+      "cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/stash/cache)",
+      "blobs": "$HOST_PATH($LOCATION(ApplicationsPerformance)/stash/blobs)",
+      "generated": "$HOST_PATH($LOCATION(ApplicationsPerformance)/stash/generated)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30198}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

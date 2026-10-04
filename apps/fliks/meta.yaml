@@ -1,0 +1,24 @@
+title: Fliks
+description: Fliks is a self-hosted media manager and streaming server for movies and TV shows.
+icon: https://media.sys.truenas.net/apps/fliks/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- movies
+- series
+- tv
+- streaming
+home: https://github.com/fliks-app/fliks
+screenshots: []
+train: community
+truenas_name: fliks
+status: draft
+managed: generated
+upstream:
+  version: 1.1.10
+  app_version: 4.3.1
+  questions_sha: 90dddab491f31c9b04e689f63a934ba8ab7cf9b3d8da5c6dd3d29c37d9cb1797
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/fliks
+notes: []

@@ -1,0 +1,23 @@
+title: SubsiMail
+description: Self-hosted cold email outreach that runs on your own server, not someone else's.
+icon: https://media.sys.truenas.net/apps/subsimail/icons/icon.png
+categories:
+- productivity
+keywords:
+- email
+- outreach
+- productivity
+home: https://subsimail.com
+screenshots:
+- https://media.sys.truenas.net/apps/subsimail/screenshots/screenshot1.png
+train: community
+truenas_name: subsimail
+status: draft
+managed: generated
+upstream:
+  version: 1.0.10
+  app_version: 7.0.0
+  questions_sha: a0a169f186157dcbb8f7df4d0ab2f40227f9ef1ae634938118ef90c8ad398144
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/subsimail
+notes: []

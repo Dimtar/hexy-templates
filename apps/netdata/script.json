@@ -1,0 +1,39 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS netdata 1.4.18"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [20489]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/netdata"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/netdata"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/netdata/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/netdata/lib",
+      "snapshot": {"id": "lib"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/netdata/cache"}
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/netdata/config)",
+      "lib": "$HOST_PATH($LOCATION(ApplicationsPerformance)/netdata/lib)",
+      "cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/netdata/cache)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 20489}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

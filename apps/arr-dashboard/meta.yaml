@@ -1,0 +1,21 @@
+title: Arr Dashboard
+description: A unified dashboard for managing and monitoring media services including Sonarr, Radarr,
+  Lidarr, Readarr, Prowlarr, Plex, Tautulli, Jellyfin, Emby, and Seerr.
+icon: https://media.sys.truenas.net/apps/arr-dashboard/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+home: https://github.com/Kha-kis/arr-dashboard
+screenshots: []
+train: community
+truenas_name: arr-dashboard
+status: draft
+managed: generated
+upstream:
+  version: 1.0.2
+  app_version: 2.24.1
+  questions_sha: 0d9466dda58ce8e9306263c75538433039da70ecba4f06ff11a68bf180154e98
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/arr-dashboard
+notes: []

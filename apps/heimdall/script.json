@@ -1,0 +1,31 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS heimdall 1.1.11"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30119, 30120]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/heimdall"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/heimdall/config",
+      "snapshot": {"id": "config"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/heimdall/config)"
+    },
+    "network": {
+      "http_port": {"bind_mode": "published", "port_number": 30119},
+      "https_port": {"bind_mode": "published", "port_number": 30120}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

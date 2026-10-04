@@ -1,0 +1,22 @@
+title: LLDAP
+description: Lightweight LDAP server with built-in web interface for identity management.
+icon: https://media.sys.truenas.net/apps/lldap/icons/icon.svg
+categories:
+- authentication
+keywords:
+- ldap
+- identity
+- authentication
+home: https://github.com/lldap/lldap
+screenshots: []
+train: community
+truenas_name: lldap
+status: draft
+managed: generated
+upstream:
+  version: 1.1.8
+  app_version: v0.6.3-alpine-rootless
+  questions_sha: 01e1c6e94d465118b6fbb911347248454b570243871e63b2c77e1fd5e1365f8e
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/lldap
+notes: []

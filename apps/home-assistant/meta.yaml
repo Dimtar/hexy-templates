@@ -1,0 +1,22 @@
+title: Home Assistant (Deprecated)
+description: Home Assistant is an open source home automation that puts local control and privacy first.
+icon: https://media.sys.truenas.net/apps/home-assistant/icons/icon.png
+categories:
+- productivity
+keywords:
+- home-automation
+- assistant
+home: https://www.home-assistant.io/
+screenshots:
+- https://media.sys.truenas.net/apps/home-assistant/screenshots/screenshot1.png
+train: stable
+truenas_name: home-assistant
+status: draft
+managed: generated
+upstream:
+  version: 1.8.67
+  app_version: 2026.9.4
+  questions_sha: 535d3a277b91fce14f4e4b035ad876e137c3f86edfaf2c6e853f84035acacc16
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/home-assistant
+notes: []

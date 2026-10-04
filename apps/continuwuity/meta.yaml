@@ -1,0 +1,25 @@
+title: Continuwuity
+description: Continuwuity, the official community driven continuation of conduwuit & Conduit, focusing
+  on user experience and new features.
+icon: https://media.sys.truenas.net/apps/continuwuity/icons/icon.svg
+categories:
+- productivity
+keywords:
+- matrix
+- productivity
+- chat
+- federated
+- encrypted
+home: https://continuwuity.org/
+screenshots: []
+train: community
+truenas_name: continuwuity
+status: draft
+managed: generated
+upstream:
+  version: 1.0.19
+  app_version: v26.9.1
+  questions_sha: 7217d23cb16b64751aeba9991d57ad327955c721153871907bffe86498b1818b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/continuwuity
+notes: []

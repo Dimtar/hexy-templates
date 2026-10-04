@@ -1,0 +1,43 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS twofactor-auth 1.3.16"
+  },
+  "installation_questions": [
+    {
+      "question": "Site owner email",
+      "type": "text",
+      "key": "site_owner_email",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30081]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/twofactor-auth"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/twofactor-auth/config",
+      "snapshot": {"id": "config"}
+    }
+  ],
+  "app_values": {
+    "twofactor_auth": {
+      "app_key": "$RANDOM_STRING(32)",
+      "app_url": "http://$SERVER_LAN_IP:30081",
+      "site_owner_email": "$QUESTION(site_owner_email)"
+    },
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/twofactor-auth/config)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30081}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,21 @@
+title: Flame
+description: Flame is a self-hosted start page for your server.
+icon: https://media.sys.truenas.net/apps/flame/icons/icon.png
+categories:
+- productivity
+keywords:
+- startpage
+home: https://github.com/pawelmalak/flame
+screenshots:
+- https://media.sys.truenas.net/apps/flame/screenshots/screenshot1.png
+train: community
+truenas_name: flame
+status: draft
+managed: generated
+upstream:
+  version: 1.3.8
+  app_version: 2.4.0
+  questions_sha: 7632b97b315e32560839b720258f2becf4d5ac271ff17eff46686b5a350f7246
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/flame
+notes: []

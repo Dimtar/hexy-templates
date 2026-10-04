@@ -1,0 +1,37 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS teamspeak 1.1.8"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [9987, 30033, 10011, 10022]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/teamspeak"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/teamspeak/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/teamspeak/data)"
+    },
+    "network": {
+      "voice_port": {"bind_mode": "published", "port_number": 9987},
+      "file_transfer_port": {
+        "bind_mode": "published",
+        "port_number": 30033
+      },
+      "raw_query_port": {"bind_mode": "published", "port_number": 10011},
+      "ssh_query_port": {"bind_mode": "published", "port_number": 10022}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

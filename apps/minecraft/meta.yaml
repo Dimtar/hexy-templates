@@ -1,0 +1,22 @@
+title: Minecraft Server (Java)
+description: Minecraft dedicated server for Java platform hosts a world for multiplayer game. Players
+  can join the server using the Java client on Desktops.
+icon: https://media.sys.truenas.net/apps/minecraft/icons/icon.svg
+categories:
+- games
+keywords:
+- world
+- building
+home: https://www.minecraft.net/en-us
+screenshots: []
+train: community
+truenas_name: minecraft
+status: draft
+managed: generated
+upstream:
+  version: 1.15.29
+  app_version: 2026.9.2-java21
+  questions_sha: def764ae993f61a511a669a117cb40d8a048fd72b7c67f818a969c14c3eaed88
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/minecraft
+notes: []

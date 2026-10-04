@@ -1,0 +1,21 @@
+title: RDT Client
+description: Real-Debrid Client Proxy
+icon: https://media.sys.truenas.net/apps/rdt-client/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- ebooks
+home: https://github.com/rogerfar/rdt-client
+screenshots: []
+train: community
+truenas_name: rdt-client
+status: draft
+managed: generated
+upstream:
+  version: 1.1.24
+  app_version: 2.0.142
+  questions_sha: 8addfe3d3d87ed5531d2c0d2b6f01789b9ec8e096bbcdf9838d2f80f5d9a6a52
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/rdt-client
+notes: []

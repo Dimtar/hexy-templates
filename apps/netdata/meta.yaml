@@ -1,0 +1,25 @@
+title: Netdata
+description: Real-time performance monitoring, done right!
+icon: https://media.sys.truenas.net/apps/netdata/icons/icon.png
+categories:
+- monitoring
+keywords:
+- alerting
+- metric
+- monitoring
+home: https://www.netdata.cloud/
+screenshots:
+- https://media.sys.truenas.net/apps/netdata/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/netdata/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/netdata/screenshots/screenshot3.png
+train: stable
+truenas_name: netdata
+status: draft
+managed: generated
+upstream:
+  version: 1.4.18
+  app_version: v2.12.0
+  questions_sha: 010508cd2beb616dcd8386b84332f7b8eabf388ae23d7e3a9089794336f5b1cb
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/netdata
+notes: []

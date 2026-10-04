@@ -1,0 +1,47 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS fileflows 1.1.14"
+  },
+  "requirements": {
+    "locations": [
+      "ApplicationsPerformance",
+      "ApplicationsCapacity",
+      "Media"
+    ],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [19200]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/fileflows"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/fileflows"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/fileflows/data",
+      "snapshot": {"id": "data"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/fileflows/logs"},
+    {"path": "$LOCATION(ApplicationsCapacity)/fileflows/temp"}
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/fileflows/data)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/fileflows/logs)",
+      "temp": "$HOST_PATH($LOCATION(ApplicationsCapacity)/fileflows/temp)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "server_port": {"bind_mode": "published", "port_number": 19200}
+    },
+    "resources": {
+      "limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"},
+      "gpus": "$GPU_CONFIG()"
+    }
+  }
+}

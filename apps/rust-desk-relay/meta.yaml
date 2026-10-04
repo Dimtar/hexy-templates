@@ -1,0 +1,21 @@
+title: Rust Desk Relay
+description: Rust Desk is an open-source remote desktop, and alternative to TeamViewer.
+icon: https://media.sys.truenas.net/apps/rust-desk-relay/icons/icon.png
+categories:
+- productivity
+keywords:
+- remote
+- desktop
+home: https://rustdesk.com
+screenshots: []
+train: community
+truenas_name: rust-desk-relay
+status: draft
+managed: generated
+upstream:
+  version: 1.0.15
+  app_version: 1.1.16
+  questions_sha: edb86c416711968575441b6abd7ea124bcf996166c9167586e3689295a6519b0
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/rust-desk-relay
+notes: []

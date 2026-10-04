@@ -1,0 +1,24 @@
+title: Actual Budget
+description: Actual Budget is a super fast and privacy-focused app for managing your finances.
+icon: https://media.sys.truenas.net/apps/actual-budget/icons/icon.png
+categories:
+- financial
+keywords:
+- finance
+- budget
+home: https://actualbudget.org
+screenshots:
+- https://media.sys.truenas.net/apps/actual-budget/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/actual-budget/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/actual-budget/screenshots/screenshot3.png
+train: community
+truenas_name: actual-budget
+status: draft
+managed: generated
+upstream:
+  version: 1.4.18
+  app_version: 26.10.0
+  questions_sha: 135967a0112c5e80f8ebd3539d453dcbb39588d83bd611a6e560757da92c1eb8
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/actual-budget
+notes: []

@@ -1,0 +1,60 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS freshrss 1.7.30"
+  },
+  "installation_questions": [
+    {
+      "question": "Default admin user",
+      "type": "text",
+      "key": "default_admin_user",
+      "required": true
+    },
+    {
+      "question": "Default admin password",
+      "type": "password",
+      "key": "default_admin_password",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30108]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/freshrss"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/freshrss/data",
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/freshrss/extensions",
+      "snapshot": {"id": "extensions"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/freshrss/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "fresh_rss": {
+      "default_admin_user": "$QUESTION(default_admin_user)",
+      "default_admin_password": "$QUESTION(default_admin_password)",
+      "db_password": "$RANDOM_STRING(16)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/freshrss/data)",
+      "extensions": "$HOST_PATH($LOCATION(ApplicationsPerformance)/freshrss/extensions)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/freshrss/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30108}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

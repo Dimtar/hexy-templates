@@ -1,0 +1,31 @@
+title: OpenFamily
+description: OpenFamily is an open-source, self-hosted app to organize your whole family life, shopping
+  lists, tasks, calendar, weekly planning, recipes, meal planning, and budget.
+icon: https://media.sys.truenas.net/apps/openfamily/icons/icon.png
+categories:
+- productivity
+keywords:
+- family
+- organizer
+- shopping-list
+- tasks
+- calendar
+- budget
+- recipes
+home: https://openfamily.fr
+screenshots:
+- https://media.sys.truenas.net/apps/openfamily/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/openfamily/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/openfamily/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/openfamily/screenshots/screenshot4.png
+train: community
+truenas_name: openfamily
+status: draft
+managed: generated
+upstream:
+  version: 1.0.9
+  app_version: 1.8.1
+  questions_sha: 6e91d85f4f8053da7ee507a6803572b5bb523415490c61ab9d632bb5843c4073
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/openfamily
+notes: []

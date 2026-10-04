@@ -1,0 +1,25 @@
+title: vLLM
+description: vLLM is a high-throughput and memory-efficient inference and serving engine for LLMs with
+  an OpenAI-compatible API.
+icon: https://media.sys.truenas.net/apps/vllm/icons/icon.svg
+categories:
+- ai
+keywords:
+- ai
+- llm
+- inference
+- openai
+- gpu
+home: https://github.com/vllm-project/vllm
+screenshots: []
+train: community
+truenas_name: vllm
+status: draft
+managed: generated
+upstream:
+  version: 1.0.18
+  app_version: v0.30.0
+  questions_sha: e0d45b6e0aa99a9ba96d7c350dbe3fcf7ba5022f9485c6ea27c4d96528690a26
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/vllm
+notes: []

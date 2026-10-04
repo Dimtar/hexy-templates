@@ -1,0 +1,20 @@
+title: Immich Kiosk
+description: Highly configurable slideshows for displaying Immich assets on browsers and devices.
+icon: https://media.sys.truenas.net/apps/immich-kiosk/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+home: https://immichkiosk.app/
+screenshots: []
+train: community
+truenas_name: immich-kiosk
+status: draft
+managed: generated
+upstream:
+  version: 1.0.24
+  app_version: 0.44.1
+  questions_sha: 694c34b5824a65016f6f1126b2c297d998eedc109f1a433315dd9d492648aeae
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/immich-kiosk
+notes: []

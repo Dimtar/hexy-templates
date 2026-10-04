@@ -1,0 +1,58 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS kerberos-agent 1.1.46"
+  },
+  "installation_questions": [
+    {
+      "question": "Agent name",
+      "type": "text",
+      "key": "agent_name",
+      "required": true
+    },
+    {
+      "question": "Username",
+      "type": "text",
+      "key": "username",
+      "required": true
+    },
+    {
+      "question": "Password",
+      "type": "password",
+      "key": "password",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Videos"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30122]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/kerberos-agent"},
+    {"path": "$LOCATION(Videos)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/kerberos-agent/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    }
+  ],
+  "app_values": {
+    "kerberos": {
+      "agent_name": "$QUESTION(agent_name)",
+      "username": "$QUESTION(username)",
+      "password": "$QUESTION(password)"
+    },
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/kerberos-agent/config)",
+      "recordings": "$HOST_PATH($LOCATION(Videos))"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30122}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

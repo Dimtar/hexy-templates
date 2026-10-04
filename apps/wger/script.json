@@ -1,0 +1,51 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS wger 2.0.19"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30170]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/wger"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/wger/static",
+      "snapshot": {"id": "static"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/wger/beat",
+      "snapshot": {"id": "beat"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/wger/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "wger": {
+      "db_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "secret_key": "$RANDOM_STRING(32)",
+      "jwt_private_key": "$RANDOM_STRING(32)",
+      "jwt_public_key": "$RANDOM_STRING(32)",
+      "site_url": "http://$SERVER_LAN_IP:30170"
+    },
+    "storage": {
+      "static": "$HOST_PATH($LOCATION(ApplicationsPerformance)/wger/static)",
+      "media": "$HOST_PATH($LOCATION(Media))",
+      "beat": "$HOST_PATH($LOCATION(ApplicationsPerformance)/wger/beat)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/wger/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30170}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,28 @@
+title: MetaTana
+description: Clean up and complete your movie, TV, and anime library.
+icon: https://media.sys.truenas.net/apps/metatana/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- metadata
+- library
+- movies
+- tv
+home: https://metatana.com
+screenshots:
+- https://media.sys.truenas.net/apps/metatana/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/metatana/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/metatana/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/metatana/screenshots/screenshot4.png
+train: community
+truenas_name: metatana
+status: draft
+managed: generated
+upstream:
+  version: 1.0.5
+  app_version: 1.1.14
+  questions_sha: 847792709f54d1cf4423b32db045d0e60b16b02eeac97154202658a687e0eeb7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/metatana
+notes: []

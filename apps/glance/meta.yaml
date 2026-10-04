@@ -1,0 +1,21 @@
+title: Glance
+description: A self-hosted dashboard that puts all your feeds in one place
+icon: https://media.sys.truenas.net/apps/glance/icons/icon.svg
+categories:
+- productivity
+keywords:
+- dashboard
+- feeds
+home: https://github.com/glanceapp/glance
+screenshots: []
+train: community
+truenas_name: glance
+status: draft
+managed: generated
+upstream:
+  version: 1.0.8
+  app_version: v0.8.6
+  questions_sha: 8f148bbba6d2f8911a85a1d28dfbec0cec0ce4b069978f9fcde49f0df9771c3f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/glance
+notes: []

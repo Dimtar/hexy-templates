@@ -1,0 +1,26 @@
+title: Qdrant
+description: Qdrant is a vector similarity search engine and vector database. It provides a production-ready
+  service with a convenient API to store, search, and manage vectors with additional payload.
+icon: https://media.sys.truenas.net/apps/qdrant/icons/icon.svg
+categories:
+- database
+keywords:
+- vector
+- database
+- search
+- ai
+- embeddings
+- gpu
+home: https://qdrant.tech
+screenshots: []
+train: community
+truenas_name: qdrant
+status: draft
+managed: generated
+upstream:
+  version: 1.0.11
+  app_version: v1.19.1
+  questions_sha: 90b3db58f2ba141e348b1108dfd9276fdb7b01c05bcaae60cf7df6c1a16cf3e4
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/qdrant
+notes: []

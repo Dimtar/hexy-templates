@@ -1,0 +1,20 @@
+title: SearXNG
+description: SearXNG is a privacy-respecting, hackable metasearch engine
+icon: https://media.sys.truenas.net/apps/searxng/icons/icon.svg
+categories:
+- productivity
+keywords:
+- search
+home: https://github.com/searxng/searxng
+screenshots: []
+train: community
+truenas_name: searxng
+status: draft
+managed: generated
+upstream:
+  version: 1.4.125
+  app_version: 2026.10.2-26b90797e
+  questions_sha: 869aec6ec2517399c6775b5e0a3ae4091f98c08541c5c9a054cefd633c89cea0
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/searxng
+notes: []

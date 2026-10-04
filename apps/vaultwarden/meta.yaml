@@ -1,0 +1,23 @@
+title: Vaultwarden
+description: Alternative implementation of the Bitwarden server API written in Rust and compatible with
+  upstream Bitwarden clients.
+icon: https://media.sys.truenas.net/apps/vaultwarden/icons/icon.svg
+categories:
+- security
+keywords:
+- password
+- manager
+home: https://github.com/dani-garcia/vaultwarden
+screenshots:
+- https://media.sys.truenas.net/apps/vaultwarden/screenshots/screenshot1.png
+train: community
+truenas_name: vaultwarden
+status: draft
+managed: generated
+upstream:
+  version: 1.6.35
+  app_version: 1.37.3
+  questions_sha: 6517629bf51354141d69a3c5259a7de507d00c53643bad0244fd9bd86e8a1e0b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/vaultwarden
+notes: []

@@ -1,0 +1,41 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS docspell 1.2.32"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30261]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/docspell"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/docspell/solr_data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "solr_data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/docspell/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "docspell": {
+      "db_password": "$RANDOM_STRING(16)",
+      "server_secret": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "solr_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/docspell/solr_data)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/docspell/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30261}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

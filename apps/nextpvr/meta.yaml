@@ -1,0 +1,23 @@
+title: NextPVR
+description: NextPVR is a personal video recorder application, with the goal making it easy to watch or
+  record live TV
+icon: https://media.sys.truenas.net/apps/nextpvr/icons/icon.webp
+categories:
+- media
+keywords:
+- nextpvr
+- livetv
+- streaming
+home: http://nextpvr.com/
+screenshots: []
+train: community
+truenas_name: nextpvr
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: stable
+  questions_sha: e22beb031dae2ed3679547cd72dfad391856864d460f84861d8c9744db1de8ce
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nextpvr
+notes: []

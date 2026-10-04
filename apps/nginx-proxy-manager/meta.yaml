@@ -1,0 +1,25 @@
+title: Nginx Proxy Manager
+description: Expose your services easily and securely
+icon: https://media.sys.truenas.net/apps/nginx-proxy-manager/icons/icon.svg
+categories:
+- networking
+keywords:
+- reverse
+- nginx
+- proxy
+home: https://nginxproxymanager.com/
+screenshots:
+- https://media.sys.truenas.net/apps/nginx-proxy-manager/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/nginx-proxy-manager/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/nginx-proxy-manager/screenshots/screenshot3.png
+train: community
+truenas_name: nginx-proxy-manager
+status: draft
+managed: generated
+upstream:
+  version: 1.3.11
+  app_version: 2.16.0
+  questions_sha: 09cf9b72d11cec644801f0aaf02067b4d5bf9777e56883fb525f478ebb88d005
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nginx-proxy-manager
+notes: []

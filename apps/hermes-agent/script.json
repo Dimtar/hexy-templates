@@ -1,0 +1,43 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS hermes-agent 1.0.26"
+  },
+  "installation_questions": [
+    {
+      "question": "Gateway key",
+      "type": "password",
+      "key": "gateway_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30432, 30433]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/hermes-agent"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/hermes-agent/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "hermes_agent": {"gateway_key": "$QUESTION(gateway_key)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/hermes-agent/data)"
+    },
+    "network": {
+      "gateway_port": {"bind_mode": "published", "port_number": 30432},
+      "dashboard_port": {"bind_mode": "published", "port_number": 30433}
+    },
+    "resources": {
+      "limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"},
+      "gpus": "$GPU_CONFIG()"
+    }
+  }
+}

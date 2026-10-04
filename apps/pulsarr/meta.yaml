@@ -1,0 +1,23 @@
+title: Pulsarr
+description: Pulsarr - Real-time Plex watchlist monitoring and content acquisition tool. Seamlessly sync
+  Plex watchlists with Sonarr and Radarr, featuring intelligent predicated content routing, multi-instance
+  support, Discord, and Apprise notifications. Automate your media library management with a modern, user-friendly
+  interface.
+icon: https://media.sys.truenas.net/apps/pulsarr/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+home: https://github.com/jamcalli/Pulsarr
+screenshots: []
+train: community
+truenas_name: pulsarr
+status: draft
+managed: generated
+upstream:
+  version: 1.0.26
+  app_version: 0.19.4
+  questions_sha: 8b20d911b0d09c2efe818c6d3c71e5ecf0c970d2897934f57d8a581f5b99a380
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/pulsarr
+notes: []

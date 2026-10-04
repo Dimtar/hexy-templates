@@ -1,0 +1,27 @@
+title: UmlautAdaptarrEX
+description: UmlautAdaptarrEX presents itself to the *arrs as an indexer, sits between the *arrs and the
+  real indexers, and corrects both searches and results so that releases with umlauts or German titles
+  are reliably found, downloaded and imported.
+icon: https://media.sys.truenas.net/apps/umlautadaptarrex/icons/icon.svg
+categories:
+- media
+keywords:
+- proxy
+- sonarr
+- radarr
+- lidarr
+- readarr
+- prowlarr
+home: https://github.com/xpsony/UmlautAdaptarrEX
+screenshots: []
+train: community
+truenas_name: umlautadaptarrex
+status: draft
+managed: generated
+upstream:
+  version: 1.0.6
+  app_version: 1.4.0
+  questions_sha: a813e3ed9f0e5746cf10b7a82c67d097f2d5a599201b9678617a5fce2bc7dbf6
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/umlautadaptarrex
+notes: []

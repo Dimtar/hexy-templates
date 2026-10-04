@@ -1,0 +1,26 @@
+title: IPFS
+description: Interplanetary Filesystem - the Web3 standard for content-addressing, interoperable with
+  HTTP
+icon: https://media.sys.truenas.net/apps/ipfs/icons/icon.png
+categories:
+- storage
+keywords:
+- storage
+- ipfs
+- file-sharing
+- kubo
+home: https://ipfs.tech/
+screenshots:
+- https://media.sys.truenas.net/apps/ipfs/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/ipfs/screenshots/screenshot2.png
+train: community
+truenas_name: ipfs
+status: draft
+managed: generated
+upstream:
+  version: 1.3.13
+  app_version: v0.43.1
+  questions_sha: ca76f4c251364479f67b1c608ccc5c8e7075cd1c8e0501301df729e7874934a0
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/ipfs
+notes: []

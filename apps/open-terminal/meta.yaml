@@ -1,0 +1,24 @@
+title: Open Terminal
+description: Open Terminal is a lightweight, self-hosted terminal that gives AI agents and automation
+  tools a dedicated environment to run commands, manage files, and execute code all through a simple API.
+icon: https://media.sys.truenas.net/apps/open-terminal/icons/icon.svg
+categories:
+- ai
+keywords:
+- ai
+- llm
+- open-terminal
+- open-webui
+home: https://github.com/open-webui/open-terminal
+screenshots: []
+train: community
+truenas_name: open-terminal
+status: draft
+managed: generated
+upstream:
+  version: 1.0.31
+  app_version: 0.14.0
+  questions_sha: eab26fb2008e269531cc33a51e87a60cd3592b9406d05f7061b162e6d5d3a782
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/open-terminal
+notes: []

@@ -1,0 +1,21 @@
+title: Zerotier
+description: Securely connect any device, anywhere.
+icon: https://media.sys.truenas.net/apps/zerotier/icons/icon.png
+categories:
+- networking
+keywords:
+- vpn
+- zerotier
+home: https://www.zerotier.com
+screenshots: []
+train: community
+truenas_name: zerotier
+status: draft
+managed: generated
+upstream:
+  version: 1.3.7
+  app_version: 1.14.2
+  questions_sha: 7bb8b12998619e2d13ba32fa963c3aa6da9c4da5f6c003eb2089f13d9ef389ee
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/zerotier
+notes: []

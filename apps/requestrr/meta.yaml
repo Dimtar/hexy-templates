@@ -1,0 +1,20 @@
+title: Requestrr
+description: Requestrr is a Discord chatbot used to connect users to Sonarr/Radarr/Lidarr/Overseerr/Ombi!
+icon: https://media.sys.truenas.net/apps/requestrr/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+home: https://github.com/thomst08/requestrr
+screenshots: []
+train: community
+truenas_name: requestrr
+status: draft
+managed: generated
+upstream:
+  version: 1.1.8
+  app_version: v2.1.10
+  questions_sha: 6f363ce4b4525d4f3f8fcada576399e47f12b29992c3be0884a4b9da7fb0849c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/requestrr
+notes: []

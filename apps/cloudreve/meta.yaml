@@ -1,0 +1,21 @@
+title: Cloudreve
+description: Self-hosted file management and sharing system, supports multiple storage providers
+icon: https://media.sys.truenas.net/apps/cloudreve/icons/icon.svg
+categories:
+- storage
+keywords:
+- file management
+- file sharing
+home: https://cloudreve.org/
+screenshots: []
+train: community
+truenas_name: cloudreve
+status: draft
+managed: generated
+upstream:
+  version: 1.0.56
+  app_version: 4.19.1
+  questions_sha: cef5a40e95114761a23f592411e4e0600e8165cae254325c909af1899e761075
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cloudreve
+notes: []

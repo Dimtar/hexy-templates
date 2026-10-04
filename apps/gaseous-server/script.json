@@ -1,0 +1,56 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS gaseous-server 1.3.9"
+  },
+  "installation_questions": [
+    {
+      "question": "Igdb client id",
+      "type": "text",
+      "key": "igdb_client_id",
+      "required": true
+    },
+    {
+      "question": "Igdb client secret",
+      "type": "password",
+      "key": "igdb_client_secret",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [5198]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/gaseous-server"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/gaseous-server/mariadb_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "mariadb_data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/gaseous-server/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "gaseous": {
+      "db_password": "$RANDOM_STRING(16)",
+      "db_root_password": "$RANDOM_STRING(16)",
+      "igdb_client_id": "$QUESTION(igdb_client_id)",
+      "igdb_client_secret": "$QUESTION(igdb_client_secret)"
+    },
+    "storage": {
+      "mariadb_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/gaseous-server/mariadb_data)",
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/gaseous-server/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 5198}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS audiomuse-ai 1.0.44"
+  },
+  "requirements": {
+    "locations": [
+      "ApplicationsCapacity",
+      "ApplicationsPerformance",
+      "Media"
+    ],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30431]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/audiomuse-ai"},
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/audiomuse-ai"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/audiomuse-ai/temp_audio",
+      "owner": {"user": "apps"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/audiomuse-ai/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "audiomuse": {
+      "db_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)"
+    },
+    "storage": {
+      "temp_audio": "$HOST_PATH($LOCATION(ApplicationsCapacity)/audiomuse-ai/temp_audio)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/audiomuse-ai/postgres_data)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30431}
+    },
+    "resources": {
+      "limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"},
+      "gpus": "$GPU_CONFIG()"
+    }
+  }
+}

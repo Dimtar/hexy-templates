@@ -1,0 +1,22 @@
+title: Prometheus
+description: The Prometheus monitoring system and time series database.
+icon: https://media.sys.truenas.net/apps/prometheus/icons/icon.png
+categories:
+- monitoring
+keywords:
+- metrics
+- prometheus
+home: https://prometheus.io
+screenshots:
+- https://media.sys.truenas.net/apps/prometheus/screenshots/screenshot1.png
+train: stable
+truenas_name: prometheus
+status: draft
+managed: generated
+upstream:
+  version: 1.4.18
+  app_version: v3.15.0
+  questions_sha: 4cb19a087c72eb0f2d60fc325614b0398a89435dc49c676f0a1104a8ef6ee088
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/prometheus
+notes: []

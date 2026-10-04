@@ -1,0 +1,25 @@
+title: Swiparr
+description: Swiparr is a media discovery tool featuring a Tinder-like swipe interface for browsing movies
+  and TV shows from Jellyfin, Emby, Plex, or TMDB.
+icon: https://media.sys.truenas.net/apps/swiparr/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- discovery
+- jellyfin
+- emby
+- plex
+home: https://swiparr.com
+screenshots: []
+train: community
+truenas_name: swiparr
+status: draft
+managed: generated
+upstream:
+  version: 1.0.3
+  app_version: 1.5.1
+  questions_sha: b2d575e5de03a97a145d7dd7e6eb2e9107eaa89ae5374a357ed56bdbad2ee715
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/swiparr
+notes: []

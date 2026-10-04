@@ -1,0 +1,25 @@
+title: Versity Gateway
+description: The Versity Gateway serves as a bridge between file based, POSIX, storage systems and applications
+  that rely on S3 object interfaces. It enables applications to interact with file storage using familiar
+  S3 operations like put and get, allowing for easy integration and compatibility.
+icon: https://media.sys.truenas.net/apps/versitygw/icons/icon.svg
+categories:
+- storage
+keywords:
+- storage
+- object-storage
+- S3
+- versity
+home: https://github.com/versity/versitygw
+screenshots: []
+train: community
+truenas_name: versitygw
+status: draft
+managed: generated
+upstream:
+  version: 1.1.15
+  app_version: v1.8.0
+  questions_sha: 77eff6f95595b7d030174c55094ba266f09e5832b1a447165b0b4451795aadc0
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/versitygw
+notes: []

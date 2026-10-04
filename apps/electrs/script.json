@@ -1,0 +1,31 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS electrs 1.1.10"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [50001]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/electrs"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/electrs/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "electrs": {"bitcoind_rpc_password": "$RANDOM_STRING(16)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/electrs/data)"
+    },
+    "network": {
+      "rpc_port": {"bind_mode": "published", "port_number": 50001}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

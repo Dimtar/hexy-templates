@@ -1,0 +1,26 @@
+title: TRAWL
+description: Self-hosted web scraping engine that bypasses JS challenges and captchas. A FlareSolverr
+  and Byparr drop-in replacement.
+icon: https://media.sys.truenas.net/apps/trawl/icons/icon.svg
+categories:
+- networking
+keywords:
+- networking
+- scraper
+- captcha
+- flaresolverr
+- prowlarr
+- jackett
+home: https://trawl.germondai.com/
+screenshots: []
+train: community
+truenas_name: trawl
+status: draft
+managed: generated
+upstream:
+  version: 1.0.14
+  app_version: 1.7.0
+  questions_sha: 8dcf15573181baef388a61afd678ce936dbe5684a30fec8d96a65a446a6b6254
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/trawl
+notes: []

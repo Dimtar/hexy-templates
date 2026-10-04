@@ -1,0 +1,35 @@
+title: ArchiveBox
+description: ArchiveBox is a powerful, self-hosted internet archiving solution to collect, save, and view
+  websites offline. Save pages as HTML, PDF, screenshots, WARC, and more.
+icon: https://media.sys.truenas.net/apps/archivebox/icons/icon.svg
+categories:
+- productivity
+keywords:
+- web
+- internet
+- bookmarks
+- links
+- rss
+- archive
+- archiving
+- wayback
+- preservation
+- scraping
+- chrome
+home: https://archivebox.io
+screenshots:
+- https://media.sys.truenas.net/apps/archivebox/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/archivebox/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/archivebox/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/archivebox/screenshots/screenshot4.png
+train: community
+truenas_name: archivebox
+status: draft
+managed: generated
+upstream:
+  version: 1.0.4
+  app_version: 0.9.71
+  questions_sha: c3ce549220866db807e529b654c9d9888a50f071c68ce87dbb02f4ab0bf07289
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/archivebox
+notes: []

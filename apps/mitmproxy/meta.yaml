@@ -1,0 +1,23 @@
+title: mitmproxy
+description: mitmproxy is your swiss-army knife for debugging, testing, privacy measurements, and penetration
+  testing.
+icon: https://media.sys.truenas.net/apps/mitmproxy/icons/icon.svg
+categories:
+- networking
+keywords:
+- mitmproxy
+- network
+- proxy
+home: https://mitmproxy.org
+screenshots: []
+train: community
+truenas_name: mitmproxy
+status: draft
+managed: generated
+upstream:
+  version: 1.1.9
+  app_version: 12.2.3
+  questions_sha: 423ce60dca935a758b6f99b6f829721c4e42ecec7fb8678d0b9b9fd462d8c63f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mitmproxy
+notes: []

@@ -1,0 +1,25 @@
+title: WordPress
+description: WordPress is a web content management system
+icon: https://media.sys.truenas.net/apps/wordpress/icons/icon.png
+categories:
+- productivity
+keywords:
+- cms
+- blog
+home: https://wordpress.org
+screenshots:
+- https://media.sys.truenas.net/apps/wordpress/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/wordpress/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/wordpress/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/wordpress/screenshots/screenshot4.png
+train: community
+truenas_name: wordpress
+status: draft
+managed: generated
+upstream:
+  version: 1.4.18
+  app_version: 7.1.2
+  questions_sha: ac1fdaad27e7403ffbe0e09e057a9f3380d9881eb8ac8f6623aa1d5d3d4be795
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/wordpress
+notes: []

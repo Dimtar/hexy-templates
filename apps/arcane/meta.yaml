@@ -1,0 +1,22 @@
+title: Arcane
+description: Modern Docker Management, Designed for Everyone
+icon: https://media.sys.truenas.net/apps/arcane/icons/icon.svg
+categories:
+- management
+keywords:
+- docker
+- compose
+home: https://getarcane.app/
+screenshots:
+- https://media.sys.truenas.net/apps/arcane/screenshots/screenshot1.png
+train: community
+truenas_name: arcane
+status: draft
+managed: generated
+upstream:
+  version: 1.0.96
+  app_version: v2.14.0
+  questions_sha: be89e1a12be4a549b7151df531910e93d76451027d74e4be0634b9dd4ed9c846
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/arcane
+notes: []

@@ -1,0 +1,21 @@
+title: Element Web
+description: Element-Web is a glossy Matrix collaboration client for the web.
+icon: https://media.sys.truenas.net/apps/element-web/icons/icon.svg
+categories:
+- productivity
+keywords:
+- chat
+- element
+home: https://element.io/
+screenshots: []
+train: community
+truenas_name: element-web
+status: draft
+managed: generated
+upstream:
+  version: 1.1.27
+  app_version: v1.12.30
+  questions_sha: 38924e2a05a260f6b769564a42e5908855ac0b29e404da80a5a641e3f42862ad
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/element-web
+notes: []

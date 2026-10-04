@@ -1,0 +1,31 @@
+title: Maintainerr
+description: Maintainerr is a media library maintenance tool for Plex, Jellyfin and Emby. Create custom
+  rules to find unused media, surface it in a collection for a grace period, then automatically clean
+  it up.
+icon: https://media.sys.truenas.net/apps/maintainerr/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- plex
+- jellyfin
+- emby
+home: https://maintainerr.info/
+screenshots:
+- https://media.sys.truenas.net/apps/maintainerr/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/maintainerr/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/maintainerr/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/maintainerr/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/maintainerr/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/maintainerr/screenshots/screenshot6.png
+train: community
+truenas_name: maintainerr
+status: draft
+managed: generated
+upstream:
+  version: 1.1.45
+  app_version: 3.30.0
+  questions_sha: 557ace39bf5642facdb7cbd85994b533b0f4f2a9431b8a6e1290fc4adc7f1d1a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/maintainerr
+notes: []

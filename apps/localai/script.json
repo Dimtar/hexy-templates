@@ -1,0 +1,46 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS localai 1.1.36"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30286]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/localai"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/localai/backends",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "backends"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/localai/models",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "models"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/localai/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "backends": "$HOST_PATH($LOCATION(ApplicationsPerformance)/localai/backends)",
+      "models": "$HOST_PATH($LOCATION(ApplicationsPerformance)/localai/models)",
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/localai/config)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30286}
+    },
+    "resources": {
+      "limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"},
+      "gpus": "$GPU_CONFIG()"
+    }
+  }
+}

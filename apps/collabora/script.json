@@ -1,0 +1,27 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS collabora 1.5.32"
+  },
+  "installation_questions": [
+    {
+      "question": "Server name",
+      "type": "text",
+      "key": "server_name",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": [],
+    "specifications": ["2CORE"],
+    "ports": [9980]
+  },
+  "app_values": {
+    "collabora": {"server_name": "$QUESTION(server_name)"},
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 9980}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

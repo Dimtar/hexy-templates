@@ -1,0 +1,49 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS stirling-pdf 1.1.32"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30124]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/stirling-pdf"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/stirling-pdf"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/stirling-pdf/tesseract_data",
+      "snapshot": {"id": "tesseract_data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/stirling-pdf/configs",
+      "snapshot": {"id": "configs"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/stirling-pdf/custom_files",
+      "snapshot": {"id": "custom_files"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/stirling-pdf/logs"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/stirling-pdf/pipeline",
+      "snapshot": {"id": "pipeline"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "tesseract_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/stirling-pdf/tesseract_data)",
+      "configs": "$HOST_PATH($LOCATION(ApplicationsPerformance)/stirling-pdf/configs)",
+      "custom_files": "$HOST_PATH($LOCATION(ApplicationsPerformance)/stirling-pdf/custom_files)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/stirling-pdf/logs)",
+      "pipeline": "$HOST_PATH($LOCATION(ApplicationsPerformance)/stirling-pdf/pipeline)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30124}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

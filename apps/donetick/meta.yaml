@@ -1,0 +1,21 @@
+title: Donetick
+description: Donetick is a self-hosted to-do list and habit tracker.
+icon: https://media.sys.truenas.net/apps/donetick/icons/icon.svg
+categories:
+- productivity
+keywords:
+- tasks
+- checklist
+home: https://github.com/donetick/donetick
+screenshots: []
+train: community
+truenas_name: donetick
+status: draft
+managed: generated
+upstream:
+  version: 1.1.12
+  app_version: v0.1.80
+  questions_sha: cfad4c6a19a8e0ceaaad0c1bd5083cda5242bdab29c0a25edc5dd7d83b2dd862
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/donetick
+notes: []

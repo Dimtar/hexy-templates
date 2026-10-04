@@ -1,0 +1,21 @@
+title: Ollama
+description: Get up and running with Llama 3.2, Mistral, Gemma 2, and other large language models.
+icon: https://media.sys.truenas.net/apps/ollama/icons/icon.png
+categories:
+- ai
+keywords:
+- ai
+- llm
+home: https://github.com/ollama/ollama
+screenshots: []
+train: community
+truenas_name: ollama
+status: draft
+managed: generated
+upstream:
+  version: 1.2.70
+  app_version: 0.35.1
+  questions_sha: fea497a9baf681a80277a137457dd5f7b49340843e830e55269bc09aa548a730
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/ollama
+notes: []

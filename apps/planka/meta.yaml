@@ -1,0 +1,23 @@
+title: Planka
+description: Planka is an Elegant open source project tracking
+icon: https://media.sys.truenas.net/apps/planka/icons/icon.png
+categories:
+- productivity
+keywords:
+- kanban
+- project
+- task
+home: https://github.com/plankanban/planka
+screenshots:
+- https://media.sys.truenas.net/apps/planka/screenshots/screenshot1.png
+train: community
+truenas_name: planka
+status: draft
+managed: generated
+upstream:
+  version: 2.3.34
+  app_version: 2.2.1
+  questions_sha: 963a27cb5609da7caff0510e6e3d24210b58059d106d9cf30580866a68056e2a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/planka
+notes: []

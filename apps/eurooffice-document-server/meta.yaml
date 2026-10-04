@@ -1,0 +1,22 @@
+title: EuroOffice Document Server
+description: Your sovereign office
+icon: https://media.sys.truenas.net/apps/eurooffice-document-server/icons/icon.svg
+categories:
+- productivity
+keywords:
+- document
+- server
+- office
+home: https://github.com/Euro-Office
+screenshots: []
+train: community
+truenas_name: eurooffice-document-server
+status: draft
+managed: generated
+upstream:
+  version: 1.0.14
+  app_version: v9.3.4
+  questions_sha: fefed9cb25df4faf1ea18360dc0b8e06589a791e937ba061d00d17a2b9439042
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/eurooffice-document-server
+notes: []

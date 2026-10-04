@@ -1,0 +1,27 @@
+title: Netboot.xyz
+description: netboot.xyz lets you PXE boot various operating system installers or utilities from a single
+  tool over the network.
+icon: https://media.sys.truenas.net/apps/netbootxyz/icons/icon.png
+categories:
+- networking
+keywords:
+- tftp
+- network
+- pxe
+- netboot
+- netbootxyz
+- netboot.xyz
+home: https://netboot.xyz
+screenshots:
+- https://media.sys.truenas.net/apps/netbootxyz/screenshots/screenshot1.jpg
+train: community
+truenas_name: netbootxyz
+status: draft
+managed: generated
+upstream:
+  version: 1.3.9
+  app_version: 0.7.6-nbxyz24
+  questions_sha: 3244c6d17104a06b9e98a368efadb4364042a4b66b6311d449f1ac57eaf04f2d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/netbootxyz
+notes: []

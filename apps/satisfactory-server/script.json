@@ -1,0 +1,31 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS satisfactory-server 1.1.7"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [7777, 8888]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/satisfactory-server"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/satisfactory-server/config",
+      "snapshot": {"id": "config"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/satisfactory-server/config)"
+    },
+    "network": {
+      "game_port": {"bind_mode": "published", "port_number": 7777},
+      "messaging_port": {"bind_mode": "published", "port_number": 8888}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

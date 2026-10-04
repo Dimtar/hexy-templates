@@ -1,0 +1,26 @@
+title: evcc
+description: evcc is an extensible EV Charge Controller and Home Energy Management System with support
+  for solar charging.
+icon: https://media.sys.truenas.net/apps/evcc/icons/icon.svg
+categories:
+- home-automation
+keywords:
+- ev
+- electric vehicle
+- charging
+- solar
+- home-automation
+- energy-management
+home: https://evcc.io
+screenshots: []
+train: community
+truenas_name: evcc
+status: draft
+managed: generated
+upstream:
+  version: 1.0.40
+  app_version: 0.316.1
+  questions_sha: afcfff49ce2a4c7999e1b034020ea9cf13097f7464169f2816fd89d13796f344
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/evcc
+notes: []

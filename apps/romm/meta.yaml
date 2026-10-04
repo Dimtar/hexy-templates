@@ -1,0 +1,27 @@
+title: RomM
+description: RomM allows you to scan, enrich, browse and play your game collection with a clean and responsive
+  interface. With support for multiple platforms, various naming schemes, and custom tags, RomM is a must-have
+  for anyone who plays on emulators.
+icon: https://media.sys.truenas.net/apps/romm/icons/icon.png
+categories:
+- games
+keywords:
+- romm
+- rom
+- manager
+- emulator
+home: https://romm.app
+screenshots:
+- https://media.sys.truenas.net/apps/romm/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/romm/screenshots/screenshot2.png
+train: community
+truenas_name: romm
+status: draft
+managed: generated
+upstream:
+  version: 1.2.46
+  app_version: 5.3.1
+  questions_sha: 8a4d3a8e07293010a937630a978386f2c6f8ac16f53d079929c60eaaad5a09fc
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/romm
+notes: []

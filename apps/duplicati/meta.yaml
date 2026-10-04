@@ -1,0 +1,20 @@
+title: Duplicati
+description: Store securely encrypted backups in the cloud!
+icon: https://media.sys.truenas.net/apps/duplicati/icons/icon.png
+categories:
+- backup
+keywords:
+- backup
+home: http://duplicati.com
+screenshots: []
+train: community
+truenas_name: duplicati
+status: draft
+managed: generated
+upstream:
+  version: 1.1.13
+  app_version: 2.4.0.0-stable
+  questions_sha: 8a49fc4c59545a05b4d1f86f3463cc0ef0e231b8f5f65e10e3874f113127e8ce
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/duplicati
+notes: []

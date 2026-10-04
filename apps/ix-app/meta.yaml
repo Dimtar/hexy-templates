@@ -1,0 +1,19 @@
+title: iX App
+description: An application for deploying simple containers.
+icon: https://media.sys.truenas.net/apps/ix-app/icons/icon.webp
+categories:
+- custom
+keywords: []
+home: https://www.truenas.com/
+screenshots: []
+train: stable
+truenas_name: ix-app
+status: draft
+managed: generated
+upstream:
+  version: 1.4.4
+  app_version: 1.4.3
+  questions_sha: 6e9ec3c4372c59c8f9e4a4161d85069354ad34c289ecd4753033c34828d2db0c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/ix-app
+notes: []

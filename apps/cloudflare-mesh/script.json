@@ -1,0 +1,35 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS cloudflare-mesh 1.0.1"
+  },
+  "installation_questions": [
+    {
+      "question": "Mesh token",
+      "type": "password",
+      "key": "mesh_token",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/cloudflare-mesh"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/cloudflare-mesh/config",
+      "snapshot": {"id": "config"}
+    }
+  ],
+  "app_values": {
+    "cloudflare_mesh": {"mesh_token": "$QUESTION(mesh_token)"},
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/cloudflare-mesh/config)"
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

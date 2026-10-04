@@ -1,0 +1,20 @@
+title: Sure
+description: The personal finance app for everyone.
+icon: https://media.sys.truenas.net/apps/sure/icons/icon.svg
+categories:
+- financial
+keywords:
+- finance
+home: https://sure.am/
+screenshots: []
+train: community
+truenas_name: sure
+status: draft
+managed: generated
+upstream:
+  version: 1.0.35
+  app_version: 0.7.5
+  questions_sha: e0b40178f09c54ac7d443f0f24eddd134bbf1410490b64ea045b9604649657fa
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/sure
+notes: []

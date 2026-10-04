@@ -1,0 +1,22 @@
+title: Wizarr
+description: Wizarr is an advanced user invitation and management system for Jellyfin, Plex, Emby etc.
+icon: https://media.sys.truenas.net/apps/wizarr/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- invitation
+- management
+home: https://github.com/wizarrrr/wizarr
+screenshots: []
+train: community
+truenas_name: wizarr
+status: draft
+managed: generated
+upstream:
+  version: 1.1.14
+  app_version: v2026.9.1
+  questions_sha: b01eaa9f548378d2d983dd91f65dcfaefa9cefa1ede7066124affc7118b07c08
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/wizarr
+notes: []

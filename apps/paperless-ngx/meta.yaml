@@ -1,0 +1,30 @@
+title: Paperless-ngx
+description: Paperless-ngx is a document management system that transforms your physical documents into
+  a searchable online archive so you can keep, well, less paper.
+icon: https://media.sys.truenas.net/apps/paperless-ngx/icons/icon.svg
+categories:
+- productivity
+keywords:
+- document
+- management
+home: https://docs.paperless-ngx.com
+screenshots:
+- https://media.sys.truenas.net/apps/paperless-ngx/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/paperless-ngx/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/paperless-ngx/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/paperless-ngx/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/paperless-ngx/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/paperless-ngx/screenshots/screenshot6.png
+- https://media.sys.truenas.net/apps/paperless-ngx/screenshots/screenshot7.png
+- https://media.sys.truenas.net/apps/paperless-ngx/screenshots/screenshot8.png
+train: community
+truenas_name: paperless-ngx
+status: draft
+managed: generated
+upstream:
+  version: 1.6.56
+  app_version: 3.2.1
+  questions_sha: 2d2ff355fa1d3757a884d7f5c3589d263786dce3289734ed313fa0596e76be49
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/paperless-ngx
+notes: []

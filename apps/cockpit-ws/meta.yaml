@@ -1,0 +1,20 @@
+title: Cockpit WS
+description: Cockpit is a web-based graphical interface for Linux servers.
+icon: https://media.sys.truenas.net/apps/cockpit-ws/icons/icon.png
+categories:
+- management
+keywords:
+- cockpit
+home: https://cockpit-project.org/
+screenshots: []
+train: community
+truenas_name: cockpit-ws
+status: draft
+managed: generated
+upstream:
+  version: 1.1.17
+  app_version: '367'
+  questions_sha: 07162bd6c86316abc24841bfeb50eac7cd2185e38a4cb3b01821dae4c9d5f580
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cockpit-ws
+notes: []

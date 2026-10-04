@@ -1,0 +1,20 @@
+title: Signal CLI REST API
+description: This project creates a small dockerized REST API around signal-cli.
+icon: https://media.sys.truenas.net/apps/signal-cli-rest-api/icons/icon.svg
+categories:
+- productivity
+keywords:
+- signal
+home: https://github.com/bbernhard/signal-cli-rest-api
+screenshots: []
+train: community
+truenas_name: signal-cli-rest-api
+status: draft
+managed: generated
+upstream:
+  version: 1.1.12
+  app_version: '0.101'
+  questions_sha: 672e7f25cabafcda093b92e4cbaf8147352701b6222db1f3d8ca547095fa9cff
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/signal-cli-rest-api
+notes: []

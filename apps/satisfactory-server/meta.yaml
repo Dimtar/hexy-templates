@@ -1,0 +1,22 @@
+title: Satisfactory Server
+description: A Dockerized version of the Satisfactory dedicated server
+icon: https://media.sys.truenas.net/apps/satisfactory-server/icons/icon.png
+categories:
+- games
+keywords:
+- games
+- server
+- satisfactory
+home: https://github.com/wolveix/satisfactory-server
+screenshots: []
+train: community
+truenas_name: satisfactory-server
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: v1.9.10
+  questions_sha: 9cac2ce94402005c07766abf3747a0004f7fda9e7ebd1adc99764eb9b2ab0a02
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/satisfactory-server
+notes: []

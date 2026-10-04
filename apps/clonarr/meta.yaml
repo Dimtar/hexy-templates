@@ -1,0 +1,23 @@
+title: Clonarr
+description: Sync, build and manage quality profiles and custom formats for Radarr and Sonarr - powered
+  by TRaSH Guides.
+icon: https://media.sys.truenas.net/apps/clonarr/icons/icon.png
+categories:
+- media
+keywords:
+- sync
+- sonarr
+- radarr
+home: https://github.com/ProphetSe7en/clonarr
+screenshots: []
+train: community
+truenas_name: clonarr
+status: draft
+managed: generated
+upstream:
+  version: 1.0.9
+  app_version: v3.4.0
+  questions_sha: 490304b163757f2a697eafffe5c705236d0cf0dadcb0e0b322f6ba0a8c4ff1df
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/clonarr
+notes: []

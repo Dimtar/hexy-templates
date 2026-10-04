@@ -1,0 +1,47 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS opencloud 1.2.37"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30259]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/opencloud"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/opencloud/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/opencloud/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/opencloud/radicale_data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "radicale_data"}
+    }
+  ],
+  "app_values": {
+    "opencloud": {
+      "app_url": "http://$SERVER_LAN_IP:30259",
+      "jwt_secret": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/opencloud/config)",
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/opencloud/data)",
+      "radicale_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/opencloud/radicale_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30259}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

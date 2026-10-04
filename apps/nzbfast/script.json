@@ -1,0 +1,52 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS nzbfast 1.0.12"
+  },
+  "installation_questions": [
+    {
+      "question": "Api key",
+      "type": "password",
+      "key": "api_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Downloads", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30474]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/nzbfast"},
+    {"path": "$LOCATION(Downloads)", "network_share": true},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/nzbfast/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/nzbfast/watch",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "watch"}
+    }
+  ],
+  "app_values": {
+    "nzbfast": {"api_key": "$QUESTION(api_key)"},
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nzbfast/config)",
+      "downloads": "$HOST_PATH($LOCATION(Downloads))",
+      "watch": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nzbfast/watch)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30474}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

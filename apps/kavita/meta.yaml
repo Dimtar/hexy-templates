@@ -1,0 +1,26 @@
+title: Kavita
+description: Kavita is a fast, feature rich, cross platform reading server.
+icon: https://media.sys.truenas.net/apps/kavita/icons/icon.png
+categories:
+- media
+keywords:
+- ebook
+- manga
+home: https://www.kavitareader.com/
+screenshots:
+- https://media.sys.truenas.net/apps/kavita/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/kavita/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/kavita/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/kavita/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/kavita/screenshots/screenshot5.png
+train: community
+truenas_name: kavita
+status: draft
+managed: generated
+upstream:
+  version: 1.3.10
+  app_version: 0.9.1
+  questions_sha: d5f98e4bc8575ac7319c1ac52f174cb759c643d27bce0707d3d46c219774846c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/kavita
+notes: []

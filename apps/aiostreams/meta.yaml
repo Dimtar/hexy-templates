@@ -1,0 +1,23 @@
+title: AIOStreams
+description: AIOStreams consolidates multiple Stremio addons and debrid services into a single, highly
+  customisable super-addon.
+icon: https://media.sys.truenas.net/apps/aiostreams/icons/icon.svg
+categories:
+- media
+keywords:
+- aiostreams
+- stremio
+- media
+home: https://github.com/Viren070/AIOStreams
+screenshots: []
+train: community
+truenas_name: aiostreams
+status: draft
+managed: generated
+upstream:
+  version: 1.0.42
+  app_version: v2.35.8
+  questions_sha: 297764bd41d48de068a8ded7ff1dff867f060f52850bd9e196c0e6e3b3fbd21a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/aiostreams
+notes: []

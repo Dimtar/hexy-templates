@@ -1,0 +1,22 @@
+title: TVHeadend
+description: TVHeadend works as a proxy server, is a TV streaming server and recorder
+icon: https://media.sys.truenas.net/apps/tvheadend/icons/icon.svg
+categories:
+- media
+keywords:
+- tvheadend
+- livetv
+- streaming
+home: https://tvheadend.org
+screenshots: []
+train: community
+truenas_name: tvheadend
+status: draft
+managed: generated
+upstream:
+  version: 1.1.19
+  app_version: 5ce3ff63-ls286
+  questions_sha: 9bfe748e893177bbd12bdddad9d51577f847eacfa14dcde661d7b39bade98065
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tvheadend
+notes: []

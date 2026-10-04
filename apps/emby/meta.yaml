@@ -1,0 +1,29 @@
+title: Emby Server
+description: Emby is designed to help you manage your personal media library, such as home videos and
+  photos
+icon: https://media.sys.truenas.net/apps/emby/icons/icon.png
+categories:
+- media
+keywords:
+- emby
+- media
+- entertainment
+- movies
+- series
+- tv
+- streaming
+home: https://emby.media/
+screenshots:
+- https://media.sys.truenas.net/apps/emby/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/emby/screenshots/screenshot2.png
+train: stable
+truenas_name: emby
+status: draft
+managed: generated
+upstream:
+  version: 1.4.9
+  app_version: 4.10.1.0
+  questions_sha: 0a4837a1ec4c97d14f5cb88bc45832f7ae3be7f558ef9630ad0f80c2e229f420
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/emby
+notes: []

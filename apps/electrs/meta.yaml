@@ -1,0 +1,23 @@
+title: Electrs
+description: An efficient re-implementation of Electrum Server in Rust.
+icon: https://media.sys.truenas.net/apps/electrs/icons/icon.svg
+categories:
+- financial
+keywords:
+- bitcoin
+- electrum
+- cryptocurrency
+- blockchain
+home: https://github.com/romanz/electrs/
+screenshots: []
+train: community
+truenas_name: electrs
+status: draft
+managed: generated
+upstream:
+  version: 1.1.10
+  app_version: v0.12.0
+  questions_sha: 95f0f5ea5566347474c28393c6feb51ea9a54777dfd85507e430553ad48d20a1
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/electrs
+notes: []

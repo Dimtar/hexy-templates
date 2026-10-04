@@ -1,0 +1,22 @@
+title: Music Assistant
+description: Music Assistant is a music library manager for your offline and online music sources which
+  can easily stream your favourite music to a wide range of supported players and be combined with the
+  power of Home Assistant!
+icon: https://media.sys.truenas.net/apps/music-assistant/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+home: https://www.music-assistant.io
+screenshots: []
+train: community
+truenas_name: music-assistant
+status: draft
+managed: generated
+upstream:
+  version: 1.1.44
+  app_version: 2.10.5
+  questions_sha: b3d841ded8baec23cd6c1c8ce8b9e33f2c5349d851d3d67351a555f3178d9b08
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/music-assistant
+notes: []

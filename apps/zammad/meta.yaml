@@ -1,0 +1,24 @@
+title: Zammad
+description: Zammad is a web based open source helpdesk/customer support system.
+icon: https://media.sys.truenas.net/apps/zammad/icons/icon.svg
+categories:
+- productivity
+keywords:
+- helpdesk
+- support
+- ticket
+- customer
+- service
+home: https://zammad.org/
+screenshots: []
+train: community
+truenas_name: zammad
+status: draft
+managed: generated
+upstream:
+  version: 1.2.69
+  app_version: 7.2.0-0022
+  questions_sha: f100493483e67f200a1921ef6672e1172abc2da61d8ecabed7133cbce63a19a9
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/zammad
+notes: []

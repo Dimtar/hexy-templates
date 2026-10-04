@@ -1,0 +1,23 @@
+title: Kiwix Server
+description: Kiwix Server is a ZIM compatible Web server.
+icon: https://media.sys.truenas.net/apps/kiwix-server/icons/icon.svg
+categories:
+- media
+keywords:
+- kiwix
+- server
+- zim
+- wiki
+home: https://github.com/kiwix/kiwix-tools
+screenshots: []
+train: community
+truenas_name: kiwix-server
+status: draft
+managed: generated
+upstream:
+  version: 1.1.8
+  app_version: 3.8.2
+  questions_sha: 696136f77d2e4aa253f72aedc207dd4c143cc683e6655611e5abeefe54586173
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/kiwix-server
+notes: []

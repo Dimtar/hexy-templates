@@ -1,0 +1,58 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS invoice-ninja 1.2.25"
+  },
+  "installation_questions": [
+    {
+      "question": "Initial user email",
+      "type": "text",
+      "key": "initial_user_email",
+      "required": true
+    },
+    {
+      "question": "Initial user password",
+      "type": "password",
+      "key": "initial_user_password",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [31105]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/invoice-ninja"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/invoice-ninja/storage",
+      "snapshot": {"id": "storage"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/invoice-ninja/mariadb_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "mariadb_data"}
+    }
+  ],
+  "app_values": {
+    "invoice_ninja": {
+      "db_password": "$RANDOM_STRING(16)",
+      "db_root_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "app_key": "$RANDOM_STRING(32)",
+      "initial_user_email": "$QUESTION(initial_user_email)",
+      "initial_user_password": "$QUESTION(initial_user_password)"
+    },
+    "storage": {
+      "storage": "$HOST_PATH($LOCATION(ApplicationsPerformance)/invoice-ninja/storage)",
+      "mariadb_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/invoice-ninja/mariadb_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 31105}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,25 @@
+title: KeePass DeltaSync
+description: End-to-end encrypted delta-sync server for KeePass kdbx databases.
+icon: https://media.sys.truenas.net/apps/keepass-deltasync/icons/icon.svg
+categories:
+- security
+keywords:
+- password
+- manager
+- sync
+home: https://deltasync.org
+screenshots:
+- https://media.sys.truenas.net/apps/keepass-deltasync/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/keepass-deltasync/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/keepass-deltasync/screenshots/screenshot3.png
+train: community
+truenas_name: keepass-deltasync
+status: draft
+managed: generated
+upstream:
+  version: 1.0.6
+  app_version: 0.6.0
+  questions_sha: f1ad32941267769157ed2b562e1531dbf2ee2b84b76dfd402b33ecad0d90a570
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/keepass-deltasync
+notes: []

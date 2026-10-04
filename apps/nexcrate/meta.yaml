@@ -1,0 +1,33 @@
+title: nexcrate
+description: Movies, shows and music in one app, in place of Radarr, Sonarr and Lidarr. A movie or a show
+  can have several versions, such as Full HD and 4K, each with its own profile and folder. Profiles from
+  everyday questions with the TRaSH Guides rules inside, search over Newznab and Torznab indexers, downloads
+  through the usual Usenet and torrent clients, and a switch-over from an existing Radarr, Sonarr and
+  Lidarr.
+icon: https://media.sys.truenas.net/apps/nexcrate/icons/icon.png
+categories:
+- media
+keywords:
+- movies
+- shows
+- music
+- radarr
+- sonarr
+- lidarr
+- media
+home: https://github.com/DerKezorm/nexcrate
+screenshots:
+- https://media.sys.truenas.net/apps/nexcrate/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/nexcrate/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/nexcrate/screenshots/screenshot3.jpg
+train: community
+truenas_name: nexcrate
+status: draft
+managed: generated
+upstream:
+  version: 1.0.5
+  app_version: 0.4.1
+  questions_sha: eed208d9d8f4480659db9c37098062feac5ed8098d9d6c350a1743b4f030e9c7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nexcrate
+notes: []

@@ -1,0 +1,20 @@
+title: Zerobyte
+description: Backup automation for self-hosters
+icon: https://media.sys.truenas.net/apps/zerobyte/icons/icon.svg
+categories:
+- storage
+keywords:
+- backup
+home: https://github.com/nicotsx/zerobyte
+screenshots: []
+train: community
+truenas_name: zerobyte
+status: draft
+managed: generated
+upstream:
+  version: 1.1.35
+  app_version: v0.43.2
+  questions_sha: 41a5354d149c2c2c0c53948716ed50394b1c0da4330162bd3dabd5521057ec72
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/zerobyte
+notes: []

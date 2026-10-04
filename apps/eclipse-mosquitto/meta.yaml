@@ -1,0 +1,21 @@
+title: Eclipse Mosquitto
+description: Eclipse Mosquitto is an open source MQTT broker
+icon: https://media.sys.truenas.net/apps/eclipse-mosquitto/icons/icon.svg
+categories:
+- networking
+keywords:
+- networking
+- mqtt
+home: https://mosquitto.org/
+screenshots: []
+train: community
+truenas_name: eclipse-mosquitto
+status: draft
+managed: generated
+upstream:
+  version: 1.2.8
+  app_version: 2.0.22
+  questions_sha: 07b53dd8b5ab5ee877717cd81c5e0f53be1bb091175d77857d4e635a4f7cf4f7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/eclipse-mosquitto
+notes: []

@@ -1,0 +1,21 @@
+title: Byparr
+description: Byparr is a FlareSolverr drop-in replacement with FastAPI and nodriver
+icon: https://media.sys.truenas.net/apps/byparr/icons/icon.png
+categories:
+- networking
+keywords:
+- networking
+- captcha
+home: https://github.com/ThePhaseless/Byparr
+screenshots: []
+train: community
+truenas_name: byparr
+status: draft
+managed: generated
+upstream:
+  version: 1.1.10
+  app_version: 3.0.4
+  questions_sha: b98c294e46221dbce13a560ccd9525c953b5d9abaebaeb859b203405e24f92aa
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/byparr
+notes: []

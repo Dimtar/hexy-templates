@@ -1,0 +1,35 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS rust-desk-relay 1.0.15"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [21117, 21119]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/rust-desk-relay"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/rust-desk-relay/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/rust-desk-relay/data)"
+    },
+    "network": {
+      "relay_port": {"bind_mode": "published", "port_number": 21117},
+      "relay_web_clients_port": {
+        "bind_mode": "published",
+        "port_number": 21119
+      }
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

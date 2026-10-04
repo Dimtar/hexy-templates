@@ -1,0 +1,20 @@
+title: Postgres
+description: The PostgreSQL object-relational database system provides reliability and data integrity.
+icon: https://media.sys.truenas.net/apps/postgres/icons/icon.png
+categories:
+- database
+keywords:
+- database
+home: https://www.postgresql.org
+screenshots: []
+train: community
+truenas_name: postgres
+status: draft
+managed: generated
+upstream:
+  version: 1.5.32
+  app_version: 18.6-trixie
+  questions_sha: e9d353988e34d80cef52191e16d0409a495545b91c0673171a4831377a9b4c65
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/postgres
+notes: []

@@ -1,0 +1,36 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS adguard-home 1.3.16"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30004, 53]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/adguard-home"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/adguard-home/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/adguard-home/work",
+      "snapshot": {"id": "work"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/adguard-home/config)",
+      "work": "$HOST_PATH($LOCATION(ApplicationsPerformance)/adguard-home/work)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30004},
+      "dns_port": {"bind_mode": "published", "port_number": 53}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

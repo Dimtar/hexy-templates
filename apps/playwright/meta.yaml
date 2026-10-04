@@ -1,0 +1,26 @@
+title: Playwright
+description: Playwright enables reliable end-to-end testing for modern web apps.
+icon: https://media.sys.truenas.net/apps/playwright/icons/icon.svg
+categories:
+- development
+keywords:
+- development
+- testing
+- automation
+home: https://playwright.dev/
+screenshots:
+- https://media.sys.truenas.net/apps/playwright/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/playwright/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/playwright/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/playwright/screenshots/screenshot4.png
+train: community
+truenas_name: playwright
+status: draft
+managed: generated
+upstream:
+  version: 1.1.17
+  app_version: v1.63.0-noble
+  questions_sha: 046549a4763c3193b4e4b9376c930cee463489a80c57a70657b8567484ef4c61
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/playwright
+notes: []

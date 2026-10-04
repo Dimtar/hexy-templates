@@ -1,0 +1,54 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS authentik 1.3.47"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30140, 30141]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/authentik"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/authentik/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/authentik/templates",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "templates"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/authentik/certs",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "certs"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/authentik/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "authentik": {
+      "db_password": "$RANDOM_STRING(16)",
+      "secret_key": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/authentik/data)",
+      "templates": "$HOST_PATH($LOCATION(ApplicationsPerformance)/authentik/templates)",
+      "certs": "$HOST_PATH($LOCATION(ApplicationsPerformance)/authentik/certs)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/authentik/postgres_data)"
+    },
+    "network": {
+      "http_port": {"bind_mode": "published", "port_number": 30140},
+      "https_port": {"bind_mode": "published", "port_number": 30141}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

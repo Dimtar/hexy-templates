@@ -1,0 +1,22 @@
+title: Kasm Workspaces
+description: Kasm Workspaces is a docker container streaming platform for delivering browser-based access
+  to desktops, applications, and web services.
+icon: https://media.sys.truenas.net/apps/kasm-workspaces/icons/icon.png
+categories:
+- productivity
+keywords:
+- kasm
+- workspaces
+home: https://www.kasmweb.com
+screenshots: []
+train: community
+truenas_name: kasm-workspaces
+status: draft
+managed: generated
+upstream:
+  version: 1.1.10
+  app_version: 1.19.0
+  questions_sha: 1b00dd53293909fa0c08f629c23b1260b601ffbb2b416592a7cf9d9cc533967b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/kasm-workspaces
+notes: []

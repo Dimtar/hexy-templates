@@ -1,0 +1,27 @@
+title: Komodo
+description: Komodo is a tool to build and deploy software across many servers.
+icon: https://media.sys.truenas.net/apps/komodo/icons/icon.svg
+categories:
+- productivity
+keywords:
+- deployment
+home: https://komo.do
+screenshots:
+- https://media.sys.truenas.net/apps/komodo/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/komodo/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/komodo/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/komodo/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/komodo/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/komodo/screenshots/screenshot6.png
+- https://media.sys.truenas.net/apps/komodo/screenshots/screenshot7.png
+train: community
+truenas_name: komodo
+status: draft
+managed: generated
+upstream:
+  version: 1.3.21
+  app_version: 2.3.3
+  questions_sha: 063e074053b63992fef9628813715a8bf810bc10b5ac24cd34f16e1760498b4c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/komodo
+notes: []

@@ -1,0 +1,21 @@
+title: Memcached
+description: Memcached is a high-performance, distributed memory object caching system.
+icon: https://media.sys.truenas.net/apps/memcached/icons/icon.png
+categories:
+- database
+keywords:
+- database
+- cache
+home: https://memcached.org/
+screenshots: []
+train: community
+truenas_name: memcached
+status: draft
+managed: generated
+upstream:
+  version: 1.1.12
+  app_version: 1.6.45
+  questions_sha: 8f0ca93f65d488e6a7704abbe99f8231bd82e6bb586ab15f7328f6240c91887e
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/memcached
+notes: []

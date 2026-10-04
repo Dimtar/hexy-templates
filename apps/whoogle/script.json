@@ -1,0 +1,11 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS whoogle 1.3.9"
+  },
+  "requirements": {"locations": [], "specifications": ["2CORE"]},
+  "app_values": {
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

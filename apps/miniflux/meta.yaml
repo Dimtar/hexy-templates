@@ -1,0 +1,21 @@
+title: Miniflux
+description: Miniflux is a minimalist and opinionated feed reader.
+icon: https://media.sys.truenas.net/apps/miniflux/icons/icon.svg
+categories:
+- productivity
+keywords:
+- rss
+- news
+home: https://miniflux.app
+screenshots: []
+train: community
+truenas_name: miniflux
+status: draft
+managed: generated
+upstream:
+  version: 1.2.37
+  app_version: 2.3.3
+  questions_sha: 0d5d72e0f8a63e3676b4e7e5eabe569ec6692a67e4cc096a6c487b5afd913260
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/miniflux
+notes: []

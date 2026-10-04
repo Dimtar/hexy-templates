@@ -1,0 +1,29 @@
+title: nexmail
+description: Self-hosted email client in the browser. Brings several IMAP mailboxes together in one window,
+  with a calendar over CalDAV, address books over CardDAV, rules, labels and scheduled sending, in a single
+  container with one SQLite database.
+icon: https://media.sys.truenas.net/apps/nexmail/icons/icon.png
+categories:
+- productivity
+keywords:
+- email
+- imap
+- calendar
+- contacts
+- webmail
+home: https://nexmail.nexapps.dev
+screenshots:
+- https://media.sys.truenas.net/apps/nexmail/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/nexmail/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/nexmail/screenshots/screenshot3.jpg
+train: community
+truenas_name: nexmail
+status: draft
+managed: generated
+upstream:
+  version: 1.0.8
+  app_version: 0.20.0
+  questions_sha: 3a364eb9730563c9ee3f8f94f354f5e7f594f249be3b6c589230c54c9bce2c37
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nexmail
+notes: []

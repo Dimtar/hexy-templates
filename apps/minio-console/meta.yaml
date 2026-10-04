@@ -1,0 +1,24 @@
+title: MinIO Console
+description: Simple UI for MinIO Object Storage
+icon: https://media.sys.truenas.net/apps/minio-console/icons/icon.png
+categories:
+- storage
+keywords:
+- minio
+- console
+home: https://github.com/huncrys/minio-console
+screenshots:
+- https://media.sys.truenas.net/apps/minio-console/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/minio-console/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/minio-console/screenshots/screenshot3.png
+train: community
+truenas_name: minio-console
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: v1.8.1
+  questions_sha: 65d65bd6dfd5614d62759ba1e39c76eaf2089c7f45af56746ec504134e190f64
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/minio-console
+notes: []

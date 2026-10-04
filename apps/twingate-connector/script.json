@@ -1,0 +1,36 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS twingate-connector 1.1.16"
+  },
+  "installation_questions": [
+    {
+      "question": "Network name",
+      "type": "text",
+      "key": "network_name",
+      "required": true
+    },
+    {
+      "question": "Access token",
+      "type": "password",
+      "key": "access_token",
+      "required": true
+    },
+    {
+      "question": "Refresh token",
+      "type": "password",
+      "key": "refresh_token",
+      "required": true
+    }
+  ],
+  "requirements": {"locations": [], "specifications": ["2CORE"]},
+  "app_values": {
+    "twingate": {
+      "network_name": "$QUESTION(network_name)",
+      "access_token": "$QUESTION(access_token)",
+      "refresh_token": "$QUESTION(refresh_token)"
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

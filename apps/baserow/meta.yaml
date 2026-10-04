@@ -1,0 +1,25 @@
+title: Baserow
+description: Baserow is an open source no-code database and Airtable alternative. Create your own database
+  without technical experience. Our user friendly no-code tool gives you the powers of a developer without
+  leaving your browser.
+icon: https://media.sys.truenas.net/apps/baserow/icons/icon.svg
+categories:
+- productivity
+keywords:
+- database
+- airtable
+- webui
+- no-code
+home: https://baserow.io
+screenshots: []
+train: community
+truenas_name: baserow
+status: draft
+managed: generated
+upstream:
+  version: 1.2.49
+  app_version: 2.4.0
+  questions_sha: 17debc4c7a3cc8ffde063095823acaffd2fa646589b7f305b5df10d5917b03a9
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/baserow
+notes: []

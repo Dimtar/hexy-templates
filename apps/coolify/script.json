@@ -1,0 +1,92 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS coolify 1.2.67"
+  },
+  "installation_questions": [
+    {
+      "question": "App id",
+      "type": "password",
+      "key": "app_id",
+      "required": true
+    },
+    {
+      "question": "Pusher app id",
+      "type": "password",
+      "key": "pusher_app_id",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30275, 30276, 30277]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/coolify"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/coolify"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/coolify/ssh_keys",
+      "snapshot": {"id": "ssh_keys"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/coolify/applications",
+      "snapshot": {"id": "applications"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/coolify/databases",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "databases"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/coolify/services",
+      "snapshot": {"id": "services"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/coolify/backups"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/coolify/webhooks_maintenance",
+      "snapshot": {"id": "webhooks_maintenance"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/coolify/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "coolify": {
+      "db_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "app_id": "$QUESTION(app_id)",
+      "app_key": "$RANDOM_STRING(32)",
+      "pusher_app_id": "$QUESTION(pusher_app_id)",
+      "pusher_app_key": "$RANDOM_STRING(32)",
+      "pusher_app_secret": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "ssh_keys": "$HOST_PATH($LOCATION(ApplicationsPerformance)/coolify/ssh_keys)",
+      "applications": "$HOST_PATH($LOCATION(ApplicationsPerformance)/coolify/applications)",
+      "databases": "$HOST_PATH($LOCATION(ApplicationsPerformance)/coolify/databases)",
+      "services": "$HOST_PATH($LOCATION(ApplicationsPerformance)/coolify/services)",
+      "backups": "$HOST_PATH($LOCATION(ApplicationsCapacity)/coolify/backups)",
+      "webhooks_maintenance": "$HOST_PATH($LOCATION(ApplicationsPerformance)/coolify/webhooks_maintenance)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/coolify/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30275},
+      "realtime_backend_port": {
+        "bind_mode": "published",
+        "port_number": 30276
+      },
+      "realtime_websocket_port": {
+        "bind_mode": "published",
+        "port_number": 30277
+      }
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

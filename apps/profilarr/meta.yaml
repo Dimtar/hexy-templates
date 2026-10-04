@@ -1,0 +1,21 @@
+title: Profilarr
+description: Profilarr is a Configuration Management Platform for Radarr/Sonarr
+icon: https://media.sys.truenas.net/apps/profilarr/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- management
+home: https://dictionarry.dev/
+screenshots: []
+train: community
+truenas_name: profilarr
+status: draft
+managed: generated
+upstream:
+  version: 2.0.10
+  app_version: 2.2.0
+  questions_sha: b9319c0525422c75bb9a42c81a7c8d0de5e69c5b7e6936584e25e48a34632abe
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/profilarr
+notes: []

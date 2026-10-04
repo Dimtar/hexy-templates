@@ -1,0 +1,23 @@
+title: FreeListen
+description: Search MusicBrainz or a Spotify playlist and save tagged audio files to your library
+icon: https://media.sys.truenas.net/apps/freelisten/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- music
+home: https://github.com/Alextheguy1/FreeListen
+screenshots:
+- https://media.sys.truenas.net/apps/freelisten/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/freelisten/screenshots/screenshot2.png
+train: community
+truenas_name: freelisten
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.0.2
+  questions_sha: 60d0f832214ac7afd462aa17a90df8725f296713f7b9bbbe8f7520653ed2bb75
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/freelisten
+notes: []

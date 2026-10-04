@@ -1,0 +1,24 @@
+title: Bazarr
+description: Bazarr is a companion application to Sonarr and Radarr. It manages and downloads subtitles
+  based on your requirements.
+icon: https://media.sys.truenas.net/apps/bazarr/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- subtitles
+home: https://www.bazarr.media
+screenshots:
+- https://media.sys.truenas.net/apps/bazarr/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/bazarr/screenshots/screenshot2.png
+train: community
+truenas_name: bazarr
+status: draft
+managed: generated
+upstream:
+  version: 1.3.11
+  app_version: 1.6.2
+  questions_sha: 6eb52f6f7a7f82e1b38c2ca7263b921ea84504b6f4db56b5e6c342acd791e310
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/bazarr
+notes: []

@@ -1,0 +1,24 @@
+title: Pterodactyl Panel
+description: Pterodactyl is a free, open-source game server management panel built with PHP, React, and
+  Go. Designed with security in mind, Pterodactyl runs all game servers in isolated Docker containers
+  while exposing a beautiful and intuitive UI to end users.
+icon: https://media.sys.truenas.net/apps/pterodactyl-panel/icons/icon.svg
+categories:
+- games
+keywords:
+- pterodactyl
+- games
+- servers
+home: https://pterodactyl.io/
+screenshots: []
+train: community
+truenas_name: pterodactyl-panel
+status: draft
+managed: generated
+upstream:
+  version: 1.2.22
+  app_version: v1.15.1
+  questions_sha: 703c16c1cc4fa354c0e11c7e900e35f362565621910c53a63cdb17439d90dfe0
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/pterodactyl-panel
+notes: []

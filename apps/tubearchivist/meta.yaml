@@ -1,0 +1,23 @@
+title: Tube Archivist
+description: Your self hosted YouTube media server
+icon: https://media.sys.truenas.net/apps/tubearchivist/icons/icon.png
+categories:
+- media
+keywords:
+- media-server
+- youtube
+- download
+- videos
+home: https://tubearchivist.com/
+screenshots: []
+train: community
+truenas_name: tubearchivist
+status: draft
+managed: generated
+upstream:
+  version: 1.2.24
+  app_version: v0.5.12
+  questions_sha: 8036a8a64794b252a744d1c0a1f35c3de3fbcb81468432211905b3c5e3692a48
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tubearchivist
+notes: []

@@ -1,0 +1,21 @@
+title: Beszel Hub
+description: Lightweight server monitoring hub with historical data, docker stats, and alerts.
+icon: https://media.sys.truenas.net/apps/beszel-hub/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- monitoring
+- alerts
+home: https://www.beszel.dev/
+screenshots: []
+train: community
+truenas_name: beszel-hub
+status: draft
+managed: generated
+upstream:
+  version: 1.1.15
+  app_version: 0.21.0
+  questions_sha: 900ff0c76bbbaca5f8797eefbb1a3e48d2ad5febe67260fc9c086b7141079e91
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/beszel-hub
+notes: []

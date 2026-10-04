@@ -1,0 +1,28 @@
+title: PhotoStructure
+description: PhotoStructure is a self-hosted library for all your photos and videos
+icon: https://media.sys.truenas.net/apps/photostructure/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- photos
+- videos
+- gallery
+home: https://photostructure.com
+screenshots:
+- https://media.sys.truenas.net/apps/photostructure/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/photostructure/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/photostructure/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/photostructure/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/photostructure/screenshots/screenshot5.png
+train: community
+truenas_name: photostructure
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 2026.9.6
+  questions_sha: b9f8cbc22ceb2d0ef9f7b8eb18ec92d6e516292a4ea046501c27601a72ac85d1
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/photostructure
+notes: []

@@ -1,0 +1,44 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS switch-game-catalog 1.0.4"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30480]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/switch-game-catalog"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/switch-game-catalog"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/switch-game-catalog/games",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "games"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/switch-game-catalog/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/switch-game-catalog/cache",
+      "owner": {"user": "apps"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "games": "$HOST_PATH($LOCATION(ApplicationsPerformance)/switch-game-catalog/games)",
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/switch-game-catalog/config)",
+      "cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/switch-game-catalog/cache)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30480}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,22 @@
+title: Shoko Server
+description: The All-in-One Cross-Platform Anime Management System Built For You
+icon: https://media.sys.truenas.net/apps/shoko-server/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- anime
+- management
+home: https://shokoanime.com/
+screenshots: []
+train: community
+truenas_name: shoko-server
+status: draft
+managed: generated
+upstream:
+  version: 1.1.9
+  app_version: v5.3.3
+  questions_sha: 533f19b1a868b815f12da2cfe23d52daddcff33ed45830fb3b2dd55dddfbded4
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/shoko-server
+notes: []

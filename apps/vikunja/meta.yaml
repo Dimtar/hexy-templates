@@ -1,0 +1,29 @@
+title: Vikunja
+description: Vikunja is an open-source, self-hostable to-do app.
+icon: https://media.sys.truenas.net/apps/vikunja/icons/icon.png
+categories:
+- productivity
+keywords:
+- todo
+home: https://vikunja.io/
+screenshots:
+- https://media.sys.truenas.net/apps/vikunja/screenshots/screenshot1.webp
+- https://media.sys.truenas.net/apps/vikunja/screenshots/screenshot2.webp
+- https://media.sys.truenas.net/apps/vikunja/screenshots/screenshot3.webp
+- https://media.sys.truenas.net/apps/vikunja/screenshots/screenshot4.webp
+- https://media.sys.truenas.net/apps/vikunja/screenshots/screenshot5.webp
+- https://media.sys.truenas.net/apps/vikunja/screenshots/screenshot6.webp
+- https://media.sys.truenas.net/apps/vikunja/screenshots/screenshot7.webp
+- https://media.sys.truenas.net/apps/vikunja/screenshots/screenshot8.webp
+- https://media.sys.truenas.net/apps/vikunja/screenshots/screenshot9.webp
+train: community
+truenas_name: vikunja
+status: draft
+managed: generated
+upstream:
+  version: 2.0.69
+  app_version: 2.7.0
+  questions_sha: eb83d20086c7717647003ea5e341eb289f30b69a5f15969797755c40a8ece4e4
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/vikunja
+notes: []

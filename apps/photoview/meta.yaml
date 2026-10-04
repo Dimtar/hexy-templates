@@ -1,0 +1,21 @@
+title: Photoview
+description: Photo gallery for self-hosted personal servers
+icon: https://media.sys.truenas.net/apps/photoview/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- photos
+home: https://photoview.github.io/
+screenshots: []
+train: community
+truenas_name: photoview
+status: draft
+managed: generated
+upstream:
+  version: 1.2.31
+  app_version: 2.4.0
+  questions_sha: f9a1664f8c1608dc995a022473336947f566117bed0dc2c43b8cfa84c6e0b10f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/photoview
+notes: []

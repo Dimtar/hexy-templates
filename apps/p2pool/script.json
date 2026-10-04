@@ -1,0 +1,40 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS p2pool 1.1.15"
+  },
+  "installation_questions": [
+    {
+      "question": "Wallet address",
+      "type": "text",
+      "key": "wallet_address",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [3333, 37889]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/p2pool"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/p2pool/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "p2pool": {"wallet_address": "$QUESTION(wallet_address)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/p2pool/data)"
+    },
+    "network": {
+      "stratum_port": {"bind_mode": "published", "port_number": 3333},
+      "p2p_port": {"bind_mode": "published", "port_number": 37889}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS mattermost 1.2.46"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30252, 30253]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/mattermost"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/mattermost"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mattermost/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mattermost/data",
+      "snapshot": {"id": "data"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/mattermost/logs"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mattermost/plugins",
+      "snapshot": {"id": "plugins"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mattermost/client_plugins",
+      "snapshot": {"id": "client_plugins"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mattermost/bleve_indexes",
+      "snapshot": {"id": "bleve_indexes"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mattermost/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "mattermost": {
+      "db_password": "$RANDOM_STRING(16)",
+      "site_url": "http://$SERVER_LAN_IP:30252"
+    },
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mattermost/config)",
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mattermost/data)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/mattermost/logs)",
+      "plugins": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mattermost/plugins)",
+      "client_plugins": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mattermost/client_plugins)",
+      "bleve_indexes": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mattermost/bleve_indexes)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mattermost/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30252},
+      "calls_port": {"bind_mode": "published", "port_number": 30253}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

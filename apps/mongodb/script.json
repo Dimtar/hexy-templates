@@ -1,0 +1,56 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS mongodb 1.1.18"
+  },
+  "installation_questions": [
+    {
+      "question": "User",
+      "type": "text",
+      "key": "user",
+      "required": true
+    },
+    {
+      "question": "Password",
+      "type": "password",
+      "key": "password",
+      "required": true
+    },
+    {
+      "question": "Database",
+      "type": "text",
+      "key": "database",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [27017]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/mongodb"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mongodb/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "mongodb": {
+      "user": "$QUESTION(user)",
+      "password": "$QUESTION(password)",
+      "database": "$QUESTION(database)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mongodb/data)"
+    },
+    "network": {
+      "tcp_port": {"bind_mode": "published", "port_number": 27017}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

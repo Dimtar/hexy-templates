@@ -1,0 +1,71 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS calagopus 1.0.36"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30438, 30439]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/calagopus"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/calagopus"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/calagopus/data",
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/calagopus/wings_data",
+      "snapshot": {"id": "wings_data"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/calagopus/wings_temp"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/calagopus/binaries",
+      "snapshot": {"id": "binaries"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/calagopus/translations",
+      "snapshot": {"id": "translations"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/calagopus/extensions",
+      "snapshot": {"id": "extensions"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/calagopus/extension_migrations",
+      "snapshot": {"id": "extension_migrations"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/calagopus/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "calagopus": {
+      "db_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "encryption_key": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/calagopus/data)",
+      "wings_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/calagopus/wings_data)",
+      "wings_temp": "$HOST_PATH($LOCATION(ApplicationsCapacity)/calagopus/wings_temp)",
+      "binaries": "$HOST_PATH($LOCATION(ApplicationsPerformance)/calagopus/binaries)",
+      "translations": "$HOST_PATH($LOCATION(ApplicationsPerformance)/calagopus/translations)",
+      "extensions": "$HOST_PATH($LOCATION(ApplicationsPerformance)/calagopus/extensions)",
+      "extension_migrations": "$HOST_PATH($LOCATION(ApplicationsPerformance)/calagopus/extension_migrations)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/calagopus/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30438},
+      "sftp_port": {"bind_mode": "published", "port_number": 30439}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS teslamate 1.0.30"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30411, 30410]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/teslamate"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/teslamate/import_data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "import_data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/teslamate/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "teslamate": {
+      "db_password": "$RANDOM_STRING(16)",
+      "encryption_key": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "import_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/teslamate/import_data)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/teslamate/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30411},
+      "api_port": {"bind_mode": "published", "port_number": 30410}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

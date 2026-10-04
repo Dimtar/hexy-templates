@@ -1,0 +1,65 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS garage 1.2.9"
+  },
+  "installation_questions": [
+    {
+      "question": "Admin token",
+      "type": "password",
+      "key": "admin_token",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30186, 30187, 30188, 30189, 30190]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/garage"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/garage/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/garage/metadata",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "metadata"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/garage/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/garage/metadata_snapshots",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "metadata_snapshots"}
+    }
+  ],
+  "app_values": {
+    "garage": {
+      "admin_token": "$QUESTION(admin_token)",
+      "rpc_secret": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/garage/config)",
+      "metadata": "$HOST_PATH($LOCATION(ApplicationsPerformance)/garage/metadata)",
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/garage/data)",
+      "metadata_snapshots": "$HOST_PATH($LOCATION(ApplicationsPerformance)/garage/metadata_snapshots)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30186},
+      "rpc_port": {"bind_mode": "published", "port_number": 30187},
+      "s3_port": {"bind_mode": "published", "port_number": 30188},
+      "s3_web_port": {"bind_mode": "published", "port_number": 30189},
+      "admin_port": {"bind_mode": "published", "port_number": 30190}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

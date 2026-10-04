@@ -1,0 +1,27 @@
+title: FileBrowser Quantum
+description: The best free self-hosted web-based file manager.
+icon: https://media.sys.truenas.net/apps/filebrowser-quantum/icons/icon.svg
+categories:
+- storage
+keywords:
+- files
+- browser
+home: https://filebrowserquantum.com
+screenshots:
+- https://media.sys.truenas.net/apps/filebrowser-quantum/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/filebrowser-quantum/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/filebrowser-quantum/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/filebrowser-quantum/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/filebrowser-quantum/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/filebrowser-quantum/screenshots/screenshot6.png
+train: community
+truenas_name: filebrowser-quantum
+status: draft
+managed: generated
+upstream:
+  version: 1.1.32
+  app_version: 1.5.6-stable
+  questions_sha: 752fd72995b1bfade0e0759c5ff1b785f63128a4c1e31fb3b15b140556b8eea2
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/filebrowser-quantum
+notes: []

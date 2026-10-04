@@ -1,0 +1,22 @@
+title: Glances
+description: Glances is a cross-platform system monitoring tool.
+icon: https://media.sys.truenas.net/apps/glances/icons/icon.png
+categories:
+- monitoring
+keywords:
+- metric
+- monitoring
+home: https://nicolargo.github.io/glances
+screenshots:
+- https://media.sys.truenas.net/apps/glances/screenshots/screenshot1.png
+train: community
+truenas_name: glances
+status: draft
+managed: generated
+upstream:
+  version: 1.1.12
+  app_version: 4.5.7
+  questions_sha: 2f8d676e37342c868e851ed191a9ed06d24286d0cb7a024287df0a16ea004f92
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/glances
+notes: []

@@ -1,0 +1,20 @@
+title: InfluxDB
+description: Scalable datastore for metrics, events, and real-time analytics
+icon: https://media.sys.truenas.net/apps/influxdb/icons/icon.png
+categories:
+- database
+keywords:
+- metrics
+home: https://influxdata.com
+screenshots: []
+train: community
+truenas_name: influxdb
+status: draft
+managed: generated
+upstream:
+  version: 1.2.9
+  app_version: 2.9.1
+  questions_sha: 0fce6c07b9376b55fdcd2790dc3384ed548b0027e41efa7541828595d476b361
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/influxdb
+notes: []

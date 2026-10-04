@@ -1,0 +1,22 @@
+title: Node-RED
+description: Node-RED is a programming tool for wiring together hardware devices, APIs and online services
+  in new and interesting ways.
+icon: https://media.sys.truenas.net/apps/node-red/icons/icon.png
+categories:
+- productivity
+keywords:
+- automation
+home: https://nodered.org
+screenshots:
+- https://media.sys.truenas.net/apps/node-red/screenshots/screenshot1.png
+train: community
+truenas_name: node-red
+status: draft
+managed: generated
+upstream:
+  version: 1.4.23
+  app_version: 5.0.7-24
+  questions_sha: 68e4a56db46ebee53a9d93cc36236c8ce01b0c1aae06753defaf6d2c93f177af
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/node-red
+notes: []

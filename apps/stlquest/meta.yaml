@@ -1,0 +1,26 @@
+title: STL Quest
+description: STL Quest is a private, self-hosted 3D-print request and production queue for resin and filament
+  printers.
+icon: https://media.sys.truenas.net/apps/stlquest/icons/icon.svg
+categories:
+- productivity
+keywords:
+- 3d-printing
+- resin
+- filament
+- stl
+- kanban
+- queue
+home: https://github.com/richardsolomou/stl.quest
+screenshots: []
+train: community
+truenas_name: stlquest
+status: draft
+managed: generated
+upstream:
+  version: 1.0.20
+  app_version: v1.30.0
+  questions_sha: 3d0a4cb4cf7b9d7cdc2f3735602a64e2dc0e0185d5f06e27a57b10a88f2e2f49
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/stlquest
+notes: []

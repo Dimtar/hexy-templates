@@ -1,0 +1,22 @@
+title: Arti
+description: Arti is an experimental Tor implementation written in Rust, and it is designed to be modular,
+  reusable, and easy to audit.
+icon: https://media.sys.truenas.net/apps/arti/icons/icon.png
+categories:
+- networking
+keywords:
+- tor
+- privacy
+home: https://tpo.pages.torproject.net/core/arti/
+screenshots: []
+train: community
+truenas_name: arti
+status: draft
+managed: generated
+upstream:
+  version: 1.3.17
+  app_version: 2.6.0
+  questions_sha: 6b3ddcca022fa88f732c85efe15cdcffa9827bc60ad7e79ddecc8bef720c6a79
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/arti
+notes: []

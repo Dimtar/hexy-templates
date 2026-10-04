@@ -1,0 +1,24 @@
+title: P2Pool
+description: Run your own node of P2Pool, a decentralized Monero mining pool.
+icon: https://media.sys.truenas.net/apps/p2pool/icons/icon.png
+categories:
+- financial
+keywords:
+- monero
+- cryptocurrency
+- blockchain
+- privacy
+- mining
+home: https://p2pool.io
+screenshots: []
+train: community
+truenas_name: p2pool
+status: draft
+managed: generated
+upstream:
+  version: 1.1.15
+  app_version: v4.18.1
+  questions_sha: 64622f16589d9130e7d38303e67757d65c079b5d482461c29b156b77af561fbb
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/p2pool
+notes: []

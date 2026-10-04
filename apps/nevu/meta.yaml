@@ -1,0 +1,30 @@
+title: Nevu
+description: Nevu is a complete redesign of Plex's UI using the plex media server API.
+icon: https://media.sys.truenas.net/apps/nevu/icons/icon.png
+categories:
+- media
+keywords:
+- plex
+- media
+- ui
+- alternative
+- frontend
+- streaming
+home: https://github.com/Ipmake/NevuForPlex
+screenshots:
+- https://media.sys.truenas.net/apps/nevu/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/nevu/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/nevu/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/nevu/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/nevu/screenshots/screenshot5.png
+train: community
+truenas_name: nevu
+status: draft
+managed: generated
+upstream:
+  version: 1.1.9
+  app_version: 1.4.3
+  questions_sha: 9c30e714650beced4a4e269fda6fff1dbeb5a9028b3c1787c643c97cf7f622ab
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nevu
+notes: []

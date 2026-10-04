@@ -1,0 +1,22 @@
+title: WebDAV
+description: WebDAV is a set of extensions to the HTTP protocol which allows users to collaboratively
+  edit and manage files on remote web servers.
+icon: https://media.sys.truenas.net/apps/webdav/icons/icon.png
+categories:
+- storage
+keywords:
+- webdav
+- file-sharing
+home: http://www.webdav.org/
+screenshots: []
+train: community
+truenas_name: webdav
+status: draft
+managed: generated
+upstream:
+  version: 1.3.9
+  app_version: 2.4.68
+  questions_sha: 12c0ed6de7f3c7a500a0c0af2a5971a624ad69cd93075584fe186529a9fbb20c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/webdav
+notes: []

@@ -1,0 +1,24 @@
+title: Homarr
+description: Homarr a modern and easy to use dashboard. 14+ integrations. 10K+ icons built in. Authentication
+  out of the box. No YAML, drag and drop configuration.
+icon: https://media.sys.truenas.net/apps/homarr/icons/icon.svg
+categories:
+- productivity
+keywords:
+- dashboard
+home: https://homarr.dev/
+screenshots:
+- https://media.sys.truenas.net/apps/homarr/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/homarr/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/homarr/screenshots/screenshot3.png
+train: community
+truenas_name: homarr
+status: draft
+managed: generated
+upstream:
+  version: 2.2.40
+  app_version: v1.77.2
+  questions_sha: 422caa745e9fab62e4ac2371723c0d8acfbefda6673cee9ce0dd0dff79b45fdb
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/homarr
+notes: []

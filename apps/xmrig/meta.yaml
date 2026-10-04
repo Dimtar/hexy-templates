@@ -1,0 +1,24 @@
+title: XMRig
+description: A high performance, open source CPU/GPU miner.
+icon: https://media.sys.truenas.net/apps/xmrig/icons/icon.svg
+categories:
+- financial
+keywords:
+- monero
+- cryptocurrency
+- blockchain
+- privacy
+- mining
+home: https://xmrig.com
+screenshots: []
+train: community
+truenas_name: xmrig
+status: draft
+managed: generated
+upstream:
+  version: 1.0.9
+  app_version: v6.26.0
+  questions_sha: b894e08e323379fc33f014200b8436b79de67ceb1aa5c9269b14f9cec7fb0129
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/xmrig
+notes: []

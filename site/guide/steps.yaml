@@ -1,0 +1,78 @@
+# The install guide. Each step's screenshot is looked up in site/guide/img/;
+# until the file exists the page shows a labelled placeholder instead.
+# Menu names follow HexOS as of late 2025 — update them if HexOS renames things.
+
+title: How to install an app with a custom install script
+intro: >-
+  A custom install script tells HexOS exactly how to set an app up: where its files go,
+  which port it uses and how much of your server it may use. It takes about two minutes.
+
+steps:
+  - title: Turn on experimental features
+    body:
+      - In HexOS, open Settings and go to Preferences.
+      - Switch on experimental features. This unlocks the Custom Install button on app pages.
+    tip: You only need to do this once.
+    screenshot: step-1-preferences.png
+    alt: HexOS Settings › Preferences with the experimental features switch turned on
+
+  - title: Find your app and copy its script
+    body:
+      - Search for the app in the Hexy Templates library and open its page.
+      - Press Copy script. The whole script is now on your clipboard.
+      - Read the boxes on the right if you want to know what will happen — especially any
+        yellow boxes, which mark questions you'll be asked.
+    screenshot: step-2-copy.png
+    alt: An app page on Hexy Templates with the Copy script button highlighted
+
+  - title: Open the app in HexOS
+    body:
+      - In HexOS, go to Apps and search for the same app.
+      - Open it and choose Custom Install instead of Install. For apps HexOS doesn't
+        curate yet, Custom Install is the only option.
+    screenshot: step-3-custom-install.png
+    alt: The HexOS app page with the Custom Install button highlighted
+
+  - title: Paste the script
+    body:
+      - A script editor opens. Click inside it, select everything (Ctrl+A, or Cmd+A on a Mac)
+        and delete it.
+      - Paste the script you copied (Ctrl+V, or Cmd+V on a Mac).
+    tip: If the editor shows a red error, the paste was probably cut short — copy the script again.
+    screenshot: step-4-paste.png
+    alt: The HexOS custom install script editor with a script pasted in
+
+  - title: Answer any questions and install
+    body:
+      - Some apps ask for a few details first, such as an admin username and password.
+        Passwords for the app's internal database are created for you.
+      - If the app needs a storage location you haven't set up yet, HexOS asks you to pick one.
+      - Press Install and wait for the app to show as running. The first start can take a few
+        minutes while HexOS downloads it.
+    screenshot: step-5-install.png
+    alt: HexOS installing an app, with the progress shown on the app card
+
+  - title: Open your new app
+    body:
+      - Click the app's card in HexOS to open it, or go to http://your-server-ip:PORT in a
+        browser. The app page on Hexy Templates tells you the port.
+    screenshot: step-6-open.png
+    alt: A newly installed app open in the browser
+
+faq:
+  - q: What does “Draft” mean?
+    a: >-
+      Draft scripts are generated automatically from the app's TrueNAS settings. They follow the same
+      pattern as HexOS's own scripts and pass the same checks, but nobody has installed that app on a real
+      HexOS server with it yet. “Tested” scripts have been.
+  - q: Where are my app's files stored?
+    a: >-
+      In the storage locations you chose when setting up HexOS — usually your fast drive for app data and your
+      big drives for media. Each app page has a box that shows the exact folders.
+  - q: The install failed. What now?
+    a: >-
+      Open the app's page here and press “Report a problem” with the error HexOS showed. You can also edit the
+      script in the HexOS editor before installing — for example to change a port that's already taken.
+  - q: Is this an official HexOS site?
+    a: >-
+      No. It's a community collection. HexOS's own curated scripts live at github.com/eshtek/hexos-app-catalog.

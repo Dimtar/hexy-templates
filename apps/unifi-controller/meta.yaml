@@ -1,0 +1,22 @@
+title: Unifi Controller
+description: Unifi Controller is a network management controller for Unifi Equipment.
+icon: https://media.sys.truenas.net/apps/unifi-controller/icons/icon.png
+categories:
+- networking
+keywords:
+- controller
+- unifi
+- network
+home: https://github.com/goofball222/unifi
+screenshots: []
+train: community
+truenas_name: unifi-controller
+status: draft
+managed: generated
+upstream:
+  version: 2.1.15
+  app_version: 10.6.106
+  questions_sha: e3c137a610af178a0c7cc444947f48666468722814ad16ca8d13bd1064bcaf20
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/unifi-controller
+notes: []

@@ -1,0 +1,25 @@
+title: Anki Sync Server
+description: Self-hosted Anki sync server with multi-user support, automated backups, and monitoring.
+  Built from official Anki source.
+icon: https://media.sys.truenas.net/apps/anki-sync-server/icons/icon.svg
+categories:
+- productivity
+keywords:
+- anki
+- sync
+- flashcards
+- spaced-repetition
+- education
+home: https://github.com/chrislongros/anki-sync-server-enhanced
+screenshots: []
+train: community
+truenas_name: anki-sync-server
+status: draft
+managed: generated
+upstream:
+  version: 1.1.10
+  app_version: 25.09.2
+  questions_sha: e676ca0added4691e0f8c5776ebfd6a0c3418ed7ba8dd9a81db747e011e5ae8f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/anki-sync-server
+notes: []

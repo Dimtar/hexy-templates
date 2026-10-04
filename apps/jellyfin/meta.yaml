@@ -1,0 +1,28 @@
+title: Jellyfin
+description: Jellyfin is a Free Software Media System that puts you in control of managing and streaming
+  your media.
+icon: https://media.sys.truenas.net/apps/jellyfin/icons/icon.svg
+categories:
+- media
+keywords:
+- entertainment
+- movies
+- series
+- tv
+- media
+- streaming
+home: https://jellyfin.org/
+screenshots:
+- https://media.sys.truenas.net/apps/jellyfin/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/jellyfin/screenshots/screenshot2.png
+train: community
+truenas_name: jellyfin
+status: draft
+managed: generated
+upstream:
+  version: 1.3.16
+  app_version: '12.1'
+  questions_sha: 17d013e8a9f0164ad41876e24da08d4e6608b27a977b3c3f262f476ede7a0aeb
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/jellyfin
+notes: []

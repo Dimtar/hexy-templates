@@ -1,0 +1,22 @@
+title: Timelinize
+description: Store your data from all your accounts and devices in a single cohesive timeline on your
+  own computer
+icon: https://media.sys.truenas.net/apps/timelinize/icons/icon.svg
+categories:
+- productivity
+keywords:
+- media
+- timeline
+home: https://timelinize.com/
+screenshots: []
+train: community
+truenas_name: timelinize
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: v0.0.28
+  questions_sha: a29bd5836dddada14417158366c967a3cb28b4232cdf09a904b9774e3d06e15d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/timelinize
+notes: []

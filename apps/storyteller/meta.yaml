@@ -1,0 +1,20 @@
+title: Storyteller
+description: Storyteller is a self-hosted platform for creating and reading ebooks with synced narration.
+icon: https://media.sys.truenas.net/apps/storyteller/icons/icon.png
+categories:
+- media
+keywords:
+- ebooks
+home: https://storyteller-platform.dev/
+screenshots: []
+train: community
+truenas_name: storyteller
+status: draft
+managed: generated
+upstream:
+  version: 1.0.10
+  app_version: web-v2.14.23
+  questions_sha: 6b92e32bf7a9b8982aaa35cd0df3064b8ab09be95e3dd8f6530d8687aebe7fd8
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/storyteller
+notes: []

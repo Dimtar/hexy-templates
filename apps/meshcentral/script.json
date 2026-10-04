@@ -1,0 +1,55 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS meshcentral 1.2.39"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30265]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/meshcentral"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/meshcentral"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/meshcentral/data",
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/meshcentral/files",
+      "snapshot": {"id": "files"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/meshcentral/web",
+      "snapshot": {"id": "web"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/meshcentral/backups"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/meshcentral/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "meshcentral": {
+      "db_password": "$RANDOM_STRING(16)",
+      "session_key": "$RANDOM_STRING(32)",
+      "hostname": "$SERVER_LAN_IP"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/meshcentral/data)",
+      "files": "$HOST_PATH($LOCATION(ApplicationsPerformance)/meshcentral/files)",
+      "web": "$HOST_PATH($LOCATION(ApplicationsPerformance)/meshcentral/web)",
+      "backups": "$HOST_PATH($LOCATION(ApplicationsCapacity)/meshcentral/backups)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/meshcentral/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30265}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

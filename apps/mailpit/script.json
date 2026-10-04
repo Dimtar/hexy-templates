@@ -1,0 +1,33 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS mailpit 1.1.25"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30330, 30331, 30332]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/mailpit"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mailpit/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mailpit/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30330},
+      "smtp_port": {"bind_mode": "published", "port_number": 30331},
+      "pop3_port": {"bind_mode": "published", "port_number": 30332}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

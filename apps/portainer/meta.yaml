@@ -1,0 +1,24 @@
+title: Portainer
+description: Container management made easy
+icon: https://media.sys.truenas.net/apps/portainer/icons/icon.png
+categories:
+- management
+keywords:
+- docker
+- compose
+- container
+home: https://www.portainer.io
+screenshots:
+- https://media.sys.truenas.net/apps/portainer/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/portainer/screenshots/screenshot2.png
+train: community
+truenas_name: portainer
+status: draft
+managed: generated
+upstream:
+  version: 1.7.13
+  app_version: 2.45.1
+  questions_sha: 6595f0acca84fe2dbaa5f482518195563e211a779205b8c07a453003f81562c8
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/portainer
+notes: []

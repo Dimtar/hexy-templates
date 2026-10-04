@@ -1,0 +1,22 @@
+title: Omni Tools
+description: Self-hosted collection of powerful web-based tools for everyday tasks. No ads, no tracking,
+  just fast, accessible utilities right from your browser!
+icon: https://media.sys.truenas.net/apps/omni-tools/icons/icon.svg
+categories:
+- productivity
+keywords:
+- utilities
+- tools
+home: https://omnitools.app/
+screenshots: []
+train: community
+truenas_name: omni-tools
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: 0.6.0
+  questions_sha: 000cf03c2171e4ad5826484a00da88ad6766f4b5bc25e81b22d35ee8e1def0cf
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/omni-tools
+notes: []

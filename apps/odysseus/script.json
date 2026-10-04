@@ -1,0 +1,65 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS odysseus 1.0.3"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30442]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/odysseus"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/odysseus"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/odysseus/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/odysseus/logs",
+      "owner": {"user": "apps"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/odysseus/ssh",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "ssh"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/odysseus/huggingface",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "huggingface"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/odysseus/local",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "local"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/odysseus/chromadb_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "chromadb_data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/odysseus/data)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/odysseus/logs)",
+      "ssh": "$HOST_PATH($LOCATION(ApplicationsPerformance)/odysseus/ssh)",
+      "huggingface": "$HOST_PATH($LOCATION(ApplicationsPerformance)/odysseus/huggingface)",
+      "local": "$HOST_PATH($LOCATION(ApplicationsPerformance)/odysseus/local)",
+      "chromadb_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/odysseus/chromadb_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30442}
+    },
+    "resources": {
+      "limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"},
+      "gpus": "$GPU_CONFIG()"
+    }
+  }
+}

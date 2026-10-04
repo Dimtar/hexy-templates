@@ -1,0 +1,22 @@
+title: Umami
+description: Umami is a simple, fast, privacy-focused alternative to Google Analytics.
+icon: https://media.sys.truenas.net/apps/umami/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- analytics
+- monitoring
+home: https://umami.is/
+screenshots:
+- https://media.sys.truenas.net/apps/umami/screenshots/screenshot1.jpg
+train: community
+truenas_name: umami
+status: draft
+managed: generated
+upstream:
+  version: 1.2.35
+  app_version: 3.4.0
+  questions_sha: 1eb977ac91619fd6c7e764a4a4a8aa8fbba0cf31d7b37f0c2631dae359c83ae4
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/umami
+notes: []

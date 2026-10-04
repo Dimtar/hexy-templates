@@ -1,0 +1,25 @@
+title: Newt
+description: Newt is a fully user space WireGuard tunnel client and TCP/UDP proxy, designed to securely
+  expose private resources controlled by Pangolin. By using Newt, you don't need to manage complex WireGuard
+  tunnels and NATing.
+icon: https://media.sys.truenas.net/apps/newt/icons/icon.svg
+categories:
+- networking
+keywords:
+- tunneling
+- proxy
+- wireguard
+- pangolin
+home: https://github.com/fosrl/newt
+screenshots: []
+train: community
+truenas_name: newt
+status: draft
+managed: generated
+upstream:
+  version: 1.1.28
+  app_version: 1.18.1
+  questions_sha: 74379143b74d0d36357c5752bff9e6f82ca8b39ef9e7708e7ad5633d56b7160f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/newt
+notes: []

@@ -1,0 +1,24 @@
+title: Smart Home Dashboard
+description: A modern smart home dashboard featuring customizable themes, Fritz!Box call monitor, and
+  Tasmota device management.
+icon: https://media.sys.truenas.net/apps/smart-home-dashboard/icons/icon.svg
+categories:
+- home-automation
+keywords:
+- smart-home
+- dashboard
+- tasmota
+- fritzbox
+home: https://github.com/Daddelgreis74/smart-home-dashboard
+screenshots: []
+train: community
+truenas_name: smart-home-dashboard
+status: draft
+managed: generated
+upstream:
+  version: 1.0.42
+  app_version: 3.23.7
+  questions_sha: a0d494519a6c3d1fa0b4eb3b405b3f2f162730b6b893c9a1c9478d195bdba995
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/smart-home-dashboard
+notes: []

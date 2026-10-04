@@ -1,0 +1,24 @@
+title: ChangeDetection.io
+description: Page change monitoring with alerts a breeze. The best way to monitor website changes.
+icon: https://media.sys.truenas.net/apps/change-detection/icons/icon.svg
+categories:
+- productivity
+keywords:
+- change-detection
+- page monitoring
+- price tracker
+- stock tracker
+home: https://changedetection.io/
+screenshots:
+- https://media.sys.truenas.net/apps/change-detection/screenshots/screenshot1.png
+train: community
+truenas_name: change-detection
+status: draft
+managed: generated
+upstream:
+  version: 1.1.35
+  app_version: 0.60.8
+  questions_sha: 5694527505b3a9da11d3a5d2f55e1ab514e5dd7091814dde388afffdfb96df37
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/change-detection
+notes: []

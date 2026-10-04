@@ -1,0 +1,23 @@
+title: Calibre Web
+description: Calibre Web is a web app for browsing, reading and downloading eBooks stored in a Calibre
+  database
+icon: https://media.sys.truenas.net/apps/calibre-web/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- ebooks
+home: https://github.com/janeczku/calibre-web
+screenshots:
+- https://media.sys.truenas.net/apps/calibre-web/screenshots/screenshot1.png
+train: community
+truenas_name: calibre-web
+status: draft
+managed: generated
+upstream:
+  version: 2.1.8
+  app_version: 0.6.27
+  questions_sha: 6134b0c8a42bd4f6b10d03292896559170be2fe4198bd5ef96e1fb90eadbc16b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/calibre-web
+notes: []

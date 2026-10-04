@@ -1,0 +1,22 @@
+title: Linkwarden
+description: Linkwarden is a self-hosted, open-source collaborative bookmark manager to collect, read,
+  annotate, and fully preserve what matters, all in one place.
+icon: https://media.sys.truenas.net/apps/linkwarden/icons/icon.png
+categories:
+- productivity
+keywords:
+- links
+- bookmarks
+home: https://docs.linkwarden.app/
+screenshots: []
+train: community
+truenas_name: linkwarden
+status: draft
+managed: generated
+upstream:
+  version: 1.2.66
+  app_version: v2.16.3
+  questions_sha: 3952466f1a0c1f2a59a4c0dc0d163d13392221303176f10d983b01af48355838
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/linkwarden
+notes: []

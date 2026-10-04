@@ -1,0 +1,22 @@
+title: FSCrawler
+description: FSCrawler is a crawler that helps to index binary documents such as PDF, Open Office, MS
+  Office.
+icon: https://media.sys.truenas.net/apps/fscrawler/icons/icon.svg
+categories:
+- productivity
+keywords:
+- index
+- crawler
+home: https://fscrawler.readthedocs.io
+screenshots: []
+train: community
+truenas_name: fscrawler
+status: draft
+managed: generated
+upstream:
+  version: 2.0.19
+  app_version: 3.1-SNAPSHOT-ocr
+  questions_sha: 7854102a9b8b22a76b4a46068701f812b802e79ac0fd73d8729788472a7fef45
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/fscrawler
+notes: []

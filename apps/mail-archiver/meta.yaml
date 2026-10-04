@@ -1,0 +1,22 @@
+title: Mail Archiver
+description: Mail-Archiver is a web application for archiving, searching, and exporting emails from multiple
+  accounts. Featuring folder sync, attachment support, mailbox migration and a dashboard.
+icon: https://media.sys.truenas.net/apps/mail-archiver/icons/icon.svg
+categories:
+- productivity
+keywords:
+- email
+- archiving
+home: https://github.com/s1t5/mail-archiver
+screenshots: []
+train: community
+truenas_name: mail-archiver
+status: draft
+managed: generated
+upstream:
+  version: 1.2.50
+  app_version: '2609.1'
+  questions_sha: aece769b55ca0d721d257608d7a75f9e355e2b36fee8e5b31b3f28727f6c1e52
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mail-archiver
+notes: []

@@ -1,0 +1,22 @@
+title: OpenCloud
+description: Excellent file management and collaboration for public authorities, providers and business
+  - or anyone who values ease of use and digital sovereignty.
+icon: https://media.sys.truenas.net/apps/opencloud/icons/icon.svg
+categories:
+- storage
+keywords:
+- file sharing
+- collaboration
+home: https://opencloud.eu
+screenshots: []
+train: community
+truenas_name: opencloud
+status: draft
+managed: generated
+upstream:
+  version: 1.2.37
+  app_version: 8.0.1
+  questions_sha: b15df6b7e8abd9ffe0a02fbeed617cb8a53df857f62d2c304f972a5044c7db37
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/opencloud
+notes: []

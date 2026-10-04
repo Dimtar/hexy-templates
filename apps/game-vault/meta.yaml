@@ -1,0 +1,23 @@
+title: GameVault
+description: The self-hosted gaming platform for your DRM-free collection. Host your own library, track
+  your stats, and share the experience with friends. It's like having your own personal Steam, but you're
+  the one in control
+icon: https://media.sys.truenas.net/apps/game-vault/icons/icon.png
+categories:
+- games
+keywords:
+- gaming
+- platform
+home: https://gamevau.lt/
+screenshots: []
+train: community
+truenas_name: game-vault
+status: draft
+managed: generated
+upstream:
+  version: 1.0.21
+  app_version: 17.0.1
+  questions_sha: 6bd11c002f6049f90fa99bef3f43fc9e844a3a75ca793acdbdf0a0b6e44c8408
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/game-vault
+notes: []

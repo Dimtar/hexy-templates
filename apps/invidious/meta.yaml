@@ -1,0 +1,26 @@
+title: Invidious
+description: Invidious is an alternative front-end to YouTube
+icon: https://media.sys.truenas.net/apps/invidious/icons/icon.svg
+categories:
+- media
+keywords:
+- youtube
+home: https://invidious.io/
+screenshots:
+- https://media.sys.truenas.net/apps/invidious/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/invidious/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/invidious/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/invidious/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/invidious/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/invidious/screenshots/screenshot6.png
+train: community
+truenas_name: invidious
+status: draft
+managed: generated
+upstream:
+  version: 1.7.37
+  app_version: 2.20260804.1
+  questions_sha: b9898ee6218fde4b67073a3a25c21502a7878cad9825376856e707510b400658
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/invidious
+notes: []

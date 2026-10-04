@@ -1,0 +1,26 @@
+title: Homepage
+description: Homepage is a modern, secure, highly customizable application dashboard.
+icon: https://media.sys.truenas.net/apps/homepage/icons/icon.png
+categories:
+- productivity
+keywords:
+- dashboard
+home: https://gethomepage.dev/
+screenshots:
+- https://media.sys.truenas.net/apps/homepage/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/homepage/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/homepage/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/homepage/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/homepage/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/homepage/screenshots/screenshot6.png
+train: community
+truenas_name: homepage
+status: draft
+managed: generated
+upstream:
+  version: 1.3.21
+  app_version: v2.4.0
+  questions_sha: 80d00b6db3be5b1e3b9a4aa8a5ae0291b773bed99f904a654aa7f9b518f85e12
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/homepage
+notes: []

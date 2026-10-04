@@ -1,0 +1,21 @@
+title: Shlink
+description: The definitive self-hosted URL shortener
+icon: https://media.sys.truenas.net/apps/shlink/icons/icon.svg
+categories:
+- productivity
+keywords:
+- shortener
+- url
+home: https://shlink.io/
+screenshots: []
+train: community
+truenas_name: shlink
+status: draft
+managed: generated
+upstream:
+  version: 1.2.43
+  app_version: 5.1.7
+  questions_sha: 7533637bba73cdd6e0a48a7581c6e386d0ac6f99ddb503c33c920a87e9e517f3
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/shlink
+notes: []

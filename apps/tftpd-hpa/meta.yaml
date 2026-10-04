@@ -1,0 +1,21 @@
+title: TFTP Server
+description: A lightweight tftp-server
+icon: https://media.sys.truenas.net/apps/tftpd-hpa/icons/icon.png
+categories:
+- networking
+keywords:
+- tftp
+- netboot
+home: https://github.com/truenas/containers/tree/main/apps/tftpd-hpa
+screenshots: []
+train: community
+truenas_name: tftpd-hpa
+status: draft
+managed: generated
+upstream:
+  version: 1.3.7
+  app_version: 1.0.0
+  questions_sha: 1b1c88fdfca3b1cda52eb6713d3e28225a52b075449402509fc87b7a698f7c1a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tftpd-hpa
+notes: []

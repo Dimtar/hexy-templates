@@ -1,0 +1,23 @@
+title: Termix
+description: Termix is a web-based server management platform with SSH terminal, tunneling, and file editing
+  capabilities.
+icon: https://media.sys.truenas.net/apps/termix/icons/icon.svg
+categories:
+- networking
+keywords:
+- ssh
+- terminal
+- server
+home: https://termix.site/
+screenshots: []
+train: community
+truenas_name: termix
+status: draft
+managed: generated
+upstream:
+  version: 1.2.21
+  app_version: release-2.9.0
+  questions_sha: b58512aed83797435f8fb985e55c9d290b5a0c6e566d3a58f3e92b3b3b7fe189
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/termix
+notes: []

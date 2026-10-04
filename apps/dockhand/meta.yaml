@@ -1,0 +1,21 @@
+title: Dockhand
+description: Dockhand - Docker management you will like.
+icon: https://media.sys.truenas.net/apps/dockhand/icons/icon.webp
+categories:
+- management
+keywords:
+- docker
+- compose
+home: https://dockhand.pro
+screenshots: []
+train: community
+truenas_name: dockhand
+status: draft
+managed: generated
+upstream:
+  version: 1.1.37
+  app_version: v1.0.51
+  questions_sha: e9bbc4a39c7fe0875cf734fa0e5289c1d6bc8306891f9ca678a5a895a8e42e1d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/dockhand
+notes: []

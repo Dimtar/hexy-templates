@@ -1,0 +1,22 @@
+title: Cloudflare Mesh
+description: Cloudflare Mesh connects your private networks to Cloudflare using the Cloudflare One Client.
+icon: https://media.sys.truenas.net/apps/cloudflare-mesh/icons/icon.svg
+categories:
+- networking
+keywords:
+- network
+- cloudflare
+- mesh
+home: https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-mesh/
+screenshots: []
+train: community
+truenas_name: cloudflare-mesh
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 2026.7.0
+  questions_sha: b69ba0dcc007227351bd4b2b9ba3001b3c057636ba7fb8f7e1f0d2299992e51a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cloudflare-mesh
+notes: []

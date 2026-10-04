@@ -1,0 +1,40 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS mempool 1.2.13"
+  },
+  "requirements": {
+    "locations": ["ApplicationsCapacity", "ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [3006]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/mempool"},
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/mempool"},
+    {"path": "$LOCATION(ApplicationsCapacity)/mempool/cache"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mempool/mariadb_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "mariadb_data"}
+    }
+  ],
+  "app_values": {
+    "mempool": {
+      "db_password": "$RANDOM_STRING(16)",
+      "db_root_password": "$RANDOM_STRING(16)",
+      "bitcoind_rpc_password": "$RANDOM_STRING(16)"
+    },
+    "storage": {
+      "cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/mempool/cache)",
+      "mariadb_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mempool/mariadb_data)"
+    },
+    "network": {
+      "web_ui_port": {"bind_mode": "published", "port_number": 3006}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

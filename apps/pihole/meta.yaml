@@ -1,0 +1,22 @@
+title: Pi-hole
+description: DNS and Ad-filtering for your network.
+icon: https://media.sys.truenas.net/apps/pihole/icons/icon.png
+categories:
+- networking
+keywords:
+- networking
+- dns
+home: https://pi-hole.net
+screenshots:
+- https://media.sys.truenas.net/apps/pihole/screenshots/screenshot1.png
+train: stable
+truenas_name: pihole
+status: draft
+managed: generated
+upstream:
+  version: 1.4.14
+  app_version: 2026.09.0
+  questions_sha: 95856eaa97292569ca8786ae3d145b9c939e15bb5a934146b59873d6039a24fc
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/pihole
+notes: []

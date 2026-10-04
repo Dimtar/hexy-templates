@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Hexy Templates{% endblock %}</title>
+  <meta name="description" content="{% block description %}Custom install scripts for every TrueNAS app, explained in plain language for HexOS.{% endblock %}">
+  <link rel="icon" href="{{ base }}static/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ base }}static/style.css">
+  <script>
+    try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body class="page-{{ page }}">
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ base }}">
+        <img src="{{ base }}static/icon.svg" alt="" width="28" height="28">
+        <span>Hexy Templates</span>
+      </a>
+      <nav class="nav">
+        <a href="{{ base }}" {% if page == "library" %}aria-current="page"{% endif %}>App library</a>
+        <a href="{{ base }}guide/" {% if page == "guide" %}aria-current="page"{% endif %}>How to install</a>
+        <a href="{{ repo }}">GitHub</a>
+        <button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-4.4 2.26 5.4 5.4 0 0 1-3.14-9.8C12.92 3.04 12.46 3 12 3Z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main>
+    {% block main %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Community project — not affiliated with HexOS, Eshtek or iXsystems. Scripts are provided as-is; drafts are generated automatically and may need tweaks.</p>
+      <p>App names, descriptions and icons come from the <a href="https://github.com/truenas/apps">TrueNAS apps catalogue</a>.</p>
+    </div>
+  </footer>
+  <script src="{{ base }}static/site.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS photostructure 1.0.0"
+  },
+  "requirements": {
+    "locations": [
+      "ApplicationsPerformance",
+      "ApplicationsCapacity",
+      "Media"
+    ],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30509]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/photostructure"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/photostructure"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/photostructure/library",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "library"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/photostructure/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/photostructure/cache",
+      "owner": {"user": "apps"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "library": "$HOST_PATH($LOCATION(ApplicationsPerformance)/photostructure/library)",
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/photostructure/config)",
+      "cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/photostructure/cache)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30509}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

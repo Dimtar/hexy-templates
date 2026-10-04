@@ -1,0 +1,21 @@
+title: Cleanuparr
+description: Cleanuparr is a tool for automating the cleanup of unwanted or blocked files in Sonarr, Radarr,
+  and supported download clients like qBittorrent, Deluge and Transmission.
+icon: https://media.sys.truenas.net/apps/cleanuparr/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+home: https://github.com/Cleanuparr/Cleanuparr
+screenshots: []
+train: community
+truenas_name: cleanuparr
+status: draft
+managed: generated
+upstream:
+  version: 1.1.38
+  app_version: 2.10.8
+  questions_sha: 8443e1250d23e34be12b6cc0a42eca67d178505f85aeca4fb62c78b276b25330
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cleanuparr
+notes: []

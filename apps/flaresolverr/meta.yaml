@@ -1,0 +1,21 @@
+title: FlareSolverr
+description: FlareSolverr is a proxy server to bypass Cloudflare and DDoS-GUARD protection.
+icon: https://media.sys.truenas.net/apps/flaresolverr/icons/icon.svg
+categories:
+- networking
+keywords:
+- networking
+- captcha
+home: https://github.com/FlareSolverr/FlareSolverr
+screenshots: []
+train: community
+truenas_name: flaresolverr
+status: draft
+managed: generated
+upstream:
+  version: 1.2.10
+  app_version: v3.5.2
+  questions_sha: 104b1e3d90aba40d69fe176dfea45fbf4b99883a18f489f3f0b4d1ae0704a53a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/flaresolverr
+notes: []

@@ -1,0 +1,24 @@
+title: Vane
+description: Vane is a privacy-focused AI search engine that runs locally, combining web search with LLMs
+  to deliver cited answers.
+icon: https://media.sys.truenas.net/apps/vane/icons/icon.png
+categories:
+- productivity
+keywords:
+- ai
+- search
+- privacy
+- perplexica
+home: https://github.com/ItzCrazyKns/Vane
+screenshots: []
+train: community
+truenas_name: vane
+status: draft
+managed: generated
+upstream:
+  version: 1.0.2
+  app_version: slim-v1.12.2
+  questions_sha: 4d86dadfa9d34ac5981552eded68c3a57bb9adff9de701860d56e3d4c01d41b3
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/vane
+notes: []

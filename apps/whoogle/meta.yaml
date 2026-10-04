@@ -1,0 +1,23 @@
+title: Whoogle
+description: Whoogle is a self-hosted, ad-free, privacy-respecting metasearch engine
+icon: https://media.sys.truenas.net/apps/whoogle/icons/icon.png
+categories:
+- productivity
+keywords:
+- search
+- engine
+home: https://github.com/benbusby/whoogle-search
+screenshots:
+- https://media.sys.truenas.net/apps/whoogle/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/whoogle/screenshots/screenshot2.png
+train: community
+truenas_name: whoogle
+status: draft
+managed: generated
+upstream:
+  version: 1.3.9
+  app_version: 1.2.4
+  questions_sha: 14591d85f745c18d0efb3d48df2ca56c13eaa0d80856cc6bb259f175139c4b35
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/whoogle
+notes: []

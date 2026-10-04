@@ -1,0 +1,23 @@
+title: Domain Locker
+description: A self-hosted domain management dashboard. Tracks expiry, DNS records, SSL certificates,
+  uptime and WHOIS data for domains you own.
+icon: https://media.sys.truenas.net/apps/domain-locker/icons/icon.svg
+categories:
+- networking
+keywords:
+- domain
+- management
+- monitoring
+home: https://domain-locker.com
+screenshots: []
+train: community
+truenas_name: domain-locker
+status: draft
+managed: generated
+upstream:
+  version: 1.0.45
+  app_version: 0.3.1
+  questions_sha: 45db159cbcf9c03a53a28523577448237120b7bdf2f457713641a01b34e18a04
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/domain-locker
+notes: []

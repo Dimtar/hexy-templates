@@ -1,0 +1,21 @@
+title: FUTO Notes
+description: FUTO Notes Server is a self-hosted, end-to-end encrypted sync server for FUTO Notes.
+icon: https://media.sys.truenas.net/apps/futo-notes/icons/icon.png
+categories:
+- productivity
+keywords:
+- notes
+- sync
+home: https://notes.futo.tech/
+screenshots: []
+train: community
+truenas_name: futo-notes
+status: draft
+managed: generated
+upstream:
+  version: 1.0.2
+  app_version: v0.7.1
+  questions_sha: d3e57131b97e0cbc839b9c3de315dba109d3eaf4769f9188620f72e91496b5ac
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/futo-notes
+notes: []

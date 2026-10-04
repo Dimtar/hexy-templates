@@ -1,0 +1,52 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS borgwarehouse 1.1.17"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30406, 30407]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/borgwarehouse"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/borgwarehouse"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/borgwarehouse/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/borgwarehouse/ssh",
+      "snapshot": {"id": "ssh"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/borgwarehouse/ssh_host",
+      "snapshot": {"id": "ssh_host"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/borgwarehouse/borg_repository",
+      "snapshot": {"id": "borg_repository"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/borgwarehouse/logs"},
+    {"path": "$LOCATION(ApplicationsCapacity)/borgwarehouse/tmp"}
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/borgwarehouse/config)",
+      "ssh": "$HOST_PATH($LOCATION(ApplicationsPerformance)/borgwarehouse/ssh)",
+      "ssh_host": "$HOST_PATH($LOCATION(ApplicationsPerformance)/borgwarehouse/ssh_host)",
+      "borg_repository": "$HOST_PATH($LOCATION(ApplicationsPerformance)/borgwarehouse/borg_repository)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/borgwarehouse/logs)",
+      "tmp": "$HOST_PATH($LOCATION(ApplicationsCapacity)/borgwarehouse/tmp)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30406},
+      "ssh_port": {"bind_mode": "published", "port_number": 30407}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

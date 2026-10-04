@@ -1,0 +1,25 @@
+title: Poznote
+description: Poznote is a self-hosted note-taking and documentation platform.
+icon: https://media.sys.truenas.net/apps/poznote/icons/icon.svg
+categories:
+- productivity
+keywords:
+- notes
+- documentation
+- markdown
+- knowledge-base
+- productivity
+home: https://poznote.com/
+screenshots:
+- https://media.sys.truenas.net/apps/poznote/screenshots/screenshot1.png
+train: community
+truenas_name: poznote
+status: draft
+managed: generated
+upstream:
+  version: 1.0.39
+  app_version: 6.105.0-rootless
+  questions_sha: 5bee22b8f2f00e242c5ae27dd7b9f9a30bbca6b3eada64875dc87b011235461b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/poznote
+notes: []

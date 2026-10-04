@@ -1,0 +1,23 @@
+title: Nginx Proxy Manager Plus
+description: Nginx Proxy Manager but better!
+icon: https://media.sys.truenas.net/apps/npmplus/icons/icon.svg
+categories:
+- networking
+keywords:
+- reverse
+- nginx
+- proxy
+- npmplus
+home: https://github.com/ZoeyVid/NPMplus/
+screenshots: []
+train: community
+truenas_name: npmplus
+status: draft
+managed: generated
+upstream:
+  version: 1.1.17
+  app_version: 2026-07-24-r1
+  questions_sha: cd5318bd8551360502e19360b71e93fc2bfc1ad92ffacdde654c8a8701bd35b6
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/npmplus
+notes: []

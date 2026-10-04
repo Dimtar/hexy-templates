@@ -1,0 +1,21 @@
+title: Papra
+description: The minimalistic document archiving platform.
+icon: https://media.sys.truenas.net/apps/papra/icons/icon.svg
+categories:
+- productivity
+keywords:
+- document
+- archiving
+home: https://github.com/papra-hq/papra
+screenshots: []
+train: community
+truenas_name: papra
+status: draft
+managed: generated
+upstream:
+  version: 1.1.19
+  app_version: 26.7.0-rootless
+  questions_sha: ae1470222c25c29bf7638f44e2bf69d0909eac46b265b26bc104a2bbb54e9bce
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/papra
+notes: []

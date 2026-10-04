@@ -1,0 +1,25 @@
+title: pgAdmin
+description: pgAdmin is the most popular and feature rich Open Source administration and development platform
+  for PostgreSQL
+icon: https://media.sys.truenas.net/apps/pgadmin/icons/icon.png
+categories:
+- productivity
+keywords:
+- database
+- management
+home: https://www.pgadmin.org/
+screenshots:
+- https://media.sys.truenas.net/apps/pgadmin/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/pgadmin/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/pgadmin/screenshots/screenshot3.png
+train: community
+truenas_name: pgadmin
+status: draft
+managed: generated
+upstream:
+  version: 1.3.13
+  app_version: '9.18'
+  questions_sha: 97de19c499ebdadb6d8724e878eacccbf262af11bc1de136e574f1c5ae5962f5
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/pgadmin
+notes: []

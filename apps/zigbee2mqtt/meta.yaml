@@ -1,0 +1,23 @@
+title: Zigbee2MQTT
+description: Zigbee to MQTT bridge get rid of your proprietary Zigbee bridges
+icon: https://media.sys.truenas.net/apps/zigbee2mqtt/icons/icon.svg
+categories:
+- home-automation
+keywords:
+- zigbee
+- mqtt
+- bridge
+home: https://www.zigbee2mqtt.io
+screenshots:
+- https://media.sys.truenas.net/apps/zigbee2mqtt/screenshots/screenshot1.png
+train: community
+truenas_name: zigbee2mqtt
+status: draft
+managed: generated
+upstream:
+  version: 1.1.25
+  app_version: 2.14.2
+  questions_sha: a7686988ba4c21e7a09d68791f6dc37d2b6c4125a66f61a20daf091fb34d4d89
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/zigbee2mqtt
+notes: []

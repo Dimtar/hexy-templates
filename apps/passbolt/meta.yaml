@@ -1,0 +1,25 @@
+title: Passbolt
+description: Passbolt is a security-first, open source password manager
+icon: https://media.sys.truenas.net/apps/passbolt/icons/icon.svg
+categories:
+- security
+keywords:
+- password
+- manager
+home: https://www.passbolt.com
+screenshots:
+- https://media.sys.truenas.net/apps/passbolt/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/passbolt/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/passbolt/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/passbolt/screenshots/screenshot4.png
+train: community
+truenas_name: passbolt
+status: draft
+managed: generated
+upstream:
+  version: 1.4.16
+  app_version: 5.16.0-1-ce-non-root
+  questions_sha: 46c80e261316e7d89745508da5230f3d6ec267ad5da0fd3b52565c553524bdce
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/passbolt
+notes: []

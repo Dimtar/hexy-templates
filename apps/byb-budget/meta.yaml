@@ -1,0 +1,29 @@
+title: BYB! Budget
+description: Private household envelope budgeting with integer-cent accounting.
+icon: https://media.sys.truenas.net/apps/byb-budget/icons/icon.svg
+categories:
+- financial
+keywords:
+- finance
+- budget
+- envelope
+home: https://github.com/johnrbrady/byb-budget
+screenshots:
+- https://media.sys.truenas.net/apps/byb-budget/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/byb-budget/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/byb-budget/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/byb-budget/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/byb-budget/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/byb-budget/screenshots/screenshot6.png
+- https://media.sys.truenas.net/apps/byb-budget/screenshots/screenshot7.png
+train: community
+truenas_name: byb-budget
+status: draft
+managed: generated
+upstream:
+  version: 1.0.2
+  app_version: 1.0.0
+  questions_sha: f06cd604e6d73fa6aee54cd1c297c82c9b51cc9fbf5f2e0f7ea04403ed551820
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/byb-budget
+notes: []

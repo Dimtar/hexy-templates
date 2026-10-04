@@ -1,0 +1,22 @@
+title: MeTube
+description: MeTube is a web GUI for youtube-dl (using the yt-dlp fork) with playlist support.
+icon: https://media.sys.truenas.net/apps/metube/icons/icon.svg
+categories:
+- media
+keywords:
+- youtube-dl
+- yt-dlp
+home: https://github.com/alexta69/metube
+screenshots:
+- https://media.sys.truenas.net/apps/metube/screenshots/screenshot1.png
+train: community
+truenas_name: metube
+status: draft
+managed: generated
+upstream:
+  version: 1.4.61
+  app_version: 2026.09.29
+  questions_sha: 633ec0ef6b456431e0ac0db21c2b3126ad619c45ce2f84ec405a3525bf133af7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/metube
+notes: []

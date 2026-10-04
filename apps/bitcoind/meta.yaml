@@ -1,0 +1,22 @@
+title: Bitcoin Node
+description: Run your personal node powered by Bitcoin Core.
+icon: https://media.sys.truenas.net/apps/bitcoind/icons/icon.png
+categories:
+- financial
+keywords:
+- bitcoin
+- cryptocurrency
+- blockchain
+home: https://bitcoin.org
+screenshots: []
+train: community
+truenas_name: bitcoind
+status: draft
+managed: generated
+upstream:
+  version: 1.1.16
+  app_version: '31.1'
+  questions_sha: b08bceebf1f3f221843ec15c384ca8deb91427a89e9759cce817d1f802441f62
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/bitcoind
+notes: []

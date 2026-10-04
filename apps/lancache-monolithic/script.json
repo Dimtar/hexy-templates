@@ -1,0 +1,32 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS lancache-monolithic 1.1.7"
+  },
+  "requirements": {
+    "locations": ["ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30171, 30172]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/lancache-monolithic"},
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/lancache-monolithic/cache"
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/lancache-monolithic/logs"}
+  ],
+  "app_values": {
+    "storage": {
+      "cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/lancache-monolithic/cache)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/lancache-monolithic/logs)"
+    },
+    "network": {
+      "http_port": {"bind_mode": "published", "port_number": 30171},
+      "https_port": {"bind_mode": "published", "port_number": 30172}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

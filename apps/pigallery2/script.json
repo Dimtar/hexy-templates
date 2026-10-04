@@ -1,0 +1,45 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS pigallery2 1.3.7"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30099]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/pigallery2"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/pigallery2/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/pigallery2/db",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "db"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/pigallery2/thumbnails",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "thumbnails"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/pigallery2/config)",
+      "db": "$HOST_PATH($LOCATION(ApplicationsPerformance)/pigallery2/db)",
+      "media": "$HOST_PATH($LOCATION(Media))",
+      "thumbnails": "$HOST_PATH($LOCATION(ApplicationsPerformance)/pigallery2/thumbnails)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30099}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

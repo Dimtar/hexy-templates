@@ -1,0 +1,49 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS penpot 1.5.48"
+  },
+  "installation_questions": [
+    {
+      "question": "Public uri",
+      "type": "text",
+      "key": "public_uri",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [31027]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/penpot"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/penpot/assets",
+      "snapshot": {"id": "assets"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/penpot/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "penpot": {
+      "public_uri": "$QUESTION(public_uri)",
+      "db_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)"
+    },
+    "storage": {
+      "assets": "$HOST_PATH($LOCATION(ApplicationsPerformance)/penpot/assets)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/penpot/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 31027}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

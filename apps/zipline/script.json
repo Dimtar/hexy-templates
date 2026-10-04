@@ -1,0 +1,54 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS zipline 1.2.42"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30164]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/zipline"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/zipline/uploads",
+      "snapshot": {"id": "uploads"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/zipline/public",
+      "snapshot": {"id": "public"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/zipline/themes",
+      "snapshot": {"id": "themes"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/zipline/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "zipline": {
+      "db_password": "$RANDOM_STRING(16)",
+      "core_secret": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "uploads": "$HOST_PATH($LOCATION(ApplicationsPerformance)/zipline/uploads)",
+      "public": "$HOST_PATH($LOCATION(ApplicationsPerformance)/zipline/public)",
+      "themes": "$HOST_PATH($LOCATION(ApplicationsPerformance)/zipline/themes)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/zipline/postgres_data)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30164}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

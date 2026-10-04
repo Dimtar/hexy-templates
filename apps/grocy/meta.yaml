@@ -1,0 +1,20 @@
+title: Grocy
+description: Grocy is a web-based self-hosted groceries & household management solution for your home
+icon: https://media.sys.truenas.net/apps/grocy/icons/icon.svg
+categories:
+- productivity
+keywords:
+- groceries
+home: https://grocy.info/
+screenshots: []
+train: community
+truenas_name: grocy
+status: draft
+managed: generated
+upstream:
+  version: 1.1.10
+  app_version: 4.7.1
+  questions_sha: af00c32fdfcf7379859dd7bf1333a14c1be5ff1cb365684f3c581f86183dafa3
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/grocy
+notes: []

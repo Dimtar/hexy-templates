@@ -1,0 +1,24 @@
+title: Databasus
+description: Databasus is a free, open source and self-hosted tool to backup databases (with focus on
+  PostgreSQL). Make backups with different storages (S3, Google Drive, FTP, etc.) and notifications about
+  progress (Slack, Discord, Telegram, etc.)
+icon: https://media.sys.truenas.net/apps/databasus/icons/icon.svg
+categories:
+- productivity
+keywords:
+- database
+- management
+home: https://databasus.com
+screenshots:
+- https://media.sys.truenas.net/apps/databasus/screenshots/screenshot1.svg
+train: community
+truenas_name: databasus
+status: draft
+managed: generated
+upstream:
+  version: 1.0.46
+  app_version: v3.60.0
+  questions_sha: 775216e5fc16f15a51586ed41f4ba0e36dad35af8f7d58a9ab5469f7de9569bb
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/databasus
+notes: []

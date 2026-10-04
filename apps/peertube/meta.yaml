@@ -1,0 +1,24 @@
+title: PeerTube
+description: Self-hosted video platform and federated video streaming server.
+icon: https://media.sys.truenas.net/apps/peertube/icons/icon.svg
+categories:
+- media
+keywords:
+- video
+- streaming
+- fediverse
+- activitypub
+- media
+home: https://joinpeertube.org/
+screenshots: []
+train: community
+truenas_name: peertube
+status: draft
+managed: generated
+upstream:
+  version: 1.0.24
+  app_version: v8.3.1
+  questions_sha: c6832cc92c91c0f4892d2435ec022017fc75ac1634789bbba3a4b99083bbf7a5
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/peertube
+notes: []

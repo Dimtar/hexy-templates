@@ -1,0 +1,20 @@
+title: Coolify
+description: An open-source & self-hostable Heroku / Netlify / Vercel alternative.
+icon: https://media.sys.truenas.net/apps/coolify/icons/icon.svg
+categories:
+- productivity
+keywords:
+- self-host
+home: https://coolify.io/
+screenshots: []
+train: community
+truenas_name: coolify
+status: draft
+managed: generated
+upstream:
+  version: 1.2.67
+  app_version: 4.3.23
+  questions_sha: 5b1168fc80f04d9ff81d725b7d973f70afdc517dfae23e86a77b4247b0a2641e
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/coolify
+notes: []

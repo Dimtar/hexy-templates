@@ -1,0 +1,22 @@
+title: Elastic Search
+description: Elasticsearch is the distributed, RESTful search and analytics engine at the heart of the
+  Elastic Stack.
+icon: https://media.sys.truenas.net/apps/elastic-search/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- search
+- elastic
+home: https://www.elastic.co
+screenshots: []
+train: stable
+truenas_name: elastic-search
+status: draft
+managed: generated
+upstream:
+  version: 1.4.21
+  app_version: 9.5.4
+  questions_sha: 816d0e896dee80651c4bcff152fe76fd92c9838e44bec8f22aca95f8c970cd35
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/elastic-search
+notes: []

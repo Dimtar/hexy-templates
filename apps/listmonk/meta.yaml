@@ -1,0 +1,24 @@
+title: Listmonk
+description: Listmonk is a self-hosted newsletter and mailing list manager.
+icon: https://media.sys.truenas.net/apps/listmonk/icons/icon.svg
+categories:
+- productivity
+keywords:
+- mailing-list
+- newsletter
+home: https://listmonk.app/
+screenshots:
+- https://media.sys.truenas.net/apps/listmonk/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/listmonk/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/listmonk/screenshots/screenshot3.png
+train: community
+truenas_name: listmonk
+status: draft
+managed: generated
+upstream:
+  version: 1.6.30
+  app_version: v6.2.0
+  questions_sha: 88321211cecdf1d011bb53d4369c34e02476fc04402178be2f5b5c0eb9bcc0f7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/listmonk
+notes: []

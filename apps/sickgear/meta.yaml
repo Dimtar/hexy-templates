@@ -1,0 +1,23 @@
+title: SickGear
+description: SickGear has proven the most reliable stable TV fork of the great Sick-Beard to fully automate
+  TV enjoyment with innovation.
+icon: https://media.sys.truenas.net/apps/sickgear/icons/icon.png
+categories:
+- media
+keywords:
+- sickgear
+- sickbeard
+- tv
+home: https://github.com/SickGear/SickGear
+screenshots: []
+train: community
+truenas_name: sickgear
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: latest
+  questions_sha: 7d12fcc6de1b1536a25b74a2684ddff1feab80e32583b9f8fa129832f072dc34
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/sickgear
+notes: []

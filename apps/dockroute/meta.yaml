@@ -1,0 +1,25 @@
+title: DockRoute
+description: DockRoute is External-DNS for plain Docker hosts. It watches running containers, reads dockroute.*
+  labels and reconciles the matching DNS records and Cloudflare Tunnel routes in a pluggable provider,
+  with TXT-based ownership so it never alters records it cannot prove it manages.
+icon: https://media.sys.truenas.net/apps/dockroute/icons/icon.png
+categories:
+- networking
+keywords:
+- dns
+- network
+- automation
+- cloudflare
+home: https://www.dockroute.dev
+screenshots: []
+train: community
+truenas_name: dockroute
+status: draft
+managed: generated
+upstream:
+  version: 1.0.8
+  app_version: 0.5.1
+  questions_sha: ad72dfa978df0be8caab13ceec703c1bf3991c2335d5b8203b27bc8ecd6d574f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/dockroute
+notes: []

@@ -1,0 +1,26 @@
+title: ActuallyFreeCD Server
+description: Web-based audio CD ripping server with MusicBrainz metadata, AccurateRip verification, FLAC/MP3
+  encoding, artwork, logging, and optical-drive control.
+icon: https://media.sys.truenas.net/apps/actuallyfreecd/icons/icon.png
+categories:
+- media
+keywords:
+- audio
+- cd
+- ripper
+- music
+- accuraterip
+- musicbrainz
+home: https://github.com/D69wookie/ActuallyFreeCD-Server
+screenshots: []
+train: community
+truenas_name: actuallyfreecd
+status: draft
+managed: generated
+upstream:
+  version: 1.0.4
+  app_version: 1.0.2
+  questions_sha: 9bf88f9523f34f51e5530e54b5ff181e8ccc9d4f9f32c500e82568e99f171267
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/actuallyfreecd
+notes: []

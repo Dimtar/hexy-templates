@@ -1,0 +1,21 @@
+title: Gotify
+description: A simple server for sending and receiving messages in real-time per WebSocket. (Includes
+  a sleek web-ui)
+icon: https://media.sys.truenas.net/apps/gotify/icons/icon.png
+categories:
+- productivity
+keywords:
+- notifications
+home: https://gotify.net
+screenshots: []
+train: community
+truenas_name: gotify
+status: draft
+managed: generated
+upstream:
+  version: 1.1.11
+  app_version: 3.1.1
+  questions_sha: a01001de15a9e2cc4640c0d3635a614307240d87d5d8a5e561cdc9dcde263125
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/gotify
+notes: []

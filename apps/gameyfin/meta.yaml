@@ -1,0 +1,21 @@
+title: Gameyfin
+description: Gameyfin will turn your disorganized collection of video games into a beautiful, easy-to-navigate
+  library that you can access from any device with a web browser.
+icon: https://media.sys.truenas.net/apps/gameyfin/icons/icon.svg
+categories:
+- games
+keywords:
+- games
+home: https://gameyfin.org/
+screenshots: []
+train: community
+truenas_name: gameyfin
+status: draft
+managed: generated
+upstream:
+  version: 1.0.3
+  app_version: 2.4.0
+  questions_sha: 2a2ce06267787a28269b1ae51a366e4cd7fd2debc28e0c458c84999f096fd9b1
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/gameyfin
+notes: []

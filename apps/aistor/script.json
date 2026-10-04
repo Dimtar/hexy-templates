@@ -1,0 +1,44 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS aistor 1.1.22"
+  },
+  "installation_questions": [
+    {
+      "question": "Root user",
+      "type": "password",
+      "key": "root_user",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30320, 30321]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/aistor"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/aistor/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "aistor": {
+      "root_user": "$QUESTION(root_user)",
+      "root_password": "$RANDOM_STRING(16)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/aistor/data)"
+    },
+    "network": {
+      "api_port": {"bind_mode": "published", "port_number": 30320},
+      "console_port": {"bind_mode": "published", "port_number": 30321}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

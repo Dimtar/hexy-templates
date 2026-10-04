@@ -1,0 +1,22 @@
+title: Gitea Act Runner
+description: A runner for Gitea based on act.
+icon: https://media.sys.truenas.net/apps/gitea-act-runner/icons/icon.svg
+categories:
+- productivity
+keywords:
+- gitea
+- actions
+- runner
+home: https://gitea.com
+screenshots: []
+train: community
+truenas_name: gitea-act-runner
+status: draft
+managed: generated
+upstream:
+  version: 1.2.4
+  app_version: 4.1.0
+  questions_sha: b19c8b02f5fece6c7bf1463892cfb6bc27fa726ae5a66271203a2b64943f06cf
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/gitea-act-runner
+notes: []

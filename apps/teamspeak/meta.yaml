@@ -1,0 +1,21 @@
+title: Teamspeak
+description: TeamSpeak is software for quality voice communication via the Internet.
+icon: https://media.sys.truenas.net/apps/teamspeak/icons/icon.svg
+categories:
+- productivity
+keywords:
+- voice
+- audio
+home: https://teamspeak.com
+screenshots: []
+train: community
+truenas_name: teamspeak
+status: draft
+managed: generated
+upstream:
+  version: 1.1.8
+  app_version: 3.13.8
+  questions_sha: c563ca90653f89c35f0d24b57781a0f17ed0636aa14a66cb4c34731d66641352
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/teamspeak
+notes: []

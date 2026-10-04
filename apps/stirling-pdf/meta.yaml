@@ -1,0 +1,25 @@
+title: Stirling PDF
+description: '#1 Locally hosted web application that allows you to perform various operations on PDF files'
+icon: https://media.sys.truenas.net/apps/stirling-pdf/icons/icon.svg
+categories:
+- productivity
+keywords:
+- pdf
+- pdf-editor
+home: https://www.stirlingpdf.com/
+screenshots:
+- https://media.sys.truenas.net/apps/stirling-pdf/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/stirling-pdf/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/stirling-pdf/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/stirling-pdf/screenshots/screenshot4.png
+train: community
+truenas_name: stirling-pdf
+status: draft
+managed: generated
+upstream:
+  version: 1.1.32
+  app_version: 3.0.2
+  questions_sha: ac6c771d2c5ec17ed65184e71ec7b96dbaa0fd7624f0756a89c331b7322e9799
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/stirling-pdf
+notes: []

@@ -1,0 +1,23 @@
+title: qBittorrent
+description: The qBittorrent project aims to provide an open-source software alternative to mTorrent.
+icon: https://media.sys.truenas.net/apps/qbittorrent/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- torrent
+- download
+home: https://www.qbittorrent.org/
+screenshots:
+- https://media.sys.truenas.net/apps/qbittorrent/screenshots/screenshot1.png
+train: community
+truenas_name: qbittorrent
+status: draft
+managed: generated
+upstream:
+  version: 1.4.12
+  app_version: 5.2.4
+  questions_sha: 68aabf35e699646ac3dbb59a76abf4197f174edeb8e34ad2b94de8b366c648db
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/qbittorrent
+notes: []

@@ -1,0 +1,24 @@
+title: Piwigo
+description: Piwigo is a photo gallery software for the web that comes with powerful features to publish
+  and manage your collection of pictures.
+icon: https://media.sys.truenas.net/apps/piwigo/icons/icon.svg
+categories:
+- media
+keywords:
+- photo
+- gallery
+home: https://piwigo.org
+screenshots:
+- https://media.sys.truenas.net/apps/piwigo/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/piwigo/screenshots/screenshot2.png
+train: community
+truenas_name: piwigo
+status: draft
+managed: generated
+upstream:
+  version: 1.4.11
+  app_version: 16.4.0
+  questions_sha: f16d1d41a7e722e26ad6e6045371711e5259f38a731fdec623c119640ff62999
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/piwigo
+notes: []

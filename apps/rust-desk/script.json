@@ -1,0 +1,42 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS rust-desk 1.7.14"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [21115, 21116, 21118]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/rust-desk"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/rust-desk/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/rust-desk/data)"
+    },
+    "network": {
+      "nat_type_test_port": {
+        "bind_mode": "published",
+        "port_number": 21115
+      },
+      "id_reg_hole_punch_port": {
+        "bind_mode": "published",
+        "port_number": 21116
+      },
+      "server_web_clients_port": {
+        "bind_mode": "published",
+        "port_number": 21118
+      }
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

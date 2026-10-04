@@ -1,0 +1,40 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS continuwuity 1.0.19"
+  },
+  "installation_questions": [
+    {
+      "question": "Server name",
+      "type": "text",
+      "key": "server_name",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30394]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/continuwuity"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/continuwuity/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "continuwuity": {"server_name": "$QUESTION(server_name)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/continuwuity/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30394}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

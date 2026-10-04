@@ -1,0 +1,23 @@
+title: Karakeep
+description: Karakeep is a self-hostable bookmark-everything app (links, notes and images) with AI-based
+  automatic tagging and full text search
+icon: https://media.sys.truenas.net/apps/karakeep/icons/icon.svg
+categories:
+- productivity
+keywords:
+- hoarder
+- bookmarks
+home: https://karakeep.app
+screenshots:
+- https://media.sys.truenas.net/apps/karakeep/screenshots/screenshot1.png
+train: community
+truenas_name: karakeep
+status: draft
+managed: generated
+upstream:
+  version: 1.2.41
+  app_version: 0.33.2
+  questions_sha: 8d928571681760eead079fd22c69a28098f29dcb8a155b58787c967a6afe6175
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/karakeep
+notes: []

@@ -1,0 +1,39 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS rotki 1.0.2"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30486]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/rotki"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/rotki"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/rotki/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/rotki/logs",
+      "owner": {"user": "apps"}
+    }
+  ],
+  "app_values": {
+    "rotki": {"session_key": "$RANDOM_STRING(32)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/rotki/data)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/rotki/logs)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30486}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

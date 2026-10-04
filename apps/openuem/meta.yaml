@@ -1,0 +1,30 @@
+title: OpenUEM Server
+description: An Open-Source Unified Endpoint Manager that is self-hosted and lets you manage your IT assets
+  thanks to its agents
+icon: https://media.sys.truenas.net/apps/openuem/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- endpoint
+- management
+- monitoring
+home: https://openuem.eu/
+screenshots:
+- https://media.sys.truenas.net/apps/openuem/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/openuem/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/openuem/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/openuem/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/openuem/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/openuem/screenshots/screenshot6.png
+- https://media.sys.truenas.net/apps/openuem/screenshots/screenshot7.png
+train: community
+truenas_name: openuem
+status: draft
+managed: generated
+upstream:
+  version: 1.0.37
+  app_version: 0.12.0
+  questions_sha: cd336d63a8edea2eb277805fe4c637e0996da1d4df19b278bd0a2aafb2010091
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/openuem
+notes: []

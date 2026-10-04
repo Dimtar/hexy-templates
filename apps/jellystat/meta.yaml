@@ -1,0 +1,26 @@
+title: Jellystat
+description: Jellystat is a free and open source Statistics App for Jellyfin
+icon: https://media.sys.truenas.net/apps/jellystat/icons/icon.svg
+categories:
+- media
+keywords:
+- statistics
+- jellyfin
+home: https://github.com/CyferShepard/Jellystat
+screenshots:
+- https://media.sys.truenas.net/apps/jellystat/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/jellystat/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/jellystat/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/jellystat/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/jellystat/screenshots/screenshot5.png
+train: community
+truenas_name: jellystat
+status: draft
+managed: generated
+upstream:
+  version: 1.2.34
+  app_version: 1.1.12
+  questions_sha: 0986a42ee8b03c186a69e229ce12b99c0ff08a90165990b7b53384e238c42f0f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/jellystat
+notes: []

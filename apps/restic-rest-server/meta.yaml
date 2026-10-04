@@ -1,0 +1,21 @@
+title: Restic REST Server
+description: Rest Server is a high performance HTTP server that implements restic's REST backend API.
+icon: https://media.sys.truenas.net/apps/restic-rest-server/icons/icon.png
+categories:
+- backup
+keywords:
+- backup
+- restic
+home: https://github.com/restic/rest-server
+screenshots: []
+train: community
+truenas_name: restic-rest-server
+status: draft
+managed: generated
+upstream:
+  version: 1.1.6
+  app_version: 0.14.0
+  questions_sha: 6491025558d5f4d2fa689ec8b6a8ca7acb82a282f1acef07e7a221d3019a1b6d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/restic-rest-server
+notes: []

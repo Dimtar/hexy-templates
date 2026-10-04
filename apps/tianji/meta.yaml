@@ -1,0 +1,30 @@
+title: Tianji
+description: Tianji - Insight into everything, Website Analytics + Uptime Monitor + Server Status. not
+  only another GA alternatives
+icon: https://media.sys.truenas.net/apps/tianji/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- analytics
+- monitoring
+- uptime
+- status
+home: https://tianji.msgbyte.com
+screenshots:
+- https://media.sys.truenas.net/apps/tianji/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/tianji/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/tianji/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/tianji/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/tianji/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/tianji/screenshots/screenshot6.png
+train: community
+truenas_name: tianji
+status: draft
+managed: generated
+upstream:
+  version: 1.2.71
+  app_version: 1.33.7
+  questions_sha: f6e2315119c4ac59fc4d2cc3091faeff882b44979e8e5a294ab6aaffdfc4da89
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tianji
+notes: []

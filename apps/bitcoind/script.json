@@ -1,0 +1,35 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS bitcoind 1.1.16"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [8332, 8333]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/bitcoind"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/bitcoind/bitcoin",
+      "snapshot": {"id": "bitcoin"}
+    }
+  ],
+  "app_values": {
+    "bitcoin": {"rpc_password": "$RANDOM_STRING(16)"},
+    "storage": {
+      "bitcoin": "$HOST_PATH($LOCATION(ApplicationsPerformance)/bitcoind/bitcoin)"
+    },
+    "network": {
+      "rpc_port": {"bind_mode": "published", "port_number": 8332},
+      "p2p_clearnet_port": {
+        "bind_mode": "published",
+        "port_number": 8333
+      }
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

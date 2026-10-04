@@ -1,0 +1,23 @@
+title: Radicale
+description: Free and Open-Source CalDAV and CardDAV Server
+icon: https://media.sys.truenas.net/apps/radicale/icons/icon.svg
+categories:
+- productivity
+keywords:
+- calendar
+- contacts
+- caldav
+- carddav
+home: https://github.com/tomsquest/docker-radicale
+screenshots: []
+train: community
+truenas_name: radicale
+status: draft
+managed: generated
+upstream:
+  version: 1.1.17
+  app_version: 3.8.1.1
+  questions_sha: 801f045c52219c415071f697cdf042ded786494047cfc444ad6500ef87b8cf09
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/radicale
+notes: []

@@ -1,0 +1,22 @@
+title: Dashy
+description: Dashy is a self-hostable personal dashboard built for you.
+icon: https://media.sys.truenas.net/apps/dashy/icons/icon.png
+categories:
+- productivity
+keywords:
+- dashboard
+home: https://dashy.to/
+screenshots:
+- https://media.sys.truenas.net/apps/dashy/screenshots/screenshot1.gif
+- https://media.sys.truenas.net/apps/dashy/screenshots/screenshot2.gif
+train: community
+truenas_name: dashy
+status: draft
+managed: generated
+upstream:
+  version: 2.0.54
+  app_version: 4.7.17
+  questions_sha: f43fe2af181d6b770cb6cd9ec2be37a305fd6e0e28f3034d2b6adfdf3717b87f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/dashy
+notes: []

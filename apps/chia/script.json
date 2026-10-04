@@ -1,0 +1,36 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS chia 1.3.13"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [8444, 8447]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/chia"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/chia/data",
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/chia/plots",
+      "snapshot": {"id": "plots"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/chia/data)",
+      "plots": "$HOST_PATH($LOCATION(ApplicationsPerformance)/chia/plots)"
+    },
+    "network": {
+      "chia_port": {"bind_mode": "published", "port_number": 8444},
+      "farmer_port": {"bind_mode": "published", "port_number": 8447}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

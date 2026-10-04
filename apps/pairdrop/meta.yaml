@@ -1,0 +1,21 @@
+title: PairDrop
+description: Transfer Files Cross-Platform. No Setup, No Signup.
+icon: https://media.sys.truenas.net/apps/pairdrop/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- file transfer
+home: https://pairdrop.net/
+screenshots: []
+train: community
+truenas_name: pairdrop
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: v1.11.2
+  questions_sha: 6b32a0165fc7eafc19a4188031540c831a53dd3a9897e071a58304a5f5d73a96
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/pairdrop
+notes: []

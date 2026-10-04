@@ -1,0 +1,24 @@
+title: Briefkasten
+description: Briefkasten is a self hosted bookmarking app
+icon: https://media.sys.truenas.net/apps/briefkasten/icons/icon.svg
+categories:
+- productivity
+keywords:
+- bookmark
+home: https://github.com/ndom91/briefkasten
+screenshots:
+- https://media.sys.truenas.net/apps/briefkasten/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/briefkasten/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/briefkasten/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/briefkasten/screenshots/screenshot4.png
+train: community
+truenas_name: briefkasten
+status: draft
+managed: generated
+upstream:
+  version: 1.6.27
+  app_version: latest
+  questions_sha: 6bab9af922308126bb5c153c0739de412bf853462fdc36c88def6c0d06361cdd
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/briefkasten
+notes: []

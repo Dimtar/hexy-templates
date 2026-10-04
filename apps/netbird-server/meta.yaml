@@ -1,0 +1,23 @@
+title: NetBird Server
+description: Connect your devices into a secure WireGuard®-based overlay network with SSO, MFA and granular
+  access controls.
+icon: https://media.sys.truenas.net/apps/netbird-server/icons/icon.svg
+categories:
+- networking
+keywords:
+- vpn
+- netbird
+- wireguard
+home: https://netbird.io/
+screenshots: []
+train: community
+truenas_name: netbird-server
+status: draft
+managed: generated
+upstream:
+  version: 1.0.54
+  app_version: 0.80.0
+  questions_sha: 8b239e322b8e4c192afa4b17cf07bb6b84fdaa111fda4906e9f01056c0b68b62
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/netbird-server
+notes: []

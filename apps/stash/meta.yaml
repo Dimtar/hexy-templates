@@ -1,0 +1,21 @@
+title: Stash
+description: An organizer for your NSFW materials, written in Go.
+icon: https://media.sys.truenas.net/apps/stash/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- series
+home: https://stashapp.cc/
+screenshots: []
+train: community
+truenas_name: stash
+status: draft
+managed: generated
+upstream:
+  version: 1.1.9
+  app_version: v0.31.1
+  questions_sha: 320f2068ffae160a0bdd5af4876d0e8af427a05a25adb1fe9b02860dab280e8f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/stash
+notes: []

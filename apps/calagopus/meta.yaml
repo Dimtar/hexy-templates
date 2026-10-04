@@ -1,0 +1,27 @@
+title: Calagopus
+description: A modern game server management panel built in Rust. Deploy, monitor, and manage Minecraft,
+  Hytale, and other game servers with industry-leading performance.
+icon: https://media.sys.truenas.net/apps/calagopus/icons/icon.svg
+categories:
+- games
+keywords:
+- calagopus
+- pterodactyl
+- games
+- servers
+- gaming
+- panel
+- wings
+home: https://calagopus.com/
+screenshots: []
+train: community
+truenas_name: calagopus
+status: draft
+managed: generated
+upstream:
+  version: 1.0.36
+  app_version: 1.2.3-aio
+  questions_sha: 2a500660dd6ffd1f2b2190cfaaa89f27add3d92c7d650e820aa0edb0d442c9a7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/calagopus
+notes: []

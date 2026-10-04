@@ -1,0 +1,20 @@
+title: Meilisearch
+description: A lightning-fast search engine API bringing AI-powered hybrid search to your sites and applications.
+icon: https://media.sys.truenas.net/apps/meilisearch/icons/icon.svg
+categories:
+- productivity
+keywords:
+- search
+home: https://www.meilisearch.com/
+screenshots: []
+train: community
+truenas_name: meilisearch
+status: draft
+managed: generated
+upstream:
+  version: 1.0.23
+  app_version: v1.54.3
+  questions_sha: 2d9d6173f02843c5f78e6f1a7e2821320a07bae84b7c0fc1bfd6c507fede13f7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/meilisearch
+notes: []

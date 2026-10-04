@@ -1,0 +1,22 @@
+title: Grimmory
+description: Grimmory is a self-hosted application for managing your entire book collection in one place.
+  Organize, read, annotate, sync across devices, and share without relying on third-party services.
+icon: https://media.sys.truenas.net/apps/grimmory/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- ebooks
+home: https://github.com/grimmory-tools/grimmory
+screenshots: []
+train: community
+truenas_name: grimmory
+status: draft
+managed: generated
+upstream:
+  version: 1.0.22
+  app_version: v3.5.0
+  questions_sha: c2a45196b1d9ec884b06b76d3b48aef57ff053868037bc42005a91d51cd5d55a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/grimmory
+notes: []

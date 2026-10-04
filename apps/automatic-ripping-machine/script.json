@@ -1,0 +1,57 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS automatic-ripping-machine 1.1.17"
+  },
+  "requirements": {
+    "locations": [
+      "ApplicationsPerformance",
+      "Music",
+      "ApplicationsCapacity",
+      "Media"
+    ],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30173]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/automatic-ripping-machine"
+    },
+    {"path": "$LOCATION(Music)", "network_share": true},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/automatic-ripping-machine"
+    },
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/automatic-ripping-machine/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/automatic-ripping-machine/home",
+      "snapshot": {"id": "home"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/automatic-ripping-machine/logs"
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/automatic-ripping-machine/config)",
+      "home": "$HOST_PATH($LOCATION(ApplicationsPerformance)/automatic-ripping-machine/home)",
+      "music": "$HOST_PATH($LOCATION(Music))",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/automatic-ripping-machine/logs)",
+      "media": "$HOST_PATH($LOCATION(Media))"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30173}
+    },
+    "resources": {
+      "limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"},
+      "gpus": "$GPU_CONFIG()"
+    }
+  }
+}

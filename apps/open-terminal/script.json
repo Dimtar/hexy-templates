@@ -1,0 +1,40 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS open-terminal 1.0.31"
+  },
+  "installation_questions": [
+    {
+      "question": "Terminal api key",
+      "type": "password",
+      "key": "terminal_api_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30377]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/open-terminal"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/open-terminal/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "open_terminal": {"terminal_api_key": "$QUESTION(terminal_api_key)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/open-terminal/data)"
+    },
+    "network": {
+      "api_port": {"bind_mode": "published", "port_number": 30377}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

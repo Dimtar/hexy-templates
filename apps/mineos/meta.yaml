@@ -1,0 +1,21 @@
+title: MineOS
+description: MineOS is a server front-end to ease managing Minecraft administrative tasks.
+icon: https://media.sys.truenas.net/apps/mineos/icons/icon.png
+categories:
+- games
+keywords:
+- minecraft
+home: https://github.com/hexparrot/mineos-node
+screenshots:
+- https://media.sys.truenas.net/apps/mineos/screenshots/screenshot1.png
+train: community
+truenas_name: mineos
+status: draft
+managed: generated
+upstream:
+  version: 1.3.7
+  app_version: latest
+  questions_sha: 6a775e19a0192233fa4ca1083f94ce43fe9b88e7afccfc1182e79f404c4208a3
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mineos
+notes: []

@@ -1,0 +1,21 @@
+title: Zipline
+description: Zipline The next generation ShareX / File upload server.
+icon: https://media.sys.truenas.net/apps/zipline/icons/icon.png
+categories:
+- media
+keywords:
+- zipline
+- media
+home: https://zipline.diced.sh/
+screenshots: []
+train: community
+truenas_name: zipline
+status: draft
+managed: generated
+upstream:
+  version: 1.2.42
+  app_version: 4.8.0
+  questions_sha: 6ef53487fd75fd93cb2fcbbb57c85d4f1865c284c3459e5254aa2a4e6825095b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/zipline
+notes: []

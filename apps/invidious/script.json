@@ -1,0 +1,63 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS invidious 1.7.37"
+  },
+  "installation_questions": [
+    {
+      "question": "Companion key",
+      "type": "password",
+      "key": "companion_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": [
+      "ApplicationsPerformance",
+      "ApplicationsCapacity",
+      "Media"
+    ],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [31008]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/invidious"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/invidious"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/invidious/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/invidious/companion_cache"
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/invidious/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "invidious": {
+      "db_password": "$RANDOM_STRING(16)",
+      "hmac_secret": "$RANDOM_STRING(32)",
+      "companion_key": "$QUESTION(companion_key)"
+    },
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/invidious/config)",
+      "companion_cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/invidious/companion_cache)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/invidious/postgres_data)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 31008}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

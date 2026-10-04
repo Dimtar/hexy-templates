@@ -1,0 +1,24 @@
+title: Rotki
+description: Rotki is an open-source portfolio tracker, accounting and analytics tool that keeps your
+  financial data locally.
+icon: https://media.sys.truenas.net/apps/rotki/icons/icon.svg
+categories:
+- financial
+keywords:
+- finance
+- crypto
+- portfolio
+- defi
+home: https://rotki.com
+screenshots: []
+train: community
+truenas_name: rotki
+status: draft
+managed: generated
+upstream:
+  version: 1.0.2
+  app_version: v1.44.1
+  questions_sha: d8cd557452453fdb8477e3723fd3210cb364df00d312ad05eb54995407afb5fc
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/rotki
+notes: []

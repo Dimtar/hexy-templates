@@ -1,0 +1,26 @@
+title: CineDock
+description: An enhanced, television-first browsing experience for the Emby, Jellyfin or Plex server you
+  already run.
+icon: https://media.sys.truenas.net/apps/cinedock/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- movies
+- television
+- plex
+- emby
+- jellyfin
+home: https://cinedock.tv
+screenshots: []
+train: community
+truenas_name: cinedock
+status: draft
+managed: generated
+upstream:
+  version: 1.0.22
+  app_version: 4.10.3
+  questions_sha: ebfa66c58443ed0150751b9bd32b25eb0f7e600c5fbc0eba7db5084116b43a5c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cinedock
+notes: []

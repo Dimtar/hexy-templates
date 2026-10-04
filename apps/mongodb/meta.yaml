@@ -1,0 +1,20 @@
+title: MongoDB
+description: MongoDB is a document database designed for ease of application development and scaling.
+icon: https://media.sys.truenas.net/apps/mongodb/icons/icon.svg
+categories:
+- database
+keywords:
+- database
+home: https://www.mongodb.com/
+screenshots: []
+train: community
+truenas_name: mongodb
+status: draft
+managed: generated
+upstream:
+  version: 1.1.18
+  app_version: 9.0.2
+  questions_sha: 0e44727d8b66f9d01bf7948afdf3f795f45f721c281a124ac7e6968d733ed4a3
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mongodb
+notes: []

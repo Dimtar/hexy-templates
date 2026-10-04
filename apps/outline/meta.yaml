@@ -1,0 +1,22 @@
+title: Outline
+description: Outline is the fastest knowledge base for growing teams. Beautiful, realtime collaborative,
+  feature packed, and markdown compatible.
+icon: https://media.sys.truenas.net/apps/outline/icons/icon.png
+categories:
+- productivity
+keywords:
+- documentation
+- knowledgebase
+home: https://www.getoutline.com
+screenshots: []
+train: community
+truenas_name: outline
+status: draft
+managed: generated
+upstream:
+  version: 1.2.48
+  app_version: 1.10.1
+  questions_sha: 0ec61a3de6aee9b4342836a65a27a5377b0fdc3173a26199d24b3a288e8a2f55
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/outline
+notes: []

@@ -1,0 +1,73 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS tubearchivist 1.2.24"
+  },
+  "installation_questions": [
+    {
+      "question": "Elastic password",
+      "type": "password",
+      "key": "elastic_password",
+      "required": true
+    },
+    {
+      "question": "Username",
+      "type": "text",
+      "key": "username",
+      "required": true
+    },
+    {
+      "question": "Password",
+      "type": "password",
+      "key": "password",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": [
+      "ApplicationsPerformance",
+      "ApplicationsCapacity",
+      "Media"
+    ],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30247]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/tubearchivist"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/tubearchivist"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/tubearchivist/youtube",
+      "snapshot": {"id": "youtube"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/tubearchivist/cache"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/tubearchivist/es_data",
+      "snapshot": {"id": "es_data"}
+    }
+  ],
+  "app_values": {
+    "tube": {
+      "elastic_password": "$QUESTION(elastic_password)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "username": "$QUESTION(username)",
+      "password": "$QUESTION(password)"
+    },
+    "storage": {
+      "youtube": "$HOST_PATH($LOCATION(ApplicationsPerformance)/tubearchivist/youtube)",
+      "cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/tubearchivist/cache)",
+      "es_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/tubearchivist/es_data)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30247}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

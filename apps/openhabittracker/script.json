@@ -1,0 +1,56 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS openhabittracker 1.0.3"
+  },
+  "installation_questions": [
+    {
+      "question": "Username",
+      "type": "text",
+      "key": "username",
+      "required": true
+    },
+    {
+      "question": "Email",
+      "type": "text",
+      "key": "email",
+      "required": true
+    },
+    {
+      "question": "Password",
+      "type": "password",
+      "key": "password",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30450]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/openhabittracker"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/openhabittracker/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "openhabittracker": {
+      "username": "$QUESTION(username)",
+      "email": "$QUESTION(email)",
+      "password": "$QUESTION(password)",
+      "jwt_secret": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/openhabittracker/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30450}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

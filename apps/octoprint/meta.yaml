@@ -1,0 +1,22 @@
+title: Octoprint
+description: Octoprint provides a snappy web interface for controlling consumer 3D printers.
+icon: https://media.sys.truenas.net/apps/octoprint/icons/icon.png
+categories:
+- productivity
+keywords:
+- 3D
+- printer
+home: https://octoprint.org
+screenshots:
+- https://media.sys.truenas.net/apps/octoprint/screenshots/screenshot1.png
+train: community
+truenas_name: octoprint
+status: draft
+managed: generated
+upstream:
+  version: 1.1.9
+  app_version: 1.11.8
+  questions_sha: c2c3ae5abb8a11ede009d023ed918f598eff9f9ec418fb8f29fc1c7042af1215
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/octoprint
+notes: []

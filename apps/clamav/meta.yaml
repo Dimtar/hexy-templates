@@ -1,0 +1,21 @@
+title: ClamAV
+description: ClamAV is an open source (GPLv2) anti-virus toolkit.
+icon: https://media.sys.truenas.net/apps/clamav/icons/icon.png
+categories:
+- security
+keywords:
+- anti-virus
+- clamav
+home: https://www.clamav.net/
+screenshots: []
+train: community
+truenas_name: clamav
+status: draft
+managed: generated
+upstream:
+  version: 1.4.10
+  app_version: 1.5.4
+  questions_sha: a3b1768e1b6e36c97b0ac671b9148aa570db6e3127b9f2a7d481e3a08792069a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/clamav
+notes: []

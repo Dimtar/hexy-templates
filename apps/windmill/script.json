@@ -1,0 +1,46 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS windmill 1.2.158"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30155, 30156]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/windmill"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/windmill"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/windmill/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/windmill/worker_cache"},
+    {"path": "$LOCATION(ApplicationsCapacity)/windmill/worker_logs"},
+    {"path": "$LOCATION(ApplicationsCapacity)/windmill/lsp_cache"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/windmill/caddy_data",
+      "snapshot": {"id": "caddy_data"}
+    }
+  ],
+  "app_values": {
+    "windmill": {"db_password": "$RANDOM_STRING(16)"},
+    "storage": {
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/windmill/postgres_data)",
+      "worker_cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/windmill/worker_cache)",
+      "worker_logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/windmill/worker_logs)",
+      "lsp_cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/windmill/lsp_cache)",
+      "caddy_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/windmill/caddy_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30155},
+      "smtp_port": {"bind_mode": "published", "port_number": 30156}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,20 @@
+title: IT Tools
+description: Collection of handy online tools for developers, with great UX.
+icon: https://media.sys.truenas.net/apps/it-tools/icons/icon.svg
+categories:
+- productivity
+keywords:
+- tools
+home: https://it-tools.tech
+screenshots: []
+train: community
+truenas_name: it-tools
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: 2024.10.22-7ca5933
+  questions_sha: ffb77e58174cb07a58b4158ba51434b62be760e92887eaa286ada5988250ffaa
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/it-tools
+notes: []

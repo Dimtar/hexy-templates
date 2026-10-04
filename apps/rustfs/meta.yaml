@@ -1,0 +1,22 @@
+title: RustFS
+description: RustFS is an open-source, S3-compatible high-performance object storage system supporting
+  migration and coexistence with other S3-compatible platforms such as MinIO and Ceph.
+icon: https://media.sys.truenas.net/apps/rustfs/icons/icon.svg
+categories:
+- storage
+keywords:
+- s3
+- storage
+home: https://rustfs.com/
+screenshots: []
+train: community
+truenas_name: rustfs
+status: draft
+managed: generated
+upstream:
+  version: 1.1.33
+  app_version: 1.0.1
+  questions_sha: 9be330fc58bfc6b4ed8d54f3903d146ee357b3f24d0dbc76b797c2bde2a9f10b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/rustfs
+notes: []

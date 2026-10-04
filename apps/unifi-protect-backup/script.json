@@ -1,0 +1,56 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS unifi-protect-backup 1.3.9"
+  },
+  "installation_questions": [
+    {
+      "question": "Username",
+      "type": "text",
+      "key": "username",
+      "required": true
+    },
+    {
+      "question": "Password",
+      "type": "password",
+      "key": "password",
+      "required": true
+    },
+    {
+      "question": "Address",
+      "type": "text",
+      "key": "address",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/unifi-protect-backup"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/unifi-protect-backup/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/unifi-protect-backup/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "unifi_protect_backup": {
+      "username": "$QUESTION(username)",
+      "password": "$QUESTION(password)",
+      "address": "$QUESTION(address)"
+    },
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/unifi-protect-backup/config)",
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/unifi-protect-backup/data)"
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

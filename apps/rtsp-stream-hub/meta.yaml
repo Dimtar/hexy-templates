@@ -1,0 +1,27 @@
+title: RTSP Stream Hub
+description: Lightweight web application to manage, discover via ONVIF, and transcode RTSP camera streams
+  into browser-compatible MJPEG.
+icon: https://media.sys.truenas.net/apps/rtsp-stream-hub/icons/icon.svg
+categories:
+- media
+keywords:
+- camera
+- rtsp
+- mjpeg
+- streaming
+- security
+- onvif
+- smarthome
+home: https://github.com/Daddelgreis74/rtsp-stream-hub
+screenshots: []
+train: community
+truenas_name: rtsp-stream-hub
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 1.1.5
+  questions_sha: d1efb29d1338a51fe00115f9dd1df240e3429379ac9b2161bdc3ed75a8a920de
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/rtsp-stream-hub
+notes: []

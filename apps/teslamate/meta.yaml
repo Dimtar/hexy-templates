@@ -1,0 +1,23 @@
+title: TeslaMate
+description: A self-hosted data logger for your Tesla
+icon: https://media.sys.truenas.net/apps/teslamate/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- tesla
+- ev
+- logging
+- grafana
+home: https://docs.teslamate.org/
+screenshots: []
+train: community
+truenas_name: teslamate
+status: draft
+managed: generated
+upstream:
+  version: 1.0.30
+  app_version: 4.3.0
+  questions_sha: 229b875c1d1b64d6fdb4be6c0403f58e299da56bc29c728aecc505a3d67f22ba
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/teslamate
+notes: []

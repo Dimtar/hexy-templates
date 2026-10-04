@@ -1,0 +1,25 @@
+title: SplitPro
+description: SplitPro is an open source alternative to Splitwise for sharing expenses with friends and
+  groups.
+icon: https://media.sys.truenas.net/apps/split-pro/icons/icon.png
+categories:
+- productivity
+keywords:
+- expense
+- splitwise
+- finance
+- budget
+- sharing
+home: https://github.com/oss-apps/split-pro
+screenshots: []
+train: community
+truenas_name: split-pro
+status: draft
+managed: generated
+upstream:
+  version: 1.0.34
+  app_version: v2.1.5
+  questions_sha: ca090f8b9445e8f27bfde17f2468983be434f3b25a28fc7abee92ea0d9baf99a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/split-pro
+notes: []

@@ -1,0 +1,45 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS tandoor-recipes 1.2.49"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30290]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/tandoor-recipes"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/tandoor-recipes/staticfiles",
+      "snapshot": {"id": "staticfiles"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/tandoor-recipes/mediafiles",
+      "snapshot": {"id": "mediafiles"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/tandoor-recipes/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "recipes": {
+      "db_password": "$RANDOM_STRING(16)",
+      "secret_key": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "staticfiles": "$HOST_PATH($LOCATION(ApplicationsPerformance)/tandoor-recipes/staticfiles)",
+      "mediafiles": "$HOST_PATH($LOCATION(ApplicationsPerformance)/tandoor-recipes/mediafiles)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/tandoor-recipes/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30290}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS openfamily 1.0.9"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30488]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/openfamily"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/openfamily/uploads",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "uploads"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/openfamily/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "openfamily": {
+      "db_password": "$RANDOM_STRING(16)",
+      "jwt_secret": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "uploads": "$HOST_PATH($LOCATION(ApplicationsPerformance)/openfamily/uploads)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/openfamily/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30488}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

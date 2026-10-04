@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}{{ app.title }} install script for HexOS · Hexy Templates{% endblock %}
+{% block description %}HexOS custom install script for {{ app.title }}, explained line by line.{% endblock %}
+{% block main %}
+{% set m = app.meta %}
+<div class="wrap app-page">
+  <nav class="crumbs"><a href="{{ base }}">App library</a> <span aria-hidden="true">›</span> {{ app.title }}</nav>
+
+  <header class="app-head">
+    <img class="app-icon app-icon-lg" src="{{ m.icon }}" alt="" width="72" height="72" onerror="this.style.visibility='hidden'">
+    <div>
+      <h1>{{ app.title }}</h1>
+      <p class="lede">{{ m.description }}</p>
+      <div class="meta-row">
+        <span class="badge badge-{{ app.status }}" title="{{ app.status_help }}">{{ app.status_label }}</span>
+        {% for c in m.categories %}<span class="tag">{{ c }}</span>{% endfor %}
+        {% if m.upstream %}<span class="muted">Based on TrueNAS app v{{ m.upstream.version }}{% if m.upstream.app_version %} ({{ app.title }} {{ m.upstream.app_version }}){% endif %}</span>{% endif %}
+      </div>
+      <div class="link-row">
+        {% if m.home %}<a href="{{ m.home }}">Project website</a>{% endif %}
+        {% if m.upstream %}<a href="{{ m.upstream.source }}">TrueNAS app source</a>{% endif %}
+        <a href="{{ repo }}/blob/main/apps/{{ app.slug }}/script.json">Script on GitHub</a>
+        <a href="{{ repo }}/issues/new?title={{ ('[' ~ app.slug ~ '] ')|urlencode }}">Report a problem</a>
+      </div>
+    </div>
+  </header>
+
+  {% if m.needs_review %}
+  <aside class="notice notice-needs-retest"><strong>Under review:</strong> the TrueNAS version of this app changed recently and this script hasn't been updated yet.</aside>
+  {% endif %}
+  {% if app.status != "tested" %}
+  <aside class="notice notice-{{ app.status }}">
+    <strong>{{ app.status_label }}:</strong> {{ app.status_help }}
+    {% if app.status == "draft" %}It should work for most setups, but check the explanation boxes before installing.{% endif %}
+    {% if m.removed_upstream %}<br><strong>Heads up:</strong> this app has been removed from the TrueNAS catalogue.{% endif %}
+  </aside>
+  {% endif %}
+
+  <ol class="quick-steps">
+    <li><span>1</span><div>Copy the script below</div></li>
+    <li><span>2</span><div>In HexOS, open <b>Apps</b>, find <b>{{ app.title }}</b> and choose <b>Custom Install</b></div></li>
+    <li><span>3</span><div>Paste, then press <b>Install</b> — <a href="{{ base }}guide/">full guide with screenshots</a></div></li>
+  </ol>
+
+  <div class="explainer" id="explainer">
+    <section class="code-col" aria-label="Install script">
+      <div class="code-card">
+        <div class="code-bar">
+          <span class="code-title">{{ app.slug }}.json</span>
+          <div class="code-actions">
+            <a class="btn btn-ghost" href="{{ base }}apps/{{ app.slug }}/{{ app.slug }}.json" download>Download</a>
+            <button class="btn btn-primary" type="button" id="copy">Copy script</button>
+          </div>
+        </div>
+        <pre class="code" id="code"><code>{% for l in app.lines %}<span class="ln" id="L{{ l.n }}" data-line="{{ l.n }}"><span class="gutter">{% for n in l.markers %}<a class="marker" href="#box-{{ n }}" data-box="{{ n }}" aria-label="Explanation {{ n }}">{{ n }}</a>{% endfor %}<span class="num">{{ l.n }}</span></span><span class="src">{{ l.html }}</span>
+</span>{% endfor %}</code></pre>
+        <textarea id="raw" hidden>{{ app.script_text }}</textarea>
+      </div>
+    </section>
+
+    <section class="boxes-col" aria-label="What each part of the script does">
+      <h2 class="boxes-title">What this script does</h2>
+      <p class="muted boxes-hint">Hover or tap a box to see the lines it explains.</p>
+      <ol class="boxes">
+        {% for b in app.boxes %}
+        <li class="box box-{{ b.tone }}" id="box-{{ b.number }}" data-box="{{ b.number }}" data-start="{{ b.start }}" data-end="{{ b.end }}" tabindex="0">
+          <span class="box-num" aria-hidden="true">{{ b.number }}</span>
+          <div>
+            <h3>{{ b.title }}</h3>
+            <p>{{ b.body }}</p>
+            <p class="box-lines">Line{% if b.end != b.start %}s {{ b.start }}–{{ b.end }}{% else %} {{ b.start }}{% endif %}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+    <svg class="connector" id="connector" aria-hidden="true"><path /></svg>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ base }}static/app.js"></script>{% endblock %}

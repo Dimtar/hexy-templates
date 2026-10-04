@@ -1,0 +1,28 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS minio-console 1.1.7"
+  },
+  "installation_questions": [
+    {
+      "question": "Minio server",
+      "type": "text",
+      "key": "minio_server",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": [],
+    "specifications": ["2CORE"],
+    "ports": [30212, 30213]
+  },
+  "app_values": {
+    "console": {"minio_server": "$QUESTION(minio_server)"},
+    "network": {
+      "http_port": {"bind_mode": "published", "port_number": 30212},
+      "https_port": {"bind_mode": "published", "port_number": 30213}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

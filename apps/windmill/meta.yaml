@@ -1,0 +1,23 @@
+title: Windmill
+description: Open-source developer platform and workflow engine
+icon: https://media.sys.truenas.net/apps/windmill/icons/icon.svg
+categories:
+- productivity
+keywords:
+- workflows
+- automation
+- scripts
+- developer
+home: https://www.windmill.dev/
+screenshots: []
+train: community
+truenas_name: windmill
+status: draft
+managed: generated
+upstream:
+  version: 1.2.158
+  app_version: 1.822.0
+  questions_sha: 16e0b05436c901f9f671df12fe6cb51eb4c955536a2f411286dd516f16a00ecc
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/windmill
+notes: []

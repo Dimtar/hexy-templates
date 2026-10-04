@@ -1,0 +1,24 @@
+title: Calibre-Web Automated
+description: A web application for managing Calibre eBook libraries with automated book ingestion.
+icon: https://media.sys.truenas.net/apps/calibre-web-automated/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- ebooks
+- calibre
+- automation
+home: https://github.com/crocodilestick/Calibre-Web-Automated
+screenshots:
+- https://media.sys.truenas.net/apps/calibre-web-automated/screenshots/screenshot1.png
+train: community
+truenas_name: calibre-web-automated
+status: draft
+managed: generated
+upstream:
+  version: 1.0.3
+  app_version: v4.0.8
+  questions_sha: 80194710cf69d14c5a8817439413f3b381c3b15716e59e04483a5242d68f9c95
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/calibre-web-automated
+notes: []

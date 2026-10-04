@@ -1,0 +1,23 @@
+title: Collabora
+description: Collabora is a collaborative online office suite based on LibreOffice technology
+icon: https://media.sys.truenas.net/apps/collabora/icons/icon.png
+categories:
+- productivity
+keywords:
+- office
+- documents
+- productivity
+home: https://www.collaboraoffice.com/
+screenshots:
+- https://media.sys.truenas.net/apps/collabora/screenshots/screenshot1.png
+train: stable
+truenas_name: collabora
+status: draft
+managed: generated
+upstream:
+  version: 1.5.32
+  app_version: 26.04.4.2.1
+  questions_sha: 8a7bd756d0630f0b8a5e4bc6cf3708a028245f75e20c4349566608486d484245
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/collabora
+notes: []

@@ -1,0 +1,21 @@
+title: Mailpit
+description: An email and SMTP testing tool with API for developers
+icon: https://media.sys.truenas.net/apps/mailpit/icons/icon.svg
+categories:
+- productivity
+keywords:
+- email
+- smtp
+home: https://mailpit.axllent.org/
+screenshots: []
+train: community
+truenas_name: mailpit
+status: draft
+managed: generated
+upstream:
+  version: 1.1.25
+  app_version: v1.31.4
+  questions_sha: 1653ba84f4146262e390fedc544e9df1d777fd8d3e364c71ba75d3b8da4ec814
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mailpit
+notes: []

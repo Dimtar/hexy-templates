@@ -1,0 +1,23 @@
+title: Tandoor Recipes
+description: Tandoor Recipes is an application for managing recipes, planning meals, building shopping
+  lists and much much more!
+icon: https://media.sys.truenas.net/apps/tandoor-recipes/icons/icon.svg
+categories:
+- productivity
+keywords:
+- recipes
+- meal planning
+- cooking
+home: https://tandoor.dev/
+screenshots: []
+train: community
+truenas_name: tandoor-recipes
+status: draft
+managed: generated
+upstream:
+  version: 1.2.49
+  app_version: 2.6.15
+  questions_sha: cb5692b724d9545d3480a5b0039b2b3506289693935fce262a8f379846a2bc5d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tandoor-recipes
+notes: []

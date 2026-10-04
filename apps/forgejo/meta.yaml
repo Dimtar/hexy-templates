@@ -1,0 +1,23 @@
+title: Forgejo
+description: Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance,
+  it just does the job.
+icon: https://media.sys.truenas.net/apps/forgejo/icons/icon.svg
+categories:
+- productivity
+keywords:
+- git
+- forgejo
+- source control
+home: https://forgejo.org/
+screenshots: []
+train: community
+truenas_name: forgejo
+status: draft
+managed: generated
+upstream:
+  version: 1.2.45
+  app_version: 16.0.5-rootless
+  questions_sha: 0917c31878bd32a4302ada069873b5f1687a1c601e72be1e8e01ff1cb97df96d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/forgejo
+notes: []

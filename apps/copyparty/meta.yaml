@@ -1,0 +1,23 @@
+title: Copyparty
+description: Portable file server with accelerated resumable uploads, dedup, WebDAV, FTP, TFTP, zeroconf,
+  media indexer, thumbnails++ all in one file, no deps
+icon: https://media.sys.truenas.net/apps/copyparty/icons/icon.svg
+categories:
+- storage
+keywords:
+- file-server
+- ftp
+- webdav
+home: https://github.com/9001/copyparty
+screenshots: []
+train: community
+truenas_name: copyparty
+status: draft
+managed: generated
+upstream:
+  version: 1.1.22
+  app_version: 1.20.24
+  questions_sha: 10fefef0a2aaea69cbf5c7fdd2592658d5e04f360743eb0e07c0cbd5384dc18a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/copyparty
+notes: []

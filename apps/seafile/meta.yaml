@@ -1,0 +1,23 @@
+title: Seafile
+description: Seafile - An open source cloud storage system with privacy preservation and teamwork features.
+icon: https://media.sys.truenas.net/apps/seafile/icons/icon.svg
+categories:
+- storage
+keywords:
+- storage
+- cloud
+- collaboration
+- file-sharing
+home: https://www.seafile.com/
+screenshots: []
+train: community
+truenas_name: seafile
+status: draft
+managed: generated
+upstream:
+  version: 1.0.13
+  app_version: 13.0.28
+  questions_sha: 1bb5f573e7761e4a1bc6fbbd5a1d80bc39344bb6c6bc929d47d3575411262456
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/seafile
+notes: []

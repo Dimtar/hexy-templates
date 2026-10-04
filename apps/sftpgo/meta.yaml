@@ -1,0 +1,21 @@
+title: SFTPGo
+description: SFTPGo is a fully featured and highly configurable SFTP server with optional HTTP/S, FTP/S
+  and WebDAV support - S3, Google Cloud Storage, Azure Blob
+icon: https://media.sys.truenas.net/apps/sftpgo/icons/icon.png
+categories:
+- storage
+keywords:
+- sftp
+home: https://github.com/drakkan/sftpgo
+screenshots: []
+train: community
+truenas_name: sftpgo
+status: draft
+managed: generated
+upstream:
+  version: 1.3.13
+  app_version: v2.7.6
+  questions_sha: e6b83f75aa8476e40e2d41010448380a5572ffcad75252ed9447ec7e9a2f091a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/sftpgo
+notes: []

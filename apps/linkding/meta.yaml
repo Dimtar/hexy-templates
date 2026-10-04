@@ -1,0 +1,21 @@
+title: Linkding
+description: Linkding is a bookmark manager that you can host yourself.
+icon: https://media.sys.truenas.net/apps/linkding/icons/icon.svg
+categories:
+- productivity
+keywords:
+- bookmark
+home: https://github.com/sissbruecker/linkding
+screenshots:
+- https://media.sys.truenas.net/apps/linkding/screenshots/screenshot1.png
+train: community
+truenas_name: linkding
+status: draft
+managed: generated
+upstream:
+  version: 1.6.31
+  app_version: 1.47.0
+  questions_sha: 65e2355c4280b05dc13df597df14eab1a13381d54ca6e2f381b5c047a2e7363b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/linkding
+notes: []

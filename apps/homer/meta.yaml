@@ -1,0 +1,21 @@
+title: Homer
+description: Homer is a dead simple static HOMepage for your servER to keep your services on hand, from
+  a simple yaml configuration file.
+icon: https://media.sys.truenas.net/apps/homer/icons/icon.png
+categories:
+- productivity
+keywords: []
+home: https://github.com/bastienwirtz/homer
+screenshots:
+- https://media.sys.truenas.net/apps/homer/screenshots/screenshot1.png
+train: community
+truenas_name: homer
+status: draft
+managed: generated
+upstream:
+  version: 2.3.11
+  app_version: v26.08.3
+  questions_sha: 0ff693fff6a014695541f65e7f87706dcc6638884806fd68fd6d29d55ab1aa3e
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/homer
+notes: []

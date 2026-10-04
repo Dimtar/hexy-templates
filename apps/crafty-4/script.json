@@ -1,0 +1,46 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS crafty-4 1.1.17"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30146]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/crafty-4"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/crafty-4"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/crafty-4/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/crafty-4/servers",
+      "snapshot": {"id": "servers"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/crafty-4/logs"},
+    {"path": "$LOCATION(ApplicationsCapacity)/crafty-4/backups"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/crafty-4/import",
+      "snapshot": {"id": "import"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/crafty-4/config)",
+      "servers": "$HOST_PATH($LOCATION(ApplicationsPerformance)/crafty-4/servers)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/crafty-4/logs)",
+      "backups": "$HOST_PATH($LOCATION(ApplicationsCapacity)/crafty-4/backups)",
+      "import": "$HOST_PATH($LOCATION(ApplicationsPerformance)/crafty-4/import)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30146}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

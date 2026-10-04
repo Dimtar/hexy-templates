@@ -1,0 +1,21 @@
+title: Flood
+description: A modern web UI for various torrent clients with a Node.js backend and React frontend.
+icon: https://media.sys.truenas.net/apps/flood/icons/icon.png
+categories:
+- media
+keywords:
+- torrent
+home: https://flood.js.org
+screenshots:
+- https://media.sys.truenas.net/apps/flood/screenshots/screenshot1.png
+train: community
+truenas_name: flood
+status: draft
+managed: generated
+upstream:
+  version: 1.2.20
+  app_version: 4.16.2
+  questions_sha: 9b786cdb4277ed121d493884fc58e2054695bccd32619a8053cf0d3b80a45f66
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/flood
+notes: []

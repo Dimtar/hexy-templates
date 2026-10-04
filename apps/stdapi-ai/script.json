@@ -1,0 +1,30 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS stdapi-ai 1.0.24"
+  },
+  "installation_questions": [
+    {
+      "question": "Aws access key id",
+      "type": "password",
+      "key": "aws_access_key_id",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": [],
+    "specifications": ["2CORE"],
+    "ports": [30397]
+  },
+  "app_values": {
+    "stdapi_ai": {
+      "aws_access_key_id": "$QUESTION(aws_access_key_id)",
+      "aws_secret_access_key": "$RANDOM_STRING(32)"
+    },
+    "network": {
+      "api_port": {"bind_mode": "published", "port_number": 30397}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

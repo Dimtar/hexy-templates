@@ -1,0 +1,45 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS ghostfolio 1.0.35"
+  },
+  "installation_questions": [
+    {
+      "question": "Access token salt",
+      "type": "password",
+      "key": "access_token_salt",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30463]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/ghostfolio"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/ghostfolio/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "ghostfolio": {
+      "db_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "access_token_salt": "$QUESTION(access_token_salt)",
+      "jwt_secret_key": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/ghostfolio/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30463}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

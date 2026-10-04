@@ -1,0 +1,24 @@
+title: Dispatcharr
+description: Dispatcharr is an open-source powerhouse for managing IPTV streams, EPG data, and VOD content
+  with elegance and control.
+icon: https://media.sys.truenas.net/apps/dispatcharr/icons/icon.svg
+categories:
+- media
+keywords:
+- iptv
+- epg
+- vod
+- streaming
+home: https://github.com/Dispatcharr/Dispatcharr
+screenshots: []
+train: community
+truenas_name: dispatcharr
+status: draft
+managed: generated
+upstream:
+  version: 1.2.55
+  app_version: 0.31.0
+  questions_sha: 009f6b2999cfaabdc26ea0164c49e128f09c3f85a4ff8bc6e6b12630e4fae278
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/dispatcharr
+notes: []

@@ -1,0 +1,36 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS nexsift 1.0.1"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30510, 30511, 30512, 30513, 30514]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/nexsift"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/nexsift/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "nexsift": {"secret_key": "$RANDOM_STRING(32)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nexsift/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30510},
+      "gotify_port": {"bind_mode": "published", "port_number": 30511},
+      "ntfy_port": {"bind_mode": "published", "port_number": 30512},
+      "smtp_port": {"bind_mode": "published", "port_number": 30513},
+      "syslog_port": {"bind_mode": "published", "port_number": 30514}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

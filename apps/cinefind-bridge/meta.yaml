@@ -1,0 +1,24 @@
+title: CineFind Bridge
+description: Securely sends CineFind movie and series discoveries to private Seerr, Radarr or Sonarr servers.
+icon: https://media.sys.truenas.net/apps/cinefind-bridge/icons/icon.svg
+categories:
+- media
+keywords:
+- cinefind
+- seerr
+- radarr
+- sonarr
+- media-request
+home: https://cinefindpro.com
+screenshots: []
+train: community
+truenas_name: cinefind-bridge
+status: draft
+managed: generated
+upstream:
+  version: 1.0.4
+  app_version: v2.1.0
+  questions_sha: c25d54f2cbc372de043eb57c5d52348371c6bf0d492994a9d063290167483822
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cinefind-bridge
+notes: []

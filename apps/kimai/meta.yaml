@@ -1,0 +1,20 @@
+title: Kimai
+description: Kimai is a web-based multi-user time-tracking application.
+icon: https://media.sys.truenas.net/apps/kimai/icons/icon.svg
+categories:
+- productivity
+keywords:
+- time-tracking
+home: https://www.kimai.org/
+screenshots: []
+train: community
+truenas_name: kimai
+status: draft
+managed: generated
+upstream:
+  version: 1.2.17
+  app_version: apache-2.57.0
+  questions_sha: a192b8f80ccddefef3ee501f823428e835d7d90603308e3425eea3e161c85857
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/kimai
+notes: []

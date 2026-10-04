@@ -1,0 +1,22 @@
+title: Dockge
+description: A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager
+icon: https://media.sys.truenas.net/apps/dockge/icons/icon.svg
+categories:
+- management
+keywords:
+- docker
+- compose
+home: https://dockge.kuma.pet
+screenshots:
+- https://media.sys.truenas.net/apps/dockge/screenshots/screenshot1.png
+train: community
+truenas_name: dockge
+status: draft
+managed: generated
+upstream:
+  version: 1.3.8
+  app_version: 1.5.0
+  questions_sha: 442c801503f97dba6cab839b84bb8d9a9ede8bf66f291678700fc6dfd3eed110
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/dockge
+notes: []

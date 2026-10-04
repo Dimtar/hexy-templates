@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}How to install an app with a custom install script · Hexy Templates{% endblock %}
+{% block main %}
+<div class="wrap guide">
+  <header class="guide-head">
+    <h1>{{ guide.title }}</h1>
+    <p class="lede">{{ guide.intro }}</p>
+  </header>
+
+  <ol class="steps">
+    {% for s in guide.steps %}
+    <li class="step" id="step-{{ loop.index }}">
+      <div class="step-text">
+        <span class="step-num">{{ loop.index }}</span>
+        <h2>{{ s.title }}</h2>
+        {% for p in s.body %}<p>{{ p }}</p>{% endfor %}
+        {% if s.tip %}<p class="tip"><strong>Tip:</strong> {{ s.tip }}</p>{% endif %}
+      </div>
+      <figure class="shot">
+        {% if s.has_screenshot %}
+        <img src="{{ base }}guide/img/{{ s.screenshot }}" alt="{{ s.alt }}" loading="lazy">
+        {% else %}
+        <div class="shot-placeholder" role="img" aria-label="{{ s.alt }}">
+          <span>Screenshot coming soon</span>
+          <small>{{ s.alt }}</small>
+        </div>
+        {% endif %}
+        <figcaption>{{ s.alt }}</figcaption>
+      </figure>
+    </li>
+    {% endfor %}
+  </ol>
+
+  <section class="faq">
+    <h2>Common questions</h2>
+    {% for f in guide.faq %}
+    <details>
+      <summary>{{ f.q }}</summary>
+      <p>{{ f.a }}</p>
+    </details>
+    {% endfor %}
+  </section>
+
+  <p class="guide-cta"><a class="btn btn-primary" href="{{ base }}">Find an app →</a></p>
+</div>
+{% endblock %}

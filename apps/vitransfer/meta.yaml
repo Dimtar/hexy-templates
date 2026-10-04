@@ -1,0 +1,21 @@
+title: ViTransfer
+description: ViTransfer - Professional video review and approval platform for filmmakers
+icon: https://media.sys.truenas.net/apps/vitransfer/icons/icon.svg
+categories:
+- productivity
+keywords:
+- video
+- feedback
+home: https://www.vitransfer.com
+screenshots: []
+train: community
+truenas_name: vitransfer
+status: draft
+managed: generated
+upstream:
+  version: 1.2.62
+  app_version: 1.3.8
+  questions_sha: 0d2869ed59c2031917677aed81dd87761c09b4bb17068b4b81d9fd69160a64bf
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/vitransfer
+notes: []

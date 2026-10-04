@@ -1,0 +1,39 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS unifi-controller 2.1.15"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30072, 30073, 30074, 30075]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/unifi-controller"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/unifi-controller/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/unifi-controller/data)"
+    },
+    "network": {
+      "web_https_port": {"bind_mode": "published", "port_number": 30072},
+      "web_http_port": {"bind_mode": "published", "port_number": 30073},
+      "portal_https_port": {
+        "bind_mode": "published",
+        "port_number": 30074
+      },
+      "portal_http_port": {
+        "bind_mode": "published",
+        "port_number": 30075
+      }
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

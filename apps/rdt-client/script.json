@@ -1,0 +1,37 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS rdt-client 1.1.24"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Downloads", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30249]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/rdt-client"},
+    {"path": "$LOCATION(Downloads)", "network_share": true},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/rdt-client/db",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "db"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "db": "$HOST_PATH($LOCATION(ApplicationsPerformance)/rdt-client/db)",
+      "downloads": "$HOST_PATH($LOCATION(Downloads))",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30249}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

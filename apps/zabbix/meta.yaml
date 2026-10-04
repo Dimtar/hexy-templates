@@ -1,0 +1,21 @@
+title: Zabbix
+description: The universal, open-source observability solution for IT & OT
+icon: https://media.sys.truenas.net/apps/zabbix/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- monitoring
+- zabbix
+home: https://www.zabbix.com/
+screenshots: []
+train: community
+truenas_name: zabbix
+status: draft
+managed: generated
+upstream:
+  version: 1.0.38
+  app_version: 7.4.15-ubuntu
+  questions_sha: 9ac4702ae6ed99d9f662bb32664dbdb18da1444d74691ef6dd8fd31d4694f8fd
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/zabbix
+notes: []

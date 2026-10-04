@@ -1,0 +1,29 @@
+title: Handbrake Web
+description: A self-hosted platform to use HandBrake on your headless devices via a bespoke web interface.
+  Harness the processing power of multiple devices to work on a single queue.
+icon: https://media.sys.truenas.net/apps/handbrake-web/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- video
+- transcoder
+home: https://github.com/TheNickOfTime/handbrake-web
+screenshots:
+- https://media.sys.truenas.net/apps/handbrake-web/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/handbrake-web/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/handbrake-web/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/handbrake-web/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/handbrake-web/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/handbrake-web/screenshots/screenshot6.png
+train: community
+truenas_name: handbrake-web
+status: draft
+managed: generated
+upstream:
+  version: 1.2.5
+  app_version: 0.8.1
+  questions_sha: 3aab8f90b6fe68537367fda777c9f544507479b8492e30a7699e402de21a8dad
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/handbrake-web
+notes: []

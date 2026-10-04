@@ -1,0 +1,22 @@
+title: LazyLibrarian
+description: LazyLibrarian is a program to follow authors and grab metadata for all your digital reading
+  needs.
+icon: https://media.sys.truenas.net/apps/lazylibrarian/icons/icon.webp
+categories:
+- media
+keywords:
+- media
+- ebooks
+home: https://gitlab.com/LazyLibrarian/LazyLibrarian
+screenshots: []
+train: community
+truenas_name: lazylibrarian
+status: draft
+managed: generated
+upstream:
+  version: 1.1.93
+  app_version: 978c264e-ls362
+  questions_sha: fe5b95b60cb31e758730684a754d23f332bc40d084f83fe631fdecb6df33e864
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/lazylibrarian
+notes: []

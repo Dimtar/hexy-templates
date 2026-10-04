@@ -1,0 +1,23 @@
+title: PlainNVR
+description: Lightweight self-hosted network video recorder for RTSP cameras.
+icon: https://media.sys.truenas.net/apps/plainnvr/icons/icon.png
+categories:
+- security
+keywords:
+- camera
+- go2rtc
+- nvr
+- rtsp
+home: https://github.com/endless1233214/plainnvr
+screenshots: []
+train: community
+truenas_name: plainnvr
+status: draft
+managed: generated
+upstream:
+  version: 1.0.5
+  app_version: 0.1.4
+  questions_sha: 5c44000bb8c231a3b4affb119955f327a9404e6a94613c06ddc9b0478e03daa0
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/plainnvr
+notes: []

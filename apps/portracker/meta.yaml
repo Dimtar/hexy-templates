@@ -1,0 +1,27 @@
+title: portracker
+description: A self-hosted, real-time port monitoring and discovery tool.
+icon: https://media.sys.truenas.net/apps/portracker/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- portracker
+- ports
+- monitoring
+- discovery
+home: https://github.com/mostafa-wahied/portracker
+screenshots:
+- https://media.sys.truenas.net/apps/portracker/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/portracker/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/portracker/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/portracker/screenshots/screenshot4.png
+train: community
+truenas_name: portracker
+status: draft
+managed: generated
+upstream:
+  version: 1.1.14
+  app_version: 1.3.13
+  questions_sha: d105eaa1ed802171f6a4831ea9fd6afb45e69e297e9b73c7101c42ff4d18ef5b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/portracker
+notes: []

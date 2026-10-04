@@ -1,0 +1,65 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS mumble 1.4.8"
+  },
+  "installation_questions": [
+    {
+      "question": "Superuser password",
+      "type": "password",
+      "key": "superuser_password",
+      "required": true
+    },
+    {
+      "question": "Server password",
+      "type": "password",
+      "key": "server_password",
+      "required": true
+    },
+    {
+      "question": "Welcome text",
+      "type": "text",
+      "key": "welcome_text",
+      "required": true
+    },
+    {
+      "question": "Users",
+      "type": "number",
+      "key": "users",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30018, 30019]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/mumble"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/mumble/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "mumble": {
+      "superuser_password": "$QUESTION(superuser_password)",
+      "server_password": "$QUESTION(server_password)",
+      "ice_secret_read": "$RANDOM_STRING(32)",
+      "ice_secret_write": "$RANDOM_STRING(32)",
+      "welcome_text": "$QUESTION(welcome_text)",
+      "users": "$QUESTION(users)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/mumble/data)"
+    },
+    "network": {
+      "server_port": {"bind_mode": "published", "port_number": 30018},
+      "ice_port": {"bind_mode": "published", "port_number": 30019}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

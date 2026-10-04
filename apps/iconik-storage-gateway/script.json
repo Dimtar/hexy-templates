@@ -1,0 +1,54 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS iconik-storage-gateway 1.1.7"
+  },
+  "installation_questions": [
+    {
+      "question": "Auth token",
+      "type": "password",
+      "key": "auth_token",
+      "required": true
+    },
+    {
+      "question": "App id",
+      "type": "password",
+      "key": "app_id",
+      "required": true
+    },
+    {
+      "question": "Storage id",
+      "type": "password",
+      "key": "storage_id",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/iconik-storage-gateway"
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/iconik-storage-gateway/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "iconik": {
+      "auth_token": "$QUESTION(auth_token)",
+      "app_id": "$QUESTION(app_id)",
+      "storage_id": "$QUESTION(storage_id)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/iconik-storage-gateway/data)"
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,29 @@
+title: Nexview
+description: Media discovery and request dashboard for a household. Browse new releases from TMDB, see
+  what is already in your library, and hand requests to Radarr and Sonarr, with accounts, approvals, quotas
+  and a per-user age restriction.
+icon: https://media.sys.truenas.net/apps/nexview/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- requests
+- radarr
+- sonarr
+- plex
+home: https://nexview.nexapps.dev
+screenshots:
+- https://media.sys.truenas.net/apps/nexview/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/nexview/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/nexview/screenshots/screenshot3.jpg
+train: community
+truenas_name: nexview
+status: draft
+managed: generated
+upstream:
+  version: 1.0.17
+  app_version: 1.0.0
+  questions_sha: 74e4ae320ff4390da531306847dce16a938ec25e2ae750af46fb9313ba050fbd
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nexview
+notes: []

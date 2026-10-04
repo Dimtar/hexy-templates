@@ -1,0 +1,70 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS peertube 1.0.24"
+  },
+  "installation_questions": [
+    {
+      "question": "Admin email",
+      "type": "text",
+      "key": "admin_email",
+      "required": true
+    },
+    {
+      "question": "Webserver hostname",
+      "type": "text",
+      "key": "webserver_hostname",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30434, 30435]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/peertube"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/peertube/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/peertube/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/peertube/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "peertube": {
+      "db_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "secret": "$RANDOM_STRING(32)",
+      "admin_email": "$QUESTION(admin_email)",
+      "initial_root_password": "$RANDOM_STRING(16)",
+      "webserver_hostname": "$QUESTION(webserver_hostname)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/peertube/data)",
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/peertube/config)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/peertube/postgres_data)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30434},
+      "rtmp_port": {"bind_mode": "published", "port_number": 30435}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

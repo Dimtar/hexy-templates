@@ -1,0 +1,25 @@
+title: Fladder
+description: A Simple Jellyfin frontend built on top of Flutter.
+icon: https://media.sys.truenas.net/apps/fladder/icons/icon.svg
+categories:
+- media
+keywords:
+- jellyfin
+- frontend
+- fladder
+home: https://donutware.github.io/Fladder/
+screenshots:
+- https://media.sys.truenas.net/apps/fladder/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/fladder/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/fladder/screenshots/screenshot3.png
+train: community
+truenas_name: fladder
+status: draft
+managed: generated
+upstream:
+  version: 1.0.8
+  app_version: v0.11.1
+  questions_sha: e3be30c1f34f5081f5768d710bd358fa919e512314ac321cb21037892939d79f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/fladder
+notes: []

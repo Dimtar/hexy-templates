@@ -1,0 +1,21 @@
+title: Backrest
+description: Backrest is a web UI and orchestrator for restic backup.
+icon: https://media.sys.truenas.net/apps/backrest/icons/icon.svg
+categories:
+- backup
+keywords:
+- backup
+- restic
+home: https://github.com/garethgeorge/backrest
+screenshots: []
+train: community
+truenas_name: backrest
+status: draft
+managed: generated
+upstream:
+  version: 1.1.13
+  app_version: v1.14.1
+  questions_sha: aec380de741116730dfd7af6559b30b0cd7e0678435a5285d80dce6aa1755f8a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/backrest
+notes: []

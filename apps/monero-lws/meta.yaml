@@ -1,0 +1,25 @@
+title: Monero LWS
+description: Monero LWS is a Monero light-wallet server, currently compatible with MyMonero and Edge.
+icon: https://media.sys.truenas.net/apps/monero-lws/icons/icon.png
+categories:
+- financial
+keywords:
+- monero
+- cryptocurrency
+- wallet
+- rpc
+- blockchain
+- privacy
+home: https://github.com/vtnerd/monero-lws
+screenshots: []
+train: community
+truenas_name: monero-lws
+status: draft
+managed: generated
+upstream:
+  version: 1.2.10
+  app_version: '1.0'
+  questions_sha: d35b5503c76eb319b1743117973f9e4de7d4989dfe71af4ed53bc45d8445ed85
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/monero-lws
+notes: []

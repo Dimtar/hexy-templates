@@ -1,0 +1,25 @@
+title: Terraria TShock
+description: TShock provides Terraria servers with server-side characters, anti-cheat, and community management
+  tools.
+icon: https://media.sys.truenas.net/apps/terraria-tshock/icons/icon.webp
+categories:
+- games
+keywords:
+- adventure
+- building
+- game
+- terraria
+- world
+home: https://terraria.org/
+screenshots: []
+train: community
+truenas_name: terraria-tshock
+status: draft
+managed: generated
+upstream:
+  version: 1.0.8
+  app_version: 6.2.1
+  questions_sha: 27c0812f36ff4627a410df441ca24919f6f9595a6fc9608ffe10afd9352a0478
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/terraria-tshock
+notes: []

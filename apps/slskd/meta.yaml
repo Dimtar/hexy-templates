@@ -1,0 +1,25 @@
+title: slskd
+description: A modern client-server application for the Soulseek file-sharing network.
+icon: https://media.sys.truenas.net/apps/slskd/icons/icon.svg
+categories:
+- media
+keywords:
+- soulseek
+- file-sharing
+- p2p
+- music
+home: https://github.com/slskd/slskd
+screenshots:
+- https://media.sys.truenas.net/apps/slskd/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/slskd/screenshots/screenshot2.png
+train: community
+truenas_name: slskd
+status: draft
+managed: generated
+upstream:
+  version: 1.1.10
+  app_version: 0.26.0
+  questions_sha: d3af15ee96245d5350d1810a831cc2fb27a9f929bd0f5bb2aadd295b575f0bca
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/slskd
+notes: []

@@ -1,0 +1,28 @@
+title: FileFlows
+description: FileFlows automates all file types - videos, audio, images, books - with VMAF-optimized AV1
+  and HEVC transcoding for top-tier quality.
+icon: https://media.sys.truenas.net/apps/fileflows/icons/icon.svg
+categories:
+- media
+keywords:
+- encode
+- transcode
+- audio
+- images
+- automate
+home: https://fileflows.com/
+screenshots:
+- https://media.sys.truenas.net/apps/fileflows/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/fileflows/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/fileflows/screenshots/screenshot3.png
+train: community
+truenas_name: fileflows
+status: draft
+managed: generated
+upstream:
+  version: 1.1.14
+  app_version: '26.09'
+  questions_sha: 7f06172059f87d5f47af8b746fae9a311f1a50598f28adde3d7ab1eb43e9b7c4
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/fileflows
+notes: []

@@ -1,0 +1,38 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS qdrant 1.0.11"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30413, 30414]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/qdrant"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/qdrant/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/qdrant/snapshots",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "snapshots"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/qdrant/data)",
+      "snapshots": "$HOST_PATH($LOCATION(ApplicationsPerformance)/qdrant/snapshots)"
+    },
+    "network": {
+      "http_port": {"bind_mode": "published", "port_number": 30413},
+      "grpc_port": {"bind_mode": "published", "port_number": 30414}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

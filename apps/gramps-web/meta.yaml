@@ -1,0 +1,24 @@
+title: Gramps Web
+description: Gramps Web is a free, open-source genealogy system for building your family tree - together.
+  Use it standalone or as a companion to Gramps Desktop, with full control over your data and privacy
+  as the top priority.
+icon: https://media.sys.truenas.net/apps/gramps-web/icons/icon.svg
+categories:
+- management
+keywords:
+- gramps
+- genealogy
+- familytree
+home: https://www.grampsweb.org/
+screenshots: []
+train: community
+truenas_name: gramps-web
+status: draft
+managed: generated
+upstream:
+  version: 1.4.6
+  app_version: 26.9.1
+  questions_sha: 04dae6669494829104d9aaa345e2e026fb2e22cc76caef247b4ff5531203dbd7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/gramps-web
+notes: []

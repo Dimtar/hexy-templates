@@ -1,0 +1,57 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS piped 1.2.31"
+  },
+  "installation_questions": [
+    {
+      "question": "Backend url",
+      "type": "password",
+      "key": "backend_url",
+      "required": true
+    },
+    {
+      "question": "Proxy url",
+      "type": "password",
+      "key": "proxy_url",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30271, 30272, 30273]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/piped"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/piped/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "piped": {
+      "db_password": "$RANDOM_STRING(16)",
+      "backend_url": "$QUESTION(backend_url)",
+      "frontend_url": "http://$SERVER_LAN_IP:30271",
+      "proxy_url": "$QUESTION(proxy_url)"
+    },
+    "storage": {
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/piped/postgres_data)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "backend_port": {"bind_mode": "published", "port_number": 30271},
+      "frontend_port": {"bind_mode": "published", "port_number": 30272},
+      "proxy_port": {"bind_mode": "published", "port_number": 30273}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

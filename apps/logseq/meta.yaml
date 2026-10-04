@@ -1,0 +1,21 @@
+title: Logseq
+description: Logseq is a privacy-first, open-source platform for knowledge management and collaboration.
+icon: https://media.sys.truenas.net/apps/logseq/icons/icon.png
+categories:
+- productivity
+keywords:
+- knowledge
+- management
+home: https://logseq.com
+screenshots: []
+train: community
+truenas_name: logseq
+status: draft
+managed: generated
+upstream:
+  version: 1.3.7
+  app_version: latest
+  questions_sha: 9145b0711640d150ddecb1d77ac378edb850f4cc7099a2f885adf74a3d4bcb6f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/logseq
+notes: []

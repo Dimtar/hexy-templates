@@ -1,0 +1,22 @@
+title: AFFiNE
+description: AFFiNE is a next-gen knowledge base that brings planning, sorting and creating all together.
+  Privacy first, open-source, customizable and ready to use.
+icon: https://media.sys.truenas.net/apps/affine/icons/icon.svg
+categories:
+- productivity
+keywords:
+- planning
+- knowledge base
+home: https://affine.pro
+screenshots: []
+train: community
+truenas_name: affine
+status: draft
+managed: generated
+upstream:
+  version: 1.2.46
+  app_version: 0.27.4
+  questions_sha: c43cfdb4db63612b61b3a4cf23c584e3b812f5d0d4fc731717538bee18b8e79f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/affine
+notes: []

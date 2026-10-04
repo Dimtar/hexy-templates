@@ -1,0 +1,45 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS yuvomi 1.0.78"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30002]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/yuvomi"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/yuvomi"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/yuvomi/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/yuvomi/backups",
+      "owner": {"user": "apps"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/yuvomi/modules",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "modules"}
+    }
+  ],
+  "app_values": {
+    "yuvomi": {"session_secret": "$RANDOM_STRING(32)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/yuvomi/data)",
+      "backups": "$HOST_PATH($LOCATION(ApplicationsCapacity)/yuvomi/backups)",
+      "modules": "$HOST_PATH($LOCATION(ApplicationsPerformance)/yuvomi/modules)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30002}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,22 @@
+title: Z-Wave JS UI
+description: Full featured Z-Wave Control Panel UI and MQTT gateway. Built using Nodejs, and Vue/Vuetify
+icon: https://media.sys.truenas.net/apps/zwave-js-ui/icons/icon.svg
+categories:
+- home-automation
+keywords:
+- zwave
+- mqtt
+- bridge
+home: https://zwave-js.github.io/zwave-js-ui
+screenshots: []
+train: community
+truenas_name: zwave-js-ui
+status: draft
+managed: generated
+upstream:
+  version: 1.1.30
+  app_version: 11.24.2
+  questions_sha: aa3b00df1e55210282e10e17e3d81fdab29f2d05522067c3228be7515d910d60
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/zwave-js-ui
+notes: []

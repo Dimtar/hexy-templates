@@ -1,0 +1,25 @@
+title: Bitmagnet
+description: Bitmagnet is a self-hosted BitTorrent indexer, DHT crawler, content classifier and torrent
+  search engine with web UI, GraphQL API and Servarr stack integration.
+icon: https://media.sys.truenas.net/apps/bitmagnet/icons/icon.svg
+categories:
+- media
+keywords:
+- torrent
+- bittorrent
+- indexer
+- dht
+home: https://bitmagnet.io/
+screenshots:
+- https://media.sys.truenas.net/apps/bitmagnet/screenshots/screenshot1.png
+train: community
+truenas_name: bitmagnet
+status: draft
+managed: generated
+upstream:
+  version: 1.2.32
+  app_version: v0.10.1
+  questions_sha: fc93e804d0c790f01a7f98248c01bcb68befe59d20ddbc49df8a371a03d76a24
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/bitmagnet
+notes: []

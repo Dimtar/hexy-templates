@@ -1,0 +1,31 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS homer 2.3.11"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30092]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/homer"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/homer/assets",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "assets"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "assets": "$HOST_PATH($LOCATION(ApplicationsPerformance)/homer/assets)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30092}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

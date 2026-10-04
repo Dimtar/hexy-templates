@@ -1,0 +1,25 @@
+title: Authentik
+description: The authentication glue you need.
+icon: https://media.sys.truenas.net/apps/authentik/icons/icon.svg
+categories:
+- authentication
+keywords:
+- authentik
+- auth
+home: https://goauthentik.io/
+screenshots:
+- https://media.sys.truenas.net/apps/authentik/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/authentik/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/authentik/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/authentik/screenshots/screenshot4.png
+train: community
+truenas_name: authentik
+status: draft
+managed: generated
+upstream:
+  version: 1.3.47
+  app_version: 2026.8.3
+  questions_sha: 6a046efb82acd0fbbadf8827c61ffbb08d6dbe654e9e2cf4af3a8bbf2780968c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/authentik
+notes: []

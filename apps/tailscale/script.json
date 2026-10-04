@@ -1,0 +1,35 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS tailscale 1.4.17"
+  },
+  "installation_questions": [
+    {
+      "question": "Auth key",
+      "type": "password",
+      "key": "auth_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/tailscale"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/tailscale/state",
+      "snapshot": {"id": "state"}
+    }
+  ],
+  "app_values": {
+    "tailscale": {"auth_key": "$QUESTION(auth_key)"},
+    "storage": {
+      "state": "$HOST_PATH($LOCATION(ApplicationsPerformance)/tailscale/state)"
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

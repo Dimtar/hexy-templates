@@ -1,0 +1,26 @@
+title: Penpot
+description: Penpot - The open-source design tool for design and code collaboration
+icon: https://media.sys.truenas.net/apps/penpot/icons/icon.svg
+categories:
+- productivity
+keywords:
+- design
+home: https://penpot.app/
+screenshots:
+- https://media.sys.truenas.net/apps/penpot/screenshots/screenshot1.webp
+- https://media.sys.truenas.net/apps/penpot/screenshots/screenshot2.webp
+- https://media.sys.truenas.net/apps/penpot/screenshots/screenshot3.webp
+- https://media.sys.truenas.net/apps/penpot/screenshots/screenshot4.webp
+- https://media.sys.truenas.net/apps/penpot/screenshots/screenshot5.webp
+- https://media.sys.truenas.net/apps/penpot/screenshots/screenshot6.webp
+train: community
+truenas_name: penpot
+status: draft
+managed: generated
+upstream:
+  version: 1.5.48
+  app_version: 2.18.1
+  questions_sha: b6f1b477356f125162225861961e875e16019e2388ea887cd5aac7d4c7dce9c7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/penpot
+notes: []

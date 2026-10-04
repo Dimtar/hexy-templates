@@ -1,0 +1,26 @@
+title: Keeyo
+description: Keeyo is a self-hosted inventory for your hardware security keys - track which key holds
+  which passkey, 2FA registration and TOTP.
+icon: https://media.sys.truenas.net/apps/keeyo/icons/icon.png
+categories:
+- security
+keywords:
+- security
+- fido2
+- webauthn
+- yubikey
+- passkeys
+- inventory
+home: https://ans-ib.github.io/keeyo/
+screenshots: []
+train: community
+truenas_name: keeyo
+status: draft
+managed: generated
+upstream:
+  version: 1.0.6
+  app_version: 2.1.0
+  questions_sha: c2ed784c47e52092c85b50fe44673fd8c89756ce436893a267371a4a0ed2260a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/keeyo
+notes: []

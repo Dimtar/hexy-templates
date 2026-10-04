@@ -1,0 +1,52 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS gitea-act-runner 1.2.4"
+  },
+  "installation_questions": [
+    {
+      "question": "Instance url",
+      "type": "text",
+      "key": "instance_url",
+      "required": true
+    },
+    {
+      "question": "Runner name",
+      "type": "text",
+      "key": "runner_name",
+      "required": true
+    },
+    {
+      "question": "Runner registration token",
+      "type": "password",
+      "key": "runner_registration_token",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/gitea-act-runner"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/gitea-act-runner/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "gitea_act_runner": {
+      "instance_url": "$QUESTION(instance_url)",
+      "runner_name": "$QUESTION(runner_name)",
+      "runner_registration_token": "$QUESTION(runner_registration_token)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/gitea-act-runner/data)"
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

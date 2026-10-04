@@ -1,0 +1,22 @@
+title: Castopod
+description: Castopod is an open-source hosting platform made for podcasters who want engage and interact
+  with their audience.
+icon: https://media.sys.truenas.net/apps/castopod/icons/icon.svg
+categories:
+- media
+keywords:
+- podcast
+home: https://castopod.org
+screenshots:
+- https://media.sys.truenas.net/apps/castopod/screenshots/screenshot1.png
+train: community
+truenas_name: castopod
+status: draft
+managed: generated
+upstream:
+  version: 1.4.14
+  app_version: 1.14.1
+  questions_sha: 968ee6dffccba2628598608b022883b359d55d34cdb42270df2aa4708f1544f8
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/castopod
+notes: []

@@ -1,0 +1,21 @@
+title: Steam Headless
+description: A Headless Steam Docker image supporting NVIDIA GPU and accessible via Web UI
+icon: https://media.sys.truenas.net/apps/steam-headless/icons/icon.png
+categories:
+- games
+keywords:
+- games
+- steam
+home: https://github.com/Steam-Headless/docker-steam-headless
+screenshots: []
+train: community
+truenas_name: steam-headless
+status: draft
+managed: generated
+upstream:
+  version: 1.1.9
+  app_version: debian
+  questions_sha: d7d9d4609b9998cccede8391286d23f9c1e1d89935beff3d971b247bc8dd6fdf
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/steam-headless
+notes: []

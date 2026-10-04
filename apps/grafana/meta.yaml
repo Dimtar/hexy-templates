@@ -1,0 +1,25 @@
+title: Grafana
+description: Grafana is the open source analytics & monitoring solution for every database.
+icon: https://media.sys.truenas.net/apps/grafana/icons/icon.png
+categories:
+- productivity
+keywords:
+- analytics
+- monitoring
+- metrics
+- dashboards
+home: https://grafana.com
+screenshots:
+- https://media.sys.truenas.net/apps/grafana/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/grafana/screenshots/screenshot2.png
+train: community
+truenas_name: grafana
+status: draft
+managed: generated
+upstream:
+  version: 1.4.20
+  app_version: 13.2.3
+  questions_sha: 1521251d4d45bc304c1e4899148cd9416ae03533a4a9018d5f76bda955433833
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/grafana
+notes: []

@@ -1,0 +1,24 @@
+title: Spotify to Plex
+description: A web application that synchronizes Spotify playlists with Plex and can download missing
+  tracks through supported integrations.
+icon: https://media.sys.truenas.net/apps/spotify-to-plex/icons/icon.png
+categories:
+- media
+keywords:
+- spotify
+- plex
+- playlists
+- music
+home: https://jjdenhertog.github.io/spotify-to-plex/
+screenshots: []
+train: community
+truenas_name: spotify-to-plex
+status: draft
+managed: generated
+upstream:
+  version: 1.0.6
+  app_version: 1.0.111
+  questions_sha: 4485a70dfaef0e84bf864cc8f28336cff40a07e38a72a8f0b232aabcb3a7e102
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/spotify-to-plex
+notes: []

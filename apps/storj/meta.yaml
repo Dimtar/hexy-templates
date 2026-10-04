@@ -1,0 +1,24 @@
+title: Storj
+description: Share your storage on the internet and earn.
+icon: https://media.sys.truenas.net/apps/storj/icons/icon.svg
+categories:
+- storage
+keywords:
+- storage
+- networking
+- financial
+- file-sharing
+home: https://www.storj.io
+screenshots:
+- https://media.sys.truenas.net/apps/storj/screenshots/screenshot1.jpeg
+train: stable
+truenas_name: storj
+status: draft
+managed: generated
+upstream:
+  version: 1.4.7
+  app_version: latest
+  questions_sha: d2812a1b0b20937c5cc0f691109dfe4c263dbe699bd1cb8f5d59f006b5f26884
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/storj
+notes: []

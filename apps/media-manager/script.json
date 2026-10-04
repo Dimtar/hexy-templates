@@ -1,0 +1,66 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS media-manager 1.2.30"
+  },
+  "installation_questions": [
+    {
+      "question": "Auth token secret",
+      "type": "password",
+      "key": "auth_token_secret",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30307]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/media-manager"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/media-manager/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/media-manager/images",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "images"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/media-manager/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/media-manager/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "media_manager": {
+      "db_password": "$RANDOM_STRING(16)",
+      "frontend_url": "http://$SERVER_LAN_IP:30307",
+      "auth_token_secret": "$QUESTION(auth_token_secret)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/media-manager/data)",
+      "images": "$HOST_PATH($LOCATION(ApplicationsPerformance)/media-manager/images)",
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/media-manager/config)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/media-manager/postgres_data)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30307}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

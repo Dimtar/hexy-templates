@@ -1,0 +1,63 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS storj 1.4.7"
+  },
+  "installation_questions": [
+    {
+      "question": "Wallet address",
+      "type": "password",
+      "key": "wallet_address",
+      "required": true
+    },
+    {
+      "question": "Email",
+      "type": "text",
+      "key": "email",
+      "required": true
+    },
+    {
+      "question": "Domain address",
+      "type": "text",
+      "key": "domain_address",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [14002, 28967]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/storj"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/storj/identity",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "identity"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/storj/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storj": {
+      "wallet_address": "$QUESTION(wallet_address)",
+      "email": "$QUESTION(email)",
+      "domain_address": "$QUESTION(domain_address)"
+    },
+    "storage": {
+      "identity": "$HOST_PATH($LOCATION(ApplicationsPerformance)/storj/identity)",
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/storj/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 14002},
+      "p2p_port": {"bind_mode": "published", "port_number": 28967}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

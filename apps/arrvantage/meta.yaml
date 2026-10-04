@@ -1,0 +1,25 @@
+title: arrVantage
+description: A unified web dashboard for your media automation stack - arr apps, indexers, media servers,
+  downloaders, and transcoders, all in one place.
+icon: https://media.sys.truenas.net/apps/arrvantage/icons/icon.svg
+categories:
+- productivity
+keywords:
+- dashboard
+- media
+- arr
+- radarr
+- sonarr
+home: https://github.com/Kazwahs/arrvantage
+screenshots: []
+train: community
+truenas_name: arrvantage
+status: draft
+managed: generated
+upstream:
+  version: 1.0.6
+  app_version: v1.0.8
+  questions_sha: 7b3779924c2ac07a15b43a9c2f310085145ee0ee753814309d1c3df65f2a311d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/arrvantage
+notes: []

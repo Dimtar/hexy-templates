@@ -1,0 +1,44 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS wallabag 1.0.2"
+  },
+  "installation_questions": [
+    {
+      "question": "Domain name",
+      "type": "text",
+      "key": "domain_name",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30430]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/wallabag"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/wallabag/data",
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/wallabag/images",
+      "snapshot": {"id": "images"}
+    }
+  ],
+  "app_values": {
+    "wallabag": {"domain_name": "$QUESTION(domain_name)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/wallabag/data)",
+      "images": "$HOST_PATH($LOCATION(ApplicationsPerformance)/wallabag/images)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30430}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

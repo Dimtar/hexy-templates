@@ -1,0 +1,43 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS notifiarr 1.1.11"
+  },
+  "installation_questions": [
+    {
+      "question": "Api key",
+      "type": "password",
+      "key": "api_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30165]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/notifiarr"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/notifiarr/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    }
+  ],
+  "app_values": {
+    "notifiarr": {
+      "hostname": "$SERVER_LAN_IP",
+      "api_key": "$QUESTION(api_key)"
+    },
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/notifiarr/config)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30165}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

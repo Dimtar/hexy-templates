@@ -1,0 +1,33 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS yunkan 1.0.12"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Videos"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30470, 23515]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/yunkan"},
+    {"path": "$LOCATION(Videos)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/yunkan/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/yunkan/data)",
+      "recordings": "$HOST_PATH($LOCATION(Videos))"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30470},
+      "webrtc_port": {"bind_mode": "published", "port_number": 23515}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

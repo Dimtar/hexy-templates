@@ -1,0 +1,21 @@
+title: Plex Auto Languages
+description: Plex Auto Languages offer automated language selection for Plex TV Shows
+icon: https://media.sys.truenas.net/apps/plex-auto-languages/icons/icon.svg
+categories:
+- media
+keywords:
+- plex
+- languages
+home: https://github.com/JourneyDocker/Plex-Auto-Languages
+screenshots: []
+train: community
+truenas_name: plex-auto-languages
+status: draft
+managed: generated
+upstream:
+  version: 1.4.16
+  app_version: 1.6.0
+  questions_sha: e5ab30d4aed14524a2af8d2cbe3c236c6a7679c319c41c1ebd6d1e59f4bb8407
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/plex-auto-languages
+notes: []

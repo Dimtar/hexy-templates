@@ -1,0 +1,80 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS lens 1.2.19"
+  },
+  "installation_questions": [
+    {
+      "question": "Api url",
+      "type": "text",
+      "key": "api_url",
+      "required": true
+    },
+    {
+      "question": "Default admin email",
+      "type": "text",
+      "key": "default_admin_email",
+      "required": true
+    },
+    {
+      "question": "Default admin username",
+      "type": "text",
+      "key": "default_admin_username",
+      "required": true
+    },
+    {
+      "question": "Default admin password",
+      "type": "password",
+      "key": "default_admin_password",
+      "required": true
+    },
+    {
+      "question": "Default admin name",
+      "type": "text",
+      "key": "default_admin_name",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30306, 30305]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/lens"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/lens/mongodb_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "mongodb_data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/lens/uploads",
+      "snapshot": {"id": "uploads"}
+    }
+  ],
+  "app_values": {
+    "lens": {
+      "db_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "hostname": "$SERVER_LAN_IP",
+      "frontend_url": "http://$SERVER_LAN_IP:30306",
+      "api_url": "$QUESTION(api_url)",
+      "default_admin_email": "$QUESTION(default_admin_email)",
+      "default_admin_username": "$QUESTION(default_admin_username)",
+      "default_admin_password": "$QUESTION(default_admin_password)",
+      "default_admin_name": "$QUESTION(default_admin_name)"
+    },
+    "storage": {
+      "mongodb_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/lens/mongodb_data)",
+      "uploads": "$HOST_PATH($LOCATION(ApplicationsPerformance)/lens/uploads)"
+    },
+    "network": {
+      "frontend_port": {"bind_mode": "published", "port_number": 30306},
+      "backend_port": {"bind_mode": "published", "port_number": 30305}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

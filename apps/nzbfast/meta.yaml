@@ -1,0 +1,24 @@
+title: nzbfast
+description: nzbfast is a speed-focused Usenet (NZB) downloader with a web dashboard and a SABnzbd-compatible
+  API.
+icon: https://media.sys.truenas.net/apps/nzbfast/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- usenet
+- newsreader
+home: https://nzbfast.github.io/nzbfast/
+screenshots:
+- https://media.sys.truenas.net/apps/nzbfast/screenshots/screenshot1.png
+train: community
+truenas_name: nzbfast
+status: draft
+managed: generated
+upstream:
+  version: 1.0.12
+  app_version: 1.7.1
+  questions_sha: 2fa72ccf6a1c1366ef864482b7142c16f69648dbb7bfcdcb56712243011e40ce
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nzbfast
+notes: []

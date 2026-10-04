@@ -1,0 +1,28 @@
+title: stdapi.ai
+description: 'OpenAI and Anthropic compatible API gateway for Amazon Bedrock, in your own AWS account.
+  Not just chat: images, speech, embeddings, rerank and batch. Also fronts Amazon Polly, Transcribe and
+  Comprehend.'
+icon: https://media.sys.truenas.net/apps/stdapi-ai/icons/icon.svg
+categories:
+- ai
+keywords:
+- ai
+- llm
+- api
+- aws
+- bedrock
+- openai
+- anthropic
+home: https://stdapi.ai
+screenshots: []
+train: community
+truenas_name: stdapi-ai
+status: draft
+managed: generated
+upstream:
+  version: 1.0.24
+  app_version: 1.19.1
+  questions_sha: b824f1c47807addc13d2ccb916a6071f0966e34af85df9016e85cd8a5e2cedfe
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/stdapi-ai
+notes: []

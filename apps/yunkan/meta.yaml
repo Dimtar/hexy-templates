@@ -1,0 +1,24 @@
+title: YunKan
+description: Self-hosted NVR for RTSP/ONVIF cameras with on-device AI detection
+icon: https://media.sys.truenas.net/apps/yunkan/icons/icon.png
+categories:
+- security
+keywords:
+- camera
+- nvr
+- security
+home: https://yun-kan.com/
+screenshots:
+- https://media.sys.truenas.net/apps/yunkan/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/yunkan/screenshots/screenshot2.jpg
+train: community
+truenas_name: yunkan
+status: draft
+managed: generated
+upstream:
+  version: 1.0.12
+  app_version: 0.9.53
+  questions_sha: 35e10bf6fcfe3a8f1d9838bd2c7e0317f310f7bb0269c3b7fcc1e858ece3ef7c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/yunkan
+notes: []

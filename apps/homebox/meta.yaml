@@ -1,0 +1,23 @@
+title: Homebox
+description: Homebox is the inventory and organization system built for the Home User!
+icon: https://media.sys.truenas.net/apps/homebox/icons/icon.svg
+categories:
+- management
+keywords:
+- inventory
+- organization
+- management
+home: https://homebox.software
+screenshots:
+- https://media.sys.truenas.net/apps/homebox/screenshots/screenshot1.png
+train: community
+truenas_name: homebox
+status: draft
+managed: generated
+upstream:
+  version: 1.1.12
+  app_version: 0.26.2-rootless
+  questions_sha: 68dd53bd48bcf8a423c99bc507f5fad852bcc91c7a5859bc80713914b98960cd
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/homebox
+notes: []

@@ -1,0 +1,22 @@
+title: SnapOtter
+description: The open-source image toolkit that makes paid tools nervous. Every image tool you need. Your
+  images stay yours.
+icon: https://media.sys.truenas.net/apps/snapotter/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- images
+home: https://snapotter.com/
+screenshots: []
+train: community
+truenas_name: snapotter
+status: draft
+managed: generated
+upstream:
+  version: 2.0.16
+  app_version: 2.2.0
+  questions_sha: 20a5399d8e382b49b255dd115bef9d9a68cc3eebdb6b71ada867346951ef1e37
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/snapotter
+notes: []

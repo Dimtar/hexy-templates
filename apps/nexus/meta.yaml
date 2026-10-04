@@ -1,0 +1,25 @@
+title: Nexus Repository
+description: Nexus Repository Manager — open source package/repository manager (maven, npm, nuget, pypi,
+  docker, helm, …).
+icon: https://media.sys.truenas.net/apps/nexus/icons/icon.svg
+categories:
+- development
+keywords:
+- repository
+- maven
+- npm
+- docker-registry
+- packages
+home: https://www.sonatype.com/products/sonatype-nexus-repository
+screenshots: []
+train: community
+truenas_name: nexus
+status: draft
+managed: generated
+upstream:
+  version: 1.0.10
+  app_version: 3.96.4
+  questions_sha: bc2b3388c36e80575f799331bf90cd43ea706b59db820bed0ba0bf7dcd2428fd
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nexus
+notes: []

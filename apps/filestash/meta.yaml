@@ -1,0 +1,25 @@
+title: Filestash
+description: Filestash is a file manager / web client for SFTP, S3, FTP, WebDAV, Git, Minio, LDAP, CalDAV,
+  CardDAV, Mysql, Backblaze, ...
+icon: https://media.sys.truenas.net/apps/filestash/icons/icon.svg
+categories:
+- storage
+keywords:
+- storage
+- file manager
+home: https://www.filestash.app/
+screenshots:
+- https://media.sys.truenas.net/apps/filestash/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/filestash/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/filestash/screenshots/screenshot3.png
+train: community
+truenas_name: filestash
+status: draft
+managed: generated
+upstream:
+  version: 1.2.12
+  app_version: latest
+  questions_sha: 1a2041106a207f95a9063917ab373212c71f2bf9713436a9d1e530e9943e6fd2
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/filestash
+notes: []

@@ -1,0 +1,24 @@
+title: AE NetScope
+description: AE NetScope is an open source LAN inventory and sysadmin network documentation web app.
+icon: https://media.sys.truenas.net/apps/ae-netscope/icons/icon.svg
+categories:
+- networking
+keywords:
+- lan
+- inventory
+- network
+- sysadmin
+- ipam
+home: https://netscope.aewhitedevs.com/
+screenshots: []
+train: community
+truenas_name: ae-netscope
+status: draft
+managed: generated
+upstream:
+  version: 1.0.18
+  app_version: v0.3.1-alpha
+  questions_sha: 909a8683e22db937dc3ddc7a97c785bbb2dbeec79213e5ed19f34b939e3de86f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/ae-netscope
+notes: []

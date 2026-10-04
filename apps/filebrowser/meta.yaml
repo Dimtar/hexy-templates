@@ -1,0 +1,25 @@
+title: File Browser (Deprecated)
+description: File Browser provides a file managing interface within a specified directory and it can be
+  used to upload, delete, preview, rename and edit your files.
+icon: https://media.sys.truenas.net/apps/filebrowser/icons/icon.png
+categories:
+- storage
+keywords:
+- files
+- browser
+home: https://filebrowser.org
+screenshots:
+- https://media.sys.truenas.net/apps/filebrowser/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/filebrowser/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/filebrowser/screenshots/screenshot3.png
+train: community
+truenas_name: filebrowser
+status: draft
+managed: generated
+upstream:
+  version: 1.4.29
+  app_version: v2.63.23
+  questions_sha: 45d9f5e2f7a45adebe0b157a3bb977e44029dbf300d6a35f1d6a7c74daa3636d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/filebrowser
+notes: []

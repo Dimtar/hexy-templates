@@ -1,0 +1,52 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS forgejo-runner 2.0.24"
+  },
+  "installation_questions": [
+    {
+      "question": "Instance url",
+      "type": "text",
+      "key": "instance_url",
+      "required": true
+    },
+    {
+      "question": "Runner uuid",
+      "type": "password",
+      "key": "runner_uuid",
+      "required": true
+    },
+    {
+      "question": "Runner registration token",
+      "type": "password",
+      "key": "runner_registration_token",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/forgejo-runner"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/forgejo-runner/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "forgejo_runner": {
+      "instance_url": "$QUESTION(instance_url)",
+      "runner_uuid": "$QUESTION(runner_uuid)",
+      "runner_registration_token": "$QUESTION(runner_registration_token)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/forgejo-runner/data)"
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

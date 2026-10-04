@@ -1,0 +1,20 @@
+title: GPTWOL
+description: Simple Wake/Sleep On LAN Docker GUI
+icon: https://media.sys.truenas.net/apps/gptwol/icons/icon.png
+categories:
+- networking
+keywords:
+- wol
+home: https://github.com/Misterbabou/gptwol
+screenshots: []
+train: community
+truenas_name: gptwol
+status: draft
+managed: generated
+upstream:
+  version: 1.0.5
+  app_version: 7.1.6
+  questions_sha: 929216b32d13e682b9ba82b51214d31dffa72ca0ee6d25a93fa88c8e861437c0
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/gptwol
+notes: []

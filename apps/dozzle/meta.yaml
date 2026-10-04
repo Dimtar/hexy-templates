@@ -1,0 +1,20 @@
+title: Dozzle
+description: Realtime log viewer for docker containers.
+icon: https://media.sys.truenas.net/apps/dozzle/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- logs
+home: https://dozzle.dev
+screenshots: []
+train: community
+truenas_name: dozzle
+status: draft
+managed: generated
+upstream:
+  version: 1.1.57
+  app_version: v11.2.0
+  questions_sha: f6d3e44f90984a0216e94b8738a1e68c40bbdfc21667697b5d7eb93cad7f9898
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/dozzle
+notes: []

@@ -1,0 +1,25 @@
+title: SeaweedFS
+description: SeaweedFS is a fast distributed storage system for blobs, objects, files, and data lake,
+  for billions of files!
+icon: https://media.sys.truenas.net/apps/seaweedfs/icons/icon.png
+categories:
+- storage
+keywords:
+- s3
+- webdav
+- blob
+- object
+- bucket
+home: https://seaweedfs.com/
+screenshots: []
+train: stable
+truenas_name: seaweedfs
+status: draft
+managed: generated
+upstream:
+  version: 1.2.39
+  app_version: '4.48'
+  questions_sha: c8fc0bc76db8a39e9df53639fc0f563d1e057a0e5cef6edc94385165f0b53e90
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/seaweedfs
+notes: []

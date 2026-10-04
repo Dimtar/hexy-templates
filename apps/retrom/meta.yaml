@@ -1,0 +1,20 @@
+title: Retrom
+description: A centralized game library/collection management service with a focus on emulation
+icon: https://media.sys.truenas.net/apps/retrom/icons/icon.png
+categories:
+- media
+keywords:
+- media
+home: https://github.com/JMBeresford/retrom
+screenshots: []
+train: community
+truenas_name: retrom
+status: draft
+managed: generated
+upstream:
+  version: 1.1.15
+  app_version: 0.8.4
+  questions_sha: 49860f8962ba6bebde1af30f961828beb10336f64e5bf76ddc6fc459563b5aa0
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/retrom
+notes: []

@@ -1,0 +1,26 @@
+title: Mkfd
+description: Mkfd is a powerful RSS feed generator supporting web scraping, API data sources, and IMAP
+  email feeds with webhook integration.
+icon: https://media.sys.truenas.net/apps/mkfd/icons/icon.svg
+categories:
+- productivity
+keywords:
+- rss
+- feed-generator
+- web-scraping
+- email
+- imap
+- webhook
+home: https://github.com/TBosak/mkfd
+screenshots: []
+train: community
+truenas_name: mkfd
+status: draft
+managed: generated
+upstream:
+  version: 1.1.11
+  app_version: 2.1.3
+  questions_sha: 50dfa9d5ae21da97fa19223591cb4895ec80cfa555040731d5ca592cbc42c97c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mkfd
+notes: []

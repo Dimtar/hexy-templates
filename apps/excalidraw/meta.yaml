@@ -1,0 +1,20 @@
+title: Excalidraw
+description: Virtual whiteboard for sketching hand-drawn like diagrams
+icon: https://media.sys.truenas.net/apps/excalidraw/icons/icon.svg
+categories:
+- productivity
+keywords:
+- diagram
+home: https://excalidraw.com/
+screenshots: []
+train: community
+truenas_name: excalidraw
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: latest
+  questions_sha: e8becbb2704bcbbc6415ca88ed0495111f6a095beab56c06926806a42b420218
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/excalidraw
+notes: []

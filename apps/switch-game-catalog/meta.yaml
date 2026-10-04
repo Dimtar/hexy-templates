@@ -1,0 +1,24 @@
+title: NSW Game Catalog
+description: A lightweight, fast self-hosted NSW game library manager and catalog with automatic metadata
+  parsing, multi-language support, and modern web dashboard.
+icon: https://media.sys.truenas.net/apps/switch-game-catalog/icons/icon.svg
+categories:
+- games
+keywords:
+- switch
+- nsw
+- game-catalog
+- rom-manager
+home: https://github.com/Daddelgreis74/switch-game-catalog
+screenshots: []
+train: community
+truenas_name: switch-game-catalog
+status: draft
+managed: generated
+upstream:
+  version: 1.0.4
+  app_version: 1.3.4
+  questions_sha: b600e801d5764c68aaf033890f65895cf7cbfcd8c202602a4109d6143f3a827f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/switch-game-catalog
+notes: []

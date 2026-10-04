@@ -1,0 +1,24 @@
+title: Lyrion Music Server
+description: Lyrion Music Server - controls a wide range of Squeezebox audio players
+icon: https://media.sys.truenas.net/apps/lyrion-music-server/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- entertainment
+- music
+- streaming
+home: https://lyrion.org/
+screenshots:
+- https://media.sys.truenas.net/apps/lyrion-music-server/screenshots/screenshot1.png
+train: community
+truenas_name: lyrion-music-server
+status: draft
+managed: generated
+upstream:
+  version: 1.1.8
+  app_version: 9.1.2-stable
+  questions_sha: b127d69ee00a1aa8721526ba1c9bf483cd36ae347627daae37185dbb75b92a39
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/lyrion-music-server
+notes: []

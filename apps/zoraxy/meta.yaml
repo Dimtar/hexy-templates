@@ -1,0 +1,21 @@
+title: Zoraxy
+description: A general purpose HTTP reverse proxy and forwarding tool.
+icon: https://media.sys.truenas.net/apps/zoraxy/icons/icon.svg
+categories:
+- networking
+keywords:
+- proxy
+- reverse-proxy
+home: https://zoraxy.aroz.org/
+screenshots: []
+train: community
+truenas_name: zoraxy
+status: draft
+managed: generated
+upstream:
+  version: 1.1.11
+  app_version: v3.3.4
+  questions_sha: f129b611b9248f86847950e7bb036e3e2a60de7a21924741b90414fa3a67c3ad
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/zoraxy
+notes: []

@@ -1,0 +1,20 @@
+title: Jackett
+description: API Support for your favorite torrent trackers
+icon: https://media.sys.truenas.net/apps/jackett/icons/icon.png
+categories:
+- media
+keywords:
+- indexer
+home: https://github.com/Jackett/Jackett
+screenshots: []
+train: community
+truenas_name: jackett
+status: draft
+managed: generated
+upstream:
+  version: 1.1.171
+  app_version: 0.24.2780
+  questions_sha: 0246e3293f118bb729bdf6e81c8df19542506ec6c43bbd0304da1a1baa4028d6
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/jackett
+notes: []

@@ -1,0 +1,26 @@
+title: Roundcube
+description: Roundcube is a browser-based multilingual IMAP client with an application-like user interface.
+icon: https://media.sys.truenas.net/apps/roundcube/icons/icon.png
+categories:
+- productivity
+keywords:
+- webmail
+- email
+home: https://roundcube.net/
+screenshots:
+- https://media.sys.truenas.net/apps/roundcube/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/roundcube/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/roundcube/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/roundcube/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/roundcube/screenshots/screenshot5.png
+train: community
+truenas_name: roundcube
+status: draft
+managed: generated
+upstream:
+  version: 1.6.35
+  app_version: 1.7.4-apache
+  questions_sha: 57366b16f42a1b3f689a18efff8b17061e526ce40d05c1f9a742ab956daead53
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/roundcube
+notes: []

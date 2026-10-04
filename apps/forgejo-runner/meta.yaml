@@ -1,0 +1,22 @@
+title: Forgejo Runner
+description: A runner for Forgejo.
+icon: https://media.sys.truenas.net/apps/forgejo-runner/icons/icon.svg
+categories:
+- productivity
+keywords:
+- forgejo
+- actions
+- runner
+home: https://forgejo.org/
+screenshots: []
+train: community
+truenas_name: forgejo-runner
+status: draft
+managed: generated
+upstream:
+  version: 2.0.24
+  app_version: 13.2.0
+  questions_sha: 60b50db22b6d8a1c90dea7472eb93b2a087a89f23e4282349bc927b80d634261
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/forgejo-runner
+notes: []

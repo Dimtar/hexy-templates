@@ -1,0 +1,21 @@
+title: Luanti
+description: Luanti is an open source voxel game-creation platform with easy modding and game creation
+icon: https://media.sys.truenas.net/apps/luanti/icons/icon.svg
+categories:
+- games
+keywords:
+- minetest
+- luanti
+home: https://www.luanti.org/
+screenshots: []
+train: community
+truenas_name: luanti
+status: draft
+managed: generated
+upstream:
+  version: 1.1.12
+  app_version: 5.17.0
+  questions_sha: 8d89482d53efa87a1a0fe5f4bf38aae8c83608d8711ca181d9893b9f257b78d6
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/luanti
+notes: []

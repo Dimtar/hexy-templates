@@ -1,0 +1,22 @@
+title: Hoppscotch
+description: Hoppscotch is a lightweight, web-based API development suite.
+icon: https://media.sys.truenas.net/apps/hoppscotch/icons/icon.svg
+categories:
+- development
+keywords:
+- api
+- development
+- postman
+home: https://hoppscotch.io/
+screenshots: []
+train: community
+truenas_name: hoppscotch
+status: draft
+managed: generated
+upstream:
+  version: 1.2.45
+  app_version: 2026.9.0
+  questions_sha: c3b547051e7a89ff2c9d14a3f86ae7e4647f7a139ec9cdd261772d6fc1a62e32
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/hoppscotch
+notes: []

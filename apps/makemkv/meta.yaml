@@ -1,0 +1,23 @@
+title: MakeMKV
+description: MakeMKV is your one-click solution to convert video that you own into free and patents-unencumbered
+  format that can be played everywhere
+icon: https://media.sys.truenas.net/apps/makemkv/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- video
+- ripping
+home: https://www.makemkv.com/
+screenshots: []
+train: community
+truenas_name: makemkv
+status: draft
+managed: generated
+upstream:
+  version: 1.1.17
+  app_version: v26.09.2
+  questions_sha: 1ff38c02da2f36e7671790056573cde6ebfd7d6ad5943caa2d37add15b45f437
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/makemkv
+notes: []

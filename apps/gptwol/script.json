@@ -1,0 +1,37 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS gptwol 1.0.5"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30445]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/gptwol"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/gptwol/db",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "db"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/gptwol/cron",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "cron"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "db": "$HOST_PATH($LOCATION(ApplicationsPerformance)/gptwol/db)",
+      "cron": "$HOST_PATH($LOCATION(ApplicationsPerformance)/gptwol/cron)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30445}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

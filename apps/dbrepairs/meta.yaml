@@ -1,0 +1,24 @@
+title: DBRepairs
+description: DBRepairs is an open-source repair shop manager for repair workshops and service centres.
+icon: https://media.sys.truenas.net/apps/dbrepairs/icons/icon.png
+categories:
+- productivity
+keywords:
+- repair
+- workshop
+- service
+- customers
+- repairs
+home: https://myt00ls.com/dbrepairs/
+screenshots: []
+train: community
+truenas_name: dbrepairs
+status: draft
+managed: generated
+upstream:
+  version: 1.0.5
+  app_version: 0.2.2
+  questions_sha: 13c20d654b4473594d31edd6125636e004b2a5b25861106a2c27354f44e41311
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/dbrepairs
+notes: []

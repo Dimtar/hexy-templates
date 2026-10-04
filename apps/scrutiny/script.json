@@ -1,0 +1,37 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS scrutiny 1.3.14"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [31054, 31055]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/scrutiny"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/scrutiny/config",
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/scrutiny/influxdb",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "influxdb"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/scrutiny/config)",
+      "influxdb": "$HOST_PATH($LOCATION(ApplicationsPerformance)/scrutiny/influxdb)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 31054},
+      "influxdb_port": {"bind_mode": "published", "port_number": 31055}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

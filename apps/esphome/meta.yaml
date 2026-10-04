@@ -1,0 +1,21 @@
+title: ESPHome
+description: ESPHome is a system to control your microcontrollers by simple yet powerful configuration
+  files and control them remotely through Home Automation systems.
+icon: https://media.sys.truenas.net/apps/esphome/icons/icon.svg
+categories:
+- home-automation
+keywords:
+- home-automation
+home: https://esphome.io
+screenshots: []
+train: community
+truenas_name: esphome
+status: draft
+managed: generated
+upstream:
+  version: 1.2.40
+  app_version: 2026.9.1
+  questions_sha: 5ee5af403163e17da1b92673d2e460257dcc3438033714f3d57462794385aa75
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/esphome
+notes: []

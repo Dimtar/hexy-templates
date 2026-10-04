@@ -1,0 +1,19 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS open-speed-test 1.1.7"
+  },
+  "requirements": {
+    "locations": [],
+    "specifications": ["2CORE"],
+    "ports": [30116, 30117]
+  },
+  "app_values": {
+    "network": {
+      "http_port": {"bind_mode": "published", "port_number": 30116},
+      "https_port": {"bind_mode": "published", "port_number": 30117}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

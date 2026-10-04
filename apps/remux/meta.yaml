@@ -1,0 +1,25 @@
+title: Remux
+description: Remux is a self-hosted media server with a Jellyfin-compatible API that brings Stremio add-ons,
+  local files, and WebDAV sources together under one roof.
+icon: https://media.sys.truenas.net/apps/remux/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- streaming
+- jellyfin
+- stremio
+- debrid
+home: https://github.com/lostb1t/remux
+screenshots: []
+train: community
+truenas_name: remux
+status: draft
+managed: generated
+upstream:
+  version: 1.0.14
+  app_version: 0.35.1
+  questions_sha: faabde13119a9b605d899a815471469ad816c5cb8ed307d799f1e07507251688
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/remux
+notes: []

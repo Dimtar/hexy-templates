@@ -1,0 +1,40 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS urbackup 1.1.7"
+  },
+  "requirements": {
+    "locations": ["ApplicationsCapacity", "ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [55414, 55413, 55415, 35623]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/urbackup"},
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/urbackup"},
+    {"path": "$LOCATION(ApplicationsCapacity)/urbackup/backups"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/urbackup/database",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "database"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/urbackup/logs"}
+  ],
+  "app_values": {
+    "storage": {
+      "backups": "$HOST_PATH($LOCATION(ApplicationsCapacity)/urbackup/backups)",
+      "database": "$HOST_PATH($LOCATION(ApplicationsPerformance)/urbackup/database)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/urbackup/logs)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 55414},
+      "backup_port_1": {"bind_mode": "published", "port_number": 55413},
+      "backup_port_2": {"bind_mode": "published", "port_number": 55415},
+      "backup_port_3": {"bind_mode": "published", "port_number": 35623}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,31 @@
+title: Lens
+description: Lens is a collaborative CAD platform for uploading, viewing, and sharing 3D models with version
+  control, export capabilities, and real-time collaboration tools.
+icon: https://media.sys.truenas.net/apps/lens/icons/icon.svg
+categories:
+- productivity
+keywords:
+- lens
+- freecad
+- cad
+- 3d
+- modeling
+- design
+- collaboration
+home: https://github.com/FreeCAD/Ondsel-Server
+screenshots:
+- https://media.sys.truenas.net/apps/lens/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/lens/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/lens/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/lens/screenshots/screenshot4.png
+train: community
+truenas_name: lens
+status: draft
+managed: generated
+upstream:
+  version: 1.2.19
+  app_version: backend-1.1.0
+  questions_sha: a294109edd2debd3e5f48ce82c2453610e379e2fb95748466f326eb773a4f3e8
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/lens
+notes: []

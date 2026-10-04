@@ -1,0 +1,22 @@
+title: Hermes-Agent
+description: The self-improving AI agent built by Nous Research.
+icon: https://media.sys.truenas.net/apps/hermes-agent/icons/icon.png
+categories:
+- ai
+keywords:
+- ai
+- assistant
+- automation
+home: https://hermes-agent.nousresearch.com/
+screenshots: []
+train: community
+truenas_name: hermes-agent
+status: draft
+managed: generated
+upstream:
+  version: 1.0.26
+  app_version: v2026.9.24
+  questions_sha: bac876f435659f90ba4911f29e5100237332b6caea9e7804bd43977af724a27b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/hermes-agent
+notes: []

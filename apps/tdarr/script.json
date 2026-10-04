@@ -1,0 +1,53 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS tdarr 1.3.45"
+  },
+  "requirements": {
+    "locations": [
+      "ApplicationsPerformance",
+      "ApplicationsCapacity",
+      "Media"
+    ],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30088, 30029]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/tdarr"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/tdarr"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/tdarr/server",
+      "snapshot": {"id": "server"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/tdarr/configs",
+      "snapshot": {"id": "configs"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/tdarr/logs"},
+    {"path": "$LOCATION(ApplicationsCapacity)/tdarr/transcodes"}
+  ],
+  "app_values": {
+    "storage": {
+      "server": "$HOST_PATH($LOCATION(ApplicationsPerformance)/tdarr/server)",
+      "configs": "$HOST_PATH($LOCATION(ApplicationsPerformance)/tdarr/configs)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/tdarr/logs)",
+      "transcodes": "$HOST_PATH($LOCATION(ApplicationsCapacity)/tdarr/transcodes)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30088},
+      "server_port": {"bind_mode": "published", "port_number": 30029}
+    },
+    "resources": {
+      "limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"},
+      "gpus": "$GPU_CONFIG()"
+    }
+  }
+}

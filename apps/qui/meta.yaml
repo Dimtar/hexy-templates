@@ -1,0 +1,21 @@
+title: qui
+description: Modern alternative webUI for qBittorrent, with multi-instance support. Written in Go/React.
+icon: https://media.sys.truenas.net/apps/qui/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- qbittorrent
+home: https://github.com/autobrr/qui
+screenshots: []
+train: community
+truenas_name: qui
+status: draft
+managed: generated
+upstream:
+  version: 1.1.25
+  app_version: v1.30.0
+  questions_sha: e94f50e599dc10255f438e40cc623325c9d7806fdff1ecd8d6164dc77e1d8b7a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/qui
+notes: []

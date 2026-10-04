@@ -1,0 +1,23 @@
+title: Wger
+description: Wger is a self hosted FLOSS fitness/workout, nutrition and weight tracker
+icon: https://media.sys.truenas.net/apps/wger/icons/icon.svg
+categories:
+- health
+keywords:
+- fitness
+- nutrition
+- tracker
+- workout
+home: https://wger.de
+screenshots: []
+train: community
+truenas_name: wger
+status: draft
+managed: generated
+upstream:
+  version: 2.0.19
+  app_version: 2.6.0
+  questions_sha: 52db6351a091e54ccd4632cd666e06cf0df53f22cbd8acce462180e5387465cc
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/wger
+notes: []

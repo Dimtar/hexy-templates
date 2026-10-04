@@ -1,0 +1,21 @@
+title: Bichon
+description: Bichon - A lightweight, high-performance Rust email archiver with WebUI
+icon: https://media.sys.truenas.net/apps/bichon/icons/icon.svg
+categories:
+- productivity
+keywords:
+- email
+- archiving
+home: https://github.com/rustmailer/bichon
+screenshots: []
+train: community
+truenas_name: bichon
+status: draft
+managed: generated
+upstream:
+  version: 1.1.27
+  app_version: 2.1.0
+  questions_sha: 768446ce661b3d751dd466b2cdb35f938b09ba4b46d294c5a2c984b139f925b7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/bichon
+notes: []

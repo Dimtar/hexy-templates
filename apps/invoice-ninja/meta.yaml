@@ -1,0 +1,20 @@
+title: Invoice Ninja
+description: Invoices, Expenses and Tasks built with Laravel, Flutter and React
+icon: https://media.sys.truenas.net/apps/invoice-ninja/icons/icon.png
+categories:
+- productivity
+keywords:
+- finance
+home: https://invoiceninja.com/
+screenshots: []
+train: community
+truenas_name: invoice-ninja
+status: draft
+managed: generated
+upstream:
+  version: 1.2.25
+  app_version: 5.12.28-o
+  questions_sha: 8e4008e3c30568c240c097276fc61f8da9011df23485c62dd43cf2dc2027ea4b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/invoice-ninja
+notes: []

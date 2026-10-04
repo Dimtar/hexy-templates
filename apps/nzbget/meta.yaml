@@ -1,0 +1,26 @@
+title: NZBGet
+description: NZBGet is a binary downloader, which downloads files from Usenet based-on information given
+  in nzb files.
+icon: https://media.sys.truenas.net/apps/nzbget/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- usenet
+- newsreader
+home: https://nzbget.com/
+screenshots:
+- https://media.sys.truenas.net/apps/nzbget/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/nzbget/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/nzbget/screenshots/screenshot3.png
+train: community
+truenas_name: nzbget
+status: draft
+managed: generated
+upstream:
+  version: 1.1.10
+  app_version: v26.3
+  questions_sha: 0445365631d0c569ed3b866eb2bfe6875b911ef781fae0862e1b8a61043aad02
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nzbget
+notes: []

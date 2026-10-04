@@ -1,0 +1,23 @@
+title: Mattermost
+description: Mattermost is an open source platform for secure collaboration across the entire software
+  development lifecycle..
+icon: https://media.sys.truenas.net/apps/mattermost/icons/icon.svg
+categories:
+- productivity
+keywords:
+- collaboration
+- communication
+- team
+home: https://mattermost.com/
+screenshots: []
+train: community
+truenas_name: mattermost
+status: draft
+managed: generated
+upstream:
+  version: 1.2.46
+  app_version: 11.11.1
+  questions_sha: 371fbd7df2e30d80d49787dc586eca6cd29249e66a0d53adbbedcfd429fd9706
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mattermost
+notes: []

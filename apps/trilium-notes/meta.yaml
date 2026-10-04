@@ -1,0 +1,31 @@
+title: Trilium Notes
+description: Trilium Notes is a free and open-source, cross-platform hierarchical note taking application
+  with focus on building large personal knowledge bases.
+icon: https://media.sys.truenas.net/apps/trilium-notes/icons/icon.svg
+categories:
+- productivity
+keywords:
+- productivity
+- notes
+- knowledge base
+home: https://github.com/TriliumNext/Trilium
+screenshots:
+- https://media.sys.truenas.net/apps/trilium-notes/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/trilium-notes/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/trilium-notes/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/trilium-notes/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/trilium-notes/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/trilium-notes/screenshots/screenshot6.png
+- https://media.sys.truenas.net/apps/trilium-notes/screenshots/screenshot7.png
+- https://media.sys.truenas.net/apps/trilium-notes/screenshots/screenshot8.png
+train: community
+truenas_name: trilium-notes
+status: draft
+managed: generated
+upstream:
+  version: 1.1.15
+  app_version: v0.106.0
+  questions_sha: 10351411970c4ecf236b054fb7502db622066d875590689d1edfb4b79093e013
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/trilium-notes
+notes: []

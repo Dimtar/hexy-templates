@@ -1,0 +1,79 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS hoppscotch 1.2.45"
+  },
+  "installation_questions": [
+    {
+      "question": "Frontend",
+      "type": "text",
+      "key": "frontend",
+      "required": true
+    },
+    {
+      "question": "Backend",
+      "type": "text",
+      "key": "backend",
+      "required": true
+    },
+    {
+      "question": "Admin",
+      "type": "text",
+      "key": "admin",
+      "required": true
+    },
+    {
+      "question": "App bundle",
+      "type": "text",
+      "key": "app_bundle",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [33000, 33170, 33100, 33200]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/hoppscotch"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/hoppscotch/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "hoppscotch": {
+      "db_password": "$RANDOM_STRING(16)",
+      "data_encryption_key": "$RANDOM_STRING(32)",
+      "urls": {
+        "frontend": "$QUESTION(frontend)",
+        "backend": "$QUESTION(backend)",
+        "admin": "$QUESTION(admin)",
+        "app_bundle": "$QUESTION(app_bundle)"
+      }
+    },
+    "storage": {
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/hoppscotch/postgres_data)"
+    },
+    "network": {
+      "frontend_web_port": {
+        "bind_mode": "published",
+        "port_number": 33000
+      },
+      "backend_web_port": {
+        "bind_mode": "published",
+        "port_number": 33170
+      },
+      "admin_web_port": {"bind_mode": "published", "port_number": 33100},
+      "app_bundle_port": {
+        "bind_mode": "published",
+        "port_number": 33200
+      }
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

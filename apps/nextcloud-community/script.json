@@ -1,0 +1,77 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS nextcloud 1.1.12"
+  },
+  "installation_questions": [
+    {
+      "question": "Admin user",
+      "type": "text",
+      "key": "admin_user",
+      "required": true
+    },
+    {
+      "question": "Admin password",
+      "type": "password",
+      "key": "admin_password",
+      "required": true
+    },
+    {
+      "question": "Host",
+      "type": "text",
+      "key": "host",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30125, 30493]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/nextcloud-community"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/nextcloud-community/html",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "html"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/nextcloud-community/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/nextcloud-community/talk_recording_data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "talk_recording_data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/nextcloud-community/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "nextcloud": {
+      "admin_user": "$QUESTION(admin_user)",
+      "admin_password": "$QUESTION(admin_password)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "db_password": "$RANDOM_STRING(16)",
+      "urls": {"host": "$QUESTION(host)"}
+    },
+    "storage": {
+      "html": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nextcloud-community/html)",
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nextcloud-community/data)",
+      "talk_recording_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nextcloud-community/talk_recording_data)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nextcloud-community/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30125},
+      "talk_port": {"bind_mode": "published", "port_number": 30493}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

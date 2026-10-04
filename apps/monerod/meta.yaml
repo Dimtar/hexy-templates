@@ -1,0 +1,24 @@
+title: Monero Node
+description: Monero is a private, decentralized cryptocurrency that keeps your finances confidential and
+  secure.
+icon: https://media.sys.truenas.net/apps/monerod/icons/icon.png
+categories:
+- financial
+keywords:
+- monero
+- cryptocurrency
+- blockchain
+- privacy
+home: https://www.getmonero.org
+screenshots: []
+train: community
+truenas_name: monerod
+status: draft
+managed: generated
+upstream:
+  version: 1.2.13
+  app_version: v0.18.5.3
+  questions_sha: fa8f9df9ded7eb49ee4972b563c4b209c52b5921755ee78403323761270b144f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/monerod
+notes: []

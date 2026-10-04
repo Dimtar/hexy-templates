@@ -1,0 +1,21 @@
+title: Traefik
+description: The Cloud Native Application Proxy
+icon: https://media.sys.truenas.net/apps/traefik/icons/icon.svg
+categories:
+- networking
+keywords:
+- networking
+- reverse-proxy
+home: https://traefik.io/
+screenshots: []
+train: community
+truenas_name: traefik
+status: draft
+managed: generated
+upstream:
+  version: 1.0.24
+  app_version: v3.7.13
+  questions_sha: 7c88160e17f677e865316824ca94fdbe72176004982632c075fcaaa31ca0cb58
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/traefik
+notes: []

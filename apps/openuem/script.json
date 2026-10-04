@@ -1,0 +1,92 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS openuem 1.0.37"
+  },
+  "installation_questions": [
+    {
+      "question": "Domain",
+      "type": "text",
+      "key": "domain",
+      "required": true
+    },
+    {
+      "question": "Org name",
+      "type": "text",
+      "key": "org_name",
+      "required": true
+    },
+    {
+      "question": "Org province",
+      "type": "text",
+      "key": "org_province",
+      "required": true
+    },
+    {
+      "question": "Org locality",
+      "type": "text",
+      "key": "org_locality",
+      "required": true
+    },
+    {
+      "question": "Org address",
+      "type": "text",
+      "key": "org_address",
+      "required": true
+    },
+    {
+      "question": "Org country",
+      "type": "text",
+      "key": "org_country",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30400, 30401, 30402, 30403]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/openuem"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/openuem/nats_data",
+      "snapshot": {"id": "nats_data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/openuem/certificates",
+      "snapshot": {"id": "certificates"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/openuem/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "openuem": {
+      "postgres_password": "$RANDOM_STRING(16)",
+      "jwt_key": "$RANDOM_STRING(32)",
+      "domain": "$QUESTION(domain)",
+      "org_name": "$QUESTION(org_name)",
+      "org_province": "$QUESTION(org_province)",
+      "org_locality": "$QUESTION(org_locality)",
+      "org_address": "$QUESTION(org_address)",
+      "org_country": "$QUESTION(org_country)"
+    },
+    "storage": {
+      "nats_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/openuem/nats_data)",
+      "certificates": "$HOST_PATH($LOCATION(ApplicationsPerformance)/openuem/certificates)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/openuem/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30400},
+      "auth_port": {"bind_mode": "published", "port_number": 30401},
+      "ocsp_port": {"bind_mode": "published", "port_number": 30402},
+      "nats_port": {"bind_mode": "published", "port_number": 30403}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

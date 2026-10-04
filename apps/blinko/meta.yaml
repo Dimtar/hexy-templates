@@ -1,0 +1,22 @@
+title: Blinko
+description: Blinko is the next generation of open-source AI-powered card notes designed to help you quickly
+  capture and organize inspiration so that ideas never run out.
+icon: https://media.sys.truenas.net/apps/blinko/icons/icon.png
+categories:
+- productivity
+keywords:
+- notes
+- cards
+home: https://blinko.space
+screenshots: []
+train: community
+truenas_name: blinko
+status: draft
+managed: generated
+upstream:
+  version: 1.0.24
+  app_version: 1.8.8
+  questions_sha: 4cb948ce5e8502fe14aecad7a8d53f8ee5b8fbc26ab2013e7744439c5aa6e10d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/blinko
+notes: []

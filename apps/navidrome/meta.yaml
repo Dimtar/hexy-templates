@@ -1,0 +1,22 @@
+title: Navidrome
+description: Navidrome is a personal streaming service
+icon: https://media.sys.truenas.net/apps/navidrome/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- music
+home: https://www.navidrome.org
+screenshots:
+- https://media.sys.truenas.net/apps/navidrome/screenshots/screenshot1.png
+train: community
+truenas_name: navidrome
+status: draft
+managed: generated
+upstream:
+  version: 1.3.17
+  app_version: 0.64.2
+  questions_sha: ea5a09943aae8a3f70d3cda4cde9334a7ec695a7880c8b37884368a5ae8c1c2a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/navidrome
+notes: []

@@ -1,0 +1,23 @@
+title: Tracefinity
+description: Generate custom 3D-printable Gridfinity bins from photos of your tools using AI
+icon: https://media.sys.truenas.net/apps/tracefinity/icons/icon.svg
+categories:
+- productivity
+keywords:
+- 3d-printing
+- gridfinity
+- ai
+- tools
+home: https://www.tracefinity.net
+screenshots: []
+train: community
+truenas_name: tracefinity
+status: draft
+managed: generated
+upstream:
+  version: 1.0.4
+  app_version: 0.9.4
+  questions_sha: 8c5b1a18c0b24a05fd08f87ab4cc159b08effd942fd2a65ec7b1dc24e03dfde8
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tracefinity
+notes: []

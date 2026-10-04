@@ -1,0 +1,57 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS stalwart 2.0.16"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [
+      30340,
+      30341,
+      30342,
+      30343,
+      30344,
+      30345,
+      30346,
+      30347,
+      30348,
+      30349
+    ]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/stalwart"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/stalwart/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/stalwart/data)"
+    },
+    "network": {
+      "http_port": {"bind_mode": "published", "port_number": 30340},
+      "https_port": {"bind_mode": "published", "port_number": 30341},
+      "smtp_port": {"bind_mode": "published", "port_number": 30342},
+      "submission_port": {
+        "bind_mode": "published",
+        "port_number": 30343
+      },
+      "submissions_port": {
+        "bind_mode": "published",
+        "port_number": 30344
+      },
+      "imap_port": {"bind_mode": "published", "port_number": 30345},
+      "imaps_port": {"bind_mode": "published", "port_number": 30346},
+      "pop3_port": {"bind_mode": "published", "port_number": 30347},
+      "pop3s_port": {"bind_mode": "published", "port_number": 30348},
+      "sieve_port": {"bind_mode": "published", "port_number": 30349}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

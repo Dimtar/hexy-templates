@@ -1,0 +1,23 @@
+title: Handbrake
+description: HandBrake is a tool for converting video from nearly any format to a selection of modern,
+  widely supported codecs.
+icon: https://media.sys.truenas.net/apps/handbrake/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- video
+- transcoder
+home: https://github.com/jlesage/docker-handbrake
+screenshots: []
+train: community
+truenas_name: handbrake
+status: draft
+managed: generated
+upstream:
+  version: 2.3.16
+  app_version: v26.09.1
+  questions_sha: 1cdf230f83c45def58d1f5a8ae024de04e2cc9885ed0b9b7e3e5161f5e3065cb
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/handbrake
+notes: []

@@ -1,0 +1,30 @@
+title: Tracearr
+description: Tracearr is a streaming access manager for Plex, Jellyfin and Emby servers.
+icon: https://media.sys.truenas.net/apps/tracearr/icons/icon.svg
+categories:
+- media
+keywords:
+- plex
+- jellyfin
+- emby
+- streaming
+- media
+- account sharing
+- session
+- geolocation
+home: https://github.com/connorgallopo/tracearr
+screenshots:
+- https://media.sys.truenas.net/apps/tracearr/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/tracearr/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/tracearr/screenshots/screenshot3.png
+train: community
+truenas_name: tracearr
+status: draft
+managed: generated
+upstream:
+  version: 1.2.67
+  app_version: 2.6.0
+  questions_sha: 2138429278c4654d41fd1a481f4e3b6ceccf9577203eaa6920119fbb51a196c3
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tracearr
+notes: []

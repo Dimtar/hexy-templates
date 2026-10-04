@@ -1,0 +1,22 @@
+title: DDNS Updater
+description: Lightweight universal DDNS Updater with web UI
+icon: https://media.sys.truenas.net/apps/ddns-updater/icons/icon.svg
+categories:
+- networking
+keywords:
+- ddns-updater
+- ddns
+home: https://github.com/qdm12/ddns-updater
+screenshots:
+- https://media.sys.truenas.net/apps/ddns-updater/screenshots/screenshot1.png
+train: community
+truenas_name: ddns-updater
+status: draft
+managed: generated
+upstream:
+  version: 1.3.14
+  app_version: v2.10.0
+  questions_sha: 1843f15f022421401f620a10e12a7f72034efd535fa0e306e2173b15b2522711
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/ddns-updater
+notes: []

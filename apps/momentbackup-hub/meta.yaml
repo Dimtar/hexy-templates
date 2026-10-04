@@ -1,0 +1,23 @@
+title: MomentBackup Hub
+description: A private overview of MomentBackup protection.
+icon: https://media.sys.truenas.net/apps/momentbackup-hub/icons/icon.png
+categories:
+- productivity
+keywords:
+- backup
+- monitoring
+- recovery
+home: https://momentbackup.com/hub/
+screenshots:
+- https://media.sys.truenas.net/apps/momentbackup-hub/screenshots/screenshot1.webp
+train: community
+truenas_name: momentbackup-hub
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 1.0.6
+  questions_sha: 34658da397c35de5fde9e2576618d8a0f709ff97a32c86d2e969167c06df1297
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/momentbackup-hub
+notes: []

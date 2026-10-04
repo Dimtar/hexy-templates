@@ -1,0 +1,28 @@
+title: Yuvomi
+description: Self-hosted family planner - tasks, calendars, shopping, meals, budget. Your data, your server.
+icon: https://media.sys.truenas.net/apps/yuvomi/icons/icon.png
+categories:
+- productivity
+keywords:
+- family
+- planner
+- calendar
+- productivity
+home: https://github.com/ulsklyc/yuvomi
+screenshots:
+- https://media.sys.truenas.net/apps/yuvomi/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/yuvomi/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/yuvomi/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/yuvomi/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/yuvomi/screenshots/screenshot5.png
+train: community
+truenas_name: yuvomi
+status: draft
+managed: generated
+upstream:
+  version: 1.0.78
+  app_version: 2.71.0
+  questions_sha: fd87f4e589c3ad2c25c05cbe9d175126cc145d3d48e67b282e3127b70753d6ea
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/yuvomi
+notes: []

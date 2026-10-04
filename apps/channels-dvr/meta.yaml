@@ -1,0 +1,24 @@
+title: Channels DVR
+description: Watch and record your favorite shows and movies from every TV and device. From your living
+  room, second home, hotel room, or even on your commute, Channels lets you watch your personal media
+  your way.
+icon: https://media.sys.truenas.net/apps/channels-dvr/icons/icon.svg
+categories:
+- media
+keywords:
+- channels
+- livetv
+- streaming
+home: https://getchannels.com/dvr-server/
+screenshots: []
+train: community
+truenas_name: channels-dvr
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: latest
+  questions_sha: 6d5991805a984d21b05a3d988b9fdc9edfd9d47c64173782789e9e03abeae86e
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/channels-dvr
+notes: []

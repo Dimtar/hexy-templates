@@ -1,0 +1,20 @@
+title: Directus
+description: Directus is a real-time API and App dashboard for managing SQL database content.
+icon: https://media.sys.truenas.net/apps/directus/icons/icon.svg
+categories:
+- productivity
+keywords:
+- directus
+home: https://directus.io/
+screenshots: []
+train: community
+truenas_name: directus
+status: draft
+managed: generated
+upstream:
+  version: 1.2.48
+  app_version: 12.4.1
+  questions_sha: 2e010b28fc752ea38a74576042c04bcc7c3e7b119964a1776f5c324a92bccc5a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/directus
+notes: []

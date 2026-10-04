@@ -1,0 +1,39 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS ntfy 1.1.21"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30184, 30185]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/ntfy"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/ntfy/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/ntfy/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "ntfy": {"base_url": "http://$SERVER_LAN_IP:30184"},
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/ntfy/config)",
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/ntfy/data)"
+    },
+    "network": {
+      "http_port": {"bind_mode": "published", "port_number": 30184},
+      "https_port": {"bind_mode": "published", "port_number": 30185}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

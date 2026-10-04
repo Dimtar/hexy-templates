@@ -1,0 +1,35 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS dockge 1.3.8"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [31014]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/dockge"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/dockge/stacks",
+      "snapshot": {"id": "stacks"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/dockge/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "stacks": "$HOST_PATH($LOCATION(ApplicationsPerformance)/dockge/stacks)",
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/dockge/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 31014}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

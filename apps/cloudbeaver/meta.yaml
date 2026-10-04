@@ -1,0 +1,22 @@
+title: CloudBeaver
+description: CloudBeaver is a Cloud Database Manager.
+icon: https://media.sys.truenas.net/apps/cloudbeaver/icons/icon.svg
+categories:
+- database
+keywords:
+- cloudbeaver
+- database
+- dbeaver
+home: https://dbeaver.com/
+screenshots: []
+train: community
+truenas_name: cloudbeaver
+status: draft
+managed: generated
+upstream:
+  version: 1.1.23
+  app_version: 26.2.1
+  questions_sha: 7b77f9d4bf0b52a4c9835478918e9e896df13b3588b3b371732f534601c653a7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cloudbeaver
+notes: []

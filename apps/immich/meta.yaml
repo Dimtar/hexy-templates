@@ -1,0 +1,21 @@
+title: Immich
+description: Immich is a self-hosted photo and video backup solution directly from your mobile phone.
+icon: https://media.sys.truenas.net/apps/immich/icons/icon.svg
+categories:
+- media
+keywords:
+- photos
+- backup
+home: https://immich.app
+screenshots: []
+train: community
+truenas_name: immich
+status: draft
+managed: generated
+upstream:
+  version: 1.14.44
+  app_version: v3.2.4
+  questions_sha: 06902d73dfb3983b149cb6b7209d1df07fa01d103b33bfa00d612a8ea8810a98
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/immich
+notes: []

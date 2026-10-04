@@ -1,0 +1,59 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS gramps-web 1.4.6"
+  },
+  "requirements": {
+    "locations": [
+      "ApplicationsPerformance",
+      "ApplicationsCapacity",
+      "Media"
+    ],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30179]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/gramps-web"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/gramps-web"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/gramps-web/users",
+      "snapshot": {"id": "users"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/gramps-web/index",
+      "snapshot": {"id": "index"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/gramps-web/thumbnail_cache"
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/gramps-web/cache"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/gramps-web/grampsdb",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "grampsdb"}
+    }
+  ],
+  "app_values": {
+    "gramps": {
+      "redis_password": "$RANDOM_STRING(16)",
+      "app_key": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "users": "$HOST_PATH($LOCATION(ApplicationsPerformance)/gramps-web/users)",
+      "index": "$HOST_PATH($LOCATION(ApplicationsPerformance)/gramps-web/index)",
+      "thumbnail_cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/gramps-web/thumbnail_cache)",
+      "cache": "$HOST_PATH($LOCATION(ApplicationsCapacity)/gramps-web/cache)",
+      "media": "$HOST_PATH($LOCATION(Media))",
+      "grampsdb": "$HOST_PATH($LOCATION(ApplicationsPerformance)/gramps-web/grampsdb)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30179}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

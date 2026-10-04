@@ -1,0 +1,24 @@
+title: Kapowarr
+description: Kapowarr is a software to build and manage a comic book library, fitting in the *arr suite
+  of software.
+icon: https://media.sys.truenas.net/apps/kapowarr/icons/icon.svg
+categories:
+- media
+keywords:
+- comic
+- media
+home: https://casvt.github.io/Kapowarr/
+screenshots:
+- https://media.sys.truenas.net/apps/kapowarr/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/kapowarr/screenshots/screenshot2.png
+train: community
+truenas_name: kapowarr
+status: draft
+managed: generated
+upstream:
+  version: 1.3.10
+  app_version: v1.3.2
+  questions_sha: b375645682f3b9e2ea736e7c9a36852ecef8606980736ab208d6ce856fd85b23
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/kapowarr
+notes: []

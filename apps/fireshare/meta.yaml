@@ -1,0 +1,22 @@
+title: Fireshare
+description: Share your game clips, videos, or other media via unique links.
+icon: https://media.sys.truenas.net/apps/fireshare/icons/icon.png
+categories:
+- media
+keywords:
+- file-sharing
+- video-sharing
+home: https://github.com/ShaneIsrael/fireshare
+screenshots:
+- https://media.sys.truenas.net/apps/fireshare/screenshots/screenshot1.png
+train: community
+truenas_name: fireshare
+status: draft
+managed: generated
+upstream:
+  version: 1.1.39
+  app_version: 1.8.5
+  questions_sha: 4bbcaf43d03245aba7dc6d99ac8408f2f52dbb3731e2ef9a297acab9ec20201a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/fireshare
+notes: []

@@ -1,0 +1,25 @@
+title: Wealthfolio
+description: Wealthfolio is an open-source, private portfolio tracker for investments, net worth, spending,
+  and simulations. All data is stored locally with no cloud dependencies.
+icon: https://media.sys.truenas.net/apps/wealthfolio/icons/icon.svg
+categories:
+- financial
+keywords:
+- finance
+- portfolio
+- investments
+- wealth
+home: https://wealthfolio.app
+screenshots:
+- https://media.sys.truenas.net/apps/wealthfolio/screenshots/screenshot1.webp
+train: community
+truenas_name: wealthfolio
+status: draft
+managed: generated
+upstream:
+  version: 1.0.11
+  app_version: 3.9.1
+  questions_sha: 997f8e64f0fb9345bba99fff7f2fa3512dcbd042f31850cfc690e6c57b3c7e0b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/wealthfolio
+notes: []

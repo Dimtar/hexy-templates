@@ -1,0 +1,22 @@
+title: Autobrr
+description: Autobrr is the modern download automation tool for torrents and usenet.
+icon: https://media.sys.truenas.net/apps/autobrr/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- torrent
+- usenet
+home: https://github.com/autobrr/autobrr
+screenshots: []
+train: community
+truenas_name: autobrr
+status: draft
+managed: generated
+upstream:
+  version: 1.4.24
+  app_version: v1.87.0
+  questions_sha: ab7bfc80c7e92dec99efc3a400f38acab1782659d15d4790296c2b5d587387ce
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/autobrr
+notes: []

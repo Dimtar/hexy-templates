@@ -1,0 +1,18 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS cockpit-ws 1.1.17"
+  },
+  "requirements": {
+    "locations": [],
+    "specifications": ["2CORE"],
+    "ports": [30137]
+  },
+  "app_values": {
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30137}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

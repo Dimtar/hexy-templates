@@ -1,0 +1,21 @@
+title: Authelia
+description: The Single Sign-On Multi-Factor portal for web apps
+icon: https://media.sys.truenas.net/apps/authelia/icons/icon.svg
+categories:
+- authentication
+keywords:
+- authentication
+- sso
+home: https://www.authelia.com/
+screenshots: []
+train: community
+truenas_name: authelia
+status: draft
+managed: generated
+upstream:
+  version: 1.2.49
+  app_version: 4.39.28
+  questions_sha: b92530621d7661ae26fd7478e4d69b80e13c24577421138a36f5a064d2dc5130
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/authelia
+notes: []

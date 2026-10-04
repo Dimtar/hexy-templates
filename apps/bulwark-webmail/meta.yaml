@@ -1,0 +1,26 @@
+title: Bulwark Webmail
+description: Bulwark is a modern, self-hosted webmail suite built for Stalwart Mail Server and powered
+  by the JMAP protocol. It provides webmail, calendar, contacts, and file access through a browser-based
+  interface.
+icon: https://media.sys.truenas.net/apps/bulwark-webmail/icons/icon.svg
+categories:
+- productivity
+keywords:
+- webmail
+- email
+- jmap
+- calendar
+- contacts
+home: https://bulwarkmail.org/
+screenshots: []
+train: community
+truenas_name: bulwark-webmail
+status: draft
+managed: generated
+upstream:
+  version: 1.0.17
+  app_version: 1.12.0
+  questions_sha: c63ce36e824b93db569daa9433ecf6ffc9678a0426ff5cb45f2926d1fc13e2cb
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/bulwark-webmail
+notes: []

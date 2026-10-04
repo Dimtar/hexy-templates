@@ -1,0 +1,23 @@
+title: NocoDB
+description: NocoDB is an open source NoCode platform that turns any database into a smart spreadsheet.
+icon: https://media.sys.truenas.net/apps/nocodb/icons/icon.svg
+categories:
+- productivity
+keywords:
+- database
+- nocode
+- spreadsheet
+- api
+home: https://nocodb.com/
+screenshots: []
+train: community
+truenas_name: nocodb
+status: draft
+managed: generated
+upstream:
+  version: 1.2.43
+  app_version: 2026.09.1
+  questions_sha: c92dffc424758bd3b37ec751a428f15c4b0120a115ace7f74650dc278d0b93f4
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nocodb
+notes: []

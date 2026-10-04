@@ -1,0 +1,26 @@
+title: Diskover Data
+description: Diskover is used to monitor size/volumes of distributed dataset.
+icon: https://media.sys.truenas.net/apps/diskoverdata/icons/icon.png
+categories:
+- monitoring
+keywords:
+- storage
+- monitoring
+- management
+- discovery
+home: https://github.com/diskoverdata/diskover-community
+screenshots:
+- https://media.sys.truenas.net/apps/diskoverdata/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/diskoverdata/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/diskoverdata/screenshots/screenshot3.png
+train: stable
+truenas_name: diskoverdata
+status: draft
+managed: generated
+upstream:
+  version: 1.8.17
+  app_version: 2.3.5
+  questions_sha: 49c5840ae86ea4e3c4f778558993a83ad8c3f47d1c483bd8d0b244a2b1fca251
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/diskoverdata
+notes: []

@@ -1,0 +1,22 @@
+title: Open Speed Test
+description: SpeedTest by OpenSpeedTest™ is a Free and Open-Source HTML5 Network Performance Estimation
+  Tool
+icon: https://media.sys.truenas.net/apps/open-speed-test/icons/icon.svg
+categories:
+- networking
+keywords:
+- speedtest
+home: https://openspeedtest.com
+screenshots:
+- https://media.sys.truenas.net/apps/open-speed-test/screenshots/screenshot1.gif
+train: community
+truenas_name: open-speed-test
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: v2.0.6
+  questions_sha: 40e5d4f1fdb053becf4e4c51fd2febf9e38f3a5a8eb42d7bf8e1d2257a23162c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/open-speed-test
+notes: []

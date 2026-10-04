@@ -1,0 +1,20 @@
+title: ntfy
+description: ntfy (pronounced "notify") is a simple HTTP-based pub-sub notification service.
+icon: https://media.sys.truenas.net/apps/ntfy/icons/icon.svg
+categories:
+- productivity
+keywords:
+- notification
+home: https://ntfy.sh/
+screenshots: []
+train: community
+truenas_name: ntfy
+status: draft
+managed: generated
+upstream:
+  version: 1.1.21
+  app_version: v2.28.0
+  questions_sha: 36e74a87f124ec7efe42426398cf761a68d5095c8e5520ee7d4960c3fba21354
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/ntfy
+notes: []

@@ -1,0 +1,22 @@
+title: Headscale
+description: An open source, self-hosted implementation of the Tailscale control server
+icon: https://media.sys.truenas.net/apps/headscale/icons/icon.svg
+categories:
+- networking
+keywords:
+- networking
+- tailscale
+- vpn
+home: https://github.com/juanfont/headscale/releases
+screenshots: []
+train: community
+truenas_name: headscale
+status: draft
+managed: generated
+upstream:
+  version: 1.1.17
+  app_version: v0.29.4
+  questions_sha: d05fd5a64a26053ae20020884a022a5c982aab6570ead9a76dc19ef7ac3bdbf0
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/headscale
+notes: []

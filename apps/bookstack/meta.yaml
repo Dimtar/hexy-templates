@@ -1,0 +1,22 @@
+title: BookStack
+description: BookStack is a simple, self-hosted, easy-to-use platform for organizing and storing information
+icon: https://media.sys.truenas.net/apps/bookstack/icons/icon.png
+categories:
+- productivity
+keywords:
+- bookstack
+- documentation
+- wiki
+home: https://www.bookstackapp.com/
+screenshots: []
+train: community
+truenas_name: bookstack
+status: draft
+managed: generated
+upstream:
+  version: 1.2.26
+  app_version: 26.9.1
+  questions_sha: 8cd01f1a039790583b244ad103c00b27664b9cc7f9797113bbb4cfbbdae9e184
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/bookstack
+notes: []

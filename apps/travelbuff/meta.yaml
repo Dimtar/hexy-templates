@@ -1,0 +1,22 @@
+title: TravelBuff
+description: Self-hosted, offline-first travel planner, location tracker, and itinerary manager.
+icon: https://media.sys.truenas.net/apps/travelbuff/icons/icon.png
+categories:
+- productivity
+keywords:
+- travel
+- planner
+- itinerary
+home: https://travelbuff.app
+screenshots: []
+train: community
+truenas_name: travelbuff
+status: draft
+managed: generated
+upstream:
+  version: 1.0.8
+  app_version: 7.7.4
+  questions_sha: 1ff151c11723f53f455ff435b783e76e1c924c684ca7a778f556525a9423ab63
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/travelbuff
+notes: []

@@ -1,0 +1,22 @@
+title: Palworld
+description: Palworld is a multiplayer, open-world survival crafting game where you befriend and collect
+  mysterious creatures called "Pals".
+icon: https://media.sys.truenas.net/apps/palworld/icons/icon.webp
+categories:
+- games
+keywords:
+- game
+- palworld
+home: https://www.pocketpair.jp/palworld
+screenshots: []
+train: community
+truenas_name: palworld
+status: draft
+managed: generated
+upstream:
+  version: 1.3.8
+  app_version: palworld
+  questions_sha: da6c3a307aee2b16098158cd481614a5c6abac6d5ae3ed72d27155fa968ceb92
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/palworld
+notes: []

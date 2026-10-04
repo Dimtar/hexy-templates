@@ -1,0 +1,21 @@
+title: Boxarr
+description: Boxarr is an automated box office tracking application that integrates with Radarr to monitor,
+  add, and manage the latest theatrical releases.
+icon: https://media.sys.truenas.net/apps/boxarr/icons/icon.png
+categories:
+- media
+keywords:
+- media
+home: https://github.com/iongpt/boxarr
+screenshots: []
+train: community
+truenas_name: boxarr
+status: draft
+managed: generated
+upstream:
+  version: 1.0.11
+  app_version: 2.1.0
+  questions_sha: 57abbe5b460b08877db8f405ba48d2fcd7e866b5f826d3f328b05951a97e91be
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/boxarr
+notes: []

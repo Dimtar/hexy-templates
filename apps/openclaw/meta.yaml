@@ -1,0 +1,22 @@
+title: OpenClaw
+description: OpenClaw is a personal AI assistant you run on your own devices.
+icon: https://media.sys.truenas.net/apps/openclaw/icons/icon.svg
+categories:
+- ai
+keywords:
+- ai
+- assistant
+- automation
+home: https://openclaw.ai/
+screenshots: []
+train: community
+truenas_name: openclaw
+status: draft
+managed: generated
+upstream:
+  version: 1.0.51
+  app_version: 2026.9.8
+  questions_sha: 7a9437cc99bed8c4a1e82e45dbaf1f8bcfb267d5af27b299bef676ba0c2a9e9f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/openclaw
+notes: []

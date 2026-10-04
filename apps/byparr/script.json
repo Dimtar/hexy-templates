@@ -1,0 +1,30 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS byparr 1.1.10"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30230]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/byparr"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/byparr/screenshots",
+      "snapshot": {"id": "screenshots"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "screenshots": "$HOST_PATH($LOCATION(ApplicationsPerformance)/byparr/screenshots)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30230}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

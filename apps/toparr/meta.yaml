@@ -1,0 +1,25 @@
+title: Toparr
+description: Real-time Intel GPU monitoring dashboard with live-updating gauges, sparkline history, and
+  per-process GPU client tracking.
+icon: https://media.sys.truenas.net/apps/toparr/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- monitoring
+- gpu
+- intel
+- hardware
+home: https://github.com/ajthom90/toparr
+screenshots:
+- https://media.sys.truenas.net/apps/toparr/screenshots/screenshot1.png
+train: community
+truenas_name: toparr
+status: draft
+managed: generated
+upstream:
+  version: 1.0.10
+  app_version: 2.0.1
+  questions_sha: 89bb13dd714f3def678cd35cb15ddf7d2e010a95e2a21fc153ab4bbff1f76e5a
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/toparr
+notes: []

@@ -1,0 +1,24 @@
+title: Photoprism
+description: AI-powered app for browsing, organizing & sharing your photo collection.
+icon: https://media.sys.truenas.net/apps/photoprism/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- photos
+- image
+home: https://photoprism.app/
+screenshots:
+- https://media.sys.truenas.net/apps/photoprism/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/photoprism/screenshots/screenshot2.png
+train: stable
+truenas_name: photoprism
+status: draft
+managed: generated
+upstream:
+  version: 1.4.12
+  app_version: '260919'
+  questions_sha: 5999c1276f7b53bfdbd0fd283d2234578b2cd44c6194032dd251040e70f86360
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/photoprism
+notes: []

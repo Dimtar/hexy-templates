@@ -1,0 +1,21 @@
+title: Next Explorer
+description: A modern, self-hosted file explorer with secure access control, polished UX, and a Docker-friendly
+  deployment story.
+icon: https://media.sys.truenas.net/apps/next-explorer/icons/icon.svg
+categories:
+- storage
+keywords:
+- file explorer
+home: https://github.com/vikramsoni2/nextExplorer
+screenshots: []
+train: community
+truenas_name: next-explorer
+status: draft
+managed: generated
+upstream:
+  version: 1.1.14
+  app_version: v4.0.0
+  questions_sha: 01f5ab0d91640b0d630a8893f3e203816d4d019505ad332148cc4336dfd34d3d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/next-explorer
+notes: []

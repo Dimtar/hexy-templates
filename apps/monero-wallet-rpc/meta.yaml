@@ -1,0 +1,25 @@
+title: Monero Wallet RPC
+description: A RPC server that allows interaction with Monero wallets programmatically.
+icon: https://media.sys.truenas.net/apps/monero-wallet-rpc/icons/icon.png
+categories:
+- financial
+keywords:
+- monero
+- cryptocurrency
+- wallet
+- rpc
+- blockchain
+- privacy
+home: https://www.getmonero.org
+screenshots: []
+train: community
+truenas_name: monero-wallet-rpc
+status: draft
+managed: generated
+upstream:
+  version: 1.1.10
+  app_version: v0.18.5.1
+  questions_sha: 5ba9b4ed8238ba0180adee2967d8e02450c4d5f794847dcbcdebafb34559e2d3
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/monero-wallet-rpc
+notes: []

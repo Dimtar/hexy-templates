@@ -1,0 +1,20 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS cloudflared 2.0.23"
+  },
+  "installation_questions": [
+    {
+      "question": "Tunnel token",
+      "type": "password",
+      "key": "tunnel_token",
+      "required": true
+    }
+  ],
+  "requirements": {"locations": [], "specifications": ["2CORE"]},
+  "app_values": {
+    "cloudflared": {"tunnel_token": "$QUESTION(tunnel_token)"},
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

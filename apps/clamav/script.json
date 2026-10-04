@@ -1,0 +1,37 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS clamav 1.4.10"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30005, 30006]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/clamav"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/clamav/sigdb",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "sigdb"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/clamav/scandir",
+      "snapshot": {"id": "scandir"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "sigdb": "$HOST_PATH($LOCATION(ApplicationsPerformance)/clamav/sigdb)",
+      "scandir": "$HOST_PATH($LOCATION(ApplicationsPerformance)/clamav/scandir)"
+    },
+    "network": {
+      "clamd_port": {"bind_mode": "published", "port_number": 30005},
+      "milterd_port": {"bind_mode": "published", "port_number": 30006}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

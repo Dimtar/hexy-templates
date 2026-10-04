@@ -1,0 +1,58 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS jdownloader2 1.1.9"
+  },
+  "installation_questions": [
+    {
+      "question": "Myjd name",
+      "type": "text",
+      "key": "myjd_name",
+      "required": true
+    },
+    {
+      "question": "Myjd user",
+      "type": "text",
+      "key": "myjd_user",
+      "required": true
+    },
+    {
+      "question": "Myjd password",
+      "type": "password",
+      "key": "myjd_password",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Downloads", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/jdownloader2"},
+    {"path": "$LOCATION(Downloads)", "network_share": true},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/jdownloader2/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    }
+  ],
+  "app_values": {
+    "jdownloader2": {
+      "myjd_name": "$QUESTION(myjd_name)",
+      "myjd_user": "$QUESTION(myjd_user)",
+      "myjd_password": "$QUESTION(myjd_password)"
+    },
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/jdownloader2/config)",
+      "downloads": "$HOST_PATH($LOCATION(Downloads))",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

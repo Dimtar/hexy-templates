@@ -1,0 +1,44 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS versitygw 1.1.15"
+  },
+  "installation_questions": [
+    {
+      "question": "Root user access key",
+      "type": "password",
+      "key": "root_user_access_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30355, 30157]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/versitygw"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/versitygw/buckets",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "buckets"}
+    }
+  ],
+  "app_values": {
+    "versity": {
+      "root_user_access_key": "$QUESTION(root_user_access_key)",
+      "root_user_secret_access_key": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "buckets": "$HOST_PATH($LOCATION(ApplicationsPerformance)/versitygw/buckets)"
+    },
+    "network": {
+      "webui_port": {"bind_mode": "published", "port_number": 30355},
+      "api_port": {"bind_mode": "published", "port_number": 30157}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

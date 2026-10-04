@@ -1,0 +1,24 @@
+title: SparkyFitness
+description: SparkyFitness is a self-hosted fitness and nutrition tracking application with AI coaching,
+  workout logging, and health data integrations.
+icon: https://media.sys.truenas.net/apps/sparkyfitness/icons/icon.png
+categories:
+- fitness
+keywords:
+- fitness
+- nutrition
+- health
+- tracking
+home: https://github.com/CodeWithCJ/SparkyFitness
+screenshots: []
+train: community
+truenas_name: sparkyfitness
+status: draft
+managed: generated
+upstream:
+  version: 1.0.23
+  app_version: v1.7.3
+  questions_sha: facd9b81b82544077ad9a8631ab4e2e6b3fe0d881b862f124ae423c3addbd369
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/sparkyfitness
+notes: []

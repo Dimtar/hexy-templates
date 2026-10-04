@@ -1,0 +1,21 @@
+title: MKVToolNix
+description: MKVToolNix is a set of tools to create, alter and inspect Matroska files.
+icon: https://media.sys.truenas.net/apps/mkvtoolnix/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- video
+home: https://mkvtoolnix.download/docs.html
+screenshots: []
+train: community
+truenas_name: mkvtoolnix
+status: draft
+managed: generated
+upstream:
+  version: 1.1.16
+  app_version: v26.09.2
+  questions_sha: 44ff2f8b4deff0e86f2708f8b2f281b9d3e9b012d2f36ff00edbbf88d781513d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mkvtoolnix
+notes: []

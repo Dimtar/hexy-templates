@@ -1,0 +1,26 @@
+title: Gitea
+description: Gitea - Git with a cup of tea
+icon: https://media.sys.truenas.net/apps/gitea/icons/icon.svg
+categories:
+- productivity
+keywords:
+- git
+- gitea
+- source control
+home: https://gitea.io/en-us
+screenshots:
+- https://media.sys.truenas.net/apps/gitea/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/gitea/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/gitea/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/gitea/screenshots/screenshot4.png
+train: community
+truenas_name: gitea
+status: draft
+managed: generated
+upstream:
+  version: 1.6.36
+  app_version: 28.0.0-rootless
+  questions_sha: faf1ada9ac7a9b3bfc1af40728a1369d8ded33afd9bf1859585fbb11094157eb
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/gitea
+notes: []

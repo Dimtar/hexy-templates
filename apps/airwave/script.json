@@ -1,0 +1,75 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS airwave 1.0.1"
+  },
+  "installation_questions": [
+    {
+      "question": "Admin email",
+      "type": "text",
+      "key": "admin_email",
+      "required": true
+    },
+    {
+      "question": "Admin password",
+      "type": "password",
+      "key": "admin_password",
+      "required": true
+    },
+    {
+      "question": "Server public url",
+      "type": "text",
+      "key": "server_public_url",
+      "required": true
+    },
+    {
+      "question": "Web public url",
+      "type": "text",
+      "key": "web_public_url",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30515, 30516]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/airwave"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/airwave/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/airwave/bumper_music",
+      "snapshot": {"id": "bumper_music"}
+    }
+  ],
+  "app_values": {
+    "airwave": {
+      "db_password": "$RANDOM_STRING(16)",
+      "better_auth_secret": "$RANDOM_STRING(32)",
+      "admin_email": "$QUESTION(admin_email)",
+      "admin_password": "$QUESTION(admin_password)",
+      "server_public_url": "$QUESTION(server_public_url)",
+      "web_public_url": "$QUESTION(web_public_url)"
+    },
+    "storage": {
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/airwave/postgres_data)",
+      "bumper_music": "$HOST_PATH($LOCATION(ApplicationsPerformance)/airwave/bumper_music)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "server_port": {"bind_mode": "published", "port_number": 30515},
+      "web_port": {"bind_mode": "published", "port_number": 30516}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

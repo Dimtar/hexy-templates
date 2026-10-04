@@ -1,0 +1,21 @@
+title: Garage
+description: An open-source distributed object storage service tailored for self-hosting.
+icon: https://media.sys.truenas.net/apps/garage/icons/icon.svg
+categories:
+- storage
+keywords:
+- garage
+- object storage
+home: https://garagehq.deuxfleurs.fr/
+screenshots: []
+train: community
+truenas_name: garage
+status: draft
+managed: generated
+upstream:
+  version: 1.2.9
+  app_version: v2.4.1
+  questions_sha: d6d5bce42f0f24a66d3210ad61c7e0c1ccb5283aa4e9196464964b418f601517
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/garage
+notes: []

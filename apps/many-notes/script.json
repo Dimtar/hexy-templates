@@ -1,0 +1,46 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS many-notes 1.1.10"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30235]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/many-notes"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/many-notes"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/many-notes/database",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "database"}
+    },
+    {"path": "$LOCATION(ApplicationsCapacity)/many-notes/logs"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/many-notes/private",
+      "snapshot": {"id": "private"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/many-notes/typesense",
+      "snapshot": {"id": "typesense"}
+    }
+  ],
+  "app_values": {
+    "many_notes": {"app_url": "http://$SERVER_LAN_IP:30235"},
+    "storage": {
+      "database": "$HOST_PATH($LOCATION(ApplicationsPerformance)/many-notes/database)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/many-notes/logs)",
+      "private": "$HOST_PATH($LOCATION(ApplicationsPerformance)/many-notes/private)",
+      "typesense": "$HOST_PATH($LOCATION(ApplicationsPerformance)/many-notes/typesense)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30235}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

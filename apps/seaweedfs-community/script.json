@@ -1,0 +1,35 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS seaweedfs 1.1.40"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30200, 30201, 30202, 30203, 30204]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/seaweedfs-community"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/seaweedfs-community/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/seaweedfs-community/data)"
+    },
+    "network": {
+      "master_port": {"bind_mode": "published", "port_number": 30200},
+      "volume_port": {"bind_mode": "published", "port_number": 30201},
+      "filer_port": {"bind_mode": "published", "port_number": 30202},
+      "s3_port": {"bind_mode": "published", "port_number": 30203},
+      "webdav_port": {"bind_mode": "published", "port_number": 30204}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

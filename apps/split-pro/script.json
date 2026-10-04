@@ -1,0 +1,41 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS split-pro 1.0.34"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30383]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/split-pro"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/split-pro/uploads",
+      "snapshot": {"id": "uploads"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/split-pro/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "splitpro": {
+      "db_password": "$RANDOM_STRING(16)",
+      "nextauth_secret": "$RANDOM_STRING(32)",
+      "nextauth_url": "http://$SERVER_LAN_IP:30383"
+    },
+    "storage": {
+      "uploads": "$HOST_PATH($LOCATION(ApplicationsPerformance)/split-pro/uploads)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/split-pro/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30383}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

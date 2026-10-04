@@ -1,0 +1,29 @@
+title: OpenHabitTracker
+description: Take notes, plan tasks, track habits - free, ad-free, open source, all data on your server.
+  Native apps for Windows, Linux, Android, iOS and macOS sync to it.
+icon: https://media.sys.truenas.net/apps/openhabittracker/icons/icon.png
+categories:
+- productivity
+keywords:
+- habit
+- tracker
+- todo
+- tasks
+- notes
+- markdown
+home: https://openhabittracker.net
+screenshots:
+- https://media.sys.truenas.net/apps/openhabittracker/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/openhabittracker/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/openhabittracker/screenshots/screenshot3.png
+train: community
+truenas_name: openhabittracker
+status: draft
+managed: generated
+upstream:
+  version: 1.0.3
+  app_version: 1.2.5
+  questions_sha: ba2e32dccf0aad6b03368e7f1309b306855d0d3827559e8bd31d80db3c8d20a7
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/openhabittracker
+notes: []

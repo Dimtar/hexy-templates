@@ -1,0 +1,21 @@
+title: Prowlarr
+description: Prowlarr is an indexer manager/proxy to integrate with your various PVR apps.
+icon: https://media.sys.truenas.net/apps/prowlarr/icons/icon.png
+categories:
+- media
+keywords:
+- indexer
+home: https://prowlarr.com
+screenshots:
+- https://media.sys.truenas.net/apps/prowlarr/screenshots/screenshot1.png
+train: community
+truenas_name: prowlarr
+status: draft
+managed: generated
+upstream:
+  version: 1.5.25
+  app_version: 2.6.5.5623
+  questions_sha: a7effff4a403044a24c8c44cf915d43b8c4f61c118a5a3b4a77eee6706d455f8
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/prowlarr
+notes: []

@@ -1,0 +1,40 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS fscrawler 2.0.19"
+  },
+  "installation_questions": [
+    {
+      "question": "Job name",
+      "type": "text",
+      "key": "job_name",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/fscrawler"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/fscrawler/root_dir",
+      "snapshot": {"id": "root_dir"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/fscrawler/es_data",
+      "snapshot": {"id": "es_data"}
+    }
+  ],
+  "app_values": {
+    "fscrawler": {"job_name": "$QUESTION(job_name)"},
+    "storage": {
+      "root_dir": "$HOST_PATH($LOCATION(ApplicationsPerformance)/fscrawler/root_dir)",
+      "es_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/fscrawler/es_data)"
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

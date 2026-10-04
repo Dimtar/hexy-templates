@@ -1,0 +1,22 @@
+title: Mealie
+description: Mealie is a self-hosted recipe manager and meal planner
+icon: https://media.sys.truenas.net/apps/mealie/icons/icon.png
+categories:
+- productivity
+keywords:
+- recipes
+- meal planner
+home: https://docs.mealie.io/
+screenshots:
+- https://media.sys.truenas.net/apps/mealie/screenshots/screenshot1.png
+train: community
+truenas_name: mealie
+status: draft
+managed: generated
+upstream:
+  version: 1.8.52
+  app_version: v3.28.0
+  questions_sha: d293f3a495999e71847c316ffda34fbac9dafab075dc985c44b23c2ae8f6c47d
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mealie
+notes: []

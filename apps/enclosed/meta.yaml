@@ -1,0 +1,21 @@
+title: Enclosed
+description: Enclosed is a minimalistic web app designed for sending private and secure notes.
+icon: https://media.sys.truenas.net/apps/enclosed/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- series
+home: https://enclosed.cc/
+screenshots: []
+train: community
+truenas_name: enclosed
+status: draft
+managed: generated
+upstream:
+  version: 1.1.7
+  app_version: 1.16.0-rootless
+  questions_sha: c90741fd476cdc32d218a6723b9e0ca921aa1501b04be968b9c2d1a0cfac915f
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/enclosed
+notes: []

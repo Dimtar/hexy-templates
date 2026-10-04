@@ -1,0 +1,22 @@
+title: Rsync Daemon
+description: Rsync is an open source utility that provides fast incremental file transfer.
+icon: https://media.sys.truenas.net/apps/rsyncd/icons/icon.png
+categories:
+- storage
+keywords:
+- sync
+- rsync
+- file transfer
+home: https://github.com/truenas/containers/tree/master/apps/rsyncd
+screenshots: []
+train: community
+truenas_name: rsyncd
+status: draft
+managed: generated
+upstream:
+  version: 1.3.7
+  app_version: 1.0.2
+  questions_sha: 920c8c6dba0c87660788549c2e453d15a7c7b669decad12e3e02755834436b46
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/rsyncd
+notes: []

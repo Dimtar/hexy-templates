@@ -1,0 +1,42 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS hyos 1.0.17"
+  },
+  "installation_questions": [
+    {
+      "question": "Client secret",
+      "type": "password",
+      "key": "client_secret",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30380, 30381, 30382]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/hyos"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/hyos/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "hytale": {"api": {"client_secret": "$QUESTION(client_secret)"}},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/hyos/data)"
+    },
+    "network": {
+      "game_port": {"bind_mode": "published", "port_number": 30380},
+      "api_port": {"bind_mode": "published", "port_number": 30381},
+      "manager_port": {"bind_mode": "published", "port_number": 30382}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

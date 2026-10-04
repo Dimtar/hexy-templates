@@ -1,0 +1,27 @@
+title: Calibre
+description: Calibre is the one stop solution for all your e-book needs.
+icon: https://media.sys.truenas.net/apps/calibre/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- ebooks
+home: https://calibre-ebook.com/
+screenshots:
+- https://media.sys.truenas.net/apps/calibre/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/calibre/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/calibre/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/calibre/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/calibre/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/calibre/screenshots/screenshot6.png
+train: community
+truenas_name: calibre
+status: draft
+managed: generated
+upstream:
+  version: 1.2.20
+  app_version: 9.15.0
+  questions_sha: b72141891c1f06750ea1bb2eedefd8b2f85d89454ee51685e4a1b81d4069c10e
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/calibre
+notes: []

@@ -1,0 +1,23 @@
+title: Cloudflared
+description: Cloudflared is a client for Cloudflare Tunnel, a daemon that exposes private services through
+  the Cloudflare edge.
+icon: https://media.sys.truenas.net/apps/cloudflared/icons/icon.svg
+categories:
+- networking
+keywords:
+- network
+- cloudflare
+- tunnel
+home: https://github.com/cloudflare/cloudflared
+screenshots: []
+train: community
+truenas_name: cloudflared
+status: draft
+managed: generated
+upstream:
+  version: 2.0.23
+  app_version: 2026.9.3
+  questions_sha: 6d8c58c44ba250a1951edde3ff6acd3a4a9d3f74db2d5734e322a13c431057b0
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cloudflared
+notes: []

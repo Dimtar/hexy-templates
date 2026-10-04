@@ -1,0 +1,26 @@
+title: Syncthing
+description: Syncthing is a continuous file synchronization program.
+icon: https://media.sys.truenas.net/apps/syncthing/icons/icon.svg
+categories:
+- storage
+keywords:
+- sync
+- file-sharing
+- backup
+home: https://syncthing.net/
+screenshots:
+- https://media.sys.truenas.net/apps/syncthing/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/syncthing/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/syncthing/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/syncthing/screenshots/screenshot4.png
+train: stable
+truenas_name: syncthing
+status: draft
+managed: generated
+upstream:
+  version: 1.3.14
+  app_version: 2.1.5
+  questions_sha: bcd3e968c5238cefc5ae17179868f416c4dcc066528ceaeaa36c828f2e70c407
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/stable/syncthing
+notes: []

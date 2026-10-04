@@ -1,0 +1,22 @@
+title: Bambuddy
+description: Your Bambu Lab. No Cloud. Your Rules. Self-hosted command center for Bambu Lab - from one
+  A1 to a 40-printer farm.
+icon: https://media.sys.truenas.net/apps/bambuddy/icons/icon.png
+categories:
+- productivity
+keywords:
+- printer
+- 3d
+home: https://bambuddy.cool/
+screenshots: []
+train: community
+truenas_name: bambuddy
+status: draft
+managed: generated
+upstream:
+  version: 1.0.8
+  app_version: 1.2.5.7
+  questions_sha: e8c37c3804c9dea9278e985d33873d875157b954d060fca1ff87f16fccf85027
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/bambuddy
+notes: []

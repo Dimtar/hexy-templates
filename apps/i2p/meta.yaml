@@ -1,0 +1,22 @@
+title: I2P
+description: I2P (Invisible Internet Protocol) is a universal anonymous network layer. All communications
+  over I2P are anonymous and end-to-end encrypted, participants don't reveal their real IP addresses.
+icon: https://media.sys.truenas.net/apps/i2p/icons/icon.png
+categories:
+- networking
+keywords:
+- i2p
+- privacy
+home: https://i2p.net
+screenshots: []
+train: community
+truenas_name: i2p
+status: draft
+managed: generated
+upstream:
+  version: 1.1.12
+  app_version: i2p-2.11.0-9
+  questions_sha: cf34f114c690c64c61ff4cff8624fdab5e13064c698862077d8707de208f6246
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/i2p
+notes: []

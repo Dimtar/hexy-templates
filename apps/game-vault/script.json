@@ -1,0 +1,59 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS game-vault 1.0.21"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30419, 30420]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/game-vault"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/game-vault/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/game-vault/savefiles",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "savefiles"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/game-vault/files",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "files"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/game-vault/plugins",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "plugins"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/game-vault/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "game_vault": {"db_password": "$RANDOM_STRING(16)"},
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/game-vault/config)",
+      "media": "$HOST_PATH($LOCATION(Media))",
+      "savefiles": "$HOST_PATH($LOCATION(ApplicationsPerformance)/game-vault/savefiles)",
+      "files": "$HOST_PATH($LOCATION(ApplicationsPerformance)/game-vault/files)",
+      "plugins": "$HOST_PATH($LOCATION(ApplicationsPerformance)/game-vault/plugins)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/game-vault/postgres_data)"
+    },
+    "network": {
+      "http_port": {"bind_mode": "published", "port_number": 30419},
+      "https_port": {"bind_mode": "published", "port_number": 30420}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

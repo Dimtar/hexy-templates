@@ -1,0 +1,20 @@
+title: Mumble
+description: Mumble is a free, open source, low latency, high quality voice chat application.
+icon: https://media.sys.truenas.net/apps/mumble/icons/icon.svg
+categories:
+- productivity
+keywords:
+- voice
+home: https://www.mumble.info/
+screenshots: []
+train: community
+truenas_name: mumble
+status: draft
+managed: generated
+upstream:
+  version: 1.4.8
+  app_version: v1.6.870
+  questions_sha: d742a7f7346123ecdbb0154b77cddef2809e47938dec5700e1bc539638ce3f86
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mumble
+notes: []

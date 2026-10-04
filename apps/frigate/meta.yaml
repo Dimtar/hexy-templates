@@ -1,0 +1,24 @@
+title: Frigate
+description: Frigate is an NVR With Realtime Object Detection for IP Cameras
+icon: https://media.sys.truenas.net/apps/frigate/icons/icon.svg
+categories:
+- security
+keywords:
+- camera
+- nvr
+home: https://frigate.video/
+screenshots:
+- https://media.sys.truenas.net/apps/frigate/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/frigate/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/frigate/screenshots/screenshot3.png
+train: community
+truenas_name: frigate
+status: draft
+managed: generated
+upstream:
+  version: 1.3.11
+  app_version: 0.18.0
+  questions_sha: 6fd509203867c9f8273727e06a85f21c1b418bd3be78a0d1e1ccc4219971342c
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/frigate
+notes: []

@@ -1,0 +1,69 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS librechat 1.2.74"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30284]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/librechat"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/librechat"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/librechat/images",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "images"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/librechat/uploads",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "uploads"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/librechat/logs",
+      "owner": {"user": "apps"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/librechat/meili_data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "meili_data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/librechat/mongodb_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "mongodb_data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/librechat/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "librechat": {
+      "pg_db_password": "$RANDOM_STRING(16)",
+      "mongo_db_password": "$RANDOM_STRING(16)",
+      "meilisearch_master_key": "$RANDOM_STRING(32)",
+      "jwt_secret": "$RANDOM_STRING(32)",
+      "jwt_refresh_secret": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "images": "$HOST_PATH($LOCATION(ApplicationsPerformance)/librechat/images)",
+      "uploads": "$HOST_PATH($LOCATION(ApplicationsPerformance)/librechat/uploads)",
+      "logs": "$HOST_PATH($LOCATION(ApplicationsCapacity)/librechat/logs)",
+      "meili_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/librechat/meili_data)",
+      "mongodb_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/librechat/mongodb_data)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/librechat/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30284}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

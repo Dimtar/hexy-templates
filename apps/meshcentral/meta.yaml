@@ -1,0 +1,24 @@
+title: MeshCentral
+description: A complete web-based remote monitoring and management web site. Once setup you can install
+  agents and perform remote desktop session to devices on the local network or over the Internet.
+icon: https://media.sys.truenas.net/apps/meshcentral/icons/icon.png
+categories:
+- productivity
+keywords:
+- remote
+- desktop
+- remote-desktop
+- remote-access
+home: https://meshcentral.com/
+screenshots: []
+train: community
+truenas_name: meshcentral
+status: draft
+managed: generated
+upstream:
+  version: 1.2.39
+  app_version: 1.2.6
+  questions_sha: f4deb280d0e8e988aa4dd11bf720bbe9fdbc37d95407a3af47eb13561da07f2b
+  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/meshcentral
+notes: []
