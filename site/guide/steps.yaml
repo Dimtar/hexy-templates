@@ -24,7 +24,7 @@ steps:
       - Read the boxes on the right if you want to know what will happen — especially any
         yellow boxes, which mark questions you'll be asked.
     screenshot: step-2-copy.png
-    alt: Searching the Hexy Templates library for “actual” to find Actual Budget
+    alt: An app page on Hexy Templates with the Copy script button highlighted
 
   - title: Open the app in HexOS
     body:
