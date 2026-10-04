@@ -11,7 +11,7 @@ home: https://bookorbit.app/
 screenshots: []
 train: community
 truenas_name: bookorbit
-status: draft
+status: tested
 managed: generated
 upstream:
   version: 1.0.29

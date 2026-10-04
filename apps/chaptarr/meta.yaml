@@ -11,7 +11,7 @@ home: https://github.com/Chaptarr/chaptarr
 screenshots: []
 train: community
 truenas_name: chaptarr
-status: draft
+status: tested
 managed: generated
 upstream:
   version: 1.0.5
