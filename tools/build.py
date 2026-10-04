@@ -28,7 +28,7 @@ APPS = ROOT / "apps"
 STATUS = {
     "tested": ("Tested", "Installed and checked on a real HexOS server."),
     "needs-retest": ("Needs re-test", "Was tested, but the TrueNAS app has changed since. Probably fine — not re-checked yet."),
-    "draft": ("Draft", "Generated automatically from the TrueNAS app settings and not yet tested on HexOS."),
+    "draft": ("Not yet tested", "Generated automatically from the TrueNAS app settings and not yet installed on a real HexOS server."),
 }
 
 TOKEN = re.compile(

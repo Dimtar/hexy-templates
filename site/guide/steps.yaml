@@ -77,9 +77,9 @@ steps:
     alt: The Audiobookshelf details panel in HexOS showing Running, with the Launch button highlighted
 
 faq:
-  - q: What does “Draft” mean?
+  - q: What does “Not yet tested” mean?
     a: >-
-      Draft scripts are generated automatically from the app's TrueNAS settings. They follow the same
+      These scripts are generated automatically from the app's TrueNAS settings. They follow the same
       pattern as HexOS's own scripts and pass the same checks, but nobody has installed that app on a real
       HexOS server with it yet. “Tested” scripts have been.
   - q: Where are my app's files stored?

@@ -24,7 +24,7 @@
         <button class="seg" data-status="" aria-pressed="true">All <span>{{ apps|length }}</span></button>
         <button class="seg seg-tested" data-status="tested" aria-pressed="false">✓ Tested <span>{{ counts["tested"] }}</span></button>
         {% if counts["needs-retest"] %}<button class="seg" data-status="needs-retest" aria-pressed="false">Needs re-test <span>{{ counts["needs-retest"] }}</span></button>{% endif %}
-        <button class="seg" data-status="draft" aria-pressed="false">Draft <span>{{ counts["draft"] }}</span></button>
+        <button class="seg" data-status="draft" aria-pressed="false">Not yet tested <span>{{ counts["draft"] }}</span></button>
       </div>
       <p id="count" class="count" aria-live="polite">{{ apps|length }} apps</p>
     </div>
