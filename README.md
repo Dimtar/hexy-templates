@@ -7,6 +7,7 @@ The site has three parts:
 - **App library** (`/`): search and filter all apps.
 - **App pages** (`/apps/<app>/`): the install script on the left. On the right are numbered boxes that explain each part of the script. Hovering a box highlights the lines it covers.
 - **Install guide** (`/guide/`): step-by-step instructions with screenshots.
+- **FAQ** (`/faq/`): common questions, edited in `site/faq.yaml`.
 
 ## Layout
 
@@ -16,6 +17,7 @@ apps/<app>/meta.yaml     title, icon, status, upstream tracking, custom notes
 site/templates/          Jinja page templates
 site/static/             CSS, JS, icon
 site/guide/steps.yaml    guide text; screenshots go in site/guide/img/
+site/faq.yaml            FAQ page questions and answers
 tools/generate.py        drafts a script from a TrueNAS app's questions.yaml
 tools/explain.py         turns a script into the plain-language boxes
 tools/sync.py            compares apps/ with upstream TrueNAS

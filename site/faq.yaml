@@ -1,0 +1,12 @@
+# The FAQ page. Each entry gets an anchor from its `id`, so you can link to it
+# directly: /faq/#updates. Answers can have several paragraphs.
+
+title: Frequently asked questions
+intro: Quick answers about installing apps on HexOS with custom install scripts.
+
+questions:
+  - id: updates
+    q: Does HexOS still detect updates for apps it doesn't curate?
+    a:
+      - Yes. HexOS still detects updates for apps you install with a custom install script, even
+        when HexOS doesn't curate the app.

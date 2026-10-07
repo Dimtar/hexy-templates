@@ -123,6 +123,7 @@ def build(base: str, out: Path) -> None:
         shot = step.get("screenshot")
         step["has_screenshot"] = bool(shot) and (SITE / "guide" / "img" / shot).exists()
     write("guide/index.html", "guide.html", guide=guide, page="guide")
+    write("faq/index.html", "faq.html", faq=yaml.safe_load((SITE / "faq.yaml").read_text()), page="faq")
     write("404.html", "404.html", page="404")
     (out / ".nojekyll").write_text("")
     print(f"Built {len(apps)} app pages into {out}")

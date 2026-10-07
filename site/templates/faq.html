@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}FAQ · Hexy Templates{% endblock %}
+{% block main %}
+<div class="wrap faq-page">
+  <header class="guide-head">
+    <h1>{{ faq.title }}</h1>
+    <p class="lede">{{ faq.intro }}</p>
+  </header>
+
+  <div class="faq-list">
+    {% for item in faq.questions %}
+    <section class="faq-item" id="{{ item.id }}">
+      <h2><a href="#{{ item.id }}">{{ item.q }}</a></h2>
+      {% for p in item.a %}<p>{{ p }}</p>{% endfor %}
+    </section>
+    {% endfor %}
+  </div>
+
+  <p class="faq-more">Got a question that isn't answered here? <a href="{{ repo }}/issues/new">Ask on GitHub</a>.</p>
+</div>
+{% endblock %}
