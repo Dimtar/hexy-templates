@@ -18,7 +18,7 @@ screenshots:
 - https://media.sys.truenas.net/apps/vikunja/screenshots/screenshot9.webp
 train: community
 truenas_name: vikunja
-status: draft
+status: tested
 managed: generated
 upstream:
   version: 2.0.69
