@@ -13,9 +13,9 @@ truenas_name: traefik
 status: draft
 managed: generated
 upstream:
-  version: 1.0.24
-  app_version: v3.7.13
-  questions_sha: 7c88160e17f677e865316824ca94fdbe72176004982632c075fcaaa31ca0cb58
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.0.35
+  app_version: v3.7.16
+  questions_sha: 342cdec5d56d46e3c944626d0a1c9968923f136ee9d2bfd06ffed2b412e128ea
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/traefik
 notes: []

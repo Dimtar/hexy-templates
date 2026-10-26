@@ -1,0 +1,27 @@
+title: Mediathek
+description: Stremio add-on for the on-demand libraries (Mediatheken) of German public broadcasters such
+  as ARD, ZDF and ARTE, served live from the MediathekViewWeb API.
+icon: https://media.sys.truenas.net/apps/mediathek-stremio/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- streaming
+- stremio
+- mediathek
+- ard
+- zdf
+- arte
+home: https://github.com/tuschla/mediathekview-2-stremio
+screenshots: []
+train: community
+truenas_name: mediathek-stremio
+status: draft
+managed: generated
+upstream:
+  version: 1.0.4
+  app_version: 0.1.0
+  questions_sha: d3fdb995e17a8970ee82aef5849d9ae532ece2403e2140af3a28a87fd75b5520
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mediathek-stremio
+notes: []

@@ -1,0 +1,27 @@
+title: Blackbriar
+description: Blackbriar is a companion app for shared Plex servers. It reads the ratings of all users
+  and shows which titles are safe to delete once everyone who requested them has watched and rated them.
+icon: https://media.sys.truenas.net/apps/blackbriar/icons/icon.svg
+categories:
+- media
+keywords:
+- plex
+- seerr
+- radarr
+- sonarr
+- cleanup
+home: https://github.com/DerAachener/blackbriar
+screenshots:
+- https://media.sys.truenas.net/apps/blackbriar/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/blackbriar/screenshots/screenshot2.png
+train: community
+truenas_name: blackbriar
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 1.7.4
+  questions_sha: edb3f2705c6f4c65a54e8069b8db74c0a706b8c7a743c49283508cfc89502643
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/blackbriar
+notes: []

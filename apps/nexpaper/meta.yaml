@@ -1,0 +1,29 @@
+title: nexpaper
+description: Paperless-ngx for the home, the simple version. A filing cabinet for the papers of a household
+  or a small firm on your own server. Upload, find, done, with an inbox, text recognition and search,
+  vaults per person and an import from Paperless-ngx.
+icon: https://media.sys.truenas.net/apps/nexpaper/icons/icon.png
+categories:
+- productivity
+keywords:
+- documents
+- paperless
+- ocr
+- archive
+- scanner
+home: https://github.com/DerKezorm/nexpaper
+screenshots:
+- https://media.sys.truenas.net/apps/nexpaper/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/nexpaper/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/nexpaper/screenshots/screenshot3.jpg
+train: community
+truenas_name: nexpaper
+status: draft
+managed: generated
+upstream:
+  version: 1.0.10
+  app_version: 1.4.1
+  questions_sha: df567e9277e6fb0905be73a84e8435e947ba02a6af13ab5d2be3295ef293367e
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nexpaper
+notes: []

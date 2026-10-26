@@ -1,0 +1,25 @@
+title: Paperclip
+description: Paperclip is an open-source control plane for AI agents. Organize agents from any provider
+  (Claude, Codex, Gemini, Cursor and more) into a company with org charts, goals, budgets, ticketing and
+  governance.
+icon: https://media.sys.truenas.net/apps/paperclip/icons/icon.png
+categories:
+- ai
+keywords:
+- ai
+- agents
+- orchestration
+- automation
+home: https://paperclip.ing
+screenshots: []
+train: community
+truenas_name: paperclip
+status: draft
+managed: generated
+upstream:
+  version: 1.0.4
+  app_version: 2026.1012.0
+  questions_sha: 89ddeffb0c3f1ce481dd6fead6fe54fe828f33454c9cb5724de3a48d347a8823
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/paperclip
+notes: []

@@ -14,9 +14,9 @@ truenas_name: opencloud
 status: draft
 managed: generated
 upstream:
-  version: 1.2.37
-  app_version: 8.0.1
-  questions_sha: b15df6b7e8abd9ffe0a02fbeed617cb8a53df857f62d2c304f972a5044c7db37
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.2.48
+  app_version: 8.1.0
+  questions_sha: 3c2985d9958950a7f0152aaa96e86c7deca9d430eeb44ba1595b60337e44dd63
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/opencloud
 notes: []

@@ -1,0 +1,29 @@
+title: nexdiary
+description: A diary for the family on your own server. Jot notes down during the day, write the page
+  in the evening. Encrypted per person, with a second factor, sharing of single days and an optional AI
+  that only orders.
+icon: https://media.sys.truenas.net/apps/nexdiary/icons/icon.png
+categories:
+- productivity
+keywords:
+- diary
+- journal
+- family
+- notes
+- encryption
+home: https://github.com/DerKezorm/nexdiary
+screenshots:
+- https://media.sys.truenas.net/apps/nexdiary/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/nexdiary/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/nexdiary/screenshots/screenshot3.jpg
+train: community
+truenas_name: nexdiary
+status: draft
+managed: generated
+upstream:
+  version: 1.0.7
+  app_version: 0.9.0
+  questions_sha: a910d3979548e745baef0a8d68a294742d02453631c475837eedd21691b24711
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nexdiary
+notes: []

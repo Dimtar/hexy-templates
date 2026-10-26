@@ -1,0 +1,26 @@
+title: SpeedKetchup
+description: SpeedKetchup runs periodic internet speed tests, stores the results and shows them with charts
+  in a builtin web page.
+icon: https://media.sys.truenas.net/apps/speedketchup/icons/icon.svg
+categories:
+- networking
+keywords:
+- speedtest
+- internet
+- monitoring
+- bandwidth
+- latency
+home: https://speedketchup.com
+screenshots:
+- https://media.sys.truenas.net/apps/speedketchup/screenshots/screenshot1.png
+train: community
+truenas_name: speedketchup
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.3.0
+  questions_sha: ba24d6042a2d918e75b98c657016e5a53e56745cf9d81100dd765ba477ca8fc6
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/speedketchup
+notes: []

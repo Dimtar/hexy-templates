@@ -1,0 +1,27 @@
+title: SolidPing
+description: Self-hosted uptime monitor with HTTP, TCP, UDP, ICMP, DNS, SSL, SMTP, SSH, database and browser
+  checks, alerts, status pages and on-call, in a single Go binary on SQLite.
+icon: https://media.sys.truenas.net/apps/solidping/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- monitoring
+- uptime
+- status page
+- alerting
+home: https://www.solidping.io
+screenshots:
+- https://media.sys.truenas.net/apps/solidping/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/solidping/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/solidping/screenshots/screenshot3.png
+train: community
+truenas_name: solidping
+status: draft
+managed: generated
+upstream:
+  version: 1.0.9
+  app_version: 0.41.0
+  questions_sha: 2e8d905f3b30542eacec38e1b0e6ae9110f5f4c171303268b428fa5e4fc93e36
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/solidping
+notes: []

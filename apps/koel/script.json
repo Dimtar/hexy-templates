@@ -1,0 +1,51 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS koel 1.0.5"
+  },
+  "requirements": {
+    "locations": ["Music", "ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30395]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(Music)", "network_share": true},
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/koel"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/koel/search_index",
+      "snapshot": {"id": "search_index"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/koel/image_storage",
+      "snapshot": {"id": "image_storage"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/koel/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "koel": {
+      "db_password": "$RANDOM_STRING(16)",
+      "app_key": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "music": "$HOST_PATH($LOCATION(Music))",
+      "search_index": "$HOST_PATH($LOCATION(ApplicationsPerformance)/koel/search_index)",
+      "image_storage": "$HOST_PATH($LOCATION(ApplicationsPerformance)/koel/image_storage)",
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/koel/postgres_data)",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30395}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

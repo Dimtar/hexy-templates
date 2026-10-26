@@ -1,0 +1,27 @@
+title: CloudGate
+description: Publish self-hosted services through Cloudflare Tunnels and playit.gg, without port forwarding
+icon: https://media.sys.truenas.net/apps/cloudgate/icons/icon.png
+categories:
+- networking
+keywords:
+- cloudflare
+- tunnel
+- reverse
+- proxy
+- playit
+home: https://github.com/Elias02345/CloudGate
+screenshots:
+- https://media.sys.truenas.net/apps/cloudgate/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/cloudgate/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/cloudgate/screenshots/screenshot3.png
+train: community
+truenas_name: cloudgate
+status: draft
+managed: generated
+upstream:
+  version: 1.0.6
+  app_version: v0.8.1
+  questions_sha: 0bd7788d6373cf43c5e5d79c8bb3a771db8d026ab0b4e9d3443756c9bbfcfc05
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cloudgate
+notes: []

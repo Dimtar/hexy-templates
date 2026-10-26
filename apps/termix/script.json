@@ -1,21 +1,20 @@
 {
   "version": 5,
   "script": {
-    "version": "0.1.0",
-    "changeLog": "Auto-generated draft from TrueNAS termix 1.2.21"
+    "version": "0.1.1",
+    "changeLog": "Regenerated for TrueNAS termix 1.2.32"
   },
   "requirements": {
     "locations": ["ApplicationsPerformance"],
     "specifications": ["2CORE"],
     "permissions": ["READ_WRITE_LOCATIONS"],
-    "ports": [30351, 30352, 30395]
+    "ports": [30351, 30352]
   },
   "ensure_directories_exists": [
     {"path": "$LOCATION(ApplicationsPerformance)"},
     {"path": "$LOCATION(ApplicationsPerformance)/termix"},
     {
       "path": "$LOCATION(ApplicationsPerformance)/termix/data",
-      "owner": {"user": "apps"},
       "snapshot": {"id": "data"}
     }
   ],
@@ -25,8 +24,7 @@
     },
     "network": {
       "http_port": {"bind_mode": "published", "port_number": 30351},
-      "https_port": {"bind_mode": "published", "port_number": 30352},
-      "guacd_port": {"bind_mode": "published", "port_number": 30395}
+      "https_port": {"bind_mode": "published", "port_number": 30352}
     },
     "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
   }

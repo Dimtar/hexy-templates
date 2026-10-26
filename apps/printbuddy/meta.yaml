@@ -1,0 +1,28 @@
+title: PrintBuddy
+description: One modern self-hosted dashboard for your 3D printer fleet.
+icon: https://media.sys.truenas.net/apps/printbuddy/icons/icon.png
+categories:
+- productivity
+keywords:
+- printer
+- 3d
+- bambu
+- klipper
+- moonraker
+home: https://wiki.printbuddy.tech
+screenshots:
+- https://media.sys.truenas.net/apps/printbuddy/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/printbuddy/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/printbuddy/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/printbuddy/screenshots/screenshot4.png
+train: community
+truenas_name: printbuddy
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.2.5.3
+  questions_sha: 90fefcf763492aec5748c282b3cafe03658f6933461f6ea4416c29b299eb53b0
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/printbuddy
+notes: []

@@ -1,0 +1,43 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS ihasmail 1.0.6"
+  },
+  "installation_questions": [
+    {
+      "question": "Stalwart url",
+      "type": "text",
+      "key": "stalwart_url",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30527]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/ihasmail"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/ihasmail/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "ihasmail": {
+      "stalwart_url": "$QUESTION(stalwart_url)",
+      "app_secret": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/ihasmail/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30527}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

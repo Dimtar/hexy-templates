@@ -1,0 +1,30 @@
+title: nexcanvas
+description: A whiteboard for your own server, in the spirit of Apple Freeform. Sticky notes, shapes,
+  text, lines, pen and highlighter, photos and PDFs on an endless board, edited live by several people
+  at once. Frames and scenes to present from, a shape library with flowchart, BPMN, UML, floor plan and
+  network packages, templates, export as PNG and PDF, and JSON Canvas to exchange boards with other apps.
+icon: https://media.sys.truenas.net/apps/nexcanvas/icons/icon.png
+categories:
+- productivity
+keywords:
+- whiteboard
+- canvas
+- diagrams
+- collaboration
+- json-canvas
+home: https://www.nexcanvas.de
+screenshots:
+- https://media.sys.truenas.net/apps/nexcanvas/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/nexcanvas/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/nexcanvas/screenshots/screenshot3.jpg
+train: community
+truenas_name: nexcanvas
+status: draft
+managed: generated
+upstream:
+  version: 1.0.10
+  app_version: 0.8.0
+  questions_sha: 2f3bf14888a11dad7628f9834ceea36b4863dd3538bd6c3a751a56393a4df919
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nexcanvas
+notes: []

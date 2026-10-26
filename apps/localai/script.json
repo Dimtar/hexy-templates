@@ -1,8 +1,8 @@
 {
   "version": 5,
   "script": {
-    "version": "0.1.0",
-    "changeLog": "Auto-generated draft from TrueNAS localai 1.1.36"
+    "version": "0.1.1",
+    "changeLog": "Regenerated for TrueNAS localai 1.1.42"
   },
   "requirements": {
     "locations": ["ApplicationsPerformance"],
@@ -27,13 +27,19 @@
       "path": "$LOCATION(ApplicationsPerformance)/localai/config",
       "owner": {"user": "apps"},
       "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/localai/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
     }
   ],
   "app_values": {
     "storage": {
       "backends": "$HOST_PATH($LOCATION(ApplicationsPerformance)/localai/backends)",
       "models": "$HOST_PATH($LOCATION(ApplicationsPerformance)/localai/models)",
-      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/localai/config)"
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/localai/config)",
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/localai/data)"
     },
     "network": {
       "web_port": {"bind_mode": "published", "port_number": 30286}

@@ -1,0 +1,32 @@
+title: Money
+description: A modern, mobile-friendly frontend for Firefly III. Dashboard, forecast, transactions with
+  keyboard shortcuts and bulk edit, budgets, bills, rules and reports, installable as an app on phones.
+  The Firefly III token stays on the server.
+icon: https://media.sys.truenas.net/apps/money/icons/icon.svg
+categories:
+- financial
+keywords:
+- finance
+- firefly-iii
+- budget
+- dashboard
+home: https://github.com/Muffy0906/firefly-money
+screenshots:
+- https://media.sys.truenas.net/apps/money/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/money/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/money/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/money/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/money/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/money/screenshots/screenshot6.png
+- https://media.sys.truenas.net/apps/money/screenshots/screenshot7.png
+train: community
+truenas_name: money
+status: draft
+managed: generated
+upstream:
+  version: 1.0.3
+  app_version: 1.3.0
+  questions_sha: a4d121a136efd69df6564985ebf9c7e230a084640ae67ac9ff8c38ee27dcaeb6
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/money
+notes: []

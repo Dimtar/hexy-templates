@@ -1,0 +1,30 @@
+title: ihasmail
+description: Immutable webmail for Stalwart Mail Server. Mail, calendars, contacts, files and filters
+  in one app, talking only JMAP, with no database and nothing of its own to back up.
+icon: https://media.sys.truenas.net/apps/ihasmail/icons/icon.png
+categories:
+- productivity
+keywords:
+- webmail
+- email
+- stalwart
+- jmap
+- calendar
+- contacts
+home: https://ihasmail.org
+screenshots:
+- https://media.sys.truenas.net/apps/ihasmail/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/ihasmail/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/ihasmail/screenshots/screenshot3.jpg
+- https://media.sys.truenas.net/apps/ihasmail/screenshots/screenshot4.jpg
+train: community
+truenas_name: ihasmail
+status: draft
+managed: generated
+upstream:
+  version: 1.0.6
+  app_version: 2026.10.13-ge0e6aec
+  questions_sha: 3891d8d5938ce3e04667b4226f8ca1fd40a46f5b850bb7fb361a4c65141b278a
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/ihasmail
+notes: []

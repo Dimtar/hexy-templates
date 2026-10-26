@@ -1,0 +1,43 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS money 1.0.3"
+  },
+  "installation_questions": [
+    {
+      "question": "Firefly url",
+      "type": "text",
+      "key": "firefly_url",
+      "required": true
+    },
+    {
+      "question": "Firefly token",
+      "type": "password",
+      "key": "firefly_token",
+      "required": true
+    },
+    {
+      "question": "Dash password",
+      "type": "password",
+      "key": "dash_password",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": [],
+    "specifications": ["2CORE"],
+    "ports": [30530]
+  },
+  "app_values": {
+    "money": {
+      "firefly_url": "$QUESTION(firefly_url)",
+      "firefly_token": "$QUESTION(firefly_token)",
+      "dash_password": "$QUESTION(dash_password)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30530}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}
