@@ -1,4 +1,4 @@
-# Daily check (6pm Sydney time) of the TrueNAS apps catalogue. New apps get draft scripts and
+# Daily check (around 6pm Sydney time) of the TrueNAS apps catalogue. New apps get draft scripts and
 # apps whose settings changed get regenerated or flagged; everything lands in a
 # single pull request on the `catalog-sync` branch for a human to review.
 # While that PR is open, later runs update it instead of opening another.
@@ -8,11 +8,12 @@
 name: Sync TrueNAS catalogue
 
 on:
-  # Cron is UTC-only and Sydney shifts between UTC+10 and UTC+11 for daylight
-  # saving, so this fires at both 07:05 and 08:05 UTC and the gate job below
-  # lets through only the run that lands at 18:xx in Sydney.
+  # 07:00 UTC is 6pm in Sydney during daylight saving (5pm in winter). GitHub
+  # often starts scheduled runs hours late, so treat this as "once a day,
+  # roughly evening in Sydney" rather than an exact time. There is deliberately
+  # no time-of-day check: an earlier version skipped every delayed run.
   schedule:
-    - cron: "5 7,8 * * *"
+    - cron: "0 7 * * *"
   workflow_dispatch:
 
 permissions:
@@ -23,24 +24,7 @@ concurrency:
   group: catalog-sync
 
 jobs:
-  gate:
-    runs-on: ubuntu-latest
-    outputs:
-      run: ${{ steps.check.outputs.run }}
-    steps:
-      - id: check
-        run: |
-          hour=$(TZ=Australia/Sydney date +%H)
-          if [ "${{ github.event_name }}" != "schedule" ] || [ "$hour" = "18" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "Skipping: it is ${hour}:xx in Sydney, not 18:xx"
-            echo "run=false" >> "$GITHUB_OUTPUT"
-          fi
-
   sync:
-    needs: gate
-    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
