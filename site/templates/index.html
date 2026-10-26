@@ -10,6 +10,9 @@
       <kbd>/</kbd>
     </div>
     <p class="hero-links"><a href="{{ base }}guide/">New to custom install scripts? Read the step-by-step guide →</a></p>
+    {% for u in latest %}
+    <p class="hero-update"><a href="{{ base }}updates/#{{ u.date }}"><span class="pill">New</span> {{ u.date_label }}: {{ u.summary }} →</a></p>
+    {% endfor %}
   </div>
 </section>
 

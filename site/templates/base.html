@@ -19,8 +19,9 @@
         <span>Hexy Templates</span>
       </a>
       <nav class="nav">
-        <a href="{{ base }}" {% if page == "library" %}aria-current="page"{% endif %}>App library</a>
-        <a href="{{ base }}guide/" {% if page == "guide" %}aria-current="page"{% endif %}>How to install</a>
+        <a href="{{ base }}" {% if page == "library" %}aria-current="page"{% endif %}><span class="long">App library</span><span class="short">Apps</span></a>
+        <a href="{{ base }}guide/" {% if page == "guide" %}aria-current="page"{% endif %}><span class="long">How to install</span><span class="short">Guide</span></a>
+        <a href="{{ base }}updates/" {% if page == "updates" %}aria-current="page"{% endif %}>Updates</a>
         <a href="{{ base }}faq/" {% if page == "faq" %}aria-current="page"{% endif %}>FAQ</a>
         <a href="{{ repo }}">GitHub</a>
         <button class="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme">

@@ -18,8 +18,10 @@ sets the `changed` step output.
 from __future__ import annotations
 
 import argparse
+import datetime
 import json
 import os
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 import yaml
@@ -31,6 +33,11 @@ import truenas
 
 ROOT = truenas.ROOT
 APPS = ROOT / "apps"
+UPDATES = ROOT / "updates"
+
+# Report sections that visitors see on the Updates page. "review" is left out:
+# it only tells the maintainer a hand-written script needs a look.
+PUBLIC_SECTIONS = ("new", "regenerated", "removed", "curated", "uncurated")
 
 
 def script_text(script: dict) -> str:
@@ -178,6 +185,28 @@ def render_report(report: dict[str, list[str]], commit: str) -> str:
     return "\n".join(out)
 
 
+def write_update(report: dict[str, list[str]]) -> Path | None:
+    """Record this sync for the public Updates page.
+
+    The file rides along in the sync pull request, so an update only appears on
+    the site once the maintainer merges it. It's dated in Sydney time; a second
+    merge on the same day adds to that day's file.
+    """
+    entry = {key: [item.split(":")[0] for item in report[key]] for key in PUBLIC_SECTIONS if report[key]}
+    if not entry:
+        return None
+    day = datetime.datetime.now(ZoneInfo("Australia/Sydney")).date().isoformat()
+    path = UPDATES / f"{day}.yaml"
+    if path.exists():
+        old = yaml.safe_load(path.read_text()) or {}
+        for key, slugs in entry.items():
+            entry[key] = list(dict.fromkeys((old.get(key) or []) + slugs))
+        entry = {**{k: v for k, v in old.items() if k != "date"}, **entry}
+    UPDATES.mkdir(exist_ok=True)
+    path.write_text(yaml.safe_dump({"date": day, **entry}, sort_keys=False))
+    return path
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--report", type=Path, default=ROOT / ".cache" / "sync-report.md")
@@ -189,6 +218,7 @@ def main() -> None:
     report = sync(truenas.load(path), commit)
     report.update(sync_curated(hexos.curated()))
     changed = any(report.values())
+    write_update(report)
 
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(render_report(report, commit))

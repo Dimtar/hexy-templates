@@ -10,6 +10,7 @@ dimtar.github.io/hexy-templates/.
 from __future__ import annotations
 
 import argparse
+import datetime
 import hashlib
 import html
 import json
@@ -27,6 +28,22 @@ from truenas import ROOT
 
 SITE = ROOT / "site"
 APPS = ROOT / "apps"
+UPDATES = ROOT / "updates"
+
+# How each kind of change is described on the Updates page, in plain words.
+UPDATE_SECTIONS = {
+    "new": ("New apps", "These apps were added to the TrueNAS catalogue, so they now have install scripts here.",
+            "{n} new app", "{n} new apps"),
+    "regenerated": ("Refreshed scripts", "These apps changed their settings in TrueNAS, so their scripts were updated to match. "
+                    "Apps you've already installed aren't affected — a script is only used when you install.",
+                    "{n} refreshed script", "{n} refreshed scripts"),
+    "curated": ("Now curated by HexOS", "HexOS now has its own official install script for these, so you can install them "
+                "with the regular Install button.", "{n} now curated", "{n} now curated"),
+    "uncurated": ("No longer curated by HexOS", "HexOS no longer has an official script for these. "
+                  "The script here still works as a custom install.", "{n} no longer curated", "{n} no longer curated"),
+    "removed": ("Removed from TrueNAS", "TrueNAS no longer lists these apps. Their scripts stay here for now, "
+                "but they may stop working.", "{n} removed", "{n} removed"),
+}
 
 STATUS = {
     "tested": ("Tested", "Installed and checked on a real HexOS server."),
@@ -88,6 +105,39 @@ def load_apps() -> list[dict]:
     return apps
 
 
+def load_updates(apps: list[dict]) -> list[dict]:
+    by_slug = {a["slug"]: a for a in apps}
+    updates = []
+    for f in sorted(UPDATES.glob("*.yaml"), reverse=True) if UPDATES.exists() else []:
+        raw = yaml.safe_load(f.read_text()) or {}
+        day = datetime.date.fromisoformat(str(raw.get("date", f.stem)))
+        sections, summary = [], []
+        for key, (title, text, one, many) in UPDATE_SECTIONS.items():
+            slugs = raw.get(key) or []
+            if not slugs:
+                continue
+            listed = []
+            for slug in slugs:
+                app = by_slug.get(slug)
+                listed.append({
+                    "slug": slug,
+                    "exists": app is not None,
+                    "title": app["title"] if app else slug,
+                    "icon": app["meta"].get("icon", "") if app else "",
+                })
+            listed.sort(key=lambda a: a["title"].lower())
+            sections.append({"title": title, "text": text, "apps": listed})
+            summary.append((one if len(slugs) == 1 else many).format(n=len(slugs)))
+        if sections:
+            updates.append({
+                "date": day.isoformat(),
+                "date_label": f"{day.day} {day:%B %Y}",
+                "summary": " · ".join(summary),
+                "sections": sections,
+            })
+    return updates
+
+
 def build(base: str, out: Path) -> None:
     env = Environment(loader=FileSystemLoader(SITE / "templates"), autoescape=select_autoescape())
     # Appended to CSS/JS URLs so a deploy never pairs new HTML with stale cached assets.
@@ -114,7 +164,8 @@ def build(base: str, out: Path) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(env.get_template(template).render(**ctx))
 
-    write("index.html", "index.html", apps=apps, categories=categories, counts=counts, page="library")
+    write("index.html", "index.html", apps=apps, categories=categories, counts=counts, page="library",
+          latest=load_updates(apps)[:1])
     for app in apps:
         write(f"apps/{app['slug']}/index.html", "app.html", app=app, page="app")
         (out / "apps" / app["slug"] / f"{app['slug']}.json").write_text(app["script_text"])
@@ -124,6 +175,8 @@ def build(base: str, out: Path) -> None:
         shot = step.get("screenshot")
         step["has_screenshot"] = bool(shot) and (SITE / "guide" / "img" / shot).exists()
     write("guide/index.html", "guide.html", guide=guide, page="guide")
+    updates = load_updates(apps)
+    write("updates/index.html", "updates.html", updates=updates, page="updates")
     write("faq/index.html", "faq.html", faq=yaml.safe_load((SITE / "faq.yaml").read_text()), page="faq")
     write("404.html", "404.html", page="404")
     (out / ".nojekyll").write_text("")

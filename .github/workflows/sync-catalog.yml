@@ -52,4 +52,6 @@ jobs:
           title: "TrueNAS catalogue update: ${{ steps.sync.outputs.summary }}"
           body-path: ${{ runner.temp }}/report.md
           labels: catalog-sync
-          add-paths: apps/**
+          add-paths: |
+            apps/**
+            updates/**

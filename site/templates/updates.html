@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Updates · Hexy Templates{% endblock %}
+{% block description %}New apps and refreshed install scripts on Hexy Templates.{% endblock %}
+{% block main %}
+<div class="wrap updates-page">
+  <header class="guide-head">
+    <h1>Updates</h1>
+    <p class="lede">What's changed in the app library. New TrueNAS apps get an install script here soon after they appear.</p>
+  </header>
+
+  {% if not updates %}
+  <p class="muted">No updates yet.</p>
+  {% endif %}
+
+  <ol class="update-list">
+    {% for u in updates %}
+    <li class="update" id="{{ u.date }}">
+      <header class="update-head">
+        <h2><a href="#{{ u.date }}">{{ u.date_label }}</a></h2>
+        <p class="muted">{{ u.summary }}</p>
+      </header>
+      {% for s in u.sections %}
+      <section class="update-section">
+        <h3>{{ s.title }}</h3>
+        <p class="muted">{{ s.text }}</p>
+        <ul class="update-apps">
+          {% for a in s.apps %}
+          <li>
+            {% if a.exists %}<a href="{{ base }}apps/{{ a.slug }}/">{% else %}<span>{% endif %}
+              <img src="{{ a.icon }}" alt="" width="24" height="24" loading="lazy" onerror="this.style.visibility='hidden'">
+              {{ a.title }}
+            {% if a.exists %}</a>{% else %}</span>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endfor %}
+    </li>
+    {% endfor %}
+  </ol>
+</div>
+{% endblock %}
