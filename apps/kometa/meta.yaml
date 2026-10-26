@@ -1,0 +1,25 @@
+title: Kometa
+description: A tool to give you granular control over metadata, collections, overlays, and more for your
+  media libraries.
+icon: https://media.sys.truenas.net/apps/kometa/icons/icon.png
+categories:
+- media
+keywords:
+- movies
+- series
+- tv
+- media
+- playlist
+home: https://github.com/Kometa-Team/Kometa
+screenshots: []
+train: community
+truenas_name: kometa
+status: draft
+managed: generated
+upstream:
+  version: 1.0.5
+  app_version: v2.5.3
+  questions_sha: 4cb2a35187771ece098a2fab758ac55126be7627904604c3e365ef719bd3894a
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/kometa
+notes: []

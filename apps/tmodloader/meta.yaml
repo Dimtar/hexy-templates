@@ -1,0 +1,24 @@
+title: tModLoader
+description: Modded Terraria server with a web dashboard, Workshop management, backups and runtime updates.
+icon: https://media.sys.truenas.net/apps/tmodloader/icons/icon.png
+categories:
+- games
+keywords:
+- terraria
+- tmodloader
+- games
+- mods
+home: https://github.com/Crosis47/tmodloader
+screenshots:
+- https://media.sys.truenas.net/apps/tmodloader/screenshots/screenshot1.png
+train: community
+truenas_name: tmodloader
+status: draft
+managed: generated
+upstream:
+  version: 1.0.5
+  app_version: 3.8.0
+  questions_sha: 9d926be0d0127f38598ee03814d8306fee24b9a707e72bb03bad67b80f22ce6d
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tmodloader
+notes: []

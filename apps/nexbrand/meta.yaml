@@ -1,0 +1,30 @@
+title: nexbrand
+description: The corporate design of your clients in one place, on your own server. Colours with print
+  values, fonts with their licence, logos, a type scale, rules and example files per client and per project,
+  with every version kept on a timeline. Contrast checks by WCAG 2.2, client reviews through a link, and
+  every version as CSS, Tailwind, SCSS or design tokens, over an API and MCP.
+icon: https://media.sys.truenas.net/apps/nexbrand/icons/icon.png
+categories:
+- productivity
+keywords:
+- brand-guidelines
+- corporate-design
+- design-tokens
+- style-guide
+- accessibility
+home: https://www.nexbrand.de
+screenshots:
+- https://media.sys.truenas.net/apps/nexbrand/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/nexbrand/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/nexbrand/screenshots/screenshot3.jpg
+train: community
+truenas_name: nexbrand
+status: draft
+managed: generated
+upstream:
+  version: 1.0.6
+  app_version: 0.2.1
+  questions_sha: 0389e072a1dd632710f24659237214e77ec5fe5b352c3f4f305e5b6de13f43b3
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nexbrand
+notes: []

@@ -1,0 +1,29 @@
+title: Rowflare
+description: Rowflare is an open-source Airtable alternative. Grid, kanban, calendar, timeline, gallery
+  and form views, Airtable-compatible formulas, automations, a REST API and an MCP server, with one SQLite
+  database per base.
+icon: https://media.sys.truenas.net/apps/rowflare/icons/icon.png
+categories:
+- productivity
+keywords:
+- airtable
+- database
+- spreadsheet
+- no-code
+- kanban
+home: https://rowflare.com
+screenshots:
+- https://media.sys.truenas.net/apps/rowflare/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/rowflare/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/rowflare/screenshots/screenshot3.png
+train: community
+truenas_name: rowflare
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.1.0
+  questions_sha: fefe334581f815f638df9413200645b35cb237dd161bfddc54a815a650f946ef
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/rowflare
+notes: []

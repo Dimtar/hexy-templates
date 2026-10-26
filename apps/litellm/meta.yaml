@@ -1,0 +1,24 @@
+title: LiteLLM
+description: OpenAI-compatible LLM gateway to manage models, virtual keys, budgets, and spend across multiple
+  providers.
+icon: https://media.sys.truenas.net/apps/litellm/icons/icon.png
+categories:
+- productivity
+keywords:
+- ai
+- llm
+- gateway
+- proxy
+home: https://www.litellm.ai/
+screenshots: []
+train: community
+truenas_name: litellm
+status: draft
+managed: generated
+upstream:
+  version: 1.0.10
+  app_version: v1.106.2
+  questions_sha: 5ad2b45bb1580ce026c4251936d2224f1ea9ee921ca3803a5ab8e200ea2e8933
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/litellm
+notes: []

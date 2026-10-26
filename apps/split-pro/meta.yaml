@@ -17,9 +17,9 @@ truenas_name: split-pro
 status: draft
 managed: generated
 upstream:
-  version: 1.0.34
-  app_version: v2.1.5
-  questions_sha: ca090f8b9445e8f27bfde17f2468983be434f3b25a28fc7abee92ea0d9baf99a
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.0.42
+  app_version: v2.1.6
+  questions_sha: d8a4e2cbdefb8211a70af3decf1e87510ea6345b2840680539150d33037639c0
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/split-pro
 notes: []

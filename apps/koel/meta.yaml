@@ -1,0 +1,21 @@
+title: Koel
+description: Music streaming solution that works.
+icon: https://media.sys.truenas.net/apps/koel/icons/icon.svg
+categories:
+- media
+keywords:
+- music
+- streaming
+home: https://koel.dev/
+screenshots: []
+train: community
+truenas_name: koel
+status: draft
+managed: generated
+upstream:
+  version: 1.0.5
+  app_version: 9.15.0
+  questions_sha: e743a7851e6a9a6bdc1a2bb4d735419af7f87c29bbcd68d8a54e07b59c6340f2
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/koel
+notes: []

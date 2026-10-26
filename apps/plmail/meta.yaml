@@ -1,0 +1,29 @@
+title: plMail
+description: Self-hosted mail client with a calendar beside it. Reads the IMAP, Gmail and Outlook mailboxes
+  you already have in one inbox.
+icon: https://media.sys.truenas.net/apps/plmail/icons/icon.png
+categories:
+- productivity
+keywords:
+- mail
+- email
+- webmail
+- imap
+- calendar
+home: https://github.com/karatektus/pl_mail
+screenshots:
+- https://media.sys.truenas.net/apps/plmail/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/plmail/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/plmail/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/plmail/screenshots/screenshot4.png
+train: community
+truenas_name: plmail
+status: draft
+managed: generated
+upstream:
+  version: 1.0.18
+  app_version: 0.3.9
+  questions_sha: 0424d6a716c5f16df5d7e9da9a23a0010dc16cc3f81a927272a114e076718511
+  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/plmail
+notes: []
