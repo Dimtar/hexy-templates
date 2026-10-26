@@ -1,9 +1,10 @@
 """Build the static site into dist/.
 
-    python tools/build.py [--base /hexy-templates/] [--out dist]
+    python tools/build.py [--base /] [--out dist]
 
-`--base` is the URL prefix the site is served from: "/hexy-templates/" on
-GitHub Pages (a project site), "/" for a custom domain or local preview.
+`--base` is the URL prefix the site is served from: "/" on the custom domain
+(hexytemplates.com), or "/hexy-templates/" if it ever moves back to
+dimtar.github.io/hexy-templates/.
 """
 
 from __future__ import annotations
@@ -131,7 +132,7 @@ def build(base: str, out: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--base", default="/hexy-templates/")
+    parser.add_argument("--base", default="/")
     parser.add_argument("--out", type=Path, default=ROOT / "dist")
     args = parser.parse_args()
     base = args.base if args.base.endswith("/") else args.base + "/"

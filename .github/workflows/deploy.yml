@@ -27,7 +27,8 @@ jobs:
       - name: Validate install scripts
         run: python tools/validate.py
       - name: Build site
-        run: python tools/build.py --base "/${{ github.event.repository.name }}/"
+        # Served at the root of https://hexytemplates.com (custom domain).
+        run: python tools/build.py --base /
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
