@@ -52,6 +52,8 @@ jobs:
           title: "TrueNAS catalogue update: ${{ steps.sync.outputs.summary }}"
           body-path: ${{ runner.temp }}/report.md
           labels: catalog-sync
+          # Assigning the PR is what makes GitHub email the maintainer about it.
+          assignees: ${{ github.repository_owner }}
           add-paths: |
             apps/**
             updates/**
