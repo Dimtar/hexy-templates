@@ -32,7 +32,7 @@
       return;
     }
     const x1 = pane.right - 6, y1 = (top + bottom) / 2;
-    const x2 = box.left - 12, y2 = box.top + 25;
+    const x2 = box.left - 2, y2 = box.top + 25;
     const mid = (x1 + x2) / 2;
     path.setAttribute("d", `M${x1},${y1} C${mid},${y1} ${mid},${y2} ${x2},${y2}`);
     connector.classList.add("show");
