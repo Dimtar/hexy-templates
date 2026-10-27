@@ -1,0 +1,23 @@
+title: OpenTodo
+description: OpenTodo is a self-hosted, local-first task manager with offline sync across devices.
+icon: https://media.sys.truenas.net/apps/opentodo/icons/icon.svg
+categories:
+- productivity
+keywords:
+- tasks
+- todo
+- productivity
+home: https://open-todo.app
+screenshots:
+- https://media.sys.truenas.net/apps/opentodo/screenshots/screenshot1.png
+train: community
+truenas_name: opentodo
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 0.13.0
+  questions_sha: b61589633c71ec9f8fd8dc8501bae7c3f26e3e7f356cb1ce0af499c704690ce5
+  commit: c263f0eed0c9f2e4500122c9b8dbedbc80badca8
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/opentodo
+notes: []

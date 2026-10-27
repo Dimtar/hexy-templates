@@ -14,9 +14,9 @@ truenas_name: minecraft
 status: draft
 managed: generated
 upstream:
-  version: 1.15.29
-  app_version: 2026.9.2-java21
-  questions_sha: def764ae993f61a511a669a117cb40d8a048fd72b7c67f818a969c14c3eaed88
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.15.34
+  app_version: 2026.10.1-java21
+  questions_sha: f8934baaf05acf2d33dc19e7c46a4fbad219e7339e9bc2762dd5161865f495d4
+  commit: c263f0eed0c9f2e4500122c9b8dbedbc80badca8
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/minecraft
 notes: []
