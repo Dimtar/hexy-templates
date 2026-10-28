@@ -1,8 +1,8 @@
 {
   "version": 5,
   "script": {
-    "version": "0.1.0",
-    "changeLog": "Auto-generated draft from TrueNAS nextcloud 1.1.12"
+    "version": "0.1.1",
+    "changeLog": "Regenerated for TrueNAS nextcloud 1.1.34"
   },
   "installation_questions": [
     {
@@ -49,6 +49,11 @@
       "snapshot": {"id": "talk_recording_data"}
     },
     {
+      "path": "$LOCATION(ApplicationsPerformance)/nextcloud-community/harp_certs",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "harp_certs"}
+    },
+    {
       "path": "$LOCATION(ApplicationsPerformance)/nextcloud-community/postgres_data",
       "owner": {"user": "netdata", "group": "docker"},
       "snapshot": {"id": "postgres_data"}
@@ -66,6 +71,7 @@
       "html": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nextcloud-community/html)",
       "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nextcloud-community/data)",
       "talk_recording_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nextcloud-community/talk_recording_data)",
+      "harp_certs": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nextcloud-community/harp_certs)",
       "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/nextcloud-community/postgres_data)"
     },
     "network": {

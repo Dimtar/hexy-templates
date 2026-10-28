@@ -1,0 +1,26 @@
+title: Legejo
+description: A self-hosted EPUB library with a web reader, OPDS, Kobo sync and KOReader sync.
+icon: https://media.sys.truenas.net/apps/legejo/icons/icon.png
+categories:
+- media
+keywords:
+- ebook
+- epub
+- library
+- kobo
+- opds
+- reader
+home: https://github.com/jularboolean/legejo
+screenshots:
+- https://media.sys.truenas.net/apps/legejo/screenshots/screenshot1.jpg
+train: community
+truenas_name: legejo
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.31.0
+  questions_sha: a0b452b54034351be8f608e7555eccac2c340c89126f49e6ea870beff70cb9b6
+  commit: c263f0eed0c9f2e4500122c9b8dbedbc80badca8
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/legejo
+notes: []

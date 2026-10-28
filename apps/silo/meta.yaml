@@ -1,0 +1,28 @@
+title: Silo
+description: A self-hosted media server for films, series, audiobooks, ebooks, podcasts, and manga.
+icon: https://media.sys.truenas.net/apps/silo/icons/icon.svg
+categories:
+- media
+keywords:
+- self-hosted
+- movies
+- series
+- media
+home: https://siloserver.org/
+screenshots:
+- https://media.sys.truenas.net/apps/silo/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/silo/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/silo/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/silo/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/silo/screenshots/screenshot5.png
+train: community
+truenas_name: silo
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: build-1745
+  questions_sha: be33eb7d4d9b634288d5630869b3af8a7c8e8a684c5f5d0fa9c7b8f3a82c17da
+  commit: c263f0eed0c9f2e4500122c9b8dbedbc80badca8
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/silo
+notes: []

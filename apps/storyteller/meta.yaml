@@ -12,9 +12,9 @@ truenas_name: storyteller
 status: draft
 managed: generated
 upstream:
-  version: 1.0.10
+  version: 1.0.15
   app_version: web-v2.14.23
-  questions_sha: 6b92e32bf7a9b8982aaa35cd0df3064b8ab09be95e3dd8f6530d8687aebe7fd8
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  questions_sha: 02854f066eeb5c205545d78d84bc1ca2b2aab4500630af063808ac6fc97ae3c5
+  commit: c263f0eed0c9f2e4500122c9b8dbedbc80badca8
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/storyteller
 notes: []

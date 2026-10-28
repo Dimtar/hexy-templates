@@ -21,9 +21,9 @@ truenas_name: nextcloud
 status: draft
 managed: generated
 upstream:
-  version: 1.1.12
-  app_version: 35.0.1-fpm-13620d53
-  questions_sha: 500234251d4ff87686bfbbed5378dd5e68037e23a4c92b938e66ad5e7a4772f4
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.1.34
+  app_version: 35.0.2-fpm-fe054e5f
+  questions_sha: c666179fc7591b3ec4a1fdbe70eb01abf7c936b765702f4448c68499f159f9d8
+  commit: c263f0eed0c9f2e4500122c9b8dbedbc80badca8
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/nextcloud
 notes: []

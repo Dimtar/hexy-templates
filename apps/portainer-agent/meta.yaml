@@ -1,0 +1,22 @@
+title: Portainer Agent
+description: Agent that allows a Portainer Server to manage this Docker host
+icon: https://media.sys.truenas.net/apps/portainer-agent/icons/icon.png
+categories:
+- management
+keywords:
+- docker
+- compose
+- container
+home: https://www.portainer.io
+screenshots: []
+train: community
+truenas_name: portainer-agent
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 2.45.3
+  questions_sha: d7c5298e19846fd165eea7f14836e179ebd493d5e44a6a868b56c8acb39f1530
+  commit: c263f0eed0c9f2e4500122c9b8dbedbc80badca8
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/portainer-agent
+notes: []
