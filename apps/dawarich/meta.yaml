@@ -16,9 +16,9 @@ truenas_name: dawarich
 status: draft
 managed: generated
 upstream:
-  version: 1.4.73
-  app_version: 1.15.3
-  questions_sha: 338be6e8f0b6a4c6ba96a5b9e2eeb63424d5c69b1405b808ddd25d93bae4a5b8
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.4.88
+  app_version: 1.19.0
+  questions_sha: 2b7884d19585413bbca6216db8f4563a92acc0f9d8718087597b7b17ec199671
+  commit: 7809ac3bcbb53e413e081e49bab68e382b712738
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/dawarich
 notes: []
