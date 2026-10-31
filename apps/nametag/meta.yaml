@@ -1,0 +1,29 @@
+title: Nametag
+description: Nametag is a personal CRM for the people in your life. Keep notes, birthdays and important
+  dates, see how everyone is connected, and get reminders to stay in touch.
+icon: https://media.sys.truenas.net/apps/nametag/icons/icon.png
+categories:
+- productivity
+keywords:
+- crm
+- contacts
+- relationships
+- birthdays
+- carddav
+home: https://nametag.one
+screenshots:
+- https://media.sys.truenas.net/apps/nametag/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/nametag/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/nametag/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/nametag/screenshots/screenshot4.png
+train: community
+truenas_name: nametag
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.67.0
+  questions_sha: dbcce16387905af0750a5e6ae673ac8da0a11107b7f924ea2c4b72b1ed25fbda
+  commit: 77058ecb5b28199f35150912cacb13283a6fb244
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nametag
+notes: []

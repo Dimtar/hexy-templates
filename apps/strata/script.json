@@ -1,0 +1,37 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS strata 1.0.0"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30543]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/strata"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/strata/config",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "config"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/strata/files",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "files"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "config": "$HOST_PATH($LOCATION(ApplicationsPerformance)/strata/config)",
+      "files": "$HOST_PATH($LOCATION(ApplicationsPerformance)/strata/files)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30543}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}
