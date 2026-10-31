@@ -15,9 +15,9 @@ truenas_name: minecraft-bedrock
 status: draft
 managed: generated
 upstream:
-  version: 1.1.29
-  app_version: 2026.9.2
-  questions_sha: 6f10727b0b54e908d4e715e2052431e4b14675078f493863d96e5e636074202f
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.2.0
+  app_version: 2026.10.2
+  questions_sha: cb4e059cc5caa5e436fc0e61d32f9e025c12eadf5d24688fdd2aef3aaa9dcaae
+  commit: 7809ac3bcbb53e413e081e49bab68e382b712738
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/minecraft-bedrock
 notes: []
