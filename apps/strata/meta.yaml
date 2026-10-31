@@ -1,0 +1,28 @@
+title: Strata
+description: Self-hosted file manager with search, previews, an xlsx and Markdown editor, a trash and
+  per-file version history
+icon: https://media.sys.truenas.net/apps/strata/icons/icon.svg
+categories:
+- storage
+keywords:
+- file-manager
+- spreadsheet
+- files
+home: https://github.com/ah410/strata
+screenshots:
+- https://media.sys.truenas.net/apps/strata/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/strata/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/strata/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/strata/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/strata/screenshots/screenshot5.png
+train: community
+truenas_name: strata
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.0.2
+  questions_sha: b4b7b4f229a9c11cec9eb93fac3153e138111cbedbccd854da7fa588a57bd372
+  commit: 77058ecb5b28199f35150912cacb13283a6fb244
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/strata
+notes: []

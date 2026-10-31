@@ -1,0 +1,25 @@
+title: CashPilot
+description: Self-hosted dashboard that deploys passive income services as Docker containers and tracks
+  what they earn.
+icon: https://media.sys.truenas.net/apps/cashpilot/icons/icon.svg
+categories:
+- financial
+keywords:
+- passive-income
+- bandwidth-sharing
+- earnings
+home: https://geiserx.github.io/CashPilot/
+screenshots:
+- https://media.sys.truenas.net/apps/cashpilot/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/cashpilot/screenshots/screenshot2.png
+train: community
+truenas_name: cashpilot
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 1.43.4
+  questions_sha: 755fac83a5243e5ad1ce7a268a7b672c1c020dffdd0258f8d73859051c0a6c67
+  commit: 77058ecb5b28199f35150912cacb13283a6fb244
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cashpilot
+notes: []
