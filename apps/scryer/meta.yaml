@@ -1,0 +1,23 @@
+title: Scryer
+description: Scryer is a self-hosted media manager for movies, series, and anime.
+icon: https://media.sys.truenas.net/apps/scryer/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- movies
+- series
+- anime
+home: https://www.scryer.media/scryer/
+screenshots: []
+train: community
+truenas_name: scryer
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 0.21.23
+  questions_sha: 06754a9bd2a6333f28131172d3dea339563b9c41cd723c15c391227adacdd0a2
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/scryer
+notes: []

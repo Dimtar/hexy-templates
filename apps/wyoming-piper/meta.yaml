@@ -1,0 +1,25 @@
+title: Wyoming Piper
+description: Piper is a Wyoming protocol text-to-speech server, using a fast and local neural text to
+  speech system.
+icon: https://media.sys.truenas.net/apps/wyoming-piper/icons/icon.png
+categories:
+- ai
+keywords:
+- ai
+- text-to-speech
+- piper
+- wyoming
+- home-assistant
+home: https://github.com/OHF-Voice/wyoming-piper
+screenshots: []
+train: community
+truenas_name: wyoming-piper
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 2.5.2
+  questions_sha: 9b2afd6642394ab514210bf14ba4a1b20ca1410a1cfe29f919c579b51aebf2d4
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/wyoming-piper
+notes: []

@@ -18,9 +18,9 @@ truenas_name: invidious
 status: draft
 managed: generated
 upstream:
-  version: 1.7.37
-  app_version: 2.20260804.1
-  questions_sha: b9898ee6218fde4b67073a3a25c21502a7878cad9825376856e707510b400658
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.7.55
+  app_version: 2.20261103.0
+  questions_sha: 86b521a785dabe07c22eca12a6a53ef2ad14d1b5c8a1c2b3d5313a04fcef8c37
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/invidious
 notes: []

@@ -12,9 +12,9 @@ truenas_name: mumble
 status: draft
 managed: generated
 upstream:
-  version: 1.4.8
+  version: 1.4.14
   app_version: v1.6.870
-  questions_sha: d742a7f7346123ecdbb0154b77cddef2809e47938dec5700e1bc539638ce3f86
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  questions_sha: 2f64be9aec8050ed184156aafc1548736f2fffc4e6060c56c8456d4486b7c135
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/mumble
 notes: []

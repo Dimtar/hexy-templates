@@ -1,0 +1,23 @@
+title: AniLink-Downloader
+description: Download and unpack archives from hoster links via Debrid-Link
+icon: https://media.sys.truenas.net/apps/anilink-downloader/icons/icon.svg
+categories:
+- media
+keywords:
+- download
+- debrid
+- archive
+- unrar
+home: https://github.com/MCmoderSD/AniLink-Downloader
+screenshots: []
+train: community
+truenas_name: anilink-downloader
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 3.1.1
+  questions_sha: 6ab1f960d12bb5c834f390b666790e1cf3f3571b55c7314a4696a150693376a1
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/anilink-downloader
+notes: []

@@ -12,10 +12,10 @@ truenas_name: wiki-js
 status: draft
 managed: generated
 upstream:
-  version: 1.2.35
-  app_version: 2.5.316
-  questions_sha: 6abe30777cfb7496722689e22710b57b1d78fb34586a6d4f2633239a94cfceff
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 2.0.1
+  app_version: 3.0.2
+  questions_sha: 3ec578ed43f2a1da32b00fd98aa03cda6a7b772ec7201a185c22074b724fd14c
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/wiki-js
 notes: []
 curated: true
