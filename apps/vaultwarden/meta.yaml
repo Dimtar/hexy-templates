@@ -15,10 +15,10 @@ truenas_name: vaultwarden
 status: draft
 managed: generated
 upstream:
-  version: 1.6.35
-  app_version: 1.37.3
-  questions_sha: 6517629bf51354141d69a3c5259a7de507d00c53643bad0244fd9bd86e8a1e0b
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.6.50
+  app_version: 1.37.5
+  questions_sha: 02072f7688c693e5e84c1a48445b056c039e17f53e9388656611c49eef2fe71a
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/vaultwarden
 notes: []
 curated: true

@@ -1,0 +1,28 @@
+title: Stackyard
+description: Stackyard is a self-hosted homelab dashboard. It shows your apps as a grid of tiles and folders,
+  with widgets for media, downloads, DNS, backups, disk health and weather, and health badges that appear
+  only when a service has a problem.
+icon: https://media.sys.truenas.net/apps/stackyard/icons/icon.png
+categories:
+- productivity
+keywords:
+- dashboard
+- homelab
+- startpage
+home: https://stackyard.sandobserver.com
+screenshots:
+- https://media.sys.truenas.net/apps/stackyard/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/stackyard/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/stackyard/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/stackyard/screenshots/screenshot4.png
+train: community
+truenas_name: stackyard
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.21.0
+  questions_sha: 3e008fbe6e6704343752ad58f73b28ff8ab6eb98c8b51898d535ec160879ab12
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/stackyard
+notes: []

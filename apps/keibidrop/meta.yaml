@@ -1,0 +1,24 @@
+title: KEIBIDROP
+description: Open the folders on this NAS from your computer as if they were local, over an end-to-end
+  encrypted peer-to-peer connection. Only the parts of a file that you read cross the network.
+icon: https://media.sys.truenas.net/apps/keibidrop/icons/icon.png
+categories:
+- storage
+keywords:
+- file sharing
+- file transfer
+- peer to peer
+- encryption
+home: https://keibidrop.com
+screenshots: []
+train: community
+truenas_name: keibidrop
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.5.1
+  questions_sha: bfdc35643b2c590569d32023e9b5d7d8fa371ad97eeb944535593f44a7a8cbe4
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/keibidrop
+notes: []

@@ -20,9 +20,9 @@ truenas_name: strata
 status: draft
 managed: generated
 upstream:
-  version: 1.0.0
+  version: 1.0.2
   app_version: 1.0.2
-  questions_sha: b4b7b4f229a9c11cec9eb93fac3153e138111cbedbccd854da7fa588a57bd372
-  commit: 77058ecb5b28199f35150912cacb13283a6fb244
+  questions_sha: e6f155de480a4685749511631a7b19c367fb8ce3b29fbc8eeaccfc5a9f6e8d01
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/strata
 notes: []

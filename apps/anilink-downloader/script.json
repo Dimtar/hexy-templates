@@ -1,0 +1,38 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS anilink-downloader 1.0.0"
+  },
+  "installation_questions": [
+    {
+      "question": "Debrid api key",
+      "type": "password",
+      "key": "debrid_api_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["Downloads", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30549]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(Downloads)", "network_share": true},
+    {"path": "$LOCATION(Media)", "network_share": true}
+  ],
+  "app_values": {
+    "anilink": {"debrid_api_key": "$QUESTION(debrid_api_key)"},
+    "storage": {
+      "downloads": "$HOST_PATH($LOCATION(Downloads))",
+      "additional_storage": [
+        "$MOUNTED_HOST_PATH($LOCATION(Media), /media)"
+      ]
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30549}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

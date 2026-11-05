@@ -17,9 +17,9 @@ truenas_name: grafana
 status: draft
 managed: generated
 upstream:
-  version: 1.4.20
-  app_version: 13.2.3
-  questions_sha: 1521251d4d45bc304c1e4899148cd9416ae03533a4a9018d5f76bda955433833
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.4.27
+  app_version: 13.3.0
+  questions_sha: 6691c8f9ebb644108aa9deda8ba7035630e9def00b151ea7b0876c28cdf67333
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/grafana
 notes: []

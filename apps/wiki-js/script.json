@@ -1,18 +1,26 @@
 {
   "version": 5,
   "script": {
-    "version": "0.1.0",
-    "changeLog": "Auto-generated draft from TrueNAS wiki-js 1.2.35"
+    "version": "0.1.1",
+    "changeLog": "Regenerated for TrueNAS wiki-js 2.0.1"
   },
   "requirements": {
     "locations": ["ApplicationsPerformance"],
     "specifications": ["2CORE"],
     "permissions": ["READ_WRITE_LOCATIONS"],
-    "ports": [30244, 30245]
+    "ports": [30244]
   },
   "ensure_directories_exists": [
     {"path": "$LOCATION(ApplicationsPerformance)"},
     {"path": "$LOCATION(ApplicationsPerformance)/wiki-js"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/wiki-js/content",
+      "snapshot": {"id": "content"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/wiki-js/repo",
+      "snapshot": {"id": "repo"}
+    },
     {
       "path": "$LOCATION(ApplicationsPerformance)/wiki-js/postgres_data",
       "owner": {"user": "netdata", "group": "docker"},
@@ -22,11 +30,12 @@
   "app_values": {
     "wiki_js": {"db_password": "$RANDOM_STRING(16)"},
     "storage": {
+      "content": "$HOST_PATH($LOCATION(ApplicationsPerformance)/wiki-js/content)",
+      "repo": "$HOST_PATH($LOCATION(ApplicationsPerformance)/wiki-js/repo)",
       "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/wiki-js/postgres_data)"
     },
     "network": {
-      "http_port": {"bind_mode": "published", "port_number": 30244},
-      "https_port": {"bind_mode": "published", "port_number": 30245}
+      "http_port": {"bind_mode": "published", "port_number": 30244}
     },
     "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
   }

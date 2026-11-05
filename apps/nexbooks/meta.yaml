@@ -1,0 +1,29 @@
+title: nexbooks
+description: Your e-books and audiobooks on your own server. Read and listen in the browser, with one
+  book holding all its editions, a shelf for each genre, pages for authors, and fetching through your
+  own indexers.
+icon: https://media.sys.truenas.net/apps/nexbooks/icons/icon.png
+categories:
+- media
+keywords:
+- ebooks
+- audiobooks
+- books
+- reader
+- library
+home: https://github.com/DerKezorm/nexbooks
+screenshots:
+- https://media.sys.truenas.net/apps/nexbooks/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/nexbooks/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/nexbooks/screenshots/screenshot3.jpg
+train: community
+truenas_name: nexbooks
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 0.1.1
+  questions_sha: 244f910224734da73d6e69d1eedb6799d20512a6d0d83422697175b186d8f830
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nexbooks
+notes: []

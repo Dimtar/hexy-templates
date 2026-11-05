@@ -14,9 +14,9 @@ truenas_name: unifi-protect-backup
 status: draft
 managed: generated
 upstream:
-  version: 1.3.9
+  version: 1.3.14
   app_version: 0.14.3
-  questions_sha: 0c1c487345e0984e033c5c3ce9b2b31c58c9638a396847d011773b0de45e498c
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  questions_sha: f8e0a69bd3e5330970f6be08811936f4a5630426afcad842adedf9e5ee6e0033
+  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/unifi-protect-backup
 notes: []
