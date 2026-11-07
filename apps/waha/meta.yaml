@@ -1,0 +1,25 @@
+title: WAHA
+description: WhatsApp HTTP API (REST API) that you can configure in a click, with multiple engines (WEBJS,
+  NOWEB, GOWS), a built-in dashboard and webhooks.
+icon: https://media.sys.truenas.net/apps/waha/icons/icon.png
+categories:
+- productivity
+keywords:
+- whatsapp
+- api
+- messaging
+- chatbot
+- webhooks
+home: https://waha.devlike.pro
+screenshots: []
+train: community
+truenas_name: waha
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 2026.10.1
+  questions_sha: 45b0a0e1ae6464cb95765d1fd68ad7704e48308f13ef4741ea716fe4b886baf4
+  commit: f142a16a1e15da5f8517658f5a9ad34400972fc4
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/waha
+notes: []

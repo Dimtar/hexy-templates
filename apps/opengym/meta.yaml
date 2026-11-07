@@ -1,0 +1,30 @@
+title: openGym
+description: Self-hosted gym and body-weight tracker. Plan routines, log workouts including supersets
+  and cardio, track weight and progress, sign in with passkeys.
+icon: https://media.sys.truenas.net/apps/opengym/icons/icon.png
+categories:
+- fitness
+keywords:
+- fitness
+- gym
+- workout
+- tracker
+- weight
+home: https://opengym.ch
+screenshots:
+- https://media.sys.truenas.net/apps/opengym/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/opengym/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/opengym/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/opengym/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/opengym/screenshots/screenshot5.png
+train: community
+truenas_name: opengym
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.4.4
+  questions_sha: f46b7968ce333b9bf4c7ecfd5cea61eab3c7fca871728777c51311e42c0332ea
+  commit: f142a16a1e15da5f8517658f5a9ad34400972fc4
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/opengym
+notes: []

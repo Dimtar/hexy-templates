@@ -1,0 +1,40 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS snapshot-visualizer 1.0.0"
+  },
+  "installation_questions": [
+    {
+      "question": "Api key",
+      "type": "password",
+      "key": "api_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30550]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/snapshot-visualizer"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/snapshot-visualizer/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "snapshot_visualizer": {"api_key": "$QUESTION(api_key)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/snapshot-visualizer/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30550}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}
