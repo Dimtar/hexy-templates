@@ -23,9 +23,9 @@ truenas_name: openfamily
 status: draft
 managed: generated
 upstream:
-  version: 1.0.9
-  app_version: 1.8.1
-  questions_sha: 6e91d85f4f8053da7ee507a6803572b5bb523415490c61ab9d632bb5843c4073
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.0.25
+  app_version: 1.9.0
+  questions_sha: 39c03ba6b2d5dcf6c693033d88af45b7627318ee8e828478698422f8346755d2
+  commit: f142a16a1e15da5f8517658f5a9ad34400972fc4
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/openfamily
 notes: []

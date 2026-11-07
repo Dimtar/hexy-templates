@@ -14,9 +14,9 @@ truenas_name: i2p
 status: draft
 managed: generated
 upstream:
-  version: 1.1.12
-  app_version: i2p-2.11.0-9
-  questions_sha: cf34f114c690c64c61ff4cff8624fdab5e13064c698862077d8707de208f6246
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.1.18
+  app_version: i2p-2.14.1
+  questions_sha: af002cb276159dd71d8e3455b38571a245bfa9ace6109374424705f648efeabb
+  commit: f142a16a1e15da5f8517658f5a9ad34400972fc4
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/i2p
 notes: []

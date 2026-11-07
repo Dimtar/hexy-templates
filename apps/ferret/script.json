@@ -1,0 +1,51 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS ferret 1.0.1"
+  },
+  "installation_questions": [
+    {
+      "question": "Files key",
+      "type": "password",
+      "key": "files_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "ApplicationsCapacity"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30558]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/ferret"},
+    {"path": "$LOCATION(ApplicationsCapacity)"},
+    {"path": "$LOCATION(ApplicationsCapacity)/ferret"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/ferret/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsCapacity)/ferret/backups",
+      "owner": {"user": "apps"}
+    }
+  ],
+  "app_values": {
+    "ferret": {
+      "public_url": "http://$SERVER_LAN_IP:30558",
+      "auth_secret": "$RANDOM_STRING(32)",
+      "files_key": "$QUESTION(files_key)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/ferret/data)",
+      "backups": "$HOST_PATH($LOCATION(ApplicationsCapacity)/ferret/backups)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30558}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS waha 1.0.0"
+  },
+  "installation_questions": [
+    {
+      "question": "Api key",
+      "type": "password",
+      "key": "api_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance", "Media"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30556]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/waha"},
+    {"path": "$LOCATION(Media)", "network_share": true},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/waha/sessions",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "sessions"}
+    }
+  ],
+  "app_values": {
+    "waha": {"api_key": "$QUESTION(api_key)"},
+    "storage": {
+      "sessions": "$HOST_PATH($LOCATION(ApplicationsPerformance)/waha/sessions)",
+      "media": "$HOST_PATH($LOCATION(Media))"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30556}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

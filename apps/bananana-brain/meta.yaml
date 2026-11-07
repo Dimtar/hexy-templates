@@ -1,0 +1,24 @@
+title: bananana brain
+description: Your own control room for servers, Macs and PCs, reached from anywhere at your-name.bananana.dev
+  without opening ports.
+icon: https://media.sys.truenas.net/apps/bananana-brain/icons/icon.png
+categories:
+- monitoring
+keywords:
+- monitoring
+- remote management
+- rmm
+- fleet
+home: https://bananana.dev
+screenshots: []
+train: community
+truenas_name: bananana-brain
+status: draft
+managed: generated
+upstream:
+  version: 1.0.2
+  app_version: 2026.11.5
+  questions_sha: 604c489edbeb0e4217c65211c88fbc260de6a6bd8e68632550ac9fbe0cf985ec
+  commit: f142a16a1e15da5f8517658f5a9ad34400972fc4
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/bananana-brain
+notes: []
