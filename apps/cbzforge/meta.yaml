@@ -1,0 +1,24 @@
+title: CBZForge
+description: CBZForge scrapes comic metadata into CBZ archives (ComicInfo.xml), converts CBR, PDF and
+  EPUB to CBZ, and renames files into series folders.
+icon: https://media.sys.truenas.net/apps/cbzforge/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- comics
+- cbz
+- metadata
+home: https://github.com/chevalierbenoit/cbzforge
+screenshots: []
+train: community
+truenas_name: cbzforge
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 1.0.1
+  questions_sha: 46ee32ea1545692e8e0b53b1fc5f3cd572eaf751a11a3f942c7909065be82776
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cbzforge
+notes: []

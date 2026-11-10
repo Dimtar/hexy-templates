@@ -1,0 +1,31 @@
+title: Kryspal Media
+description: Kryspal Media is a self-hosted media server that stays fast on very large libraries. It plays
+  your files in original quality and works with Emby and Jellyfin players such as Infuse, SenPlayer and
+  VidHub.
+icon: https://media.sys.truenas.net/apps/kryspal-media/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- movies
+- series
+- tv
+- streaming
+- emby
+- jellyfin
+home: https://media.kryspal.net
+screenshots:
+- https://media.sys.truenas.net/apps/kryspal-media/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/kryspal-media/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/kryspal-media/screenshots/screenshot3.png
+train: community
+truenas_name: kryspal-media
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 0.9.16
+  questions_sha: 98bb9b51cecd7de3af6c5b96ad5a279238956c5c58ab4e51bc0da3db9d7f3a87
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/kryspal-media
+notes: []

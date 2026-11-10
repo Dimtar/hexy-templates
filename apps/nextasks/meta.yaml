@@ -1,0 +1,29 @@
+title: nextasks
+description: Tasks for families and small groups on your own server. Spaces with members and lists, due
+  dates and repeats, tasks assigned to several people, reports by mail and notifications to the browser
+  and the iPhone app.
+icon: https://media.sys.truenas.net/apps/nextasks/icons/icon.png
+categories:
+- productivity
+keywords:
+- tasks
+- todo
+- reminders
+- family
+- lists
+home: https://github.com/DerKezorm/nextasks
+screenshots:
+- https://media.sys.truenas.net/apps/nextasks/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/nextasks/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/nextasks/screenshots/screenshot3.jpg
+train: community
+truenas_name: nextasks
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 0.2.0
+  questions_sha: 174cfb8767fe6ce718c89912a40fcce739f060639a7c108458828baa9d210e66
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nextasks
+notes: []

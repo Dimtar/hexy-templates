@@ -1,0 +1,30 @@
+title: Ferret
+description: Self-hosted home inventory for the whole family. Add things by photo, barcode or a walk through
+  a room, find them by what they are, print QR labels, and keep warranties, manuals, maintenance and an
+  insurance report. REST API and MCP server; optional AI on your own models.
+icon: https://media.sys.truenas.net/apps/ferret/icons/icon.png
+categories:
+- productivity
+keywords:
+- inventory
+- home
+- warranty
+- insurance
+- barcode
+- labels
+home: https://github.com/ferret-project/ferret
+screenshots:
+- https://media.sys.truenas.net/apps/ferret/screenshots/screenshot1.webp
+- https://media.sys.truenas.net/apps/ferret/screenshots/screenshot2.webp
+- https://media.sys.truenas.net/apps/ferret/screenshots/screenshot3.webp
+train: community
+truenas_name: ferret
+status: draft
+managed: generated
+upstream:
+  version: 1.0.4
+  app_version: 2026.11.11
+  questions_sha: 3df03fcc836d8d8f7105367643bf7fb12a29a2f90a22e0eae2c63b15e190bd29
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/ferret
+notes: []

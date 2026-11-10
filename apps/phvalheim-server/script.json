@@ -1,0 +1,31 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS phvalheim-server 1.0.0"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["4CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30569, 30570]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/phvalheim-server"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/phvalheim-server/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/phvalheim-server/data)"
+    },
+    "network": {
+      "public_port": {"bind_mode": "published", "port_number": 30569},
+      "admin_port": {"bind_mode": "published", "port_number": 30570}
+    },
+    "resources": {"limits": {"cpus": 4, "memory": "$MEMORY(10%, 8192)"}}
+  }
+}

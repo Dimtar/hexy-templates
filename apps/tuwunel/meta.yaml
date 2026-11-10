@@ -1,0 +1,25 @@
+title: Tuwunel
+description: Tuwunel, the high performance Matrix homeserver written in Rust. It is the successor to Conduit
+  & Conduwuit, maintained by the author of Conduit.
+icon: https://media.sys.truenas.net/apps/tuwunel/icons/icon.png
+categories:
+- productivity
+keywords:
+- matrix
+- productivity
+- chat
+- federated
+- encrypted
+home: https://github.com/matrix-construct/tuwunel
+screenshots: []
+train: community
+truenas_name: tuwunel
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: v1.9.4
+  questions_sha: fad9357a6b2fba21245055c62bbb99aa8cd5d8fd5cef9d6493c401f4c5ea36b2
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tuwunel
+notes: []
