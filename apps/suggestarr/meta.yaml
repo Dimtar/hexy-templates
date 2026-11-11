@@ -1,0 +1,30 @@
+title: SuggestArr
+description: Finds movies and TV shows similar to what you watch on Jellyfin, Plex or Emby, and requests
+  them to Seerr automatically.
+icon: https://media.sys.truenas.net/apps/suggestarr/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- recommendations
+- jellyfin
+- plex
+- emby
+- seerr
+home: https://github.com/giuseppe99barchetta/SuggestArr
+screenshots:
+- https://media.sys.truenas.net/apps/suggestarr/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/suggestarr/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/suggestarr/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/suggestarr/screenshots/screenshot4.png
+train: community
+truenas_name: suggestarr
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: v3.4.0
+  questions_sha: 6c7adb1ae2e78314bbee89d3e93f98e7f37e08be25631c13152aef0b32a60250
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/suggestarr
+notes: []

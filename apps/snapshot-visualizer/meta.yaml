@@ -1,0 +1,31 @@
+title: Snapshot Visualizer
+description: Visualise ZFS snapshots like WinDirStat. A cushion treemap, a timeline and sortable tables
+  show which datasets, snapshots and periodic snapshot tasks use your space, sorted by size, age and naming
+  schema. Reads data through the TrueNAS API; deleting selected snapshots from the web UI is optional.
+  HTTPS and an optional password protect the web UI.
+icon: https://media.sys.truenas.net/apps/snapshot-visualizer/icons/icon.png
+categories:
+- monitoring
+keywords:
+- zfs
+- snapshots
+- storage
+- treemap
+- disk usage
+home: https://github.com/synecho/truenas-snapshot-visualizer
+screenshots:
+- https://media.sys.truenas.net/apps/snapshot-visualizer/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/snapshot-visualizer/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/snapshot-visualizer/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/snapshot-visualizer/screenshots/screenshot4.png
+train: community
+truenas_name: snapshot-visualizer
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 1.5.0
+  questions_sha: 77535cdf2365ea83569718096fcdf553c25052173cff1a125aa8f42787e4a113
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/snapshot-visualizer
+notes: []

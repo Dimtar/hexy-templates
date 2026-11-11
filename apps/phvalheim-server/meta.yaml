@@ -1,0 +1,29 @@
+title: PhValheim Server
+description: Host multiple Valheim worlds, manage mods in your browser, and keep your group's mods and
+  settings in sync.
+icon: https://media.sys.truenas.net/apps/phvalheim-server/icons/icon.png
+categories:
+- games
+keywords:
+- valheim
+- games
+- dedicated-server
+- mods
+home: https://phvalheim.com
+screenshots:
+- https://media.sys.truenas.net/apps/phvalheim-server/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/phvalheim-server/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/phvalheim-server/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/phvalheim-server/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/phvalheim-server/screenshots/screenshot5.png
+train: community
+truenas_name: phvalheim-server
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: '2.62'
+  questions_sha: 7557f13d722e92e401cdf28d934ceb127b52f5b1e41505b323f22e0a82eff7c3
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/phvalheim-server
+notes: []

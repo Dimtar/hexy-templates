@@ -1,0 +1,24 @@
+title: Filehub
+description: Filehub is a lightweight, self-hosted file manager for sharing folders among users on your
+  own server.
+icon: https://media.sys.truenas.net/apps/filehub/icons/icon.png
+categories:
+- productivity
+keywords:
+- filehub
+- files
+- sharing
+home: https://github.com/ericleung001/nas-filehub
+screenshots:
+- https://media.sys.truenas.net/apps/filehub/screenshots/screenshot1.png
+train: community
+truenas_name: filehub
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.4.4
+  questions_sha: 76cf7861f21c0c33125990824c2ef2cd348a7c1095fcde48c183982ad913c881
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/filehub
+notes: []

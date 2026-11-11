@@ -14,9 +14,9 @@ truenas_name: fscrawler
 status: draft
 managed: generated
 upstream:
-  version: 2.0.19
+  version: 2.0.33
   app_version: 3.1-SNAPSHOT-ocr
-  questions_sha: 7854102a9b8b22a76b4a46068701f812b802e79ac0fd73d8729788472a7fef45
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  questions_sha: 790fad735c1a15d0c33b630b9f7c8a0b998d4d64da2c1e8697edf56cd98d253b
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/fscrawler
 notes: []

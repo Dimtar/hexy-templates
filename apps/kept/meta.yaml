@@ -1,0 +1,24 @@
+title: Kept
+description: Kept is a self-hosted note-taking app with checklists, labels, binders, reminders, drawings,
+  attachments and shared notes.
+icon: https://media.sys.truenas.net/apps/kept/icons/icon.png
+categories:
+- productivity
+keywords:
+- notes
+- checklists
+- reminders
+home: https://www.keepitkept.xyz/
+screenshots:
+- https://media.sys.truenas.net/apps/kept/screenshots/screenshot1.png
+train: community
+truenas_name: kept
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.9.4
+  questions_sha: 0e2be4206163c8c61c89e72c407b3a8711c22a47c5534380ae9da1ad19e2dabd
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/kept
+notes: []

@@ -1,0 +1,25 @@
+title: DNSalsa Connector
+description: DNSalsa connector puts a service in your network online at your own dnsalsa.nl address through
+  a Cloudflare Tunnel, paired by a short code instead of a token.
+icon: https://media.sys.truenas.net/apps/dnsalsa-connector/icons/icon.svg
+categories:
+- networking
+keywords:
+- network
+- tunnel
+- cloudflare
+- remote access
+- dns
+home: https://dnsalsa.nl
+screenshots: []
+train: community
+truenas_name: dnsalsa-connector
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 1.1.4
+  questions_sha: d178bbddcdc67b9ac9facf6e2bbcb1ce6fad5c73edcad606a3d373e03172b55c
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/dnsalsa-connector
+notes: []

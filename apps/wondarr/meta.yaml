@@ -1,0 +1,28 @@
+title: Wondarr
+description: An *arr for single songs. Finds each song on Soulseek, YouTube Music, torrents and usenet,
+  checks it is the right recording and files it into your music library.
+icon: https://media.sys.truenas.net/apps/wondarr/icons/icon.png
+categories:
+- media
+keywords:
+- music
+- soulseek
+- arr
+- downloader
+- plex
+home: https://wulfftech.github.io/wondarr/
+screenshots:
+- https://media.sys.truenas.net/apps/wondarr/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/wondarr/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/wondarr/screenshots/screenshot3.png
+train: community
+truenas_name: wondarr
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.1.18
+  questions_sha: 1ff624251f65a6a65254fb3f28d2b2f5e77790199d85c4e7f3f8d58f2c5c2f6d
+  commit: 90ee0e031320b6b758863a854ced5e60f4c40010
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/wondarr
+notes: []

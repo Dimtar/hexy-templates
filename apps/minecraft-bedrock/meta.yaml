@@ -21,3 +21,4 @@ upstream:
   commit: 7809ac3bcbb53e413e081e49bab68e382b712738
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/minecraft-bedrock
 notes: []
+curated: true

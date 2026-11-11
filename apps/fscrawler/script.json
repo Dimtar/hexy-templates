@@ -1,10 +1,16 @@
 {
   "version": 5,
   "script": {
-    "version": "0.1.0",
-    "changeLog": "Auto-generated draft from TrueNAS fscrawler 2.0.19"
+    "version": "0.1.1",
+    "changeLog": "Regenerated for TrueNAS fscrawler 2.0.33"
   },
   "installation_questions": [
+    {
+      "question": "Elastic password",
+      "type": "password",
+      "key": "elastic_password",
+      "required": true
+    },
     {
       "question": "Job name",
       "type": "text",
@@ -30,7 +36,10 @@
     }
   ],
   "app_values": {
-    "fscrawler": {"job_name": "$QUESTION(job_name)"},
+    "fscrawler": {
+      "elastic_password": "$QUESTION(elastic_password)",
+      "job_name": "$QUESTION(job_name)"
+    },
     "storage": {
       "root_dir": "$HOST_PATH($LOCATION(ApplicationsPerformance)/fscrawler/root_dir)",
       "es_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/fscrawler/es_data)"
