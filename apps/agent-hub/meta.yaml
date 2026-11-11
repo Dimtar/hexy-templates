@@ -1,0 +1,25 @@
+title: Agent Hub
+description: Watch the Claude Code agents running on your PCs live, from one dashboard on your NAS.
+icon: https://media.sys.truenas.net/apps/agent-hub/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- ai
+- claude
+- claude-code
+- agents
+- dashboard
+home: https://github.com/UurDemir/agent-hub-ui
+screenshots:
+- https://media.sys.truenas.net/apps/agent-hub/screenshots/screenshot1.jpg
+train: community
+truenas_name: agent-hub
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.4.1
+  questions_sha: 75d3f93e364dbbc97cfeb24ee01b33e43ea6f43d3539aa4b8183217d6bcdb0e0
+  commit: 489e7751f50d07a0d4560dfdfa065aff155742ba
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/agent-hub
+notes: []
