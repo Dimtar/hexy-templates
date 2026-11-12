@@ -1,0 +1,28 @@
+title: Tempo AI
+description: Tempo AI forecasts the French Tempo electricity tariff color (blue, white or red) two to
+  four days ahead with a small local LightGBM model trained on public RTE and Open-Meteo data. It checks
+  its own forecasts every day and exposes a REST API and a web page.
+icon: https://media.sys.truenas.net/apps/tempo-ai/icons/icon.svg
+categories:
+- home-automation
+keywords:
+- tempo
+- edf
+- rte
+- electricity
+- forecast
+- home-assistant
+home: https://github.com/lgm42/tempo-ai
+screenshots:
+- https://media.sys.truenas.net/apps/tempo-ai/screenshots/screenshot1.png
+train: community
+truenas_name: tempo-ai
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.1.0
+  questions_sha: 48c835e8f539081faabb6141fe445c4033d5abf0adb29a799be6e880cbc36879
+  commit: b6f1e12baadae029a224c1ecb049659162715519
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tempo-ai
+notes: []

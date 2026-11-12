@@ -1,0 +1,25 @@
+title: Silo S3
+description: Silo is a community-maintained fork of the MinIO server (maintained by PGSTY). S3-compatible
+  object storage with the full web console, compatible with existing MinIO data directories, MINIO_* variables
+  and mc clients.
+icon: https://media.sys.truenas.net/apps/silo-s3/icons/icon.svg
+categories:
+- storage
+keywords:
+- s3
+- storage
+- object-storage
+- minio
+home: https://silo.pgsty.com
+screenshots: []
+train: community
+truenas_name: silo-s3
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: RELEASE.2026-11-12T00-00-00Z
+  questions_sha: 11feae3a10cbd947ef2abdfeed38aa40e1f9f5b9537cd8695f97447158fd1dd7
+  commit: b6f1e12baadae029a224c1ecb049659162715519
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/silo-s3
+notes: []

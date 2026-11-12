@@ -19,3 +19,4 @@ upstream:
   commit: c263f0eed0c9f2e4500122c9b8dbedbc80badca8
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/rust-desk
 notes: []
+curated: true

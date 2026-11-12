@@ -1,0 +1,26 @@
+date: '2026-11-13'
+new:
+- silo-s3
+- tempo-ai
+removed:
+- filebrowser
+- rowflare
+curated:
+- code-server
+- eurooffice-document-server
+- forgejo
+- freshrss
+- frigate
+- maintainerr
+- nevu
+- nginx-proxy-manager
+- onlyoffice-document-server
+- opencloud
+- planka
+- rust-desk
+- rust-desk-relay
+- scrypted
+- sparkyfitness
+- trilium-notes
+- unifi-protect-backup
+- vikunja
