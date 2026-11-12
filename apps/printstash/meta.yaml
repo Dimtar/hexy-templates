@@ -1,0 +1,28 @@
+title: PrintStash
+description: Open-source, self-hosted library for 3D printing. Organize your models, keep the G-code that
+  works, and manage your printers from one web app.
+icon: https://media.sys.truenas.net/apps/printstash/icons/icon.svg
+categories:
+- productivity
+keywords:
+- 3d-printing
+- stl
+- model-library
+- print-farm
+home: https://printstash.org
+screenshots:
+- https://media.sys.truenas.net/apps/printstash/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/printstash/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/printstash/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/printstash/screenshots/screenshot4.png
+train: community
+truenas_name: printstash
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.15.1
+  questions_sha: 3d18a8015f0f071a31a3437d94037f3c313eca128ad42edf5c8b22a6a0752b41
+  commit: 489e7751f50d07a0d4560dfdfa065aff155742ba
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/printstash
+notes: []

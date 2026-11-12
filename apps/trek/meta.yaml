@@ -1,0 +1,23 @@
+title: TREK
+description: A self-hosted, collaborative travel planner with interactive maps, itineraries, bookings,
+  budgets, and packing lists.
+icon: https://media.sys.truenas.net/apps/trek/icons/icon.svg
+categories:
+- productivity
+keywords:
+- travel
+- trip planner
+- maps
+home: https://demo.liketrek.com/
+screenshots: []
+train: community
+truenas_name: trek
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 5.1.3
+  questions_sha: 3bff207d94cd78983601afb909ee6872dbe157068cb793f122b3eddc3e78dba8
+  commit: 489e7751f50d07a0d4560dfdfa065aff155742ba
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/trek
+notes: []

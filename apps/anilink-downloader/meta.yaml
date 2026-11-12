@@ -15,9 +15,9 @@ truenas_name: anilink-downloader
 status: draft
 managed: generated
 upstream:
-  version: 1.0.0
-  app_version: 3.1.1
-  questions_sha: 6ab1f960d12bb5c834f390b666790e1cf3f3571b55c7314a4696a150693376a1
-  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
+  version: 1.1.0
+  app_version: 3.2.0
+  questions_sha: 73b9af8bf812fb208db39614ffd39a059ec10cb252de91757f6604a6e0daa7c2
+  commit: 489e7751f50d07a0d4560dfdfa065aff155742ba
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/anilink-downloader
 notes: []

@@ -1,8 +1,8 @@
 {
   "version": 5,
   "script": {
-    "version": "0.1.0",
-    "changeLog": "Auto-generated draft from TrueNAS anilink-downloader 1.0.0"
+    "version": "0.1.1",
+    "changeLog": "Regenerated for TrueNAS anilink-downloader 1.1.0"
   },
   "installation_questions": [
     {
@@ -16,7 +16,7 @@
     "locations": ["Downloads", "Media"],
     "specifications": ["2CORE"],
     "permissions": ["READ_WRITE_LOCATIONS"],
-    "ports": [30549]
+    "ports": [30549, 30575]
   },
   "ensure_directories_exists": [
     {"path": "$LOCATION(Downloads)", "network_share": true},
@@ -31,7 +31,8 @@
       ]
     },
     "network": {
-      "web_port": {"bind_mode": "published", "port_number": 30549}
+      "web_port": {"bind_mode": "published", "port_number": 30549},
+      "https_port": {"bind_mode": "published", "port_number": 30575}
     },
     "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
   }
