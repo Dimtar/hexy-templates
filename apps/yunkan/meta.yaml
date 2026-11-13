@@ -1,4 +1,4 @@
-title: YunKan
+title: SkyView
 description: Self-hosted NVR for RTSP/ONVIF cameras with on-device AI detection
 icon: https://media.sys.truenas.net/apps/yunkan/icons/icon.png
 categories:
@@ -16,9 +16,9 @@ truenas_name: yunkan
 status: draft
 managed: generated
 upstream:
-  version: 1.0.12
-  app_version: 0.9.53
-  questions_sha: 35e10bf6fcfe3a8f1d9838bd2c7e0317f310f7bb0269c3b7fcc1e858ece3ef7c
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.0.24
+  app_version: 0.9.59
+  questions_sha: 134c92938b16756c5988d77eeb3730ede113074b72b3d0f555bc99befe8563a6
+  commit: b6f1e12baadae029a224c1ecb049659162715519
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/yunkan
 notes: []

@@ -20,3 +20,4 @@ upstream:
   commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/unifi-protect-backup
 notes: []
+curated: true

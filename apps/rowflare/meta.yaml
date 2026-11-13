@@ -27,3 +27,4 @@ upstream:
   commit: c675b3a455ddb70c3bd9038ba265826978192a4f
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/rowflare
 notes: []
+removed_upstream: true
