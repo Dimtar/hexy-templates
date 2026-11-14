@@ -1,0 +1,26 @@
+title: UniHub
+description: Self-hosted mail, contacts, calendars, tasks and recordings.
+icon: https://media.sys.truenas.net/apps/unihub/icons/icon.png
+categories:
+- productivity
+keywords:
+- mail
+- contacts
+- calendar
+- tasks
+home: https://github.com/mrksrus/selfhost-unihub
+screenshots:
+- https://media.sys.truenas.net/apps/unihub/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/unihub/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/unihub/screenshots/screenshot3.png
+train: community
+truenas_name: unihub
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.28.4
+  questions_sha: 96e9719a4cd5d9e83bd0f07c825b368c7a79d67540b783d3667526a9dc2bcc4a
+  commit: 4dda88572397f9e84adfa9372c91dd63601919c3
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/unihub
+notes: []

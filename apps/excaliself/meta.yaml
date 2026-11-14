@@ -1,0 +1,28 @@
+title: Excaliself
+description: Excaliself is a self-hosted Excalidraw for teams. It adds accounts, live collaboration, a
+  team space, folders, search and share links, and keeps every drawing in Postgres.
+icon: https://media.sys.truenas.net/apps/excaliself/icons/icon.png
+categories:
+- productivity
+keywords:
+- excalidraw
+- whiteboard
+- diagrams
+- drawing
+- collaboration
+home: https://excaliself.com
+screenshots:
+- https://media.sys.truenas.net/apps/excaliself/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/excaliself/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/excaliself/screenshots/screenshot3.png
+train: community
+truenas_name: excaliself
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 0.12.0
+  questions_sha: 44bb201856606cb9fb88f95bb506148bb011baa2799d9ee7054128ebe9a36d14
+  commit: 4dda88572397f9e84adfa9372c91dd63601919c3
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/excaliself
+notes: []

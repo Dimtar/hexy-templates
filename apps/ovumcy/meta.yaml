@@ -1,0 +1,25 @@
+title: Ovumcy
+description: Ovumcy is a self-hosted menstrual cycle tracker. Your cycle data stays on your own server.
+icon: https://media.sys.truenas.net/apps/ovumcy/icons/icon.svg
+categories:
+- health
+keywords:
+- health
+- cycle
+- period
+- tracker
+- privacy
+home: https://github.com/ovumcy/ovumcy-web
+screenshots:
+- https://media.sys.truenas.net/apps/ovumcy/screenshots/screenshot1.jpg
+train: community
+truenas_name: ovumcy
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: v2.2.1
+  questions_sha: 3377c5ac22c3f70bbde10ae118b99053d1c60be8db7cc3845354b5c54dadf074
+  commit: 4dda88572397f9e84adfa9372c91dd63601919c3
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/ovumcy
+notes: []
