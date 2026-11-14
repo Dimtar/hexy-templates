@@ -1,0 +1,27 @@
+title: Inbox Zero
+description: Open source AI email assistant that organizes your inbox, drafts replies and automates email
+  management.
+icon: https://media.sys.truenas.net/apps/inbox-zero/icons/icon.png
+categories:
+- productivity
+keywords:
+- email
+- ai
+- productivity
+home: https://www.getinboxzero.com/
+screenshots:
+- https://media.sys.truenas.net/apps/inbox-zero/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/inbox-zero/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/inbox-zero/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/inbox-zero/screenshots/screenshot4.png
+train: community
+truenas_name: inbox-zero
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 2.30.0
+  questions_sha: 420f3bdc0c2de4732b64a593086d8845b731a031facc211756c4a4f8557969a8
+  commit: 4dda88572397f9e84adfa9372c91dd63601919c3
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/inbox-zero
+notes: []

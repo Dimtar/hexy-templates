@@ -1,0 +1,54 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS inbox-zero 1.0.1"
+  },
+  "installation_questions": [
+    {
+      "question": "Email encrypt salt",
+      "type": "password",
+      "key": "email_encrypt_salt",
+      "required": true
+    },
+    {
+      "question": "Llm provider",
+      "type": "text",
+      "key": "llm_provider",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30582]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/inbox-zero"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/inbox-zero/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "inbox_zero": {
+      "db_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "base_url": "http://$SERVER_LAN_IP:30582",
+      "auth_secret": "$RANDOM_STRING(32)",
+      "email_encrypt_secret": "$RANDOM_STRING(32)",
+      "email_encrypt_salt": "$QUESTION(email_encrypt_salt)",
+      "llm_provider": "$QUESTION(llm_provider)"
+    },
+    "storage": {
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/inbox-zero/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30582}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}
