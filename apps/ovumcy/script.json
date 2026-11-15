@@ -1,0 +1,38 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS ovumcy 1.0.0"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30586]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/ovumcy"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/ovumcy/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/ovumcy/fence",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "fence"}
+    }
+  ],
+  "app_values": {
+    "ovumcy": {"secret_key": "$RANDOM_STRING(32)"},
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/ovumcy/data)",
+      "fence": "$HOST_PATH($LOCATION(ApplicationsPerformance)/ovumcy/fence)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30586}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

@@ -1,0 +1,27 @@
+title: HolyArrs
+description: One self-hosted app for your shows, movies and music. It works with the download clients
+  and media servers you already run.
+icon: https://media.sys.truenas.net/apps/holyarrs/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- movies
+- series
+- music
+home: https://holyarrs.com
+screenshots:
+- https://media.sys.truenas.net/apps/holyarrs/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/holyarrs/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/holyarrs/screenshots/screenshot3.jpg
+train: community
+truenas_name: holyarrs
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.1.0
+  questions_sha: 64a45492e9fca9d370552486b9b98cadfc0c867fbcdad0442fb106103f292241
+  commit: 4dda88572397f9e84adfa9372c91dd63601919c3
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/holyarrs
+notes: []

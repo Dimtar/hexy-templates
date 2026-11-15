@@ -1,0 +1,29 @@
+title: MediaMan
+description: Organizes, imports and transcodes a Jellyfin media library, keeping HDR, Dolby Vision and
+  every audio and subtitle track.
+icon: https://media.sys.truenas.net/apps/mediaman/icons/icon.png
+categories:
+- media
+keywords:
+- media
+- jellyfin
+- transcode
+- av1
+- hevc
+- organize
+home: https://github.com/MJWaters1985/MediaMan
+screenshots:
+- https://media.sys.truenas.net/apps/mediaman/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/mediaman/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/mediaman/screenshots/screenshot3.png
+train: community
+truenas_name: mediaman
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 1.8.4
+  questions_sha: 5e818a4625c23e34c677054e641d502b3427cc71f56b533de18b393be337cdd3
+  commit: 4dda88572397f9e84adfa9372c91dd63601919c3
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/mediaman
+notes: []

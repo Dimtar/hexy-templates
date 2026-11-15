@@ -1,0 +1,49 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS logforge-unicron 1.0.0"
+  },
+  "installation_questions": [
+    {
+      "question": "Central fqdn",
+      "type": "text",
+      "key": "central_fqdn",
+      "required": true
+    },
+    {
+      "question": "Admin password",
+      "type": "password",
+      "key": "admin_password",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30580, 30581]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/logforge-unicron"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/logforge-unicron/data",
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "logforge": {
+      "central_fqdn": "$QUESTION(central_fqdn)",
+      "admin_password": "$QUESTION(admin_password)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/logforge-unicron/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30580},
+      "agent_port": {"bind_mode": "published", "port_number": 30581}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

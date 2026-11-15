@@ -1,0 +1,26 @@
+title: LogForge Unicron
+description: All in one UI, for Docker. Real-time logs, Interactive terminals, Custom alerts/notifications/Automations,
+  File system access.
+icon: https://media.sys.truenas.net/apps/logforge-unicron/icons/icon.png
+categories:
+- monitoring
+keywords:
+- docker
+- logs
+- monitoring
+- observability
+- terminal
+home: https://www.logforge.dev/
+screenshots:
+- https://media.sys.truenas.net/apps/logforge-unicron/screenshots/screenshot1.png
+train: community
+truenas_name: logforge-unicron
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 3.0.1
+  questions_sha: dcf68dcdfc9eb93ba213d78c8eb8ccac6008ae39e73114be2d6e3b9bd99c4f1a
+  commit: 4dda88572397f9e84adfa9372c91dd63601919c3
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/logforge-unicron
+notes: []

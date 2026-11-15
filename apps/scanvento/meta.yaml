@@ -1,0 +1,31 @@
+title: Scanvento
+description: Scanvento is an IT asset management and discovery platform for hardware, software, licences,
+  vulnerabilities and the asset lifecycle. Proprietary software, free edition up to 250 active assets
+  without a licence file.
+icon: https://media.sys.truenas.net/apps/scanvento/icons/icon.svg
+categories:
+- management
+keywords:
+- asset
+- inventory
+- itam
+- cmdb
+- discovery
+- licence
+home: https://scanvento.com
+screenshots:
+- https://media.sys.truenas.net/apps/scanvento/screenshots/screenshot1.webp
+- https://media.sys.truenas.net/apps/scanvento/screenshots/screenshot2.webp
+- https://media.sys.truenas.net/apps/scanvento/screenshots/screenshot3.webp
+- https://media.sys.truenas.net/apps/scanvento/screenshots/screenshot4.webp
+train: community
+truenas_name: scanvento
+status: draft
+managed: generated
+upstream:
+  version: 1.0.4
+  app_version: 0.0.16
+  questions_sha: cd3b8d4529d279bc585be1239072b80a2d2508750cbbb734f1c96e41ce3089e8
+  commit: 4dda88572397f9e84adfa9372c91dd63601919c3
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/scanvento
+notes: []

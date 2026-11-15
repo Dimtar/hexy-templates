@@ -1,0 +1,54 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS scanvento 1.0.4"
+  },
+  "installation_questions": [
+    {
+      "question": "Admin user",
+      "type": "text",
+      "key": "admin_user",
+      "required": true
+    },
+    {
+      "question": "Admin password",
+      "type": "password",
+      "key": "admin_password",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30584]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/scanvento"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/scanvento/postgres_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "postgres_data"}
+    }
+  ],
+  "app_values": {
+    "scanvento": {
+      "db_password": "$RANDOM_STRING(16)",
+      "redis_password": "$RANDOM_STRING(16)",
+      "public_url": "http://$SERVER_LAN_IP:30584",
+      "admin_user": "$QUESTION(admin_user)",
+      "admin_password": "$QUESTION(admin_password)",
+      "encryption_master_key": "$RANDOM_STRING(32)",
+      "jwt_signing_key": "$RANDOM_STRING(32)"
+    },
+    "storage": {
+      "postgres_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/scanvento/postgres_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30584}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}
