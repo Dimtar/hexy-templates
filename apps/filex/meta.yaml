@@ -1,0 +1,27 @@
+title: filex
+description: filex is a self-hosted file manager with a web UI for local folders, S3, SFTP, WebDAV, FTP
+  and SMB storage, with share links, trash and versions, and full-text search.
+icon: https://media.sys.truenas.net/apps/filex/icons/icon.png
+categories:
+- storage
+keywords:
+- files
+- file-manager
+- sharing
+- webdav
+- s3
+home: https://filex.sh
+screenshots:
+- https://media.sys.truenas.net/apps/filex/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/filex/screenshots/screenshot2.png
+train: community
+truenas_name: filex
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: v0.61.1
+  questions_sha: 4208452ad4784770894844998684db4727f12d0e594c4c89f5455e2e15b8c0f3
+  commit: 272d040034bffdd6d2cab582f8b6b061b6032a25
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/filex
+notes: []

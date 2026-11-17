@@ -1,0 +1,29 @@
+title: ROMarr
+description: ROMarr is the *arr for games. Request a title and it searches your indexers through Prowlarr,
+  sends the best release to qBittorrent, SABnzbd or NZBGet, verifies what arrived and files it into RomM,
+  Gaseous, Retrom or a plain folder tree for emulator frontends.
+icon: https://media.sys.truenas.net/apps/romarr/icons/icon.png
+categories:
+- games
+keywords:
+- rom
+- games
+- emulation
+- arr
+- prowlarr
+home: https://romarr.app
+screenshots:
+- https://media.sys.truenas.net/apps/romarr/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/romarr/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/romarr/screenshots/screenshot3.png
+train: community
+truenas_name: romarr
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.10.0
+  questions_sha: 7d5cfe5c52da2b6bd0f76f25b327e02afa7e494aa3dce77173229cd4dd461fa2
+  commit: 272d040034bffdd6d2cab582f8b6b061b6032a25
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/romarr
+notes: []

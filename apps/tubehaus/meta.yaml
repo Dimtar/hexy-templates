@@ -1,0 +1,23 @@
+title: TubeHaus
+description: Your own YouTube for the household, without ads, tracking or a Google account
+icon: https://media.sys.truenas.net/apps/tubehaus/icons/icon.svg
+categories:
+- media
+keywords:
+- youtube
+- video
+- media-server
+home: https://github.com/biolend83/tubehaus
+screenshots:
+- https://media.sys.truenas.net/apps/tubehaus/screenshots/screenshot1.jpg
+train: community
+truenas_name: tubehaus
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.6.0
+  questions_sha: 2dde78b7b0e26603640c0235423edfe18cae805f793c3fed9614e6ef4594e87f
+  commit: 272d040034bffdd6d2cab582f8b6b061b6032a25
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/tubehaus
+notes: []
