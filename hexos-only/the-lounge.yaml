@@ -1,0 +1,6 @@
+title: The Lounge
+icon: https://raw.githubusercontent.com/eshtek/hexos-app-catalog/prod/the-lounge/icon.svg
+categories:
+- communication
+home: https://thelounge.chat
+description: A web-based IRC client that stays connected and keeps your chat history.

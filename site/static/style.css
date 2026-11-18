@@ -157,6 +157,7 @@ img { max-width: 100%; }
 .badge-tested { background: var(--tested-bg); color: var(--tested-text); }
 .badge-needs-retest { background: var(--retest-bg); color: var(--retest-text); }
 .badge-curated { background: var(--curated-bg); color: var(--curated-text); }
+.badge-hexos-only { color: var(--curated-text); box-shadow: inset 0 0 0 1px var(--curated-edge); }
 .notice-curated { background: var(--curated-bg); color: var(--curated-text); border-left: 4px solid var(--curated-edge); }
 .notice-curated a { color: inherit; font-weight: 600; }
 .curated-toggle {

@@ -29,6 +29,7 @@ from truenas import ROOT
 SITE = ROOT / "site"
 APPS = ROOT / "apps"
 UPDATES = ROOT / "updates"
+HEXOS_ONLY = ROOT / "hexos-only"
 
 # How each kind of change is described on the Updates page, in plain words.
 UPDATE_SECTIONS = {
@@ -41,6 +42,11 @@ UPDATE_SECTIONS = {
                 "with the regular Install button.", "{n} now curated", "{n} now curated"),
     "uncurated": ("No longer curated by HexOS", "HexOS no longer has an official script for these. "
                   "The script here still works as a custom install.", "{n} no longer curated", "{n} no longer curated"),
+    "hexos_only": ("Only available from HexOS", "HexOS offers these apps itself and they aren't in the TrueNAS catalogue, "
+                   "so there's no script here. Install them straight from the Apps page in HexOS.",
+                   "{n} HexOS-only app", "{n} HexOS-only apps"),
+    "hexos_only_removed": ("No longer offered by HexOS", "HexOS has stopped offering these apps.",
+                           "{n} no longer offered", "{n} no longer offered"),
     "removed": ("Removed from TrueNAS", "TrueNAS no longer lists these apps. Their scripts stay here for now, "
                 "but they may stop working.", "{n} removed", "{n} removed"),
 }
@@ -49,6 +55,7 @@ STATUS = {
     "tested": ("Tested", "Installed and checked on a real HexOS server."),
     "needs-retest": ("Needs re-test", "Was tested, but the TrueNAS app has changed since. Probably fine — not re-checked yet."),
     "draft": ("Not yet tested", "Generated automatically from the TrueNAS app settings and not yet installed on a real HexOS server."),
+    "hexos-only": ("HexOS only", "Not in the TrueNAS catalogue. Only HexOS's own version exists, so there's no script here."),
 }
 
 TOKEN = re.compile(
@@ -105,6 +112,28 @@ def load_apps() -> list[dict]:
     return apps
 
 
+def load_hexos_only() -> list[dict]:
+    """Cards for apps HexOS curates that TrueNAS doesn't have. They have no script."""
+    apps = []
+    for f in sorted(HEXOS_ONLY.glob("*.yaml")) if HEXOS_ONLY.exists() else []:
+        meta = yaml.safe_load(f.read_text()) or {}
+        meta["description"] = meta.get("description") or "A curated app you can install straight from HexOS."
+        title = meta.get("title", f.stem)
+        apps.append({
+            "slug": f.stem,
+            "meta": meta,
+            "title": title,
+            "status": "hexos-only",
+            "hexos_only": True,
+            "curated": True,
+            "official_url": hexos.script_url(f.stem),
+            "status_label": STATUS["hexos-only"][0],
+            "status_help": STATUS["hexos-only"][1],
+            "search": " ".join([title, f.stem, meta["description"], "hexos only", *meta.get("categories", [])]).lower(),
+        })
+    return apps
+
+
 def load_updates(apps: list[dict]) -> list[dict]:
     by_slug = {a["slug"]: a for a in apps}
     updates = []
@@ -148,7 +177,8 @@ def build(base: str, out: Path) -> None:
     env.globals.update(base=base, repo="https://github.com/Dimtar/hexy-templates", v=digest.hexdigest()[:10])
     env.filters["tojson_attr"] = lambda v: json.dumps(v)
 
-    apps = load_apps()
+    scripted = load_apps()
+    apps = sorted(scripted + load_hexos_only(), key=lambda a: a["slug"])
     categories = sorted({c for a in apps for c in a["meta"].get("categories", [])})
     counts = {s: sum(a["status"] == s for a in apps) for s in STATUS}
     counts["curated"] = sum(a["curated"] for a in apps)
@@ -164,9 +194,12 @@ def build(base: str, out: Path) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(env.get_template(template).render(**ctx))
 
-    write("index.html", "index.html", apps=apps, categories=categories, counts=counts, page="library",
-          latest=load_updates(apps)[:1])
+    write("index.html", "index.html", apps=apps, scripted=len(scripted), categories=categories, counts=counts,
+          page="library", latest=load_updates(apps)[:1])
     for app in apps:
+        if app.get("hexos_only"):
+            write(f"apps/{app['slug']}/index.html", "hexos_only.html", app=app, page="app")
+            continue
         write(f"apps/{app['slug']}/index.html", "app.html", app=app, page="app")
         (out / "apps" / app["slug"] / f"{app['slug']}.json").write_text(app["script_text"])
 
@@ -180,7 +213,7 @@ def build(base: str, out: Path) -> None:
     write("faq/index.html", "faq.html", faq=yaml.safe_load((SITE / "faq.yaml").read_text()), page="faq")
     write("404.html", "404.html", page="404")
     (out / ".nojekyll").write_text("")
-    print(f"Built {len(apps)} app pages into {out}")
+    print(f"Built {len(apps)} app pages ({len(apps) - len(scripted)} HexOS only) into {out}")
 
 
 def main() -> None:

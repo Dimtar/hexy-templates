@@ -6,6 +6,8 @@
 - An app whose questions.yaml changed is regenerated if its script is still
   machine-managed (`managed: generated`), or flagged for a human otherwise.
 - An app that disappeared upstream is flagged, never deleted.
+- An app HexOS curates that isn't in TrueNAS at all gets a "HexOS only" card
+  in hexos-only/, which points people to HexOS's own version.
 
 Version-only bumps upstream (new container image, same settings) are ignored:
 they don't change what an install script has to say, and recording them would
@@ -34,10 +36,11 @@ import truenas
 ROOT = truenas.ROOT
 APPS = ROOT / "apps"
 UPDATES = ROOT / "updates"
+HEXOS_ONLY = ROOT / "hexos-only"
 
 # Report sections that visitors see on the Updates page. "review" is left out:
 # it only tells the maintainer a hand-written script needs a look.
-PUBLIC_SECTIONS = ("new", "regenerated", "removed", "curated", "uncurated")
+PUBLIC_SECTIONS = ("new", "regenerated", "removed", "curated", "uncurated", "hexos_only", "hexos_only_removed")
 
 
 def script_text(script: dict) -> str:
@@ -158,6 +161,31 @@ def sync_curated(curated: set[str]) -> dict[str, list[str]]:
     return report
 
 
+def sync_hexos_only(curated: set[str], upstream: dict[str, truenas.UpstreamApp]) -> dict[str, list[str]]:
+    """Keep one hexos-only/<app>.yaml card per curated app that TrueNAS doesn't have.
+
+    A card is deleted when HexOS drops the app, or when TrueNAS adds it (it then
+    becomes a normal app with a generated script and the Curated tag).
+    """
+    report: dict[str, list[str]] = {"hexos_only": [], "hexos_only_removed": []}
+    in_truenas = set(upstream) | {app.name for app in upstream.values()}
+    wanted = curated - in_truenas
+    HEXOS_ONLY.mkdir(exist_ok=True)
+    for slug in sorted(wanted):
+        path = HEXOS_ONLY / f"{slug}.yaml"
+        if path.exists():
+            continue
+        # The description is left for the maintainer to write in their own words.
+        path.write_text(yaml.safe_dump({**hexos.metadata(slug), "description": ""}, sort_keys=False, allow_unicode=True))
+        report["hexos_only"].append(slug)
+    for path in sorted(HEXOS_ONLY.glob("*.yaml")):
+        if path.stem not in wanted:
+            path.unlink()
+            if path.stem not in in_truenas:
+                report["hexos_only_removed"].append(path.stem)
+    return report
+
+
 def render_report(report: dict[str, list[str]], commit: str) -> str:
     out = [
         "Automated check against the [TrueNAS apps catalogue]"
@@ -171,6 +199,8 @@ def render_report(report: dict[str, list[str]], commit: str) -> str:
         ("removed", "🗑️ Removed from the TrueNAS catalogue", "Flagged with `removed_upstream: true`. Delete the folder if it should go."),
         ("curated", "⭐ Now curated by HexOS", "HexOS added an official script for these apps, so they're now tagged Curated."),
         ("uncurated", "Curated tag removed", "These apps are no longer in HexOS's official catalogue."),
+        ("hexos_only", "📦 HexOS-only apps added", "HexOS curates these but TrueNAS doesn't have them, so each gets a card that points to HexOS. Write a one-line `description` in `hexos-only/<app>.yaml`."),
+        ("hexos_only_removed", "HexOS-only apps removed", "HexOS no longer offers these, so their cards were deleted."),
     ]
     for key, title, hint in sections:
         items = report[key]
@@ -215,8 +245,11 @@ def main() -> None:
 
     path = truenas.CACHE if args.no_fetch else truenas.fetch()
     commit = truenas.commit(path)
-    report = sync(truenas.load(path), commit)
-    report.update(sync_curated(hexos.curated()))
+    upstream = truenas.load(path)
+    curated = hexos.curated()
+    report = sync(upstream, commit)
+    report.update(sync_curated(curated))
+    report.update(sync_hexos_only(curated, upstream))
     changed = any(report.values())
     write_update(report)
 

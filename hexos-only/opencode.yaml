@@ -1,0 +1,6 @@
+title: OpenCode
+icon: https://raw.githubusercontent.com/eshtek/hexos-app-catalog/prod/opencode/icon.svg
+categories:
+- productivity
+home: https://opencode.ai
+description: An AI coding assistant that runs on your own local AI models.

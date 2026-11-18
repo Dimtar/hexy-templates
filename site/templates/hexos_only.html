@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}{{ app.title }} on HexOS · Hexy Templates{% endblock %}
+{% block description %}{{ app.title }} is a curated HexOS app that isn't in the TrueNAS catalogue.{% endblock %}
+{% block main %}
+{% set m = app.meta %}
+<div class="wrap app-page">
+  <nav class="crumbs"><a href="{{ base }}">App library</a> <span aria-hidden="true">›</span> {{ app.title }}</nav>
+
+  <header class="app-head">
+    <img class="app-icon app-icon-lg" src="{{ m.icon }}" alt="" width="72" height="72" onerror="this.style.visibility='hidden'">
+    <div>
+      <h1>{{ app.title }}</h1>
+      <p class="lede">{{ m.description }}</p>
+      <div class="meta-row">
+        <span class="badge badge-curated" title="HexOS has its own official install script for this app">★ Curated by HexOS</span>
+        <span class="badge badge-hexos-only" title="{{ app.status_help }}">{{ app.status_label }}</span>
+        {% for c in m.categories %}<span class="tag">{{ c }}</span>{% endfor %}
+      </div>
+      <div class="link-row">
+        {% if m.home %}<a href="{{ m.home }}">Project website</a>{% endif %}
+        <a href="{{ app.official_url }}">HexOS's official script</a>
+      </div>
+    </div>
+  </header>
+
+  <aside class="notice notice-curated">
+    <strong>Only available from HexOS:</strong> HexOS packages this app itself and it isn't in the TrueNAS catalogue,
+    so there's no custom install script for it here. You don't need one — install it straight from HexOS.
+  </aside>
+
+  <ol class="quick-steps">
+    <li><span>1</span><div>In HexOS, open <b>Apps</b></div></li>
+    <li><span>2</span><div>Search for <b>{{ app.title }}</b></div></li>
+    <li><span>3</span><div>Press <b>Install</b> and follow HexOS's prompts</div></li>
+  </ol>
+</div>
+{% endblock %}

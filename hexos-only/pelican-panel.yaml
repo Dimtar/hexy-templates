@@ -1,0 +1,6 @@
+title: Pelican Panel
+icon: https://raw.githubusercontent.com/eshtek/hexos-app-catalog/prod/pelican/icon.svg
+categories:
+- games
+home: https://pelican.dev/
+description: A web panel for creating and managing game servers from ready-made templates.

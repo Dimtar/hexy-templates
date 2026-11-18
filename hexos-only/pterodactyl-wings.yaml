@@ -1,0 +1,7 @@
+title: Pterodactyl Wings
+icon: https://raw.githubusercontent.com/eshtek/hexos-app-catalog/prod/pterodactyl/icon.svg
+categories:
+- games
+home: https://pterodactyl.io/
+description: Runs the game servers you create in Pterodactyl Panel. Install it alongside
+  Pterodactyl Panel.

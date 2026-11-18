@@ -56,4 +56,5 @@ jobs:
           assignees: ${{ github.repository_owner }}
           add-paths: |
             apps/**
+            hexos-only/**
             updates/**

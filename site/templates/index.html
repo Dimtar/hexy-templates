@@ -3,7 +3,7 @@
 <section class="hero">
   <div class="wrap">
     <h1>Install any TrueNAS app on HexOS</h1>
-    <p class="lede">{{ apps|length }} ready-made custom install scripts — one for every app in the TrueNAS catalogue — with every line explained in plain English.</p>
+    <p class="lede">{{ scripted }} ready-made custom install scripts — one for every app in the TrueNAS catalogue — with every line explained in plain English.</p>
     <div class="search">
       <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M10 2a8 8 0 0 1 6.32 12.9l5.39 5.4-1.42 1.4-5.39-5.38A8 8 0 1 1 10 2Zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/></svg>
       <input id="q" type="search" placeholder="Search apps — try “photos”, “jellyfin” or “budget”" autocomplete="off" aria-label="Search apps" autofocus>
@@ -28,6 +28,7 @@
         <button class="seg seg-tested" data-status="tested" aria-pressed="false">✓ Tested <span>{{ counts["tested"] }}</span></button>
         {% if counts["needs-retest"] %}<button class="seg" data-status="needs-retest" aria-pressed="false">Needs re-test <span>{{ counts["needs-retest"] }}</span></button>{% endif %}
         <button class="seg" data-status="draft" aria-pressed="false">Not yet tested <span>{{ counts["draft"] }}</span></button>
+        {% if counts["hexos-only"] %}<button class="seg" data-status="hexos-only" aria-pressed="false">HexOS only <span>{{ counts["hexos-only"] }}</span></button>{% endif %}
       </div>
       <button class="curated-toggle" id="curated" aria-pressed="false">
         <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="m12 2 2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 16.9l-6.1 3.5 1.5-6.8L2.2 9l6.9-.7Z"/></svg>
@@ -57,7 +58,7 @@
   </ul>
   <div id="empty" class="empty" hidden>
     <p>No apps match that search.</p>
-    <p>Can't find it? The app may not be in the TrueNAS catalogue yet — <a href="{{ repo }}/issues/new">request it on GitHub</a>.</p>
+    <p>Can't find it? The app may not be in the TrueNAS or HexOS catalogues yet — <a href="{{ repo }}/issues/new">request it on GitHub</a>.</p>
   </div>
 </section>
 {% endblock %}

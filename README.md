@@ -6,6 +6,7 @@ The site has three parts:
 
 - **App library** (`/`): search and filter all apps.
 - **App pages** (`/apps/<app>/`): the install script on the left. On the right are numbered boxes that explain each part of the script. Hovering a box highlights the lines it covers.
+- **HexOS-only apps**: apps HexOS curates that aren't in the TrueNAS catalogue (mostly game servers). They get a card and a short page that sends people to HexOS, but no script.
 - **Install guide** (`/guide/`): step-by-step instructions with screenshots.
 - **Updates** (`/updates/`): a plain-language list of new and changed apps, built from merged sync pull requests.
 - **FAQ** (`/faq/`): common questions, edited in `site/faq.yaml`.
@@ -20,6 +21,7 @@ site/static/             CSS, JS, icon
 site/guide/steps.yaml    guide text; screenshots go in site/guide/img/
 site/faq.yaml            FAQ page questions and answers
 updates/<date>.yaml      one file per merged sync; drives the Updates page
+hexos-only/<app>.yaml    HexOS-only app cards: title, icon, categories, link, your own description
 tools/generate.py        drafts a script from a TrueNAS app's questions.yaml
 tools/explain.py         turns a script into the plain-language boxes
 tools/sync.py            compares apps/ with upstream TrueNAS
@@ -63,6 +65,7 @@ notes:
 - **Changed apps** (when their `questions.yaml` changed) are regenerated if `managed: generated`, or flagged if `managed: manual`.
 - **Curated apps**: the `curated` tag follows HexOS's official catalogue, and any change shows up in the same pull request.
 - **Removed apps** are flagged with `removed_upstream: true` and are never deleted automatically.
+- **HexOS-only apps**: a curated app that TrueNAS doesn't have gets `hexos-only/<app>.yaml`. Only its name, icon link, categories and website are taken from HexOS (its catalogue has no licence), so write a one-line `description` yourself in the pull request. Until you do, the card says it's a curated HexOS app. The card is deleted if HexOS drops the app or TrueNAS adds it.
 
 Each sync pull request also adds `updates/<date>.yaml`, so the Updates page only shows changes once you merge. You can edit or delete that file in the pull request to change what visitors see.
 

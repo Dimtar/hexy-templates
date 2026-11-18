@@ -11,3 +11,16 @@ regenerated:
 curated:
 - adguard-home
 - pihole
+hexos_only:
+- ark-survival-evolved
+- bindarr
+- kodi
+- opencode
+- pelican-panel
+- pelican-wings
+- project-zomboid
+- pterodactyl-wings
+- rust
+- stardew-valley
+- the-lounge
+- valheim
