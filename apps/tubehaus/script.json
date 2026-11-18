@@ -1,14 +1,14 @@
 {
   "version": 5,
   "script": {
-    "version": "0.1.0",
-    "changeLog": "Auto-generated draft from TrueNAS tubehaus 1.0.0"
+    "version": "0.1.1",
+    "changeLog": "Regenerated for TrueNAS tubehaus 1.0.4"
   },
   "requirements": {
     "locations": ["ApplicationsPerformance", "Media"],
     "specifications": ["2CORE"],
     "permissions": ["READ_WRITE_LOCATIONS"],
-    "ports": [30589]
+    "ports": [30596]
   },
   "ensure_directories_exists": [
     {"path": "$LOCATION(ApplicationsPerformance)"},
@@ -28,7 +28,7 @@
       ]
     },
     "network": {
-      "web_port": {"bind_mode": "published", "port_number": 30589}
+      "web_port": {"bind_mode": "published", "port_number": 30596}
     },
     "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
   }

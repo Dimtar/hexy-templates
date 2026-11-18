@@ -1,0 +1,31 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS spoolman 1.0.0"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30590]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/spoolman"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/spoolman/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/spoolman/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30590}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

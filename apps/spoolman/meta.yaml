@@ -1,0 +1,26 @@
+title: Spoolman
+description: Spoolman is a self-hosted web application for managing 3D printing filament spools and inventory.
+icon: https://media.sys.truenas.net/apps/spoolman/icons/icon.png
+categories:
+- productivity
+keywords:
+- 3d-printing
+- filament
+- spool
+- inventory
+home: https://github.com/Donkie/Spoolman
+screenshots:
+- https://media.sys.truenas.net/apps/spoolman/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/spoolman/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/spoolman/screenshots/screenshot3.png
+train: community
+truenas_name: spoolman
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.27.1
+  questions_sha: af10f84890e6b08b984768c3cf5610adfe8be04bfa175310dc6856349892fb92
+  commit: de4ea4f14311b64494dc28debd7cc0b44c337df3
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/spoolman
+notes: []

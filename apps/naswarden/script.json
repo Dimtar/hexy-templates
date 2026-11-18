@@ -1,0 +1,27 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS naswarden 1.0.0"
+  },
+  "installation_questions": [
+    {
+      "question": "Truenas api key",
+      "type": "password",
+      "key": "truenas_api_key",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": [],
+    "specifications": ["2CORE"],
+    "ports": [30597]
+  },
+  "app_values": {
+    "naswarden": {"truenas_api_key": "$QUESTION(truenas_api_key)"},
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30597}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}
