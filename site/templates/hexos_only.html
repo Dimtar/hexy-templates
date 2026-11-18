@@ -25,7 +25,7 @@
 
   <aside class="notice notice-curated">
     <strong>Only available from HexOS:</strong> HexOS packages this app itself and it isn't in the TrueNAS catalogue,
-    so there's no custom install script for it here. You don't need one — install it straight from HexOS.
+    so Hexy Templates doesn't have a custom script for it. You don't need one — install it straight from HexOS.
   </aside>
 
   <ol class="quick-steps">
@@ -33,5 +33,13 @@
     <li><span>2</span><div>Search for <b>{{ app.title }}</b></div></li>
     <li><span>3</span><div>Press <b>Install</b> and follow HexOS's prompts</div></li>
   </ol>
+
+  {% if app.lines %}
+  <h2 class="official-title">HexOS's install script, explained</h2>
+  <p class="muted official-hint">This is the script HexOS uses when you press Install, shown here so you can see what it sets up.
+    It's HexOS's work, loaded from <a href="{{ app.official_url }}">their app catalogue</a> each time this site is rebuilt.</p>
+  {% include "_explainer.html" %}
+  {% endif %}
 </div>
 {% endblock %}
+{% block scripts %}{% if app.lines %}<script src="{{ base }}static/app.js?v={{ v }}"></script>{% endif %}{% endblock %}

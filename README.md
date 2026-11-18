@@ -6,7 +6,7 @@ The site has three parts:
 
 - **App library** (`/`): search and filter all apps.
 - **App pages** (`/apps/<app>/`): the install script on the left. On the right are numbered boxes that explain each part of the script. Hovering a box highlights the lines it covers.
-- **HexOS-only apps**: apps HexOS curates that aren't in the TrueNAS catalogue (mostly game servers). They get a card and a short page that sends people to HexOS, but no script.
+- **HexOS-only apps**: apps HexOS curates that aren't in the TrueNAS catalogue (mostly game servers). They get a card and a page that sends people to HexOS and explains HexOS's own script. That script is fetched when the site is built (and the site rebuilds daily), never stored in this repo.
 - **Install guide** (`/guide/`): step-by-step instructions with screenshots.
 - **Updates** (`/updates/`): a plain-language list of new and changed apps, built from merged sync pull requests.
 - **FAQ** (`/faq/`): common questions, edited in `site/faq.yaml`.

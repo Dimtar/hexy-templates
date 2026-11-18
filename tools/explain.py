@@ -149,6 +149,7 @@ def friendly_path(raw: str) -> str:
         return LOCATIONS.get(m.group(1), (m.group(1),))[0]
 
     text = re.sub(r"\$LOCATION\(([^)]+)\)", sub, raw)
+    text = re.sub(r"\$INSTANCE\(([^)]+)\)", r"\1", text)
     return " › ".join(part for part in text.split("/") if part)
 
 
@@ -184,6 +185,19 @@ def describe_memory(value) -> str:
     return str(value)
 
 
+def describe_cpus(value) -> str:
+    m = re.fullmatch(r"\$CPUS\(\s*(\d+)%\s*,\s*(\d+)\s*\)", str(value))
+    if m:
+        pct, cap = m.groups()
+        return f"{pct}% of your server's processor, but never more than {cap} cores"
+    return f"{value} CPU core{'s' if value != 1 else ''}"
+
+
+def describe_port(value) -> str:
+    m = re.fullmatch(r"\$PORT\((\d+)\)", str(value))
+    return m.group(1) if m else str(value)
+
+
 def _join(items: list[str]) -> str:
     return items[0] if len(items) == 1 else ", ".join(items[:-1]) + " and " + items[-1]
 
@@ -197,6 +211,11 @@ def boxes_for(script: dict, slug: str, title: str) -> list[Box]:
 
     add(("version",), "Script format",
         f"Tells HexOS this is a version {script.get('version')} install script, so it knows how to read the rest.")
+
+    listing = script.get("metadata") or {}
+    if listing:
+        add(("metadata",), "How it appears in HexOS",
+            f"The name, description, icon and screenshots HexOS shows for {listing.get('name', title)} in its app list.")
 
     meta = script.get("script") or {}
     if meta:
@@ -229,6 +248,14 @@ def boxes_for(script: dict, slug: str, title: str) -> list[Box]:
         add(("requirements", "ports"), "Network ports",
             f"The app needs port{'s' if len(ports) > 1 else ''} {_join(ports)} to be free on your server. "
             "A port is like an apartment number for your server's address.", tone="network")
+    if req.get("game_port"):
+        add(("requirements", "game_port"), f"Game port: {req['game_port']}",
+            f"Players connect to your server's address on port {req['game_port']}. "
+            "HexOS shows this address on the app's card so you can share it.", tone="network")
+    if req.get("instances") == "many":
+        add(("requirements", "instances"), "You can install more than one copy",
+            "Each copy gets its own folders and its own ports. Wherever the script says $INSTANCE(...), "
+            "HexOS fills in that copy's name, and $PORT(...) becomes the next free port.")
 
     dirs = script.get("ensure_directories_exists") or []
     if dirs:
@@ -244,14 +271,89 @@ def boxes_for(script: dict, slug: str, title: str) -> list[Box]:
         add(("ensure_directories_exists",), "Folders created on install", body, tone="storage")
 
     values = script.get("app_values") or {}
+    image = values.get("image") or {}
+    if image.get("repository"):
+        tag = str(image.get("tag", "")).split("@")[0]
+        add(("app_values", "image"), "The app itself",
+            f"Downloads and runs the {image['repository']} container{f', version {tag}' if tag else ''}. "
+            "The long code after the version pins the exact build, so every install gets the same one.")
+    if values.get("restart_policy") == "unless-stopped":
+        add(("app_values", "restart_policy"), "Restarts on its own",
+            "If the app crashes or your server reboots, it starts again by itself, unless you stopped it.")
+    envs = values.get("envs") or []
+    if isinstance(envs, list) and envs:
+        asked = [e["name"] for e in envs if "$QUESTION" in str(e.get("value"))]
+        fixed = [e["name"] for e in envs if "$QUESTION" not in str(e.get("value"))]
+        body = "Settings handed to the app when it starts."
+        if asked:
+            body += f" From your answers: {_join(asked)}."
+        if fixed:
+            body += f" Set by the script: {_join(fixed)}."
+        add(("app_values", "envs"), "App settings", body, tone="warning" if asked else "info")
+    ports = values.get("ports") or []
+    if isinstance(ports, list):
+        for i, p in enumerate(ports):
+            if isinstance(p, dict) and "port_number" in p:
+                port, proto = describe_port(p["port_number"]), str(p.get("protocol", "tcp")).upper()
+                add(("app_values", "ports", i), f"Port {port} ({proto})",
+                    f"Opens port {port} for {proto} traffic so it can be reached from your network.", tone="network")
+    if isinstance(values.get("storage"), list):
+        for i, item in enumerate(values["storage"]):
+            host = (item.get("host_path_config") or {}).get("path") if isinstance(item, dict) else None
+            if host:
+                add(("app_values", "storage", i), f"Folder: {host.rstrip('/').split('/')[-1]}",
+                    f"Saves files to {friendly_path(host)} on your server, which the app sees as {item.get('mount_path')}.",
+                    tone="storage")
+
+    for key in ("portals", "x-portals"):
+        for i, p in enumerate(values.get(key) or []):
+            if isinstance(p, dict) and p.get("port"):
+                name = p.get("name", "Web UI")
+                add(("app_values", key, i), f"Card link: {name}",
+                    f"Adds a link called “{name}” to the app's card in HexOS. It opens port {describe_port(p['port'])} "
+                    "in your browser.", tone="network")
+
+    # Some apps are described as several containers working together, compose-style.
+    services = values.get("services") or {}
+    for name, svc in services.items():
+        if not isinstance(svc, dict):
+            continue
+        image = str(svc.get("image", "")).split("@")[0]
+        env = svc.get("environment") or {}
+        env_items = list(env.items()) if isinstance(env, dict) else []
+        asked = [k for k, v in env_items if "$QUESTION" in str(v)]
+        secret = [k for k, v in env_items if str(v).startswith("$RANDOM_STRING")]
+        ports = [f"{describe_port(p.get('published'))}{' (UDP)' if p.get('protocol') == 'udp' else ''}"
+                 for p in svc.get("ports") or [] if isinstance(p, dict) and p.get("published")]
+        folders = [friendly_path(str(v).split(":")[0]) for v in svc.get("volumes") or [] if "$LOCATION" in str(v)]
+        limits = ((svc.get("deploy") or {}).get("resources") or {}).get("limits") or {}
+        body = f"Runs the {image} container." if image else "One of the containers that make up the app."
+        if asked:
+            body += f" It uses your answers for {_join(asked)}."
+        if secret:
+            body += f" HexOS makes up a random {_join(secret)} for it."
+        if ports:
+            body += f" It opens port{'s' if len(ports) > 1 else ''} {_join(ports)}."
+        if folders:
+            body += f" It saves files to {_join(folders)}."
+        if limits:
+            parts = [describe_cpus(limits["cpus"])] if "cpus" in limits else []
+            parts += [describe_memory(limits["memory"])] if "memory" in limits else []
+            body += f" It can use at most {_join(parts)}."
+        if svc.get("depends_on"):
+            body += f" It starts after {_join(list(svc['depends_on']))}."
+        add(("app_values", "services", name), f"Part of the app: {name}", body,
+            tone="warning" if asked else "info")
+
     for group, answers in values.items():
-        if group in ("storage", "network", "resources", "run_as"):
+        if group in ("storage", "network", "resources", "run_as", "image", "envs", "ports",
+                     "portals", "x-portals", "services"):
             continue
         if isinstance(answers, dict):
             for key, value in answers.items():
                 boxes.extend(_setting_boxes((group, key), key, value, title))
 
-    storage = values.get("storage") or {}
+    storage = values.get("storage") if isinstance(values.get("storage"), dict) else {}
     for key, value in storage.items():
         if key == "additional_storage" and isinstance(value, list):
             mounts = []
@@ -294,7 +396,7 @@ def boxes_for(script: dict, slug: str, title: str) -> list[Box]:
     if limits:
         parts = []
         if "cpus" in limits:
-            parts.append(f"{limits['cpus']} CPU core{'s' if limits['cpus'] != 1 else ''}")
+            parts.append(describe_cpus(limits["cpus"]))
         if "memory" in limits:
             parts.append(describe_memory(limits["memory"]))
         add(("app_values", "resources", "limits"), "Resource limits",
@@ -306,10 +408,22 @@ def boxes_for(script: dict, slug: str, title: str) -> list[Box]:
             "(useful for video conversion or AI features).")
 
     hooks = script.get("hooks") or []
-    if hooks:
+    buttons = [h for h in hooks if "userAction" in (h.get("events") or [])]
+    if buttons:
+        for i, h in enumerate(hooks):
+            if h in buttons:
+                add(("hooks", i), f"Card button: {h.get('title', h.get('id'))}",
+                    f"Adds a “{h.get('title', h.get('id'))}” button to the app's card in HexOS. {h.get('description', '')}".strip())
+    automatic = [h for h in hooks if h not in buttons]
+    if automatic:
         add(("hooks",), "Automatic setup steps",
             "After installing, HexOS runs extra setup steps for you: "
-            + _join([h.get("description") or h.get("title") or h.get("id", "setup") for h in hooks]) + ".")
+            + _join([h.get("description") or h.get("title") or h.get("id", "setup") for h in automatic]) + ".")
+
+    for i, w in enumerate(script.get("widgets") or []):
+        every = f" It refreshes every {w['refresh']} seconds." if w.get("refresh") else ""
+        add(("widgets", i), f"Card widget: {w.get('title', w.get('id'))}",
+            f"Shows live information on the app's card in HexOS. {w.get('description', '')}{every}".strip())
 
     return boxes
 

@@ -47,6 +47,10 @@ def metadata(slug: str) -> dict:
     }
 
 
+def official_script(slug: str) -> dict:
+    return _get(f"{RAW}/{slug}.json")
+
+
 def curated() -> set[str]:
     entries = _get(f"https://api.github.com/repos/{REPO}/contents?ref={BRANCH}")
     return {

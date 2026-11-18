@@ -3,6 +3,9 @@ name: Deploy site
 on:
   push:
     branches: [main]
+  # Daily rebuild so HexOS-only pages pick up changes to HexOS's own scripts.
+  schedule:
+    - cron: "30 8 * * *"
   workflow_dispatch:
 
 permissions:

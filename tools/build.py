@@ -77,6 +77,21 @@ def highlight(text: str) -> Markup:
     return Markup("".join(out))
 
 
+def explained(script: dict, slug: str, title: str, notes: list | None = None) -> dict:
+    """The highlighted, line-numbered script and its explanation boxes, for app pages."""
+    lines, boxes = explain.explain(script, slug, title, notes)
+    markers: dict[int, list[int]] = {}
+    for b in boxes:
+        markers.setdefault(b.start, []).append(b.number)
+    return {
+        "lines": [
+            {"n": i, "html": highlight(line.text), "markers": markers.get(i, [])}
+            for i, line in enumerate(lines, 1)
+        ],
+        "boxes": boxes,
+    }
+
+
 def load_apps() -> list[dict]:
     apps = []
     for folder in sorted(p for p in APPS.iterdir() if p.is_dir()):
@@ -84,10 +99,6 @@ def load_apps() -> list[dict]:
         script_text = (folder / "script.json").read_text()
         script = json.loads(script_text)
         title = meta.get("title", folder.name)
-        lines, boxes = explain.explain(script, folder.name, title, meta.get("notes"))
-        markers: dict[int, list[int]] = {}
-        for b in boxes:
-            markers.setdefault(b.start, []).append(b.number)
         status = meta.get("status", "draft")
         apps.append({
             "slug": folder.name,
@@ -99,11 +110,7 @@ def load_apps() -> list[dict]:
             "status_label": STATUS.get(status, STATUS["draft"])[0],
             "status_help": STATUS.get(status, STATUS["draft"])[1],
             "script_text": script_text,
-            "lines": [
-                {"n": i, "html": highlight(line.text), "markers": markers.get(i, [])}
-                for i, line in enumerate(lines, 1)
-            ],
-            "boxes": boxes,
+            **explained(script, folder.name, title, meta.get("notes")),
             "search": " ".join([
                 title, folder.name, meta.get("description", ""),
                 *meta.get("categories", []), *meta.get("keywords", []),
@@ -113,12 +120,21 @@ def load_apps() -> list[dict]:
 
 
 def load_hexos_only() -> list[dict]:
-    """Cards for apps HexOS curates that TrueNAS doesn't have. They have no script."""
+    """Cards for apps HexOS curates that TrueNAS doesn't have.
+
+    Their pages explain HexOS's own script, fetched fresh at build time rather
+    than kept in this repo. If GitHub can't be reached, the page goes without.
+    """
     apps = []
     for f in sorted(HEXOS_ONLY.glob("*.yaml")) if HEXOS_ONLY.exists() else []:
         meta = yaml.safe_load(f.read_text()) or {}
         meta["description"] = meta.get("description") or "A curated app you can install straight from HexOS."
         title = meta.get("title", f.stem)
+        try:
+            script = hexos.official_script(f.stem)
+        except (OSError, ValueError) as e:
+            print(f"warning: no HexOS script for {f.stem}: {e}")
+            script = None
         apps.append({
             "slug": f.stem,
             "meta": meta,
@@ -130,6 +146,8 @@ def load_hexos_only() -> list[dict]:
             "status_label": STATUS["hexos-only"][0],
             "status_help": STATUS["hexos-only"][1],
             "search": " ".join([title, f.stem, meta["description"], "hexos only", *meta.get("categories", [])]).lower(),
+            **({"script_text": "\n".join(line.text for line in explain.render(script)) + "\n", **explained(script, f.stem, title)}
+               if script else {}),
         })
     return apps
 

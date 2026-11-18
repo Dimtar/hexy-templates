@@ -260,6 +260,8 @@ img { max-width: 100%; }
 .t-macro { color: var(--t-macro); font-weight: 600; }
 
 .boxes-title { font-size: 1.15rem; }
+.official-title { font-size: 1.3rem; margin-top: 8px; }
+.official-hint { margin: 4px 0 16px; max-width: 70ch; }
 .boxes-hint { margin: 4px 0 14px; font-size: 0.875rem; }
 .boxes { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
 .box {

@@ -50,40 +50,7 @@
     <li><span>3</span><div>Paste, then press <b>Install</b> — <a href="{{ base }}guide/">full guide with screenshots</a></div></li>
   </ol>
 
-  <div class="explainer" id="explainer">
-    <section class="code-col" aria-label="Install script">
-      <div class="code-card">
-        <div class="code-bar">
-          <span class="code-title">{{ app.slug }}.json</span>
-          <div class="code-actions">
-            <a class="btn btn-ghost" href="{{ base }}apps/{{ app.slug }}/{{ app.slug }}.json" download>Download</a>
-            <button class="btn btn-primary" type="button" id="copy">Copy script</button>
-          </div>
-        </div>
-        <pre class="code" id="code"><code>{% for l in app.lines %}<span class="ln" id="L{{ l.n }}" data-line="{{ l.n }}"><span class="gutter">{% for n in l.markers %}<a class="marker" href="#box-{{ n }}" data-box="{{ n }}" aria-label="Explanation {{ n }}">{{ n }}</a>{% endfor %}<span class="num">{{ l.n }}</span></span><span class="src">{{ l.html }}</span>
-</span>{% endfor %}</code></pre>
-        <textarea id="raw" hidden>{{ app.script_text }}</textarea>
-      </div>
-    </section>
-
-    <section class="boxes-col" aria-label="What each part of the script does">
-      <h2 class="boxes-title">What this script does</h2>
-      <p class="muted boxes-hint">Hover or tap a box to see the lines it explains.</p>
-      <ol class="boxes">
-        {% for b in app.boxes %}
-        <li class="box box-{{ b.tone }}" id="box-{{ b.number }}" data-box="{{ b.number }}" data-start="{{ b.start }}" data-end="{{ b.end }}" tabindex="0">
-          <span class="box-num" aria-hidden="true">{{ b.number }}</span>
-          <div>
-            <h3>{{ b.title }}</h3>
-            <p>{{ b.body }}</p>
-            <p class="box-lines">Line{% if b.end != b.start %}s {{ b.start }}–{{ b.end }}{% else %} {{ b.start }}{% endif %}</p>
-          </div>
-        </li>
-        {% endfor %}
-      </ol>
-    </section>
-    <svg class="connector" id="connector" aria-hidden="true"><path /></svg>
-  </div>
+  {% include "_explainer.html" %}
 </div>
 {% endblock %}
 {% block scripts %}<script src="{{ base }}static/app.js?v={{ v }}"></script>{% endblock %}
