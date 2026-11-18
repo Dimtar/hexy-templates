@@ -1,0 +1,29 @@
+title: KTN Enclosure Manager
+description: Physical drive-bay map, chassis telemetry and IDENT LED control for SES disk shelves attached
+  to TrueNAS SCALE.
+icon: https://media.sys.truenas.net/apps/ktn-enclosure-manager/icons/icon.svg
+categories:
+- monitoring
+keywords:
+- enclosure
+- ses
+- sas
+- jbod
+- disk-shelf
+- identify
+home: https://github.com/MechanicalCoderX/ktn-enclosure-manager
+screenshots:
+- https://media.sys.truenas.net/apps/ktn-enclosure-manager/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/ktn-enclosure-manager/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/ktn-enclosure-manager/screenshots/screenshot3.png
+train: community
+truenas_name: ktn-enclosure-manager
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.6.3
+  questions_sha: 3e8c2711bb232ee71b31c69f485bacfa3565b01d3cd827e483767ffb320eb1f9
+  commit: de4ea4f14311b64494dc28debd7cc0b44c337df3
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/ktn-enclosure-manager
+notes: []

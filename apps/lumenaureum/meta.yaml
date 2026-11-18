@@ -1,0 +1,25 @@
+title: Lumen Aureum
+description: Studio management for photographers, on a computer you own. Clients, sessions, galleries
+  and backups, all encrypted.
+icon: https://media.sys.truenas.net/apps/lumenaureum/icons/icon.png
+categories:
+- productivity
+keywords:
+- photography
+- studio
+- crm
+- gallery
+- clients
+home: https://lumenaureum.org
+screenshots: []
+train: community
+truenas_name: lumenaureum
+status: draft
+managed: generated
+upstream:
+  version: 1.0.2
+  app_version: 1.3.1
+  questions_sha: 5c4ea396c31abaf09a72cf78d685c77fd974b1757bc05d5bdc564a1a20a9c34f
+  commit: de4ea4f14311b64494dc28debd7cc0b44c337df3
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/lumenaureum
+notes: []

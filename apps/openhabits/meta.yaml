@@ -1,0 +1,27 @@
+title: OpenHabits
+description: A self-hosted habit tracker built around Atomic Habits. Build habits or break them, start
+  small and grow them, and keep every device in sync with your own server. Apps for iPhone, iPad, Mac,
+  Windows and Linux.
+icon: https://media.sys.truenas.net/apps/openhabits/icons/icon.png
+categories:
+- productivity
+keywords:
+- habits
+- habit-tracker
+- atomic-habits
+- productivity
+home: https://github.com/Veggies/openhabits
+screenshots:
+- https://media.sys.truenas.net/apps/openhabits/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/openhabits/screenshots/screenshot2.png
+train: community
+truenas_name: openhabits
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.1.1
+  questions_sha: bbbd105848e7a71ff86624cfa058f7ebe726eb8268c61c459a23d2d85d70b992
+  commit: de4ea4f14311b64494dc28debd7cc0b44c337df3
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/openhabits
+notes: []

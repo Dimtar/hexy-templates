@@ -15,9 +15,9 @@ truenas_name: tubehaus
 status: draft
 managed: generated
 upstream:
-  version: 1.0.0
-  app_version: 1.6.0
-  questions_sha: 2dde78b7b0e26603640c0235423edfe18cae805f793c3fed9614e6ef4594e87f
-  commit: 272d040034bffdd6d2cab582f8b6b061b6032a25
+  version: 1.0.4
+  app_version: 1.6.3
+  questions_sha: 6a95c86a70978a3ccc2fc7baed70a02999488f281732974814a44f8fa0f32e0c
+  commit: de4ea4f14311b64494dc28debd7cc0b44c337df3
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/tubehaus
 notes: []
