@@ -1,0 +1,28 @@
+title: Plex Repairman
+description: A Discord assistant for diagnosing and repairing Plex, Sonarr and Radarr media issues, with
+  optional Seerr requests.
+icon: https://media.sys.truenas.net/apps/plex-repairman/icons/icon.png
+categories:
+- media
+keywords:
+- plex
+- sonarr
+- radarr
+- seerr
+- discord
+home: https://github.com/chrisstoll1/plex-repair-discord-bot
+screenshots:
+- https://media.sys.truenas.net/apps/plex-repairman/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/plex-repairman/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/plex-repairman/screenshots/screenshot3.png
+train: community
+truenas_name: plex-repairman
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.2.2
+  questions_sha: c61f0d0433d4ed8ea2c4d76355309bd136dcdffda1864989b4ca8b5fc5d6b976
+  commit: 4b8978b8ad1d7ffc46c78a4cf760fc32d172b037
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/plex-repairman
+notes: []

@@ -13,10 +13,10 @@ truenas_name: rust-desk
 status: draft
 managed: generated
 upstream:
-  version: 1.7.19
+  version: 1.7.25
   app_version: 1.1.16
-  questions_sha: e65d38bc060c7cfa79213710fbce858108e38a603875ca910e1b4e9894170edd
-  commit: c263f0eed0c9f2e4500122c9b8dbedbc80badca8
+  questions_sha: 2f6dcedbc93fb0ea31d38855b80bfeabe0e9b889dee4d25c500b8399d599c1b9
+  commit: 4b8978b8ad1d7ffc46c78a4cf760fc32d172b037
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/rust-desk
 notes: []
 curated: true

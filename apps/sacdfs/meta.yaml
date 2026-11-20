@@ -1,0 +1,24 @@
+title: sacdfs
+description: sacdfs serves SACD disc images (ISO files) as DSF and WAV files, over SMB and NFS, so music
+  servers and players can read them like ordinary albums
+icon: https://media.sys.truenas.net/apps/sacdfs/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- music
+- sacd
+- dsd
+home: https://github.com/aclater/sacdfs
+screenshots: []
+train: community
+truenas_name: sacdfs
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: 0.7.0
+  questions_sha: 252dfed91d9f6f1748449d776354667e7206a0cbac8a392617bb6c341de850dc
+  commit: 4b8978b8ad1d7ffc46c78a4cf760fc32d172b037
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/sacdfs
+notes: []

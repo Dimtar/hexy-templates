@@ -1,17 +1,9 @@
 {
   "version": 5,
   "script": {
-    "version": "0.1.0",
-    "changeLog": "Auto-generated draft from TrueNAS ultra-explorer 1.0.10"
+    "version": "0.1.1",
+    "changeLog": "Regenerated for TrueNAS ultra-explorer 1.0.24"
   },
-  "installation_questions": [
-    {
-      "question": "Admin password",
-      "type": "password",
-      "key": "admin_password",
-      "required": true
-    }
-  ],
   "requirements": {
     "locations": ["ApplicationsPerformance"],
     "specifications": ["2CORE"],
@@ -28,7 +20,6 @@
     }
   ],
   "app_values": {
-    "ultra_explorer": {"admin_password": "$QUESTION(admin_password)"},
     "storage": {
       "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/ultra-explorer/data)"
     },

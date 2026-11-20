@@ -15,14 +15,18 @@ screenshots:
 - https://media.sys.truenas.net/apps/ultra-explorer/screenshots/screenshot2.png
 - https://media.sys.truenas.net/apps/ultra-explorer/screenshots/screenshot3.png
 - https://media.sys.truenas.net/apps/ultra-explorer/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/ultra-explorer/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/ultra-explorer/screenshots/screenshot6.png
+- https://media.sys.truenas.net/apps/ultra-explorer/screenshots/screenshot7.png
+- https://media.sys.truenas.net/apps/ultra-explorer/screenshots/screenshot8.png
 train: community
 truenas_name: ultra-explorer
 status: draft
 managed: generated
 upstream:
-  version: 1.0.10
-  app_version: 1.2.2
-  questions_sha: 41d90fd1755a4acdfc78ada4a3c517745ee071730ede134cb4780aa8aa462e7d
-  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  version: 1.0.24
+  app_version: 1.5.0
+  questions_sha: cfd148d98af3420505ad69a102766dc76293bbe6f36948a76b7470a1e16af352
+  commit: 4b8978b8ad1d7ffc46c78a4cf760fc32d172b037
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/ultra-explorer
 notes: []
