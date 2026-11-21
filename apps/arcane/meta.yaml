@@ -14,9 +14,9 @@ truenas_name: arcane
 status: draft
 managed: generated
 upstream:
-  version: 1.0.110
-  app_version: v3.0.1
-  questions_sha: 3be68514664dc3274077529bfcae1d34f22fac1a82851a133c252f2fcae04928
-  commit: 272d040034bffdd6d2cab582f8b6b061b6032a25
+  version: 1.0.116
+  app_version: v3.1.1
+  questions_sha: 1d48e4d149df7348146b73ddf832bf3d9d5ea974010bfec182b02eaf2de28bb2
+  commit: 4b8978b8ad1d7ffc46c78a4cf760fc32d172b037
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/arcane
 notes: []

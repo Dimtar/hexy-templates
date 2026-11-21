@@ -1,0 +1,45 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS arcane-agent 1.0.1"
+  },
+  "installation_questions": [
+    {
+      "question": "Manager api url",
+      "type": "text",
+      "key": "manager_api_url",
+      "required": true
+    },
+    {
+      "question": "Agent token",
+      "type": "password",
+      "key": "agent_token",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/arcane-agent"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/arcane-agent/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "arcane_agent": {
+      "manager_api_url": "$QUESTION(manager_api_url)",
+      "agent_token": "$QUESTION(agent_token)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/arcane-agent/data)"
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

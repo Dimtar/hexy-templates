@@ -1,0 +1,28 @@
+title: NeoGuard
+description: 100% local multi-camera AI security, person tracking, face recognition, and 48-hour unknown
+  person logging for RTSP and ONVIF IP cameras.
+icon: https://media.sys.truenas.net/apps/neoguard/icons/icon.png
+categories:
+- security
+keywords:
+- camera
+- security
+- ai
+- face-recognition
+- rtsp
+- onvif
+- tapo
+- tracking
+home: https://github.com/Daddelgreis74/neoguard
+screenshots: []
+train: community
+truenas_name: neoguard
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.0.0
+  questions_sha: 73a3356566fe11a7f56991d4332c67565355379d4b82a7b1da1d0206e41c8646
+  commit: 4b8978b8ad1d7ffc46c78a4cf760fc32d172b037
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/neoguard
+notes: []

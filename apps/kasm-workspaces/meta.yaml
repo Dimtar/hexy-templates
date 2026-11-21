@@ -14,9 +14,9 @@ truenas_name: kasm-workspaces
 status: draft
 managed: generated
 upstream:
-  version: 1.1.10
+  version: 1.1.22
   app_version: 1.19.0
-  questions_sha: 1b00dd53293909fa0c08f629c23b1260b601ffbb2b416592a7cf9d9cc533967b
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  questions_sha: 1938e509e092d0e8eea2b614b9b1ec89e324e2388479ea91424a77e5c6520d50
+  commit: 4b8978b8ad1d7ffc46c78a4cf760fc32d172b037
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/kasm-workspaces
 notes: []

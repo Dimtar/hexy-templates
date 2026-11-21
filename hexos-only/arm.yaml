@@ -1,0 +1,6 @@
+title: Automatic Ripping Machine
+icon: https://raw.githubusercontent.com/eshtek/hexos-app-catalog/prod/arm/icon.png
+categories:
+- media
+home: https://github.com/automatic-ripping-machine/automatic-ripping-machine
+description: Copies DVDs, Blu-rays and music CDs automatically when you put one in a disc drive connected to your server.

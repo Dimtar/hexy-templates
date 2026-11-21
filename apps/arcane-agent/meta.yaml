@@ -1,0 +1,22 @@
+title: Arcane Agent
+description: Agent that connects this system's Docker to a remote Arcane manager
+icon: https://media.sys.truenas.net/apps/arcane-agent/icons/icon.svg
+categories:
+- management
+keywords:
+- docker
+- compose
+- agent
+home: https://getarcane.app/
+screenshots: []
+train: community
+truenas_name: arcane-agent
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: v3.1.1
+  questions_sha: 11aeeeab814224b0a6a79be190f0acd16c66afe9d051fa5756b60e883a44ecdb
+  commit: 4b8978b8ad1d7ffc46c78a4cf760fc32d172b037
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/arcane-agent
+notes: []
