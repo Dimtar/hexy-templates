@@ -1,0 +1,7 @@
+title: Automatic Ripping Machine
+icon: https://raw.githubusercontent.com/eshtek/hexos-app-catalog/prod/arm/icon.png
+categories:
+- media
+home: https://github.com/uprightbass360/automatic-ripping-machine-neu
+description: Copies DVDs and Blu-rays automatically when you put one in a disc drive
+  connected to your server, then hands them to Radarr and Sonarr.

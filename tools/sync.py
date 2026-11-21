@@ -259,7 +259,8 @@ def main() -> None:
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
             fh.write(f"changed={'true' if changed else 'false'}\n")
-            fh.write(f"summary={', '.join(f'{len(v)} {k}' for k, v in report.items() if v)}\n")
+            labels = {"hexos_only": "HexOS-only", "hexos_only_removed": "HexOS-only removed"}
+            fh.write(f"summary={', '.join(f'{len(v)} {labels.get(k, k)}' for k, v in report.items() if v)}\n")
 
 
 if __name__ == "__main__":
