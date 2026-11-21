@@ -3,9 +3,8 @@ name: Deploy site
 on:
   push:
     branches: [main]
-  # Daily rebuild so HexOS-only pages pick up changes to HexOS's own scripts.
-  schedule:
-    - cron: "30 8 * * *"
+  # Also started by the daily catalogue sync (sync-catalog.yml), which keeps
+  # HexOS-only pages in step with HexOS's own scripts.
   workflow_dispatch:
 
 permissions:

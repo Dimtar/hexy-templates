@@ -1,10 +1,16 @@
-# Daily check (around 6pm Sydney time) of the TrueNAS apps catalogue. New apps get draft scripts and
-# apps whose settings changed get regenerated or flagged; everything lands in a
-# single pull request on the `catalog-sync` branch for a human to review.
-# While that PR is open, later runs update it instead of opening another.
+# Daily check (around 6pm Sydney time) of the TrueNAS apps catalogue and of
+# which apps HexOS curates. New apps get draft scripts, apps whose settings
+# changed get regenerated or flagged, and the result is published straight away:
 #
-# Requires: Settings › Actions › General › "Allow GitHub Actions to create and
-# approve pull requests".
+# - If every script passes validation, the changes are committed to main and
+#   the site is redeployed. No pull request.
+# - If validation fails, the changes go to a pull request on `catalog-sync`
+#   instead, assigned to the maintainer, so nothing broken goes live.
+# - If something needs a person (a hand-written script to update, or a new
+#   HexOS-only app to describe), an issue is opened and assigned to them.
+#
+# The site is redeployed after every run, even with no changes, so HexOS-only
+# pages pick up changes to HexOS's own scripts.
 name: Sync TrueNAS catalogue
 
 on:
@@ -19,6 +25,8 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
+  actions: write
 
 concurrency:
   group: catalog-sync
@@ -27,6 +35,8 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -40,16 +50,28 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: python tools/sync.py --report "$RUNNER_TEMP/report.md"
       - name: Validate install scripts
+        id: validate
         if: steps.sync.outputs.changed == 'true'
+        continue-on-error: true
         run: python tools/validate.py
-      - name: Open or update pull request
-        if: steps.sync.outputs.changed == 'true'
+
+      - name: Publish changes
+        if: steps.sync.outputs.changed == 'true' && steps.validate.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add apps hexos-only updates
+          git commit -q -m "Sync with TrueNAS catalogue: ${{ steps.sync.outputs.summary }}" -m "$(cat "$RUNNER_TEMP/report.md")"
+          git push -q origin HEAD:main
+
+      - name: Hold changes for review (validation failed)
+        if: steps.sync.outputs.changed == 'true' && steps.validate.outcome == 'failure'
         uses: peter-evans/create-pull-request@v7
         with:
           branch: catalog-sync
           delete-branch: true
           commit-message: "Sync with TrueNAS catalogue: ${{ steps.sync.outputs.summary }}"
-          title: "TrueNAS catalogue update: ${{ steps.sync.outputs.summary }}"
+          title: "TrueNAS catalogue update needs a fix: ${{ steps.sync.outputs.summary }}"
           body-path: ${{ runner.temp }}/report.md
           labels: catalog-sync
           # Assigning the PR is what makes GitHub email the maintainer about it.
@@ -58,3 +80,15 @@ jobs:
             apps/**
             hexos-only/**
             updates/**
+
+      - name: Ask for help where a person is needed
+        if: steps.sync.outputs.attention == 'true' && steps.validate.outcome == 'success'
+        run: |
+          gh issue create \
+            --title "Catalogue sync needs you: $(date -u +%F)" \
+            --assignee "${{ github.repository_owner }}" \
+            --body-file "$RUNNER_TEMP/report.md"
+
+      - name: Redeploy the site
+        if: always()
+        run: gh workflow run deploy.yml --ref main

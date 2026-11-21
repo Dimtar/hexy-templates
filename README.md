@@ -59,19 +59,19 @@ notes:
 
 ## Catalogue updates
 
-`.github/workflows/sync-catalog.yml` runs once a day, scheduled for 6pm Sydney time (GitHub often starts it a few hours late), and you can also start it by hand from the Actions tab. It opens or updates a single pull request on the `catalog-sync` branch:
+`.github/workflows/sync-catalog.yml` runs once a day, scheduled for 6pm Sydney time (GitHub often starts it a few hours late), and you can also start it by hand from the Actions tab. It publishes what it finds straight to the site:
 
 - **New TrueNAS apps** get a draft script.
 - **Changed apps** (when their `questions.yaml` changed) are regenerated if `managed: generated`, or flagged if `managed: manual`.
 - **Curated apps**: the `curated` tag follows HexOS's official catalogue, and any change shows up in the same pull request.
 - **Removed apps** are flagged with `removed_upstream: true` and are never deleted automatically.
-- **HexOS-only apps**: a curated app that TrueNAS doesn't have gets `hexos-only/<app>.yaml`. Only its name, icon link, categories and website are taken from HexOS (its catalogue has no licence), so write a one-line `description` yourself in the pull request. Until you do, the card says it's a curated HexOS app. The card is deleted if HexOS drops the app or TrueNAS adds it.
+- **HexOS-only apps**: a curated app that TrueNAS doesn't have gets `hexos-only/<app>.yaml`. Only its name, icon link, categories and website are taken from HexOS (its catalogue has no licence), so the sync opens an issue asking you to write a one-line `description`. Until you do, the card says it's a curated HexOS app. The card is deleted if HexOS drops the app or TrueNAS adds it.
 
-Each sync pull request also adds `updates/<date>.yaml`, so the Updates page only shows changes once you merge. You can edit or delete that file in the pull request to change what visitors see.
+Each sync also adds `updates/<date>.yaml` for the Updates page. Edit or delete it on main to change what visitors see.
 
 Version-only bumps (a new container image with the same settings) are ignored on purpose.
 
-Nothing is merged automatically.
+If every script passes validation, the changes are committed to main and the site redeploys. If validation fails, nothing goes live: the changes go to a pull request on `catalog-sync`, assigned to you, to fix and merge. When something needs a person (a `manual` script to update, or a new HexOS-only app to describe), the sync opens an issue assigned to you. The site is redeployed after every sync.
 
 ## Credits
 

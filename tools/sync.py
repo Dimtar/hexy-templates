@@ -13,8 +13,8 @@ Version-only bumps upstream (new container image, same settings) are ignored:
 they don't change what an install script has to say, and recording them would
 open a pull request almost every day.
 
-Writes a Markdown summary for the pull request body and, under GitHub Actions,
-sets the `changed` step output.
+Writes a Markdown summary of the changes and, under GitHub Actions, sets the
+`changed`, `attention` and `summary` step outputs.
 """
 
 from __future__ import annotations
@@ -259,6 +259,8 @@ def main() -> None:
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
             fh.write(f"changed={'true' if changed else 'false'}\n")
+            # Things only a person can do: fix a hand-written script, or describe a new HexOS-only app.
+            fh.write(f"attention={'true' if report['review'] or report['hexos_only'] else 'false'}\n")
             labels = {"hexos_only": "HexOS-only", "hexos_only_removed": "HexOS-only removed"}
             fh.write(f"summary={', '.join(f'{len(v)} {labels.get(k, k)}' for k, v in report.items() if v)}\n")
 
