@@ -1,0 +1,25 @@
+title: Ablago
+description: Ablago - document filing for home and small businesses. Self-hosted, for contracts, insurance,
+  tax and all paperwork in folders, with full-text search (OCR), tasks, reminders and encrypted backups.
+icon: https://media.sys.truenas.net/apps/ablago/icons/icon.png
+categories:
+- productivity
+keywords:
+- documents
+- dms
+- ablago
+- paperless
+- household
+home: https://ablago.app
+screenshots: []
+train: community
+truenas_name: ablago
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.299.2
+  questions_sha: a22b83f5577301b270a4d57c8674b1f001d9abc97101389856b21326b5022342
+  commit: 149a224fafeebc369a21bed6239e73587778f392
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/ablago
+notes: []

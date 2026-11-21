@@ -1,0 +1,23 @@
+title: PingKit Agent
+description: PingKit Agent watches your own network and alerts PingKit on your iPhone when the internet
+  goes down, a new device joins or a device goes offline.
+icon: https://media.sys.truenas.net/apps/pingkit-agent/icons/icon.png
+categories:
+- networking
+keywords:
+- network
+- monitoring
+- iphone
+home: https://pingkit.app/agent/docker/
+screenshots: []
+train: community
+truenas_name: pingkit-agent
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.0.0
+  questions_sha: fdece31267a115f5d3645710c66cfa3385bf64b88ca0f8b5d12f675cfba205a8
+  commit: 149a224fafeebc369a21bed6239e73587778f392
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/pingkit-agent
+notes: []

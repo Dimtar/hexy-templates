@@ -4,7 +4,14 @@ new:
 - neoguard
 - plex-repairman
 - sacdfs
+- ablago
+- cellarion
+- kinora
+- pingkit-agent
+- prusa-connect
+- replayowl
 regenerated:
 - ultra-explorer
+- rowflare
 hexos_only:
 - ripping-machine

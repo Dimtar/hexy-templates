@@ -1,0 +1,23 @@
+title: Prusa Connect
+description: Monitor and control Prusa 3D printers from a browser, entirely on your own network.
+icon: https://media.sys.truenas.net/apps/prusa-connect/icons/icon.png
+categories:
+- monitoring
+keywords:
+- 3d-printing
+- prusa
+- printer
+- monitoring
+home: https://github.com/prusa3d/prusa-connect
+screenshots: []
+train: community
+truenas_name: prusa-connect
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.1.0-beta.1
+  questions_sha: cdfcf39838e69cb7dc473d45960ceea164a8083111b509017cd75612c12309bb
+  commit: 149a224fafeebc369a21bed6239e73587778f392
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/prusa-connect
+notes: []

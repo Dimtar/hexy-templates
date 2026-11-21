@@ -1,0 +1,24 @@
+title: Cellarion
+description: Cellarion is a self-hosted wine cellar manager. Track your bottles, lay them out in racks,
+  scan labels and get drink-window advice from a shared wine registry.
+icon: https://media.sys.truenas.net/apps/cellarion/icons/icon.svg
+categories:
+- productivity
+keywords:
+- wine
+- cellar
+- collection
+- inventory
+home: https://cellarion.app
+screenshots: []
+train: community
+truenas_name: cellarion
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.307.0
+  questions_sha: 94b92e905c1be625064493362f89bc4f513e2809d9cb3464d948032838b65d52
+  commit: 149a224fafeebc369a21bed6239e73587778f392
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/cellarion
+notes: []

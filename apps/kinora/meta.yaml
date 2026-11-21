@@ -1,0 +1,26 @@
+title: Kinora
+description: Kinora is a self-hosted media server for your movies and series, with a friendly web client,
+  profiles, watch parties and hardware-accelerated transcoding.
+icon: https://media.sys.truenas.net/apps/kinora/icons/icon.png
+categories:
+- media
+keywords:
+- entertainment
+- movies
+- series
+- tv
+- media
+- streaming
+home: https://github.com/ScotyLucas/kinora
+screenshots: []
+train: community
+truenas_name: kinora
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.0.15
+  questions_sha: 0829aefde005f38b8b05a58e3b0b7800ded6f52e4e9e547e8d5c53e59eaaa8e7
+  commit: 149a224fafeebc369a21bed6239e73587778f392
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/kinora
+notes: []

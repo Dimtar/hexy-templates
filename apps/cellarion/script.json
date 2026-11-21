@@ -1,0 +1,49 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS cellarion 1.0.0"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30609]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/cellarion"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/cellarion/uploads",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "uploads"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/cellarion/meili_data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "meili_data"}
+    },
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/cellarion/mongodb_data",
+      "owner": {"user": "netdata", "group": "docker"},
+      "snapshot": {"id": "mongodb_data"}
+    }
+  ],
+  "app_values": {
+    "cellarion": {
+      "mongo_db_password": "$RANDOM_STRING(16)",
+      "meilisearch_master_key": "$RANDOM_STRING(32)",
+      "jwt_secret": "$RANDOM_STRING(32)",
+      "frontend_url": "http://$SERVER_LAN_IP:30609"
+    },
+    "storage": {
+      "uploads": "$HOST_PATH($LOCATION(ApplicationsPerformance)/cellarion/uploads)",
+      "meili_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/cellarion/meili_data)",
+      "mongodb_data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/cellarion/mongodb_data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30609}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}

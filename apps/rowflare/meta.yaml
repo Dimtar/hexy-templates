@@ -21,10 +21,9 @@ truenas_name: rowflare
 status: draft
 managed: generated
 upstream:
-  version: 1.0.0
+  version: 1.0.3
   app_version: 0.1.0
-  questions_sha: fefe334581f815f638df9413200645b35cb237dd161bfddc54a815a650f946ef
-  commit: c675b3a455ddb70c3bd9038ba265826978192a4f
+  questions_sha: 9e943ae4f3b69e87e657a281901c7af4696a9d37579f24b7f39a65ef07025c8b
+  commit: 149a224fafeebc369a21bed6239e73587778f392
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/rowflare
 notes: []
-removed_upstream: true

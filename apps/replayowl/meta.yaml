@@ -1,0 +1,26 @@
+title: Replayowl
+description: Replayowl is a self-hosted session recording and replay tool for websites. It records page
+  changes, clicks, scrolling, masked input and console errors, and lets you search sessions by user, page
+  and behavior.
+icon: https://media.sys.truenas.net/apps/replayowl/icons/icon.png
+categories:
+- monitoring
+keywords:
+- analytics
+- session replay
+- monitoring
+home: https://replayowl.com
+screenshots:
+- https://media.sys.truenas.net/apps/replayowl/screenshots/screenshot1.webp
+- https://media.sys.truenas.net/apps/replayowl/screenshots/screenshot2.webp
+train: community
+truenas_name: replayowl
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.1.1
+  questions_sha: 0fb9aef1768532ae9cb912da57832e0499c4cce01e8dfe6541453c95b90cb10a
+  commit: 149a224fafeebc369a21bed6239e73587778f392
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/replayowl
+notes: []
