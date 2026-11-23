@@ -1,0 +1,28 @@
+title: LinkBreeze
+description: LinkBreeze is a self-hosted link-in-bio page builder. Share one page with all your links,
+  fully themeable and multilingual.
+icon: https://media.sys.truenas.net/apps/linkbreeze/icons/icon.png
+categories:
+- productivity
+keywords:
+- link-in-bio
+- links
+- page-builder
+home: https://linkbreeze.omnirise.dev
+screenshots:
+- https://media.sys.truenas.net/apps/linkbreeze/screenshots/screenshot1.jpeg
+- https://media.sys.truenas.net/apps/linkbreeze/screenshots/screenshot2.jpeg
+- https://media.sys.truenas.net/apps/linkbreeze/screenshots/screenshot3.jpeg
+- https://media.sys.truenas.net/apps/linkbreeze/screenshots/screenshot4.jpeg
+- https://media.sys.truenas.net/apps/linkbreeze/screenshots/screenshot5.jpeg
+train: community
+truenas_name: linkbreeze
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.6.1
+  questions_sha: 7786b3d9b5ee6d7a34b36d39e3686e1ec85d6a74c6330513303aebafe61da52d
+  commit: bbae47f3c0aa7e53a5689673e2e7ffd05601c5f9
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/linkbreeze
+notes: []

@@ -1,0 +1,26 @@
+title: Borg UI
+description: Borg UI is a web interface for BorgBackup to run backups, browse and restore archives, manage
+  repositories and schedules.
+icon: https://media.sys.truenas.net/apps/borg-ui/icons/icon.png
+categories:
+- backup
+keywords:
+- backup
+- borg
+- borgbackup
+- restore
+home: https://borgui.com
+screenshots:
+- https://media.sys.truenas.net/apps/borg-ui/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/borg-ui/screenshots/screenshot2.png
+train: community
+truenas_name: borg-ui
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 2.4.10
+  questions_sha: 17235f83aed53ab547afcb0724f365a4498c48601b5f0d72ff14f71a41fffbd7
+  commit: bbae47f3c0aa7e53a5689673e2e7ffd05601c5f9
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/borg-ui
+notes: []

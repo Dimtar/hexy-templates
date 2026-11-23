@@ -1,0 +1,26 @@
+title: Retriever
+description: Retriever is a yt-dlp web UI for downloading videos, playlists and channels, with channel
+  subscriptions, a media library, Webhooks and Telegram integrations.
+icon: https://media.sys.truenas.net/apps/retriever/icons/icon.svg
+categories:
+- media
+keywords:
+- yt-dlp
+- youtube-dl
+- downloader
+- media
+home: https://github.com/xinua/retriever
+screenshots:
+- https://media.sys.truenas.net/apps/retriever/screenshots/screenshot1.webp
+- https://media.sys.truenas.net/apps/retriever/screenshots/screenshot2.webp
+train: community
+truenas_name: retriever
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.3.1
+  questions_sha: 80bb823d4710614708427688d43b462ddc3f775681e3e8bc3b7d4cf7468b3e68
+  commit: bbae47f3c0aa7e53a5689673e2e7ffd05601c5f9
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/retriever
+notes: []

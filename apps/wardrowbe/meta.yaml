@@ -1,0 +1,26 @@
+title: Wardrowbe
+description: Self-hosted AI-powered wardrobe manager with outfit suggestions based on weather and occasion.
+icon: https://media.sys.truenas.net/apps/wardrowbe/icons/icon.png
+categories:
+- productivity
+keywords:
+- wardrobe
+- clothing
+- outfit
+- fashion
+home: https://github.com/Anyesh/wardrowbe
+screenshots:
+- https://media.sys.truenas.net/apps/wardrowbe/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/wardrowbe/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/wardrowbe/screenshots/screenshot3.png
+train: community
+truenas_name: wardrowbe
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.14.0
+  questions_sha: ce952632e5fd20375e0cb35b870712ecea3f5e92a28a833d65c5e694886f7d2c
+  commit: bbae47f3c0aa7e53a5689673e2e7ffd05601c5f9
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/wardrowbe
+notes: []

@@ -1,0 +1,27 @@
+title: Pellu Home Server
+description: Pellu Home Server shares the videos (and their subtitles) in the folders you choose with
+  the Pellu apps on your phones, tablets and TV at home, as they are, without transcoding.
+icon: https://media.sys.truenas.net/apps/pellu-home/icons/icon.svg
+categories:
+- media
+keywords:
+- media
+- video
+- subtitles
+- streaming
+home: https://pellu.co/home-server/linux
+screenshots:
+- https://media.sys.truenas.net/apps/pellu-home/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/pellu-home/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/pellu-home/screenshots/screenshot3.png
+train: community
+truenas_name: pellu-home
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.0.1
+  questions_sha: 487606f6186665a1f9eeeee9dda346438e163a18280a3d9dd42ed70a50531220
+  commit: bbae47f3c0aa7e53a5689673e2e7ffd05601c5f9
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/pellu-home
+notes: []

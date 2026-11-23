@@ -15,9 +15,9 @@ truenas_name: paperless-ai
 status: draft
 managed: generated
 upstream:
-  version: 1.1.7
-  app_version: 3.0.9
-  questions_sha: 19dc8eb0bae854e07ea6e0573d463d796b43c785329a68f279760f39e17e51f0
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.1.19
+  app_version: 4.5.1
+  questions_sha: 9853c656ae6d03401e8941b811038e42d6b9b1b3bb2710d19af2cc4bbf8f40d5
+  commit: bbae47f3c0aa7e53a5689673e2e7ffd05601c5f9
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/paperless-ai
 notes: []

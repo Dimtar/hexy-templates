@@ -1,0 +1,23 @@
+title: FCaptcha
+description: Self-hosted CAPTCHA for web forms with a browser widget and a server-side token verification
+  API.
+icon: https://media.sys.truenas.net/apps/fcaptcha/icons/icon.png
+categories:
+- networking
+keywords:
+- captcha
+- security
+- web
+home: https://webdecoy.com/product/fcaptcha/
+screenshots: []
+train: community
+truenas_name: fcaptcha
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.51.0
+  questions_sha: 91c5f143f82b43be3d7367aefcbb42b35fd80b19f9acfc433b7578f0f6169753
+  commit: bbae47f3c0aa7e53a5689673e2e7ffd05601c5f9
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/fcaptcha
+notes: []
