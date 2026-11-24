@@ -1,0 +1,25 @@
+title: Faster Whisper
+description: Faster Whisper is a Wyoming protocol speech-to-text server, using a fast implementation of
+  OpenAI's Whisper model built on CTranslate2.
+icon: https://media.sys.truenas.net/apps/faster-whisper/icons/icon.png
+categories:
+- ai
+keywords:
+- ai
+- speech-to-text
+- whisper
+- wyoming
+- home-assistant
+home: https://github.com/SYSTRAN/faster-whisper
+screenshots: []
+train: community
+truenas_name: faster-whisper
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 3.9.1
+  questions_sha: cb16cd92a5f642b7c0f3424efcb92df2ff46b46f8fd42d80663c2e5ca93c716c
+  commit: 5515aef08321f1400441fea91b7763a290e8a592
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/faster-whisper
+notes: []

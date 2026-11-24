@@ -18,9 +18,9 @@ truenas_name: kinora
 status: draft
 managed: generated
 upstream:
-  version: 1.0.0
-  app_version: 1.0.15
-  questions_sha: 0829aefde005f38b8b05a58e3b0b7800ded6f52e4e9e547e8d5c53e59eaaa8e7
-  commit: 149a224fafeebc369a21bed6239e73587778f392
+  version: 1.0.3
+  app_version: v1.1.1
+  questions_sha: 199a213ac388edf8eaddb4b729ed48f95da6880586c802d896b61f884c681ce5
+  commit: 5515aef08321f1400441fea91b7763a290e8a592
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/kinora
 notes: []

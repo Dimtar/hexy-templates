@@ -1,0 +1,31 @@
+title: NAS Doctor
+description: NAS Doctor is a local diagnostic and monitoring tool for your NAS.
+icon: https://media.sys.truenas.net/apps/nas-doctor/icons/icon.png
+categories:
+- monitoring
+keywords:
+- monitoring
+- diagnostics
+- smart
+- health
+- nas
+- dashboard
+- gpu
+home: https://github.com/mcdays94/nas-doctor
+screenshots:
+- https://media.sys.truenas.net/apps/nas-doctor/screenshots/screenshot1.jpg
+- https://media.sys.truenas.net/apps/nas-doctor/screenshots/screenshot2.jpg
+- https://media.sys.truenas.net/apps/nas-doctor/screenshots/screenshot3.jpg
+- https://media.sys.truenas.net/apps/nas-doctor/screenshots/screenshot4.jpg
+- https://media.sys.truenas.net/apps/nas-doctor/screenshots/screenshot5.jpg
+train: community
+truenas_name: nas-doctor
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.10.4
+  questions_sha: 253eb255370a7aa0485cb11b000b1a5aa0fa2b3acbc2410a84e9a9d340215a73
+  commit: 5515aef08321f1400441fea91b7763a290e8a592
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nas-doctor
+notes: []

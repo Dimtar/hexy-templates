@@ -1,0 +1,29 @@
+title: NuviraHub
+description: Your own server for NuviraHub, the open source remote desktop and remote support app for
+  Windows, macOS and Linux. It handles signalling, the relay for devices that cannot connect directly,
+  and the signed updates of the apps.
+icon: https://media.sys.truenas.net/apps/nuvirahub/icons/icon.png
+categories:
+- networking
+keywords:
+- remote
+- desktop
+- remote-support
+- relay
+home: https://nuvirahub.dev
+screenshots:
+- https://media.sys.truenas.net/apps/nuvirahub/screenshots/screenshot1.webp
+- https://media.sys.truenas.net/apps/nuvirahub/screenshots/screenshot2.webp
+- https://media.sys.truenas.net/apps/nuvirahub/screenshots/screenshot3.webp
+- https://media.sys.truenas.net/apps/nuvirahub/screenshots/screenshot4.webp
+train: community
+truenas_name: nuvirahub
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.28.0
+  questions_sha: 9e29735c4c0cf692d1db12b2efc66f9ede3bb433ecf77322cb922e45b035a6f7
+  commit: 5515aef08321f1400441fea91b7763a290e8a592
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nuvirahub
+notes: []

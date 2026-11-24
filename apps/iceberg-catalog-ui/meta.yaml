@@ -1,0 +1,31 @@
+title: Iceberg Catalog UI
+description: Multi-user web UI for the Apache Iceberg catalog of MinIO AIStor Tables. Browse and manage
+  warehouses, namespaces, tables, views, snapshots and column statistics, and describe data with Apache
+  Ossie semantic models.
+icon: https://media.sys.truenas.net/apps/iceberg-catalog-ui/icons/icon.png
+categories:
+- storage
+keywords:
+- iceberg
+- aistor
+- minio
+- catalog
+- data-lake
+- s3
+home: https://github.com/arturborycki/aistore-ui
+screenshots:
+- https://media.sys.truenas.net/apps/iceberg-catalog-ui/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/iceberg-catalog-ui/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/iceberg-catalog-ui/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/iceberg-catalog-ui/screenshots/screenshot4.png
+train: community
+truenas_name: iceberg-catalog-ui
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.2.1
+  questions_sha: c0f65c0a36e83cceddfc010b50510c685bbd1f9e275c8cf59dd6935f81c75ae8
+  commit: 5515aef08321f1400441fea91b7763a290e8a592
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/iceberg-catalog-ui
+notes: []

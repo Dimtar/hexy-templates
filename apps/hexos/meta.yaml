@@ -1,0 +1,45 @@
+title: HexOS
+description: 'Everything you love, on a server you own. HexOS is a force multiplier for the TrueNAS you
+  already run, not a replacement: install it here, claim the server at deck.hexos.com, and get the Command
+  Deck on top of the pools, shares, users and apps you have today. Over a hundred curated apps and VMs
+  that install in one tap, HexOS Anywhere to reach every app from anywhere with your network closed, Buddy
+  Backup to a friend''s server, the Hardware Advisor watching your exact parts, and notifications a human
+  can read. The full TrueNAS UI stays put.'
+icon: https://media.sys.truenas.net/apps/hexos/icons/icon.png
+categories:
+- management
+keywords:
+- hexos
+- home server
+- command deck
+- self-hosting
+- private cloud
+- buddy backup
+- hexos anywhere
+- remote access
+- apps
+- nas
+home: https://hexos.com
+screenshots:
+- https://media.sys.truenas.net/apps/hexos/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/hexos/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/hexos/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/hexos/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/hexos/screenshots/screenshot5.png
+- https://media.sys.truenas.net/apps/hexos/screenshots/screenshot6.png
+- https://media.sys.truenas.net/apps/hexos/screenshots/screenshot7.png
+- https://media.sys.truenas.net/apps/hexos/screenshots/screenshot8.png
+- https://media.sys.truenas.net/apps/hexos/screenshots/screenshot9.png
+- https://media.sys.truenas.net/apps/hexos/screenshots/screenshot10.png
+- https://media.sys.truenas.net/apps/hexos/screenshots/screenshot11.png
+train: community
+truenas_name: hexos
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: latest
+  questions_sha: d7c2e847c622964962897be2454fbae88f1414d2c4990b05e41f338224031288
+  commit: 5515aef08321f1400441fea91b7763a290e8a592
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/hexos
+notes: []

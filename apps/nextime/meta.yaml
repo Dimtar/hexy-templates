@@ -1,0 +1,29 @@
+title: nextime
+description: A calendar for families and small groups on your own server. Own calendars shared with members
+  and guests, iCloud, Google and CalDAV accounts read and written, and a CalDAV account for iPhones and
+  Android phones.
+icon: https://media.sys.truenas.net/apps/nextime/icons/icon.png
+categories:
+- productivity
+keywords:
+- calendar
+- caldav
+- events
+- family
+- scheduling
+home: https://github.com/DerKezorm/nextime
+screenshots:
+- https://media.sys.truenas.net/apps/nextime/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/nextime/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/nextime/screenshots/screenshot3.png
+train: community
+truenas_name: nextime
+status: draft
+managed: generated
+upstream:
+  version: 1.0.2
+  app_version: 0.3.1
+  questions_sha: 5b1f09b0cda5006424214f1369567476f657209082cd26a688c306f54b036a88
+  commit: 5515aef08321f1400441fea91b7763a290e8a592
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/nextime
+notes: []

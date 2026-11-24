@@ -1,0 +1,43 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS iceberg-catalog-ui 1.0.0"
+  },
+  "installation_questions": [
+    {
+      "question": "Aistor endpoint",
+      "type": "text",
+      "key": "aistor_endpoint",
+      "required": true
+    }
+  ],
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"],
+    "ports": [30621]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/iceberg-catalog-ui"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/iceberg-catalog-ui/data",
+      "owner": {"user": "apps"},
+      "snapshot": {"id": "data"}
+    }
+  ],
+  "app_values": {
+    "catalog_ui": {
+      "public_url": "http://$SERVER_LAN_IP:30621",
+      "aistor_endpoint": "$QUESTION(aistor_endpoint)"
+    },
+    "storage": {
+      "data": "$HOST_PATH($LOCATION(ApplicationsPerformance)/iceberg-catalog-ui/data)"
+    },
+    "network": {
+      "web_port": {"bind_mode": "published", "port_number": 30621}
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}
