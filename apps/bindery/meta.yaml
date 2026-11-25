@@ -1,0 +1,28 @@
+title: Bindery
+description: A self-hosted ebook and audiobook manager. It watches authors, searches indexers, sends grabs
+  to a download client and imports the result into your library.
+icon: https://media.sys.truenas.net/apps/bindery/icons/icon.png
+categories:
+- media
+keywords:
+- ebooks
+- audiobooks
+- library
+home: https://getbindery.dev/
+screenshots:
+- https://media.sys.truenas.net/apps/bindery/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/bindery/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/bindery/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/bindery/screenshots/screenshot4.png
+- https://media.sys.truenas.net/apps/bindery/screenshots/screenshot5.png
+train: community
+truenas_name: bindery
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: v1.53.2
+  questions_sha: 3d377366cfa012eba4bc51b0713a89b96d7516c319b93509dce5335c4bd18f5d
+  commit: c3e06a00a7c3bf3f633db99ba3bf73f2c60f2bf5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/bindery
+notes: []

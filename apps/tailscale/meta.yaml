@@ -14,9 +14,9 @@ truenas_name: tailscale
 status: draft
 managed: generated
 upstream:
-  version: 1.4.26
-  app_version: v1.104.4
-  questions_sha: eb044784ce505641001f452c846675bd355016c7147fc296bb59494ae5a29832
-  commit: 3197f4907995386127ef5a1a1d951b4c04dd272c
+  version: 1.4.30
+  app_version: v1.104.7
+  questions_sha: a425929855ef7c883a10e4526814a41417fd901f06210901e10d70d85712b0db
+  commit: c3e06a00a7c3bf3f633db99ba3bf73f2c60f2bf5
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/tailscale
 notes: []

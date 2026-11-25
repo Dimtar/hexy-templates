@@ -1,0 +1,28 @@
+title: SignalDB
+description: SignalDB is a distributed observability signal database for metrics, logs and traces, built
+  on Arrow/Parquet with native OTLP ingestion and Tempo API compatibility.
+icon: https://media.sys.truenas.net/apps/signaldb/icons/icon.png
+categories:
+- monitoring
+keywords:
+- observability
+- metrics
+- logs
+- traces
+- otlp
+home: https://github.com/cedricziel/signaldb
+screenshots:
+- https://media.sys.truenas.net/apps/signaldb/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/signaldb/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/signaldb/screenshots/screenshot3.png
+train: community
+truenas_name: signaldb
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 0.4.1
+  questions_sha: 464ceb7d580d40fc080e9edcf0a93e0353caba3920791d4735c7b9d5436ff99f
+  commit: c3e06a00a7c3bf3f633db99ba3bf73f2c60f2bf5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/signaldb
+notes: []

@@ -1,0 +1,24 @@
+title: DockTail
+description: Label-based Tailscale Services for Docker containers
+icon: https://media.sys.truenas.net/apps/docktail/icons/icon.png
+categories:
+- networking
+keywords:
+- tailscale
+- docker
+- labels
+- proxy
+- vpn
+home: https://docktail.org
+screenshots: []
+train: community
+truenas_name: docktail
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.9.0
+  questions_sha: 7e3df2f88237ce610169f0899bd9c34f3ccbb90fffae8ecb205e2a272a42ab33
+  commit: c3e06a00a7c3bf3f633db99ba3bf73f2c60f2bf5
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/docktail
+notes: []

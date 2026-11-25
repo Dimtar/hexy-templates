@@ -1,0 +1,26 @@
+{
+  "version": 5,
+  "script": {
+    "version": "0.1.0",
+    "changeLog": "Auto-generated draft from TrueNAS docktail 1.0.0"
+  },
+  "requirements": {
+    "locations": ["ApplicationsPerformance"],
+    "specifications": ["2CORE"],
+    "permissions": ["READ_WRITE_LOCATIONS"]
+  },
+  "ensure_directories_exists": [
+    {"path": "$LOCATION(ApplicationsPerformance)"},
+    {"path": "$LOCATION(ApplicationsPerformance)/docktail"},
+    {
+      "path": "$LOCATION(ApplicationsPerformance)/docktail/tailscale_socket",
+      "snapshot": {"id": "tailscale_socket"}
+    }
+  ],
+  "app_values": {
+    "storage": {
+      "tailscale_socket": "$HOST_PATH($LOCATION(ApplicationsPerformance)/docktail/tailscale_socket)"
+    },
+    "resources": {"limits": {"cpus": 2, "memory": "$MEMORY(10%, 4096)"}}
+  }
+}
