@@ -1,0 +1,25 @@
+title: BombVault
+description: BombVault backs up Docker containers and KVM/libvirt VMs with restic.
+icon: https://media.sys.truenas.net/apps/bombvault/icons/icon.png
+categories:
+- backup
+keywords:
+- restic
+- docker
+- kvm
+home: https://github.com/junkerderprovinz/bombvault
+screenshots:
+- https://media.sys.truenas.net/apps/bombvault/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/bombvault/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/bombvault/screenshots/screenshot3.png
+train: community
+truenas_name: bombvault
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 10.1.0
+  questions_sha: c12a038417e34206f86744759466c83cec20e464c1494d278ecd212b81e724d3
+  commit: 3b9ff7e3ce91946c351df743cb9b2e16dd1b03a1
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/bombvault
+notes: []

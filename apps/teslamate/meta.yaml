@@ -15,9 +15,9 @@ truenas_name: teslamate
 status: draft
 managed: generated
 upstream:
-  version: 1.0.51
+  version: 1.0.55
   app_version: 4.5.0
-  questions_sha: 7862fdf3f0ad5410ddd1dd67148c9b7d6502b9ff8818e3056323908654afd133
-  commit: 4b8978b8ad1d7ffc46c78a4cf760fc32d172b037
+  questions_sha: bf9a5c9f76abab56acab2f821665bc31264fdff0e3df8f0cb81670482461e084
+  commit: 3b9ff7e3ce91946c351df743cb9b2e16dd1b03a1
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/teslamate
 notes: []

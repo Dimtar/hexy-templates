@@ -1,0 +1,29 @@
+title: Kinopeer
+description: A qBittorrent web UI built around movies and TV series. Find a title, pick a release found
+  by Prowlarr and follow the download, on a phone or a computer.
+icon: https://media.sys.truenas.net/apps/kinopeer/icons/icon.png
+categories:
+- media
+keywords:
+- qbittorrent
+- prowlarr
+- tmdb
+- movies
+- series
+home: https://github.com/kinopeer/kinopeer
+screenshots:
+- https://media.sys.truenas.net/apps/kinopeer/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/kinopeer/screenshots/screenshot2.png
+- https://media.sys.truenas.net/apps/kinopeer/screenshots/screenshot3.png
+- https://media.sys.truenas.net/apps/kinopeer/screenshots/screenshot4.png
+train: community
+truenas_name: kinopeer
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.3.0
+  questions_sha: a256a677cf25a00ac4eaf4f2cae5fb581679f41e69c9225d60f9789955bc9c96
+  commit: 3b9ff7e3ce91946c351df743cb9b2e16dd1b03a1
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/kinopeer
+notes: []

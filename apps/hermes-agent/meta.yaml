@@ -14,10 +14,10 @@ truenas_name: hermes-agent
 status: draft
 managed: generated
 upstream:
-  version: 1.0.26
-  app_version: v2026.9.24
-  questions_sha: bac876f435659f90ba4911f29e5100237332b6caea9e7804bd43977af724a27b
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.0.45
+  app_version: v0.23.4
+  questions_sha: 2cee10b4371d6dee415179f84cc1f8125f1c6c152995df0251721741ee3c4014
+  commit: 3b9ff7e3ce91946c351df743cb9b2e16dd1b03a1
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/hermes-agent
 notes: []
 curated: true

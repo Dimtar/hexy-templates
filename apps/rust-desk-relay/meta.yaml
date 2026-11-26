@@ -13,10 +13,10 @@ truenas_name: rust-desk-relay
 status: draft
 managed: generated
 upstream:
-  version: 1.0.24
+  version: 1.0.26
   app_version: 1.1.16
-  questions_sha: b5940727d933d7a5946c1ff949506424515cbe948a4a7c9f9838a36a3e68257b
-  commit: 4b8978b8ad1d7ffc46c78a4cf760fc32d172b037
+  questions_sha: 8590e106e776fc6b37a08f415d9b22f47267a8082344e75ce16f1457494f67a3
+  commit: 3b9ff7e3ce91946c351df743cb9b2e16dd1b03a1
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/rust-desk-relay
 notes: []
 curated: true
