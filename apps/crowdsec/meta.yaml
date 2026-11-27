@@ -1,0 +1,23 @@
+title: CrowdSec Security Engine
+description: CrowdSec Security Engine is an open-source, lightweight security engine that detects and
+  blocks malicious actors. It analyzes logs and HTTP requests using behavior-based patterns called scenarios.
+icon: https://media.sys.truenas.net/apps/crowdsec/icons/icon.svg
+categories:
+- security
+keywords:
+- security
+- waf
+- firewall
+home: https://www.crowdsec.net/
+screenshots: []
+train: community
+truenas_name: crowdsec
+status: draft
+managed: generated
+upstream:
+  version: 1.0.1
+  app_version: v1.8.2
+  questions_sha: 37d0e86a9943a9f2e46037555164a962613de04682057b207cae43b7073ad1aa
+  commit: 459b8f6f295a87ac5978ff3386866ccae30c3a47
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/crowdsec
+notes: []

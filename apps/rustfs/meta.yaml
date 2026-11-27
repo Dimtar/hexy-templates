@@ -14,9 +14,9 @@ truenas_name: rustfs
 status: draft
 managed: generated
 upstream:
-  version: 1.1.33
-  app_version: 1.0.1
-  questions_sha: 9be330fc58bfc6b4ed8d54f3903d146ee357b3f24d0dbc76b797c2bde2a9f10b
-  commit: fcb435722d2a50f84ce5457b3288b72b8d170ac5
+  version: 1.1.47
+  app_version: 1.0.7
+  questions_sha: ec2a801477e94fd0601e257f4f8bb6f18a46e523280f80eb2ce82eecc6c7ab5e
+  commit: 459b8f6f295a87ac5978ff3386866ccae30c3a47
   source: https://github.com/truenas/apps/tree/master/ix-dev/community/rustfs
 notes: []

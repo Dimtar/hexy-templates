@@ -1,0 +1,28 @@
+title: CertKeeper
+description: Issues Let's Encrypt certificates through Cloudflare DNS validation and installs them on
+  your hosts and appliances over SSH, renewing and redeploying them automatically.
+icon: https://media.sys.truenas.net/apps/certkeeper/icons/icon.png
+categories:
+- security
+keywords:
+- certificate
+- letsencrypt
+- acme
+- tls
+- ssl
+- cloudflare
+home: https://github.com/MJWaters1985/CertKeeper
+screenshots:
+- https://media.sys.truenas.net/apps/certkeeper/screenshots/screenshot1.png
+- https://media.sys.truenas.net/apps/certkeeper/screenshots/screenshot2.png
+train: community
+truenas_name: certkeeper
+status: draft
+managed: generated
+upstream:
+  version: 1.0.0
+  app_version: 1.0.0
+  questions_sha: c3fcc49c01dc30956893907a5b6ab7f1907fb6c2e11ee44bf551575ba715f77c
+  commit: 459b8f6f295a87ac5978ff3386866ccae30c3a47
+  source: https://github.com/truenas/apps/tree/master/ix-dev/community/certkeeper
+notes: []
